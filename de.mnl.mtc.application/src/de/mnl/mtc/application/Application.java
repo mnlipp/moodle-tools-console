@@ -90,8 +90,7 @@ public class Application extends Component implements BundleActivator {
             = httpServer.attach(new VueJsConsoleWeblet(httpChannel,
                 Channel.SELF, new URI("/")))
                 .prependClassTemplateLoader(getClass())
-                .prependResourceBundleProvider(getClass())
-                .setConsoleSessionInactivityTimeout(300000);
+                .prependResourceBundleProvider(getClass());
         WebConsole console = consoleWeblet.console();
         console.attach(new BrowserLocalBackedKVStore(
             console, consoleWeblet.prefix().getPath()));
