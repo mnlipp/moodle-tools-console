@@ -7,6 +7,11 @@
     bnd.identity; id=de.mnl.osgi.slf4j2osgi; version='latest',\
     bnd.identity; id=de.mnl.osgi.osgi2jul; version='latest',\
     \
+    bnd.identity; id=org.apache.felix.gogo.shell; version='latest',\
+    bnd.identity; id=org.apache.felix.gogo.command; version='latest',\
+    bnd.identity; id=org.apache.felix.shell; version='latest',\
+    bnd.identity; id=org.apache.felix.shell.remote; version='latest',\
+    \
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.2.0.ga))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
@@ -112,4 +117,5 @@
 	org.jgrapes.osgi.webconlet.bundles;version='[0.18.0,0.18.1)',\
 	org.jgrapes.osgi.webconlet.services;version='[0.16.0,0.16.1)',\
 	org.jgrapes.osgi.webconlet.logviewer;version='[0.16.0,0.16.1)',\
-	de.mnl.mtc.application;version=snapshot
+	de.mnl.mtc.application;version=snapshot,\
+	de.mnl.moodle.service;version=snapshot
