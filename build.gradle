@@ -37,7 +37,7 @@ subprojects {
 }
 
 task stage {
-	dependsOn ':de.mnl.ahp.application:export'
+	dependsOn ':de.mnl.mtc.application:export'
 }
 
 apply plugin: 'eclipse'
