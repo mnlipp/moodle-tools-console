@@ -1,0 +1,46 @@
+buildscript {
+    repositories {
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:6.2.0"
+        classpath 'com.github.node-gradle:gradle-node-plugin:3.2.1'
+        classpath 'org.ajoberstar.grgit:grgit-gradle:4.1.0'
+        classpath 'org.ajoberstar:gradle-git-publish:3.0.0'
+    }
+}
+
+apply plugin: 'com.github.node-gradle.node'
+apply plugin: 'biz.aQute.bnd.workspace'
+
+ext {
+	isCiBuild = System.getenv().get("CI") == 'true'
+    isJitPackBuild = System.getenv().get("JITPACK") == 'true'
+}
+
+node {
+    download = true
+}
+
+// Prepare github authentication for plugins
+if (System.properties['org.ajoberstar.grgit.auth.username'] == null) {
+	System.setProperty('org.ajoberstar.grgit.auth.username',
+		System.getenv("GH_TOKEN") ?: project.properties['github.token'] ?: "nouser")
+}
+
+/* Configure the subprojects */
+subprojects {
+    apply from: "${project.rootDir}/gradle/subprojects.gradle"
+    // Must be applied after configuring the subprojects,
+    // can therefore not be applied in allprojects.
+    apply from: "${project.rootDir}/gradle/eclipse.gradle"
+}
+
+task stage {
+	dependsOn ':de.mnl.ahp.application:export'
+}
+
+apply plugin: 'eclipse'
+
+tasks.eclipse.dependsOn(cleanEclipse)
+

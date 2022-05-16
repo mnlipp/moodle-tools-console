@@ -1,0 +1,10 @@
+rootProject.name = 'moodle-tools-console'
+
+for (File file: rootDir.listFiles()) {
+    if (file.isDirectory() &&
+            file.name.startsWith("de.mnl.") ) {
+            include file.name
+    }
+}
+
+include 'cnf'

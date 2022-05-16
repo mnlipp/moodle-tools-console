@@ -1,0 +1,32 @@
+Bundle-Name: Moodle Tools Console Application
+Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
+#Bundle-Version: 1.0.0.ga
+Bundle-Copyright: Michael N. Lipp (c) 2022
+Bundle-License: http://www.gnu.org/licenses/gpl-3.0.txt
+Export-Package: de.mnl.mtc.application
+Bundle-Activator: de.mnl.mtc.application.Application
+
+-buildpath: \
+	osgi.core;version=6.0.0,\
+	osgi.annotation;version=6.0.1,\
+	osgi.cmpn;version=6.0,\
+	org.jgrapes.core;version=latest,\
+	org.jgrapes.io;version=latest,\
+	org.jgrapes.http;version=latest,\
+	org.jgrapes.util;version=latest,\
+    org.jgrapes.webconsole.base;version=latest,\
+	org.jgrapes.webconsole.vuejs;version=latest,\
+	org.jgrapes.osgi.core;version=latest
+
+-testpath: \
+    org.apache.servicemix.bundles.junit; version=4.12.0.1
+
+-includeresource: \
+	resources
+
+-dependson: 
+    
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
+    "The .classpath contains an unknown container: org.eclipse.buildship.core.gradleclasspathcontainer. This could make your build less portable.", \
+    "The build path does not refer to the bnd container 'aQute.bnd.classpath.container'"
