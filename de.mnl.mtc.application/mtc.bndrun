@@ -23,7 +23,7 @@
 	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.bundles)',\
 	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.services)',\
 	bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
-	bnd.identity;id='de.mnl.moodle.service';version=latest
+	bnd.identity;id='de.mnl.moodle.provider';version=latest
 
 # - SLF4J 1.8 is still alpha and backward compatibility is unclear
 # - Make sure that the import "org.slf4j.impl;version=1.6.0" is only 
@@ -118,4 +118,5 @@
 	org.jgrapes.osgi.webconlet.services;version='[0.16.0,0.16.1)',\
 	org.jgrapes.osgi.webconlet.logviewer;version='[0.16.0,0.16.1)',\
 	de.mnl.mtc.application;version=snapshot,\
-	de.mnl.moodle.service;version=snapshot
+	de.mnl.moodle.service;version=snapshot,\
+	de.mnl.moodle.provider;version=snapshot

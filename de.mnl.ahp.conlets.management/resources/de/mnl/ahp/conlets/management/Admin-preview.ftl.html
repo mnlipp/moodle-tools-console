@@ -1,0 +1,15 @@
+<div ref="previewDom" class="AdHocPolling-admin-preview"
+    data-portlet-title="${_("conletName")}"
+    data-jgwc-on-load="deMnlAhpAdmin.initPreview"
+    data-jgwc-on-unload="JGConsole.jgwc.unmountVueApps"> 
+    <div class="lastCreated" data-started-at="0">
+        <p>
+            {{ localize("Last poll created") }}: 
+            <span class="lastPollCreated">{{ lastPollCreated }}</span>
+        </p>    
+    </div> 
+    <form>
+        <button type="button"
+            @click="createPoll($event)">{{ localize("Create Poll") }}</button>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+Bundle-Name: Ad Hoc Polling Service
+#Bundle-Version: 0.0.0.-${tstamp}-SNAPSHOT
+Bundle-Version: 1.1.0.ga
+Bundle-Copyright: Michael N. Lipp (c) 2018, 2022
+Bundle-License: http://www.gnu.org/licenses/gpl-3.0.txt
+
+api_version = 1.0.0
+
+Export-Package: \
+	de.mnl.ahp.service;version="${api_version}",\
+	de.mnl.ahp.service.events;version="${api_version}"
+
+-buildpath: \
+    osgi.core;version=6.0.0,\
+	osgi.annotation;version=6.0.1,\
+	org.jgrapes.core;version=latest,\
+    org.jgrapes.io;version=latest
+
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
+    "The .classpath contains an unknown container: org.eclipse.buildship.core.gradleclasspathcontainer. This could make your build less portable.", \
+    "The build path does not refer to the bnd container 'aQute.bnd.classpath.container'"
+

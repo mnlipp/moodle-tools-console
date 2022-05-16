@@ -1,0 +1,19 @@
+Bundle-Name: Moodle Service
+Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
+#Bundle-Version: 1.0.0.ga
+Bundle-Copyright: Michael N. Lipp (c) 2022
+Bundle-License: http://www.gnu.org/licenses/agpl-3.0.txt
+
+api_version = 1.0.0
+
+Export-Package: \
+	de.mnl.moodle.service;version="${api_version}"
+
+-buildpath: \
+    osgi.core;version=6.0.0
+
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
+    "The .classpath contains an unknown container: org.eclipse.buildship.core.gradleclasspathcontainer. This could make your build less portable.", \
+    "The build path does not refer to the bnd container 'aQute.bnd.classpath.container'"
+
