@@ -18,28 +18,76 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.service.MoodleService;
+import de.mnl.moodle.service.model.MoodleTokens;
+import de.mnl.osgi.lf4osgi.Logger;
+import de.mnl.osgi.lf4osgi.LoggerFactory;
+import java.io.IOException;
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Iterator;
 import java.util.Map;
-
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ConfigurationPolicy;
 import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.component.annotations.Modified;
 
-import de.mnl.moodle.service.MoodleService;
-
 @Component(configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
 public class MoodleServiceProvider implements MoodleService {
 
+    private static final Logger logger
+        = LoggerFactory.getLogger(MoodleServiceProvider.class);
+
     public MoodleServiceProvider() {
         println("=== Constructor ===");
+    }
+
+    private static String retrieveToken(Map<String, Object> configuration)
+            throws ConfigurationException, IOException, InterruptedException {
+        // Shortcut to server configuration
+        @SuppressWarnings("unchecked")
+        var moodleConfig
+            = (Map<String, Object>) configuration.get("moodle");
+
+        String moodle = "";
+
+        // Get password for server and user
+        PasswordAuthentication credentials = Authenticator
+            .requestPasswordAuthentication(new NetrcAuthenticator(),
+                moodle, null, 0, null, null, null, null, null);
+        if (credentials == null) {
+            throw new ConfigurationException("Cannot find credentials.");
+        }
+
+        // Request token
+        try {
+            URI tokenUri = new URI("https", moodle, "/login/token.php", null);
+            var restClient = new RestClient(tokenUri);
+            var tokens = restClient.invoke(MoodleTokens.class,
+                Map.of("username", credentials.getUserName(),
+                    "password", new String(credentials.getPassword()),
+                    "service", "moodle_mobile_app"));
+            logger.info("Obtained access token.");
+            return tokens.getToken();
+        } catch (URISyntaxException e) {
+            throw new ConfigurationException(e);
+        }
     }
 
     @Activate
     public void activate(Map properties) {
         println("=== Activate " + properties.get("number") + " ===");
         println(properties);
+        try {
+            String token = retrieveToken((Map<String, Object>) properties);
+        } catch (ConfigurationException | IOException
+                | InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
     }
 
     @Modified

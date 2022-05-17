@@ -9,10 +9,13 @@ api_version = 1.0.0
 Export-Package: de.mnl.moodle.provider;version='${api_version}'
 
 -buildpath: \
-    osgi.core;version=6.0.0,\
-	osgi.annotation;version=6.0.1,\
-    osgi.cmpn;version=6.0,\
-    de.mnl.moodle.service;version=latest
+	osgi.core;version='6.0.0',\
+	osgi.annotation;version='6.0.1',\
+	osgi.cmpn;version='7.0',\
+	de.mnl.osgi.lf4osgi;version=latest,\
+	org.jdrupes.json;version=latest,\
+    com.fasterxml.jackson.core.jackson-core,\
+	de.mnl.moodle.service;version=latest
 
 -fixupmessages: \
     "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \

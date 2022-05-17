@@ -13,6 +13,7 @@
     bnd.identity; id=org.apache.felix.shell.remote; version='latest',\
     \
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
+    bnd.identity; id=org.apache.felix.metatype; version='latest',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.2.0.ga))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
 	osgi.identity;filter:='(osgi.identity=de.mnl.mtc.application)',\
@@ -79,6 +80,7 @@
 	org.apache.felix.log;version='[1.2.6,1.2.7)',\
 	org.apache.felix.scr;version='[2.2.0,2.2.1)',\
 	org.apache.felix.configadmin;version='[1.9.24,1.9.25)',\
+	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
 	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
 	org.apache.felix.gogo.runtime;version='[1.1.6,1.1.7)',\
 	org.apache.felix.gogo.shell;version='[1.1.4,1.1.5)',\

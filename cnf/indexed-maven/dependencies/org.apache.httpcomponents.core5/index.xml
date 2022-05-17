@@ -1,0 +1,1094 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1652734401682">
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5:httpcore5"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5:5.0-beta2"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="706727" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.0-beta2/httpcore5-5.0-beta2.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="C4C299235762FF174CE129B477E12736D84E982D6F79DEEC8FB554E05E4DECE2"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5:httpcore5-h2"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta2"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apache.httpcomponents.core5:httpcore5:5.0-beta2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="219182" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.0-beta2/httpcore5-h2-5.0-beta2.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="B421275F728AA73B303F69F2FF7D489E427A5AEFE52E95E0B16463A0C1E7527F"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+      <attribute name="osgi.identity" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="documentation" value="http://www.apache.org/"/>
+      <attribute name="description" value="Apache HttpComponents Core (OSGi bundle)"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.annotation"/>
+      <attribute name="bnd.hashes" value="-502303438,-240242424,635054813,422291897,-1425239062" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.concurrent"/>
+      <attribute name="bnd.hashes" value="470195057,107672940,-1363620393,-479132722,-874348836,-628176269,-596690177,-1898550456" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.function"/>
+      <attribute name="bnd.hashes" value="-107576219,-1762961381,572770538,-276684762,-1598661140,1621876521" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http"/>
+      <attribute name="bnd.hashes" value="65071037,1801901333,77300347,2007771493,1306286015,336960425,1560511794,1737501368,1278737203,388080333,1239957695,863599107,1870051913,-2137403731,-1230406769,512095940,-2099042906,-1955746755,-1771098453,-1193463673,-977306178,-68791696,-817689025,-676921145,1889970755,2045328094,-430982680,543214857,-845353023,1059361116,-1365304646,-1421006064,-1233277686,-2068601325,-1675388953,114582411,650382751,-1563728653,-894292449,-1503540864,1889884677,-1685592896,1971845884,-921269129,755811072,-131450084,1914351747,-1646602336,700858897,146744500" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.config"/>
+      <attribute name="bnd.hashes" value="1895597947,-1994156574,-804625013,-2013227622,2433570,2083726046,-625568675,675594366,-342802251" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.io,org.apache.hc.core5.http.protocol"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl"/>
+      <attribute name="bnd.hashes" value="1527210239,271311729,-997950225,-154766544,-200228561,-1452102727,115398760,849667505,-447035700,-663045827,-901190423,-2032105927" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net,javax.net.ssl,org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.impl.io,org.apache.hc.core5.http.io,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.pool,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.bootstrap"/>
+      <attribute name="bnd.hashes" value="882740352,-80711218,1251539135,-1990108049,1273451336,753754042,-280685720,1392553471,-1867201752,1508213527,-1175059742,-1981155404,-1808614382,-1378649589,-1356803005,-1312047502,-1387270148,-2006584757,-1400949154,-1698218082,147009485" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.io,org.apache.hc.core5.http.message,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.io"/>
+      <attribute name="bnd.hashes" value="-1655169564,-1439332808,1912115545,-1088907106,1368777133,1762551243,-430327264,-2044171886,2026821400,-2101498102,2101279392,-2068116684,1007987952,865775557,1799209349,1081612313,735974065,-583085463,-716169631,-367248707,-1779404915,-414705539,-8804678,211539181,-1859465172,-1043686433,-1273533583,2005560468,1505518839,-199718113" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.message,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.reactor,org.apache.hc.core5.reactor.ssl,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.nio"/>
+      <attribute name="bnd.hashes" value="2062961261,-1086839995,1914860765,-276256717,-1130643015,-1155962508,-1655169564,-1439332808,94720311,1239886351,-1892970860,833252310,-668826837,-326471841,737020108,770322980,865775557,1799209349,1081612313,735974065,-1194695680,-583085463,-716169631,-367248707,-1779404915,245257332,258495322,1216572438,-208414330,936751710,1572111153,-1577690103,-1132849942,941682716,-55197362,1345899168,-2129140557,-1214921513,-1249749436,-80480532,2005560468,1505518839,-940932996" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.protocol,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io"/>
+      <attribute name="bnd.hashes" value="-1384871320,1329607252,133020966,1897381329,-1270357834,291511428,-1464502761,1008384097,-1651486486,989416254,1840839660,1205253010,777604376,-620310397,-954633784,1840055113,1821582502,91431458,-776478636,-131890633" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.entity"/>
+      <attribute name="bnd.hashes" value="-768567187,-1571355125,926144825,1417556202,2134959444,15359810,-1984241269,-1354638738,-906128225,1074017635,818535121,-1166268568,656542797,-1387533854,-161123468" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.io,org.apache.hc.core5.http.protocol,org.apache.hc.core5.net"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.support"/>
+      <attribute name="bnd.hashes" value="-584918291,-1499820136,-224706892,426046985,-1803318786,-594781063,-1058641577" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.net,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.message"/>
+      <attribute name="bnd.hashes" value="1050751515,-1677141138,-1210642013,1177737133,512094267,2095914561,883276239,1739715017,184059764,1705702837,1333241849,-1566241769,-72243768,105551841,786397959,1822780466,-73994215,784975980,-1465164846,430257766,-2076443645,282394060,1842037578,-385402878,-574321689,896402198,1703275859,-1999692312,955628661,-1477255421,-2053732570,72444760" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http,org.apache.hc.core5.http.protocol,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio"/>
+      <attribute name="bnd.hashes" value="-2026305540,-1333549216,-916108740,201491105,-1352100392,-442513803,-878505455,-1464502761,138168877,-409690186,-517170772,-953162424,1040711081,604719429,284969427,-151022225,-734589720,-114632614,-1222722566,-2131603017,1727372627,727480197,291488545,-77737271,895717803,2040883843,-1447618119,-1475478969,-330312929,1343641216,527184048,-1267699142,743020804,1964032870,-2119188588,-1361934470,334339426,-776478636,-131890633,2011006275" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.command"/>
+      <attribute name="bnd.hashes" value="-90995405,-1573159947" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http,org.apache.hc.core5.http.nio"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.entity"/>
+      <attribute name="bnd.hashes" value="1704429808,1268438156,-290839611,-1432801091,80204913,-1868792743,-1198917480,-1770492151,2088483493,-1908121,657922983,221931331,1500394129,1986522577,1731688346,-2077150502,-2001525737,1857449907,-340739759,-1889870565,-1165667611,688153030,-993787228,-1429778880" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.ssl"/>
+      <attribute name="bnd.hashes" value="182898261,-1594214435,1453161608,-431718325,-215071378" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.net"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.support"/>
+      <attribute name="bnd.hashes" value="-1896201450,-675099816,1410241233,-1436470691,80204913,-738241068,967120578,52311509,-504216654,-1059650579,-629870864,200685806,799645302,959692991,-1471657387,-1575912965" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.protocol"/>
+      <attribute name="bnd.hashes" value="1189079833,-200664646,96074825,-821083161,-1858121912,345510653,525118666,100909937,1753018359,34649762,-1906608374,-1477501251,1028324463,-1215814856,1394217640,-1876037557,1754314733,1668218224,546919640,1603060655,-918878460,-1627785234,1556347390,-2098351529" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.io"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2"/>
+      <attribute name="bnd.hashes" value="-886047289,-1134230011,974445374,-2012611997,351499103,-2074478691,-744293526,1552149092,-961073054" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.config"/>
+      <attribute name="bnd.hashes" value="1895597947,82878668,984097219,-690904570" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2,org.apache.hc.core5.http2.config"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.frame"/>
+      <attribute name="bnd.hashes" value="1884795806,68139341,1065708829,928804605,-1746289063,1705969165,-1745859033,545078853,-1910627272" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.hpack"/>
+      <attribute name="bnd.hashes" value="1727170636,84186751,-47307677,-1040241021,104925019,-1778643343,2022162126,773626990,1011130798,-1372255347,2135330807,-1014470449,782212911,1092519112,-1329347073,-1693503595,-1752237600" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl"/>
+      <attribute name="bnd.hashes" value="-1460394254,809363644,-1969607980,-1275881909" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2,org.apache.hc.core5.http2.frame,org.apache.hc.core5.http2.impl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.io"/>
+      <attribute name="bnd.hashes" value="297035037,-1212705138,-726576690" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl.nio,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2,org.apache.hc.core5.http2.config,org.apache.hc.core5.http2.frame,org.apache.hc.core5.http2.impl,org.apache.hc.core5.io,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio"/>
+      <attribute name="bnd.hashes" value="-872554722,-1368015207,-592065961,475088042,1991233209,2403779,2017990388,-1491387699,-385419051,231461483,-1927106122,1960697460,637371413,1445098293,1516359077,80204913,297035037,-1212705138,-365059005,-247063303,-293210304,844505982,-1845732771,-1755308061,1885569838,-255003140,155080077,-770602307,1034067741" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.impl.bootstrap,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2,org.apache.hc.core5.http2.config,org.apache.hc.core5.http2.impl.nio,org.apache.hc.core5.pool,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio.bootstrap"/>
+      <attribute name="bnd.hashes" value="528453388,1273451336,753754042,43458780,1185527841,-280685720,-397939830,2029219768,1440394646" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio"/>
+      <attribute name="bnd.hashes" value="-1568010884" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2.nio,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.command"/>
+      <attribute name="bnd.hashes" value="-696878759" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.io,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.pool"/>
+      <attribute name="bnd.hashes" value="-1951324046" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2.nio"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.support"/>
+      <attribute name="bnd.hashes" value="1055692938,-1657827105" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.protocol"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.protocol"/>
+      <attribute name="bnd.hashes" value="1390156044,-1942184332,-1887192322,825336515,739240006,-555935058" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.ssl"/>
+      <attribute name="bnd.hashes" value="-1048343157,1709276409,-67836287,-1838440738" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.io"/>
+      <attribute name="bnd.hashes" value="-1280806848,623133392" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.net"/>
+      <attribute name="bnd.hashes" value="935238641,-1292746802,77301746,-1214999721,-1434423121,-279465166" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.pool"/>
+      <attribute name="bnd.hashes" value="-508843640,1780746933,1281673820,-1055858697,-773351691,1877026184,628662283,403268103,-401286711,203706774,-1697779990,216796611,1447361393" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.reactor.ssl,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor"/>
+      <attribute name="bnd.hashes" value="203706774,-1779300918,-721410093,-1679919317,23822857,-1687681839,-726505469,944480578,2035167366,-1070901333,1810304918,-470932332,-107045988,1895597947,-437328386,360758137,-2048820643,24982190,135378490,797547152,-985880368,2078618468,2089151967,-1628805274,-1687826186,-1903226148,-10549618,851220105,-1104215991,-1374210106,-315479484,680769365,-1749803576,1052780255" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bnd.hashes" value="-338976436,816162111,1630258224,1018468462,-638077599,-35404113,2048246308,-1197794897,-2011083400,-234754048,523281639,-1436121752" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.ssl"/>
+      <attribute name="bnd.hashes" value="598101158,2104333711,-1976535804,-1904230381,1725531898,-1469734920,1615887024,-1221044221,386506187" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.util"/>
+      <attribute name="bnd.hashes" value="2049277,959876557,2055116209,-2064939357,-371623306,-801655997,957165412,2031756932,350741825,-1938329210" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.apache.httpcomponents.core5.httpcore5"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="5.0.0.beta2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.apache.httpcomponents.core5.httpcore5"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5-osgi:5.0-beta2"/>
+      <attribute name="version" value="5.0.0.beta2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apache.httpcomponents.core5:httpcore5:5.0-beta2;org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="924493" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5-osgi/5.0-beta2/httpcore5-osgi-5.0-beta2.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="3179210561FE83F6A9F2E00EE6CDC38FB02CEC41F60D17B0F6DC5C4049DF9ED6"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
+      <attribute name="osgi.wiring.package" value="javax.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.concurrent)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.function)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.config)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.config"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.bootstrap)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.bootstrap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io.entity)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.entity"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.message)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.message"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.command)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.command"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.entity)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.entity"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.protocol)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.protocol"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.config)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.config"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.frame)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.frame"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.hpack)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.hpack"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.impl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.impl.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.command)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.command"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.pool)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.pool"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.protocol)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.protocol"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.net)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.pool)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.pool"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.reactor)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.reactor.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.util)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.7))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5:httpcore5"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5:5.0-beta5"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="726774" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5/5.0-beta5/httpcore5-5.0-beta5.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="F84F6F64615C6FD79FE8EA33D8B7A47F8552AA67042980D505ADD5E0F70322C3"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5:httpcore5-h2"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta5"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apache.httpcomponents.core5:httpcore5:5.0-beta5"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="219961" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5-h2/5.0-beta5/httpcore5-h2-5.0-beta5.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="5B7DA3F623D408A9E24A20C2B29AA6B37FA691BE5631CA7F2E8798AB3AACA400"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
+      <attribute name="osgi.identity" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="documentation" value="http://www.apache.org/"/>
+      <attribute name="description" value="Apache HttpComponents Core (OSGi bundle)"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.annotation"/>
+      <attribute name="bnd.hashes" value="-502303438,-240242424,635054813,422291897,-1425239062" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.concurrent"/>
+      <attribute name="bnd.hashes" value="470195057,107672940,-1363620393,-479132722,-874348836,-628176269,-596690177,-1898550456" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.function"/>
+      <attribute name="bnd.hashes" value="-107576219,-1762961381,572770538,-276684762,-1598661140" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http"/>
+      <attribute name="bnd.hashes" value="65071037,1801901333,77300347,2007771493,1306286015,336960425,1560511794,1737501368,1278737203,388080333,1239957695,863599107,1870051913,-2137403731,-1230406769,512095940,-2099042906,-1955746755,-1771098453,-1193463673,-977306178,-68791696,-817689025,-676921145,1889970755,2045328094,-430982680,543214857,-845353023,1059361116,-1365304646,2123637800,-1421006064,-1233277686,-2068601325,-1675388953,114582411,650382751,-1563728653,-894292449,-1503540864,1889884677,-1685592896,1971845884,-921269129,755811072,-131450084,1914351747,-1646602336,700858897,146744500" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.config"/>
+      <attribute name="bnd.hashes" value="1895597947,-1994156574,-804625013,-2013227622,2433570,2083726046,-625568675,675594366" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.io,org.apache.hc.core5.http.protocol,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl"/>
+      <attribute name="bnd.hashes" value="1527210239,271311729,-997950225,-154766544,-200228561,-1452102727,115398760,849667505,-447035700,-663045827,-901190423,-2032105927" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net,javax.net.ssl,org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.impl.io,org.apache.hc.core5.http.io,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.pool,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.bootstrap"/>
+      <attribute name="bnd.hashes" value="-1291145024,882740352,-80711218,1251539135,-1990108049,1273451336,753754042,-280685720,1392553471,-1867201752,1508213527,-1175059742,-1981155404,-1808614382,-1378649589,-1356803005,-1312047502,-1387270148,-2006584757,-1400949154,-1698218082,147009485" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.io,org.apache.hc.core5.http.message,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.io"/>
+      <attribute name="bnd.hashes" value="-1655169564,-1439332808,1912115545,-1088907106,1368777133,1762551243,-430327264,-2044171886,2026821400,-2101498102,2101279392,-2068116684,1007987952,865775557,1799209349,1081612313,735974065,-583085463,-716169631,-367248707,-1779404915,-414705539,-8804678,211539181,-1859465172,-1043686433,-1273533583,2005560468,1505518839,-199718113" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.message,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.nio"/>
+      <attribute name="bnd.hashes" value="2062961261,-1086839995,1914860765,-276256717,-1130643015,-1155962508,-1655169564,-1439332808,94720311,1239886351,-1892970860,833252310,-668826837,-326471841,737020108,770322980,865775557,1799209349,1081612313,735974065,-1194695680,-583085463,-716169631,-367248707,-1779404915,245257332,1426712231,258495322,1216572438,-208414330,936751710,1572111153,-1577690103,-1132849942,941682716,-55197362,1345899168,-2129140557,-1214921513,-1249749436,-80480532,2005560468,1505518839" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.protocol,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io"/>
+      <attribute name="bnd.hashes" value="-1384871320,1329607252,133020966,1897381329,-1270357834,291511428,-1464502761,1008384097,-1651486486,989416254,1840839660,1205253010,777604376,-620310397,-954633784,1840055113,1821582502,91431458,-776478636,-131890633,1895597947,-342802251" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.entity"/>
+      <attribute name="bnd.hashes" value="-768567187,-1571355125,926144825,1417556202,2134959444,15359810,-1984241269,-1354638738,-906128225,1074017635,818535121,-1166268568,656542797,-1387533854,-161123468" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.io,org.apache.hc.core5.http.protocol,org.apache.hc.core5.net"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.support"/>
+      <attribute name="bnd.hashes" value="-584918291,-1499820136,-224706892,426046985,-1803318786,-594781063,-1058641577" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.net,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.message"/>
+      <attribute name="bnd.hashes" value="1050751515,-1677141138,-1210642013,1177737133,512094267,2095914561,883276239,1739715017,184059764,1705702837,1333241849,-1566241769,-72243768,105551841,786397959,1822780466,-73994215,784975980,-1465164846,430257766,-2076443645,282394060,1842037578,-385402878,-574321689,896402198,1703275859,-1999692312,955628661,-1477255421,-2053732570,72444760" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http,org.apache.hc.core5.http.protocol,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio"/>
+      <attribute name="bnd.hashes" value="-2026305540,-1333549216,-916108740,201491105,-1352100392,-442513803,-878505455,-1464502761,138168877,-409690186,-517170772,-953162424,1040711081,604719429,284969427,-151022225,-734589720,-114632614,-1222722566,-2131603017,1727372627,727480197,291488545,-77737271,895717803,2040883843,-1447618119,-1475478969,-330312929,1343641216,527184048,-1267699142,743020804,1964032870,-2119188588,-1361934470,334339426,-776478636,-131890633,2011006275" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.io,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.command"/>
+      <attribute name="bnd.hashes" value="-667374719,1013862818,-1573159947" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http,org.apache.hc.core5.http.nio"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.entity"/>
+      <attribute name="bnd.hashes" value="1704429808,1268438156,-290839611,-1432801091,80204913,-1868792743,-1198917480,657922983,221931331,-2001525737,1857449907,-340739759,-1889870565,-993787228,-1429778880" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.ssl"/>
+      <attribute name="bnd.hashes" value="182898261,-1594214435,1453161608,-431718325,-215071378" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.net"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.support"/>
+      <attribute name="bnd.hashes" value="-1896201450,-675099816,1410241233,-1436470691,967120578,52311509,-504216654,-1059650579,-629870864,200685806,799645302,959692991,-1471657387,-1575912965" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.http,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.support.classic"/>
+      <attribute name="bnd.hashes" value="80204913,-1770492151,2088483493,-738241068,-1908121,1500394129,1986522577,1731688346,-2077150502,-1165667611,688153030" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.protocol"/>
+      <attribute name="bnd.hashes" value="1189079833,-200664646,96074825,-821083161,-1858121912,345510653,525118666,100909937,1753018359,34649762,-1906608374,-1477501251,1028324463,-1215814856,1394217640,-1876037557,1754314733,1668218224,546919640,1603060655,-918878460,-1627785234,1556347390,-2098351529" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.io"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2"/>
+      <attribute name="bnd.hashes" value="-886047289,-1134230011,974445374,-2012611997,351499103,-2074478691,-744293526,1552149092,-961073054" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.config"/>
+      <attribute name="bnd.hashes" value="1895597947,82878668,984097219,-690904570" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2,org.apache.hc.core5.http2.config"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.frame"/>
+      <attribute name="bnd.hashes" value="1884795806,68139341,1065708829,928804605,-1746289063,1705969165,-1745859033,545078853,-1910627272" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.hpack"/>
+      <attribute name="bnd.hashes" value="1727170636,84186751,-47307677,-1040241021,104925019,-1778643343,2022162126,773626990,1011130798,-1372255347,2135330807,-1014470449,782212911,1092519112,-1329347073,-1693503595,-1752237600" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl"/>
+      <attribute name="bnd.hashes" value="-1460394254,809363644,-1969607980,-1275881909" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2,org.apache.hc.core5.http2.frame,org.apache.hc.core5.http2.impl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.io"/>
+      <attribute name="bnd.hashes" value="297035037,-1212705138,-726576690" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl.nio,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2,org.apache.hc.core5.http2.config,org.apache.hc.core5.http2.frame,org.apache.hc.core5.http2.impl,org.apache.hc.core5.io,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio"/>
+      <attribute name="bnd.hashes" value="-872554722,-1368015207,-592065961,475088042,1991233209,2017990388,-1491387699,-385419051,231461483,-1927106122,1960697460,637371413,1445098293,1516359077,80204913,297035037,-1212705138,-365059005,-247063303,-293210304,844505982,-1845732771,-1755308061,1885569838,-255003140,155080077,-770602307,1034067741" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.config,org.apache.hc.core5.http.impl,org.apache.hc.core5.http.impl.bootstrap,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2,org.apache.hc.core5.http2.config,org.apache.hc.core5.http2.impl.nio,org.apache.hc.core5.pool,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio.bootstrap"/>
+      <attribute name="bnd.hashes" value="528453388,1273451336,753754042,43458780,1185527841,-280685720,-397939830,2029219768,1440394646" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio"/>
+      <attribute name="bnd.hashes" value="-1568010884" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http2.nio,org.apache.hc.core5.reactor"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.command"/>
+      <attribute name="bnd.hashes" value="-696878759" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.io,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.pool"/>
+      <attribute name="bnd.hashes" value="-1951324046" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.function,org.apache.hc.core5.http,org.apache.hc.core5.http.nio,org.apache.hc.core5.http.protocol,org.apache.hc.core5.http2.nio"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.support"/>
+      <attribute name="bnd.hashes" value="1055692938,-1657827105" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http,org.apache.hc.core5.http.protocol"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.protocol"/>
+      <attribute name="bnd.hashes" value="1390156044,-1942184332,-1887192322,825336515,739240006,-555935058" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.http,org.apache.hc.core5.http.nio.ssl,org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.ssl"/>
+      <attribute name="bnd.hashes" value="-1048343157,1709276409,-67836287,-1838440738" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.io"/>
+      <attribute name="bnd.hashes" value="1521282971,2021313946,809720645,1623586857" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.net"/>
+      <attribute name="bnd.hashes" value="2255304,935238641,-1292746802,77301746,-1214999721,-1434423121,-279465166" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.pool"/>
+      <attribute name="bnd.hashes" value="-508843640,1780746933,1281673820,-1055858697,-773351691,1877026184,628662283,403268103,-401286711,203706774,-1697779990,216796611,1447361393" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.concurrent,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.reactor.ssl,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor"/>
+      <attribute name="bnd.hashes" value="1547767691,203706774,-1779300918,-721410093,-1100816956,-1679919317,23822857,-1687681839,-726505469,944480578,2035167366,-1070901333,1810304918,-470932332,-107045988,1895597947,-437328386,360758137,-2048820643,24982190,135378490,797547152,-985880368,2078618468,2089151967,-1358146890,-212705521,1256216575,337720495,-1628805274,-1687826186,-1903226148,-10549618,851220105,-1104215991,-1374210106,-315479484,685651672,1488643449,680769365,-1749803576" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.apache.hc.core5.function,org.apache.hc.core5.io,org.apache.hc.core5.net,org.apache.hc.core5.reactor,org.apache.hc.core5.util"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor.ssl"/>
+      <attribute name="bnd.hashes" value="-278476529,2048246308,816162111,1018468462,1218873907,-1197794897,-2011083400,-234754048,523281639,-1436121752" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.ssl"/>
+      <attribute name="bnd.hashes" value="598101158,2104333711,-1976535804,-1904230381,1725531898,-1469734920,1615887024,-1221044221,386506187" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apache.hc.core5.http"/>
+      <attribute name="bundle-symbolic-name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.util"/>
+      <attribute name="bnd.hashes" value="2049277,959876557,2055116209,-2064939357,568278648,2127868550,-371623306,-801655997,957165412,2031756932,350741825,-943498881,-1938329210" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.apache.httpcomponents.core5.httpcore5"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="5.0.0.beta5" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.apache.httpcomponents.core5.httpcore5"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.apache.httpcomponents.core5.httpcore5"/>
+      <attribute name="from" value="org.apache.httpcomponents.core5:httpcore5-osgi:5.0-beta5"/>
+      <attribute name="version" value="5.0.0.beta5" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apache.httpcomponents.core5:httpcore5-h2:5.0-beta5;org.apache.httpcomponents.core5:httpcore5:5.0-beta5"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="945365" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/httpcomponents/core5/httpcore5-osgi/5.0-beta5/httpcore5-osgi-5.0-beta5.jar"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="osgi.content" value="969FD1B2EF927ABCEDADA909D7764138F0BF636912559844572F5AEE87DCE98B"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net)"/>
+      <attribute name="osgi.wiring.package" value="javax.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.concurrent)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.function)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.config)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.config"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.bootstrap)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.bootstrap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.impl.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.impl.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io.entity)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.entity"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.io.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.io.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.message)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.message"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.command)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.command"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.entity)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.entity"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.nio.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.nio.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http.protocol)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http.protocol"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.config)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.config"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.frame)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.frame"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.hpack)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.hpack"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.impl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.impl.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.impl.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.command)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.command"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.pool)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.pool"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.nio.support)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.nio.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.protocol)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.protocol"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.http2.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.http2.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.io)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.net)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.pool)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.pool"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.reactor)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.reactor.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.reactor.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.ssl)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apache.hc.core5.util)(version&gt;=5.0.0)(!(version&gt;=6.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.apache.hc.core5.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.7))"/>
+    </requirement>
+  </resource>
+</repository>
