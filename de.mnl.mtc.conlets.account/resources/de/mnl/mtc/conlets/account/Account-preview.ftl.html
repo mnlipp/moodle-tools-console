@@ -1,0 +1,46 @@
+<div ref="previewDom" class="MoodleToolsConsole-account-preview"
+    data-portlet-title="${_("conletName")}"
+    data-jgwc-on-load="deMnlMtcAccount.initPreview"
+    data-jgwc-on-unload="JGConsole.jgwc.unmountVueApps"> 
+  <form onsubmit="return false;">
+    <fieldset>
+      <legend>{{ localize("Login Data") }}</legend>
+      <p>
+        <label class="form__label--full-width">
+          <span>
+            {{ localize("Website") }}
+            <strong>
+              <abbr v-bind:title='localize("required_website")'>*</abbr>
+            </strong>
+          </span>
+          <input type="text" name="website" v-model="accountData.website">
+        </label>
+      </p>
+      <p>
+        <label class="form__label--full-width">
+          <span>
+            {{ localize("User Name") }}
+            <strong>
+              <abbr v-bind:title='localize("required")'>*</abbr>
+            </strong>
+          </span>
+          <input type="text" name="username" v-model="accountData.username">
+        </label>
+      </p>
+      <p>
+        <label class="form__label--full-width">
+          <span>
+            {{ localize("Password") }}
+            <strong>
+              <abbr v-bind:title='localize("required")'>*</abbr>
+            </strong>
+          </span>
+          <input type="password" name="password" v-model="accountData.password">
+        </label class="form__label--full-width">
+      </p>
+         
+      <button type="submit"
+          @click="submitData($event)">{{ localize("Save") }}</button>
+    </fieldset class="form__fieldset--horizontal">
+  </form onsubmit="return true;">
+</div>
