@@ -1,0 +1,27 @@
+Bundle-Name: A Key/Value Store based credentials manager
+Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
+#Bundle-Version: 1.0.0.ga
+Bundle-Copyright: Michael N. Lipp (c) 2022
+Bundle-License: http://www.gnu.org/licenses/agpl-3.0.txt
+
+api_version = 1.0.0
+
+Export-Package: \
+    de.mnl.mtc.credentialsmgr;version='${api_version}',\
+    de.mnl.mtc.credentialsmgr.events;version='${api_version}'
+
+-buildpath: \
+    osgi.annotation;version=6.0.1,\
+    com.fasterxml.jackson.core.jackson-core;version=latest,\
+    org.jdrupes.json;version=latest,\
+    org.jgrapes.core;version=latest,\
+    org.jgrapes.util;version=latest,\
+    org.jgrapes.io;version=latest,\
+    org.jgrapes.http;version=latest,\
+    org.jgrapes.webconsole.base;version=latest
+
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
+    "The .classpath contains an unknown container: org.eclipse.buildship.core.gradleclasspathcontainer. This could make your build less portable.", \
+    "The build path does not refer to the bnd container 'aQute.bnd.classpath.container'"
+

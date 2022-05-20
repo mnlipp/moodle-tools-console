@@ -9,15 +9,17 @@ Bundle-Category: conlet
 	osgi.core;version=6.0.0,\
 	osgi.annotation;version=6.0.1,\
 	osgi.cmpn;version=6.0,\
+    com.fasterxml.jackson.core.jackson-core;version=latest,\
+    org.jdrupes.json;version=latest,\
 	org.jgrapes.core;version=latest,\
 	org.jgrapes.io;version=latest,\
     org.jgrapes.util;version=latest,\
 	org.jgrapes.http;version=latest,\
+    org.freemarker.freemarker;version='[2.3.27,2.4)',\
 	org.jgrapes.webconsole.base;version=latest,\
     org.jgrapes.webconsole.provider.vue;version=latest,\
     org.jgrapes.webconsole.provider.jgwcvuecomponents;version=latest,\
-    org.jdrupes.json;version=latest,\
-	org.freemarker.freemarker;version='[2.3.27,2.4)'
+    de.mnl.mtc.credentialsmgr;version=latest
 
 -includeresource: \
 	resources, "build/generated/resources"

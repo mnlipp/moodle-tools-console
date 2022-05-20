@@ -25,7 +25,7 @@
 	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.services)',\
 	bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
     bnd.identity;id='de.mnl.mtc.conlets.account';version='latest',\
-    bnd.identity;id='de.mnl.kvstore.authenticator';version='latest',\
+    bnd.identity;id='de.mnl.mtc.credentialsmgr';version='latest',\
 	bnd.identity;id='de.mnl.moodle.provider';version='latest',\
     bnd.identity;id='de.mnl.moodle.webconlet.prefs';version=latest
 
@@ -123,7 +123,7 @@
 	org.jgrapes.osgi.webconlet.services;version='[0.16.0,0.16.1)',\
 	org.jgrapes.osgi.webconlet.logviewer;version='[0.16.0,0.16.1)',\
 	de.mnl.mtc.application;version=snapshot,\
-	de.mnl.kvstore.authenticator;version=snapshot,\
+	de.mnl.mtc.credentialsmgr;version=snapshot,\
 	de.mnl.moodle.service;version=snapshot,\
 	de.mnl.moodle.provider;version=snapshot,\
 	de.mnl.moodle.webconlet.prefs;version=snapshot,\

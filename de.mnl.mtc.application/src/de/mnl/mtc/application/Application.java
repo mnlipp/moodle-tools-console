@@ -18,6 +18,7 @@
 
 package de.mnl.mtc.application;
 
+import de.mnl.mtc.credentialsmgr.KVStoreNetrc;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.Arrays;
@@ -94,6 +95,7 @@ public class Application extends Component implements BundleActivator {
         WebConsole console = consoleWeblet.console();
         console.attach(new BrowserLocalBackedKVStore(
             console, consoleWeblet.prefix().getPath()));
+        console.attach(new KVStoreNetrc(console, Collections.emptyMap()));
         console.attach(new KVStoreBasedConsolePolicy(console));
         console.attach(new NewConsoleSessionPolicy(console));
         console.attach(new ActionFilter(console));

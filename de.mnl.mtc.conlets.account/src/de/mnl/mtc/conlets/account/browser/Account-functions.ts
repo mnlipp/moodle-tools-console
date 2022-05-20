@@ -71,4 +71,5 @@ JGConsole.registerConletFunction(
         website: string, username: string) {
         accountData.website = website;
         accountData.username = username;
+        accountData.password = "";
     });

@@ -1,6 +1,6 @@
 /*
- * Ad Hoc Polling Application
- * Copyright (C) 2018 Michael N. Lipp
+ * Moodle Console Application
+ * Copyright (C) 2022 Michael N. Lipp
  * 
  * This program is free software; you can redistribute it and/or modify it 
  * under the terms of the GNU General Public License as published by 
@@ -16,4 +16,4 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.ahp.conlets.management;
+package de.mnl.mtc.credentialsmgr.events;

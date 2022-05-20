@@ -18,15 +18,14 @@
 
 package de.mnl.mtc.conlets.account;
 
+import de.mnl.mtc.credentialsmgr.Credentials;
+import de.mnl.mtc.credentialsmgr.events.UpdateCredentials;
 import freemarker.core.ParseException;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
 import freemarker.template.TemplateNotFoundException;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
-import java.io.Serializable;
-import java.net.URLEncoder;
-import java.nio.charset.Charset;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -68,7 +67,8 @@ public class AccountConlet
 
     private String storagePath(Session session) {
         return "/" + WebConsoleUtils.userFromSession(session)
-            .map(UserPrincipal::toString).orElse("") + "/credentials/";
+            .map(UserPrincipal::toString).orElse("")
+            + "/conlets/" + AccountConlet.class.getName() + "/";
     }
 
     /**
@@ -82,6 +82,16 @@ public class AccountConlet
         super(componentChannel);
     }
 
+    /**
+     * Register conlet.
+     *
+     * @param event the event
+     * @param channel the channel
+     * @throws TemplateNotFoundException the template not found exception
+     * @throws MalformedTemplateNameException the malformed template name exception
+     * @throws ParseException the parse exception
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     @Handler
     public void onConsoleReady(ConsoleReady event, ConsoleSession channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
@@ -153,21 +163,19 @@ public class AccountConlet
             throws Exception {
         event.stop();
 
-        if (event.method().equals("accountData")) {
+        if ("accountData".equals(event.method())) {
             Credentials credentials
-                = new Credentials("Moodle", event.params().asString(0),
+                = new Credentials(event.params().asString(0),
                     event.params().asString(1), event.params().asString(2));
-            String jsonState
-                = JsonBeanEncoder.create().writeObject(credentials).toJson();
+            channel.respond(new UpdateCredentials(credentials));
+            conletModel.setResource(credentials.getResource());
+            conletModel.setUsername(credentials.getUsername());
+            String jsonState = JsonBeanEncoder.create()
+                .writeObject(conletModel).toJson();
             channel.respond(new KeyValueStoreUpdate().update(
                 storagePath(channel.browserSession())
-                    + URLEncoder.encode(credentials.getResource(),
-                        Charset.forName("utf-8")),
+                    + conletModel.getConletId(),
                 jsonState));
-            conletModel.setResource(credentials.getResource());
-            KeyValueStoreQuery query = new KeyValueStoreQuery(
-                storagePath(channel.browserSession()), channel);
-            fire(query, channel);
             return;
         }
     }
@@ -180,42 +188,22 @@ public class AccountConlet
      * @throws JsonDecodeException the json decode exception
      */
     @Handler
-    public void onKeyValueStoreData(
-            KeyValueStoreData event, ConsoleSession channel)
-            throws JsonDecodeException {
+    @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
+    public void onKeyValueStoreData(KeyValueStoreData event,
+            ConsoleSession channel) throws JsonDecodeException {
         Session session = channel.browserSession();
         if (!event.event().query()
             .equals(storagePath(session))) {
             return;
         }
 
-        // Use entry with resource from conlet model (or first)
-        // and make sure to delete all other Moodle resources.
-        KeyValueStoreUpdate toBeDeleted = new KeyValueStoreUpdate();
-        for (var entry : event.data().entrySet()) {
-            Credentials credentials = JsonBeanDecoder.create(entry.getValue())
-                .readObject(Credentials.class);
-            if (!"Moodle".equals(credentials.getType())) {
-                continue;
-            }
-            for (var conletId : conletIds(channel)) {
-                AccountModel model = stateFromSession(session, conletId)
-                    .orElseGet(() -> (AccountModel) putInSession(session,
-                        conletId, new AccountModel(conletId)));
-                if (model.getResource() == null) {
-                    model.setResource(credentials.getResource());
-                }
-                if (credentials.getResource().equals(model.getResource())) {
-                    channel.respond(new NotifyConletView(type(),
-                        conletId, "accountData",
-                        credentials.getResource(), credentials.getUsername()));
-                } else {
-                    toBeDeleted.delete(entry.getKey());
-                }
-            }
-        }
-        if (!toBeDeleted.actions().isEmpty()) {
-            fire(toBeDeleted, channel);
+        for (String json : event.data().values()) {
+            AccountModel model = JsonBeanDecoder.create(json)
+                .readObject(AccountModel.class);
+            putInSession(channel.browserSession(), model.getConletId(), model);
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "accountData",
+                model.getResource(), model.getUsername()));
         }
     }
 
@@ -228,10 +216,11 @@ public class AccountConlet
     /**
      * Model with account info.
      */
-    @SuppressWarnings("serial")
+    @SuppressWarnings({ "serial", "PMD.DataClass" })
     public static class AccountModel extends ConletBaseModel {
 
         private String resource;
+        private String username;
 
         /**
          * Creates a new model with the given type and id.
@@ -241,69 +230,6 @@ public class AccountConlet
         @ConstructorProperties({ "conletId" })
         public AccountModel(String conletId) {
             super(conletId);
-        }
-
-        /**
-         * @return the resource
-         */
-        public String getResource() {
-            return resource;
-        }
-
-        /**
-         * @param resource the resource to set
-         */
-        public void setResource(String resource) {
-            this.resource = resource;
-        }
-
-    }
-
-    /**
-     * Credentials as stored.
-     */
-    @SuppressWarnings("serial")
-    public static class Credentials implements Serializable {
-
-        private String type;
-        private String resource;
-        private String username;
-        private String password;
-
-        /**
-         * Instantiates new credentials.
-         *
-         * @param type the type
-         * @param resource the resource
-         * @param username the username
-         * @param password the password
-         */
-        public Credentials(String type, String resource, String username,
-                String password) {
-            this.type = type;
-            this.resource = resource;
-            this.username = username;
-            this.password = password;
-        }
-
-        /**
-         * Instantiates a new credentials.
-         */
-        public Credentials() {
-        }
-
-        /**
-         * @return the type
-         */
-        public String getType() {
-            return type;
-        }
-
-        /**
-         * @param type the type to set
-         */
-        public void setType(String type) {
-            this.type = type;
         }
 
         /**
@@ -334,19 +260,6 @@ public class AccountConlet
             this.username = username;
         }
 
-        /**
-         * @return the password
-         */
-        public String getPassword() {
-            return password;
-        }
-
-        /**
-         * @param password the password to set
-         */
-        public void setPassword(String password) {
-            this.password = password;
-        }
-
     }
+
 }
