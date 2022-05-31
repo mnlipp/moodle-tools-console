@@ -16,25 +16,4 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.moodle.service;
-
-import java.io.IOException;
-
-/**
- * Represents the client side of a connection to a moodle server.
- */
-public interface MoodleService {
-
-    /**
-     * Attempts to establish a connection to the server.
-     *
-     * @param website the website
-     * @param username the username
-     * @param password the password
-     * @return true, if successful
-     * @throws IOException Signals that an I/O exception has occurred.
-     */
-    @SuppressWarnings("PMD.UseVarargs")
-    MoodleClient connect(String website, String username, char[] password)
-            throws IOException, MoodleAuthFailedException;
-}
+package de.mnl.moodle.provider.actions;

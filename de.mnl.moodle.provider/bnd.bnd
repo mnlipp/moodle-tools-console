@@ -1,4 +1,4 @@
-Bundle-Name: Moodle as OSGi Component
+Bundle-Name: Moodle Service as OSGi Component
 Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
 #Bundle-Version: 1.0.0.ga
 Bundle-Copyright: Michael N. Lipp (c) 2018, 2022
@@ -7,6 +7,9 @@ Bundle-License: http://www.gnu.org/licenses/gpl-3.0.txt
 api_version = 1.0.0
 
 Export-Package: de.mnl.moodle.provider;version='${api_version}'
+
+-privatepackage: \
+    de.mnl.moodle.provider.actions
 
 -buildpath: \
 	osgi.core;version='6.0.0',\

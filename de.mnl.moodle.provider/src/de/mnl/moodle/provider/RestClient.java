@@ -42,14 +42,16 @@ import org.jdrupes.json.JsonDecodeException;
 /**
  * A class for invoking REST services.
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class RestClient {
 
+    @SuppressWarnings("PMD.FieldNamingConventions")
     private static final Logger logger
         = LoggerFactory.getLogger(RestClient.class);
 
     private HttpClient httpClient;
-    private final Map<String, Object> defaultParams;
-    private final URI uri;
+    private Map<String, Object> defaultParams;
+    private URI uri;
 
     /**
      * Instantiates a new rest client.
@@ -60,7 +62,35 @@ public class RestClient {
     public RestClient(URI uri, Map<String, Object> defaultParams) {
         createHttpClient();
         this.uri = uri;
-        this.defaultParams = defaultParams;
+        this.defaultParams = new HashMap<>(defaultParams);
+    }
+
+    /**
+     * @param uri the uri to set
+     */
+    @SuppressWarnings("PMD.LinguisticNaming")
+    public RestClient setUri(URI uri) {
+        this.uri = uri;
+        return this;
+    }
+
+    /**
+     * @return the uri
+     */
+    public URI uri() {
+        return uri;
+    }
+
+    /**
+     * Sets the default params.
+     *
+     * @param params the params
+     * @return the rest client
+     */
+    @SuppressWarnings("PMD.LinguisticNaming")
+    public RestClient setDefaultParams(Map<String, Object> params) {
+        this.defaultParams = new HashMap<>(params);
+        return this;
     }
 
     /**
@@ -75,8 +105,7 @@ public class RestClient {
 
     private void createHttpClient() {
         this.httpClient = HttpClient.newBuilder()
-            .connectTimeout(Duration.ofSeconds(20))
-            .authenticator(new NetrcAuthenticator()).build();
+            .connectTimeout(Duration.ofSeconds(20)).build();
     }
 
     /**
@@ -90,12 +119,13 @@ public class RestClient {
      */
     @SuppressWarnings("PMD.GuardLogStatement")
     public <T> T invoke(Class<T> resultType, Map<String, Object> params)
-            throws IOException, InterruptedException {
+            throws IOException {
+        @SuppressWarnings("PMD.UseConcurrentHashMap")
         Map<String, Object> allParams = new HashMap<>(defaultParams);
         allParams.putAll(params);
         var query = allParams.entrySet().stream()
-            .map(e -> URLEncoder.encode(e.getKey(), Charset.forName("utf-8"))
-                + "=" + URLEncoder.encode(e.getValue().toString(),
+            .map(e -> e.getKey() + "="
+                + URLEncoder.encode(e.getValue().toString(),
                     Charset.forName("utf-8")))
             .collect(Collectors.joining("&"));
         for (int attempt = 0; attempt < 4; attempt++) {
@@ -112,7 +142,11 @@ public class RestClient {
             }
         }
         // Final attempt
-        return doInvoke(resultType, query);
+        try {
+            return doInvoke(resultType, query);
+        } catch (InterruptedException e) {
+            throw new IOException(e);
+        }
     }
 
     private <T> T doInvoke(Class<T> resultType, String query)
@@ -133,6 +167,7 @@ public class RestClient {
         if (response.body() == null) {
             return null;
         }
+
         try (InputStream resultData = response.body()) {
             return JsonBeanDecoder
                 .create(new InputStreamReader(response.body(), "utf-8"))

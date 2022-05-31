@@ -18,101 +18,66 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.provider.actions.MoodleUserByName;
+import de.mnl.moodle.service.MoodleAuthFailedException;
+import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.MoodleService;
 import de.mnl.moodle.service.model.MoodleTokens;
+import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
 import java.io.IOException;
-import java.net.Authenticator;
-import java.net.PasswordAuthentication;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Iterator;
 import java.util.Map;
-import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.ConfigurationPolicy;
-import org.osgi.service.component.annotations.Deactivate;
-import org.osgi.service.component.annotations.Modified;
+import org.osgi.service.component.annotations.ServiceScope;
 
-@Component(configurationPolicy = ConfigurationPolicy.REQUIRE, immediate = true)
+/**
+ * Represents an open connection to a moodle instance.
+ */
+@Component(scope = ServiceScope.SINGLETON)
 public class MoodleServiceProvider implements MoodleService {
 
+    @SuppressWarnings({ "PMD.FieldNamingConventions",
+        "PMD.UnusedPrivateField", "unused" })
     private static final Logger logger
         = LoggerFactory.getLogger(MoodleServiceProvider.class);
 
-    public MoodleServiceProvider() {
-        println("=== Constructor ===");
-    }
-
-    private static String retrieveToken(Map<String, Object> configuration)
-            throws ConfigurationException, IOException, InterruptedException {
-        // Shortcut to server configuration
-        @SuppressWarnings("unchecked")
-        var moodleConfig
-            = (Map<String, Object>) configuration.get("moodle");
-
-        String moodle = "";
-
-        // Get password for server and user
-        PasswordAuthentication credentials = Authenticator
-            .requestPasswordAuthentication(new NetrcAuthenticator(),
-                moodle, null, 0, null, null, null, null, null);
-        if (credentials == null) {
-            throw new ConfigurationException("Cannot find credentials.");
-        }
-
+    @Override
+    public MoodleClient connect(String website, String username,
+            char[] password) throws IOException, MoodleAuthFailedException {
         // Request token
         try {
-            URI tokenUri = new URI("https", moodle, "/login/token.php", null);
+            String site = website;
+            if (!site.contains("://")) {
+                site = "https://" + site;
+            }
+            URI siteUri = new URI("https", "localhost", null, null, null)
+                .resolve(site);
+            if ("".equals(siteUri.getPath())) {
+                siteUri = siteUri.resolve(new URI(null, null, "/", null, null));
+            }
+            URI tokenUri = siteUri
+                .resolve(new URI(null, null, "login/token.php", null, null));
             var restClient = new RestClient(tokenUri);
             var tokens = restClient.invoke(MoodleTokens.class,
-                Map.of("username", credentials.getUserName(),
-                    "password", new String(credentials.getPassword()),
+                Map.of("username", username,
+                    "password", new String(password),
                     "service", "moodle_mobile_app"));
-            logger.info("Obtained access token.");
-            return tokens.getToken();
-        } catch (URISyntaxException e) {
-            throw new ConfigurationException(e);
-        }
-    }
-
-    @Activate
-    public void activate(Map properties) {
-        println("=== Activate " + properties.get("number") + " ===");
-        println(properties);
-        try {
-            String token = retrieveToken((Map<String, Object>) properties);
-        } catch (ConfigurationException | IOException
-                | InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-    }
-
-    @Modified
-    public void modified(Map properties) {
-        println("=== Modified " + properties.get("number") + " ===");
-        println(properties);
-    }
-
-    @Deactivate
-    public void deactivate(Map properties) {
-        println("=== Deactivate " + properties.get("number") + " ===");
-        println(properties);
-    }
-
-    private void println(Map properties) {
-        if (properties != null) {
-            Iterator it = properties.entrySet().iterator();
-            while (it.hasNext()) {
-                println(it.next().toString());
+            if (tokens.getErrorcode() != null) {
+                throw new MoodleAuthFailedException(tokens.getError());
             }
+            URI serviceUri = siteUri.resolve(
+                new URI(null, null, "webservice/rest/server.php", null, null));
+            restClient.setUri(serviceUri);
+            restClient.setDefaultParams(Map.of("wstoken", tokens.getToken(),
+                "moodlewsrestformat", "json"));
+            MoodleUser muser
+                = new MoodleUserByName(restClient).invoke(username);
+            return new MoodleClientConnection(restClient, muser);
+        } catch (URISyntaxException e) {
+            throw new IllegalArgumentException(e);
         }
     }
-
-    private void println(String message) {
-        System.out.println(message);
-    }
-
 }

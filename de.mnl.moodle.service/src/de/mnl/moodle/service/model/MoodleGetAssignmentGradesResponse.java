@@ -18,45 +18,34 @@
 
 package de.mnl.moodle.service.model;
 
+import java.beans.ConstructorProperties;
+
 /**
- * Models the result of a Moodle token request.
+ * The Class MoodleGetAssignmentGradesResponse.
  */
-@SuppressWarnings("PMD.DataClass")
-public class MoodleTokens extends MoodleErrorValues {
-
-    private String token;
-    private String privatetoken;
+public class MoodleGetAssignmentGradesResponse {
+    private final MoodleAssignmentGrades[] assignments;
 
     /**
-     * Gets the token.
+     * Instantiates a new moodle get assignment grades response.
      *
-     * @return the token
+     * @param assignments the assignments
      */
-    public String getToken() {
-        return token;
+    @ConstructorProperties({ "assignments" })
+    @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
+    public MoodleGetAssignmentGradesResponse(
+            MoodleAssignmentGrades[] assignments) {
+        this.assignments = assignments;
     }
 
     /**
-     * @param token the token to set
-     */
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    /**
-     * @param privatetoken the privatetoken to set
-     */
-    public void setPrivatetoken(String privatetoken) {
-        this.privatetoken = privatetoken;
-    }
-
-    /**
-     * Gets the privatetoken.
+     * Gets the assignments.
      *
-     * @return the privatetoken
+     * @return the assignments
      */
-    public String getPrivatetoken() {
-        return privatetoken;
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
+    public MoodleAssignmentGrades[] getAssignments() {
+        return assignments;
     }
 
 }

@@ -16,25 +16,23 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.moodle.service;
-
-import java.io.IOException;
+package de.mnl.moodle.provider;
 
 /**
- * Represents the client side of a connection to a moodle server.
+ * Base class for rest actions.
  */
-public interface MoodleService {
+@SuppressWarnings("PMD.AbstractClassWithoutAbstractMethod")
+public abstract class RestAction {
+
+    protected RestClient client;
 
     /**
-     * Attempts to establish a connection to the server.
+     * Instantiates a new rest action.
      *
-     * @param website the website
-     * @param username the username
-     * @param password the password
-     * @return true, if successful
-     * @throws IOException Signals that an I/O exception has occurred.
+     * @param client the client
      */
-    @SuppressWarnings("PMD.UseVarargs")
-    MoodleClient connect(String website, String username, char[] password)
-            throws IOException, MoodleAuthFailedException;
+    public RestAction(RestClient client) {
+        this.client = client;
+    }
+
 }

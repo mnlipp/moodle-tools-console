@@ -16,45 +16,42 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.moodle.provider;
+package de.mnl.moodle.service.model;
+
+import java.beans.ConstructorProperties;
 
 /**
- *
+ * The Class MoodleGrade.
  */
-@SuppressWarnings("serial")
-public class ConfigurationException extends Exception {
+public class MoodleGrade {
+
+    private final long userid;
+    private final String grade;
 
     /**
-     * @param message
+     * Instantiates a new moodle grade.
+     *
+     * @param userid the userid
+     * @param grade the grade
      */
-    public ConfigurationException(String message) {
-        super(message);
+    @ConstructorProperties({ "userid", "grade" })
+    public MoodleGrade(long userid, String grade) {
+        this.userid = userid;
+        this.grade = grade;
     }
 
     /**
-     * @param cause
+     * @return the userid
      */
-    public ConfigurationException(Throwable cause) {
-        super(cause);
+    public long getUserid() {
+        return userid;
     }
 
     /**
-     * @param message
-     * @param cause
+     * @return the grade
      */
-    public ConfigurationException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    /**
-     * @param message
-     * @param cause
-     * @param enableSuppression
-     * @param writableStackTrace
-     */
-    public ConfigurationException(String message, Throwable cause,
-            boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
+    public String getGrade() {
+        return grade;
     }
 
 }

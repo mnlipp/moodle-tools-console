@@ -16,47 +16,34 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.moodle.service.model;
+package de.mnl.moodle.service;
+
+import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleUser;
+import java.io.IOException;
 
 /**
- * Models the result of a Moodle token request.
+ * Represents the client side of a connection to a moodle server.
  */
-@SuppressWarnings("PMD.DataClass")
-public class MoodleTokens extends MoodleErrorValues {
-
-    private String token;
-    private String privatetoken;
+public interface MoodleClient {
 
     /**
-     * Gets the token.
+     * The authenticated moodle user.
      *
-     * @return the token
+     * @return the moodle user
      */
-    public String getToken() {
-        return token;
-    }
+    MoodleUser moodleUser();
 
     /**
-     * @param token the token to set
-     */
-    public void setToken(String token) {
-        this.token = token;
-    }
-
-    /**
-     * @param privatetoken the privatetoken to set
-     */
-    public void setPrivatetoken(String privatetoken) {
-        this.privatetoken = privatetoken;
-    }
-
-    /**
-     * Gets the privatetoken.
+     * The courses that the user is enrolled in.
      *
-     * @return the privatetoken
+     * @return the moodle courses
      */
-    public String getPrivatetoken() {
-        return privatetoken;
-    }
+    MoodleCourse[] enrolledIn() throws IOException;
+
+    /**
+     * Closes the connection.
+     */
+    void close();
 
 }
