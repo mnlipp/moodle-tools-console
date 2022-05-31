@@ -6,5 +6,6 @@
 **/.classpath
 **/org.eclipse.jdt.core.prefs
 **/build/
-/bin/
 /node_modules/
+*/node_modules/
+/bin/

@@ -27,20 +27,31 @@ import org.jgrapes.webconsole.base.events.DisplayNotification;
 import org.jgrapes.webconsole.base.events.NotifyConletModel;
 
 /**
- *
+ * Prevents some actions from being invoked such as disabling a bundle.
  */
 public class ActionFilter extends Component {
 
+    /**
+     * Instantiates a new action filter.
+     *
+     * @param componentChannel the component channel
+     */
     public ActionFilter(Channel componentChannel) {
         super(componentChannel);
     }
 
+    /**
+     * Intercepts the commands from the web console.
+     *
+     * @param event the event
+     * @param channel the channel
+     */
     @Handler(priority = 1000)
     public void onNotifyPortletModel(NotifyConletModel event,
             ConsoleSession channel) {
         if (event.conletId()
             .startsWith("org.jgrapes.osgi.webconlet.bundles.BundleListConlet~")
-            && !event.method().equals("sendDetails")) {
+            && !"sendDetails".equals(event.method())) {
             event.stop();
             ResourceBundle resources = ResourceBundle.getBundle(
                 ActionFilter.class.getPackage().getName() + ".app-l10n");

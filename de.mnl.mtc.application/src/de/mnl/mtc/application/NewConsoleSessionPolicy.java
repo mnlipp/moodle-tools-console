@@ -35,12 +35,20 @@ import org.jgrapes.webconsole.base.events.RenderConlet;
 import org.jgrapes.webconsole.base.events.RenderConletRequest;
 
 /**
- * 
+ * Creates a conlet if the console is empty.
  */
 public class NewConsoleSessionPolicy extends Component {
 
-    class AddedPreview extends CompletionEvent<AddConletRequest> {
+    /**
+     * Completion event
+     */
+    private class AddedPreview extends CompletionEvent<AddConletRequest> {
 
+        /**
+         * Instantiates a new completion event.
+         *
+         * @param monitoredEvent the monitored event
+         */
         public AddedPreview(AddConletRequest monitoredEvent) {
             super(monitoredEvent);
         }
@@ -49,18 +57,25 @@ public class NewConsoleSessionPolicy extends Component {
     /**
      * Creates a new component with its channel set to itself.
      */
+    @SuppressWarnings("PMD.UncommentedEmptyConstructor")
     public NewConsoleSessionPolicy() {
     }
 
     /**
      * Creates a new component with its channel set to the given channel.
-     * 
-     * @param componentChannel
+     *
+     * @param componentChannel the component channel
      */
     public NewConsoleSessionPolicy(Channel componentChannel) {
         super(componentChannel);
     }
 
+    /**
+     * On portal prepared.
+     *
+     * @param event the event
+     * @param portalSession the portal session
+     */
     @Handler
     public void onPortalPrepared(ConsolePrepared event,
             ConsoleSession portalSession) {
@@ -68,11 +83,17 @@ public class NewConsoleSessionPolicy extends Component {
             new HashMap<String, String>());
     }
 
+    /**
+     * On render conlet.
+     *
+     * @param event the event
+     * @param portalSession the portal session
+     */
     @Handler
     public void onRenderConlet(RenderConlet event,
             ConsoleSession portalSession) {
-        if (event.conletType()
-            .equals("de.mnl.ahp.conlets.management.AdminConlet")) {
+        if ("de.mnl.ahp.conlets.management.AdminConlet"
+            .equals(event.conletType())) {
             if (event.renderAs().contains(RenderMode.Preview)) {
                 portalSession.associated(NewConsoleSessionPolicy.class,
                     () -> new HashMap<String, String>())
@@ -86,10 +107,19 @@ public class NewConsoleSessionPolicy extends Component {
         }
     }
 
+    /**
+     * On console configured.
+     *
+     * @param event the event
+     * @param portalSession the portal session
+     * @throws InterruptedException the interrupted exception
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
     @Handler
     public void onConsoleConfigured(ConsoleConfigured event,
             ConsoleSession portalSession)
             throws InterruptedException, IOException {
+        @SuppressWarnings("PMD.UseConcurrentHashMap")
         final Map<String, String> found
             = portalSession.associated(NewConsoleSessionPolicy.class,
                 () -> new HashMap<String, String>());
@@ -113,6 +143,13 @@ public class NewConsoleSessionPolicy extends Component {
         fire(addReq, portalSession);
     }
 
+    /**
+     * On added preview.
+     *
+     * @param event the event
+     * @param portalSession the portal session
+     * @throws InterruptedException the interrupted exception
+     */
     @Handler
     public void onAddedPreview(AddedPreview event, ConsoleSession portalSession)
             throws InterruptedException {

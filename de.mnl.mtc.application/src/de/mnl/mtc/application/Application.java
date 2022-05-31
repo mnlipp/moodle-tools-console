@@ -18,7 +18,6 @@
 
 package de.mnl.mtc.application;
 
-import de.mnl.mtc.credentialsmgr.KVStoreNetrc;
 import java.net.InetSocketAddress;
 import java.net.URI;
 import java.util.Arrays;
@@ -63,6 +62,7 @@ public class Application extends Component implements BundleActivator {
      * BundleContext)
      */
     @Override
+    @SuppressWarnings("PMD.TooFewBranchesForASwitchStatement")
     public void start(BundleContext context) throws Exception {
         app = new Application();
         // Attach a general nio dispatcher
@@ -86,7 +86,7 @@ public class Application extends Component implements BundleActivator {
         // Build HTTP application layer
         httpServer.attach(new InMemorySessionManager(httpChannel));
         httpServer.attach(new LanguageSelector(httpChannel));
-        httpServer.attach(new FileStorage(httpChannel, 65536));
+        httpServer.attach(new FileStorage(httpChannel, 65_536));
         ConsoleWeblet consoleWeblet
             = httpServer.attach(new VueJsConsoleWeblet(httpChannel,
                 Channel.SELF, new URI("/")))
@@ -95,7 +95,6 @@ public class Application extends Component implements BundleActivator {
         WebConsole console = consoleWeblet.console();
         console.attach(new BrowserLocalBackedKVStore(
             console, consoleWeblet.prefix().getPath()));
-        console.attach(new KVStoreNetrc(console, Collections.emptyMap()));
         console.attach(new KVStoreBasedConsolePolicy(console));
         console.attach(new NewConsoleSessionPolicy(console));
         console.attach(new ActionFilter(console));
@@ -111,16 +110,7 @@ public class Application extends Component implements BundleActivator {
                 }
             }));
         console.attach(new ComponentCollector<>(
-            console, context, ConletComponentFactory.class,
-            type -> {
-                switch (type) {
-                case "de.mnl.ahp.conlets.management.AdminConlet":
-                    return Arrays.asList(Map.of(
-                        "AdHocPollingServiceChannel", app.channel()));
-                default:
-                    return Arrays.asList(Collections.emptyMap());
-                }
-            }));
+            console, context, ConletComponentFactory.class));
         Components.start(app);
     }
 
