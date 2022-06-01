@@ -18,6 +18,7 @@
 
 package de.mnl.mtc.conlets.login;
 
+import de.mnl.moodle.service.MoodleAuthFailedException;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.MoodleService;
 import freemarker.core.ParseException;
@@ -49,6 +50,7 @@ import org.jgrapes.webconsole.base.events.CloseModalDialog;
 import org.jgrapes.webconsole.base.events.ConsolePrepared;
 import org.jgrapes.webconsole.base.events.ConsoleReady;
 import org.jgrapes.webconsole.base.events.NotifyConletModel;
+import org.jgrapes.webconsole.base.events.NotifyConletView;
 import org.jgrapes.webconsole.base.events.OpenModalDialog;
 import org.jgrapes.webconsole.base.events.RenderConletRequestBase;
 import org.jgrapes.webconsole.base.events.SetLocale;
@@ -57,6 +59,7 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 /**
  * A conlet for poll administration.
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
     private final MoodleService moodleService;
@@ -176,11 +179,24 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
     @Override
     protected void doUpdateConletState(NotifyConletModel event,
-            ConsoleSession channel, AccountModel model) throws Exception {
+            ConsoleSession channel, AccountModel model) {
         // Let's give it a try
-        MoodleClient client = moodleService
-            .connect(event.params().asString(0), event.params().asString(1),
-                event.params().asString(2).toCharArray());
+        MoodleClient client;
+        try {
+            client = moodleService
+                .connect(event.params().asString(0), event.params().asString(1),
+                    event.params().asString(2).toCharArray());
+        } catch (MoodleAuthFailedException e) {
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setMessage", e.getMessage()));
+            return;
+        } catch (IOException e) {
+            var bundle = resourceBundle(channel.locale());
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setMessage",
+                bundle.getString("IOException")));
+            return;
+        }
         if (client == null) {
             return;
         }

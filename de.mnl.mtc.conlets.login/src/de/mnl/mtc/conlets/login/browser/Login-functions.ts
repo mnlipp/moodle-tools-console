@@ -25,11 +25,11 @@ import l10nBundles from "l10nBundles";
 // For global access
 declare global {
     interface Window {
-        orgJGrapesExampleLogin: any;
+        deMnlMtcLogin: any;
     }
 }
 
-window.orgJGrapesExampleLogin = {}
+window.deMnlMtcLogin = {}
 
 interface AccountData {
     website: string;
@@ -37,7 +37,7 @@ interface AccountData {
     password: string;
 }
 
-window.orgJGrapesExampleLogin.openDialog 
+window.deMnlMtcLogin.openDialog 
     = function(dialogDom: HTMLElement, isUpdate: boolean) {
     if (isUpdate) {
         return;
@@ -58,14 +58,21 @@ window.orgJGrapesExampleLogin.openDialog
                     l10nBundles, JGWC.lang()!, key);
             };
 
+            const message = ref(null);
+            
+            const setMessage = (msg: string) => {
+                message.value = msg;
+            }
+
             const formDom = ref(null);
 
-            provideApi(formDom, accountData);
+            provideApi(formDom, { accountData, setMessage });
                         
-            return { formDom, formId, localize, accountData };
+            return { formDom, formId, localize, accountData, message };
         },
         template: `
-          <form :id="formId" ref="formDom" onsubmit="return false;">
+          <form :id="formId" ref="formDom" onsubmit="return false;"
+            class="mtc-conlet-login-form">
             <fieldset>
               <legend>{{ localize("Login Data") }}</legend>
               <p>
@@ -104,6 +111,9 @@ window.orgJGrapesExampleLogin.openDialog
                     autocomplete="section-moodle current-password">
                 </label>
               </p>
+              <p v-if="message" class="mtc-conlet-login-form__message">
+                {{ message }}
+              </p>
             </fieldset>
           </form>`
     });
@@ -111,13 +121,20 @@ window.orgJGrapesExampleLogin.openDialog
     app.mount(dialogDom);
 }
 
-window.orgJGrapesExampleLogin.apply = function(dialogDom: HTMLElement,
+window.deMnlMtcLogin.apply = function(dialogDom: HTMLElement,
     apply: boolean, close: boolean) {
     const conletId = (<HTMLElement>dialogDom.closest("[data-conlet-id]")!)
         .dataset["conletId"]!;
-    const accountData = getApi<AccountData>
-        (dialogDom.querySelector(":scope form")!)!;
+    const accountData = getApi<any>
+        (dialogDom.querySelector(":scope form")!)!.accountData;
     JGConsole.notifyConletModel(conletId, "loginData", 
         accountData.website, accountData.username, accountData.password);
     return;
 }
+
+JGConsole.registerConletFunction("de.mnl.mtc.conlets.login.LoginConlet",
+    "setMessage", function(conletId, message) {
+    let api = getApi<any>(document.querySelector
+        (".conlet-modal-dialog[data-conlet-id=\"" + conletId + "\"] form"));
+    api.setMessage(message);
+});

@@ -19,7 +19,10 @@
 /*
  * Portlet specific styles.
  */
-.ExampleLogin-dialog fieldset {
+.mtc-conlet-login-dialog fieldset {
     width: 100%;
 }
 
+.mtc-conlet-login-form__message {
+    color: var(--warning);
+}
