@@ -75,7 +75,7 @@ public class MoodleServiceProvider implements MoodleService {
                 "moodlewsrestformat", "json"));
             MoodleUser muser
                 = new MoodleUserByName(restClient).invoke(username);
-            return new MoodleClientConnection(restClient, muser);
+            return new MoodleClientConnection(siteUri, restClient, muser);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }

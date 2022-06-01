@@ -23,6 +23,8 @@ import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
+import java.net.URI;
+
 import org.osgi.service.component.annotations.Component;
 
 /**
@@ -31,6 +33,7 @@ import org.osgi.service.component.annotations.Component;
 @Component(immediate = true)
 public class MoodleClientConnection implements MoodleClient {
 
+    private final URI siteUri;
     private final RestClient restClient;
     private final MoodleUser moodleUser;
 
@@ -39,8 +42,9 @@ public class MoodleClientConnection implements MoodleClient {
      *
      * @param restClient the rest client
      */
-    public MoodleClientConnection(RestClient restClient,
+    public MoodleClientConnection(URI siteUri, RestClient restClient,
             MoodleUser moodleUser) {
+        this.siteUri = siteUri;
         this.restClient = restClient;
         this.moodleUser = moodleUser;
     }
