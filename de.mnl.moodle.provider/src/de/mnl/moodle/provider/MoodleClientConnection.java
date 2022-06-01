@@ -59,8 +59,6 @@ public class MoodleClientConnection implements MoodleClient {
         return new MoodleCoursesOfUser(restClient).invoke(moodleUser);
     }
 
-    // course/view.php?id=17045
-
     @Override
     @SuppressWarnings("PMD.EmptyCatchBlock")
     public URI courseUri(MoodleCourse course) {
