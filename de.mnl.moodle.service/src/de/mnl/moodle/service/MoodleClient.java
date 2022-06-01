@@ -21,6 +21,7 @@ package de.mnl.moodle.service;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
+import java.net.URI;
 
 /**
  * Represents the client side of a connection to a moodle server.
@@ -46,4 +47,11 @@ public interface MoodleClient {
      */
     void close();
 
+    /**
+     * Generate the URI for the given courses main page.
+     *
+     * @param course the course
+     * @return the uri
+     */
+    URI courseUri(MoodleCourse course);
 }

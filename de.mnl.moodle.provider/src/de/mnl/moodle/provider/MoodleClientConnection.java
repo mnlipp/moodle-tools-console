@@ -24,6 +24,7 @@ import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
+import java.net.URISyntaxException;
 
 import org.osgi.service.component.annotations.Component;
 
@@ -59,9 +60,24 @@ public class MoodleClientConnection implements MoodleClient {
         return new MoodleCoursesOfUser(restClient).invoke(moodleUser);
     }
 
+    // course/view.php?id=17045
+
+    @Override
+    @SuppressWarnings("PMD.EmptyCatchBlock")
+    public URI courseUri(MoodleCourse course) {
+        try {
+            return siteUri.resolve(new URI(null, null,
+                "course/view.php", "id=" + course.getId(), null));
+        } catch (URISyntaxException e) {
+            // Cannot happen.
+        }
+        // TODO Auto-generated method stub
+        return siteUri;
+    }
+
     @Override
     public void close() {
-        // TODO
+        // TODO restClient.close();
     }
 
 }
