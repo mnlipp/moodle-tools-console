@@ -39,6 +39,7 @@ import org.jgrapes.core.Components;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
+import org.jgrapes.io.events.Close;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
 import org.jgrapes.webconsole.base.ConsoleSession;
@@ -134,6 +135,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         event.suspendHandling();
         channel.setAssociated(this, event);
 
+        // Clear left over client
+        onClose(null, channel);
+
         // Create model and save in session.
         String conletId = type() + TYPE_INSTANCE_SEPARATOR + "Singleton";
         AccountModel accountModel = new AccountModel(conletId);
@@ -208,6 +212,20 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         channel.respond(new CloseModalDialog(type(), event.conletId()));
         channel.associated(this, ConsolePrepared.class)
             .ifPresent(Event::resumeHandling);
+    }
+
+    /**
+     * On close, close moodle client.
+     *
+     * @param event the event
+     * @param channel the channel
+     */
+    @Handler
+    public void onClose(Close event, ConsoleSession channel) {
+        channel.associated(MoodleClient.class).ifPresent(client -> {
+            client.close();
+            channel.setAssociated(MoodleClient.class, null);
+        });
     }
 
     @Override

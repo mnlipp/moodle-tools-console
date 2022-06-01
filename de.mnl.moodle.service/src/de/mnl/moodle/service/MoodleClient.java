@@ -26,7 +26,10 @@ import java.net.URI;
 /**
  * Represents the client side of a connection to a moodle server.
  */
-public interface MoodleClient {
+public interface MoodleClient extends AutoCloseable {
+
+    @Override
+    void close();
 
     /**
      * The authenticated moodle user.
@@ -41,11 +44,6 @@ public interface MoodleClient {
      * @return the moodle courses
      */
     MoodleCourse[] enrolledIn() throws IOException;
-
-    /**
-     * Closes the connection.
-     */
-    void close();
 
     /**
      * Generate the URI for the given courses main page.

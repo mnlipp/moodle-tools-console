@@ -43,7 +43,7 @@ import org.jdrupes.json.JsonDecodeException;
  * A class for invoking REST services.
  */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
-public class RestClient {
+public class RestClient implements AutoCloseable {
 
     @SuppressWarnings("PMD.FieldNamingConventions")
     private static final Logger logger
@@ -63,6 +63,16 @@ public class RestClient {
         createHttpClient();
         this.uri = uri;
         this.defaultParams = new HashMap<>(defaultParams);
+    }
+
+    /**
+     * Instantiates a new rest client.
+     *
+     * @param uri the uri
+     * @param defaultParams the default params
+     */
+    public RestClient(URI uri) {
+        this(uri, Collections.emptyMap());
     }
 
     /**
@@ -93,14 +103,9 @@ public class RestClient {
         return this;
     }
 
-    /**
-     * Instantiates a new rest client.
-     *
-     * @param uri the uri
-     * @param defaultParams the default params
-     */
-    public RestClient(URI uri) {
-        this(uri, Collections.emptyMap());
+    @Override
+    public void close() throws Exception {
+        httpClient = null;
     }
 
     private void createHttpClient() {

@@ -25,7 +25,6 @@ import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import org.osgi.service.component.annotations.Component;
 
 /**
