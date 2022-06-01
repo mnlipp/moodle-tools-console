@@ -120,7 +120,6 @@
 	org.jgrapes.osgi.webconlet.services;version='[0.16.0,0.16.1)',\
 	org.jgrapes.osgi.webconlet.logviewer;version='[0.16.0,0.16.1)',\
 	de.mnl.mtc.application;version=snapshot,\
-	de.mnl.mtc.credentialsmgr;version=snapshot,\
 	de.mnl.moodle.service;version=snapshot,\
 	de.mnl.moodle.provider;version=snapshot,\
 	de.mnl.mtc.conlets.login;version=snapshot
