@@ -120,29 +120,25 @@ public class RestClient {
     @SuppressWarnings("PMD.GuardLogStatement")
     public <T> T invoke(Class<T> resultType, Map<String, Object> params)
             throws IOException {
-        @SuppressWarnings("PMD.UseConcurrentHashMap")
-        Map<String, Object> allParams = new HashMap<>(defaultParams);
-        allParams.putAll(params);
-        var query = allParams.entrySet().stream()
-            .map(e -> e.getKey() + "="
-                + URLEncoder.encode(e.getValue().toString(),
-                    Charset.forName("utf-8")))
-            .collect(Collectors.joining("&"));
-        for (int attempt = 0; attempt < 4; attempt++) {
-            try {
-                return doInvoke(resultType, query);
-            } catch (IOException | InterruptedException e) {
-                logger.debug("Reconnecting due to: " + e.getMessage(), e);
-            }
-            createHttpClient();
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                // Ignored
-            }
-        }
-        // Final attempt
         try {
+            @SuppressWarnings("PMD.UseConcurrentHashMap")
+            Map<String, Object> allParams = new HashMap<>(defaultParams);
+            allParams.putAll(params);
+            var query = allParams.entrySet().stream()
+                .map(e -> e.getKey() + "="
+                    + URLEncoder.encode(e.getValue().toString(),
+                        Charset.forName("utf-8")))
+                .collect(Collectors.joining("&"));
+            for (int attempt = 0; attempt < 4; attempt++) {
+                try {
+                    return doInvoke(resultType, query);
+                } catch (IOException e) {
+                    logger.debug("Reconnecting due to: " + e.getMessage(), e);
+                }
+                createHttpClient();
+                Thread.sleep(1000);
+            }
+            // Final attempt
             return doInvoke(resultType, query);
         } catch (InterruptedException e) {
             throw new IOException(e);
