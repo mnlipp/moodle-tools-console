@@ -24,7 +24,7 @@ Bundle-Activator: de.mnl.mtc.application.Application
 -includeresource: \
 	resources
 
--dependson: 
+-dependson: *
     
 -fixupmessages: \
     "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
