@@ -117,10 +117,9 @@ public class AccountConlet
     @Override
     protected Optional<AccountModel> createNewState(AddConletRequest event,
             ConsoleSession session, String conletId) throws Exception {
-        if (stateFromSession(session.browserSession(), conletId).isPresent()) {
-            return Optional.empty();
-        }
-        return super.createNewState(event, session, conletId);
+        return Optional
+            .ofNullable(stateFromSession(session.browserSession(), conletId)
+                .orElse(super.createNewState(event, session, conletId).get()));
     }
 
     @Override
