@@ -58,17 +58,19 @@ window.deMnlMtcLogin.openDialog
                     l10nBundles, JGWC.lang()!, key);
             };
 
-            const message = ref(null);
+            const info = ref(null);
+            const warning = ref(null);
             
-            const setMessage = (msg: string) => {
-                message.value = msg;
+            const setMessages = (infoMsg: string, warningMsg: string) => {
+                info.value = infoMsg;
+                warning.value = warningMsg;
             }
 
             const formDom = ref(null);
 
-            provideApi(formDom, { accountData, setMessage });
+            provideApi(formDom, { accountData, setMessages });
                         
-            return { formDom, formId, localize, accountData, message };
+            return { formDom, formId, localize, accountData, info, warning };
         },
         template: `
           <form :id="formId" ref="formDom" onsubmit="return false;"
@@ -111,8 +113,11 @@ window.deMnlMtcLogin.openDialog
                     autocomplete="section-moodle current-password">
                 </label>
               </p>
-              <p v-if="message" class="mtc-conlet-login-form__message">
-                {{ message }}
+              <p v-if="info" class="mtc-conlet-login-form__info">
+                {{ info }}
+              </p>
+              <p v-if="warning" class="mtc-conlet-login-form__warning">
+                {{ warning }}
               </p>
             </fieldset>
           </form>`
@@ -133,8 +138,8 @@ window.deMnlMtcLogin.apply = function(dialogDom: HTMLElement,
 }
 
 JGConsole.registerConletFunction("de.mnl.mtc.conlets.login.LoginConlet",
-    "setMessage", function(conletId, message) {
+    "setMessages", function(conletId, info, warning) {
     let api = getApi<any>(document.querySelector
         (".conlet-modal-dialog[data-conlet-id=\"" + conletId + "\"] form"));
-    api.setMessage(message);
+    api.setMessages(info, warning);
 });

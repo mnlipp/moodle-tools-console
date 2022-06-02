@@ -186,16 +186,19 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             ConsoleSession channel, AccountModel model) {
         // Let's give it a try
         MoodleClient client;
+        var bundle = resourceBundle(channel.locale());
         try {
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setMessages",
+                bundle.getString("Connecting"), null));
             client = moodleService
                 .connect(event.params().asString(0), event.params().asString(1),
                     event.params().asString(2).toCharArray());
         } catch (MoodleAuthFailedException e) {
             channel.respond(new NotifyConletView(type(),
-                model.getConletId(), "setMessage", e.getMessage()));
+                model.getConletId(), "setMessages", null, e.getMessage()));
             return;
         } catch (IOException e) {
-            var bundle = resourceBundle(channel.locale());
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessage",
                 bundle.getString("IOException")));
