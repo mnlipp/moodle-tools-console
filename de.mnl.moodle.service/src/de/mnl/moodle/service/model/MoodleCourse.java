@@ -19,7 +19,9 @@
 package de.mnl.moodle.service.model;
 
 import java.beans.ConstructorProperties;
+import java.time.Instant;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Models a Moodle course with the properties required in this context.
@@ -28,6 +30,7 @@ public class MoodleCourse {
 
     private final long id;
     private final String shortName;
+    private Long startdate;
 
     /**
      * Instantiates a new moodle course.
@@ -57,6 +60,31 @@ public class MoodleCourse {
      */
     public String getShortName() {
         return shortName;
+    }
+
+    /**
+     * @return the startdate
+     */
+    public long getStartdate() {
+        return startdate;
+    }
+
+    /**
+     * @param startdate the startdate to set
+     */
+    public void setStartdate(long startdate) {
+        if (startdate != 0) {
+            this.startdate = startdate;
+        }
+    }
+
+    /**
+     * Start date as instant.
+     *
+     * @return the optional
+     */
+    public Optional<Instant> startDate() {
+        return Optional.ofNullable(startdate).map(Instant::ofEpochSecond);
     }
 
     /**
@@ -97,7 +125,8 @@ public class MoodleCourse {
      */
     @Override
     public String toString() {
-        return "MoodleCourse [id=" + id + ", shortName=" + shortName + "]";
+        return "MoodleCourse [id=" + id + ", shortName=" + shortName
+            + ", startDate=" + startDate() + "]";
     }
 
 }
