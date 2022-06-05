@@ -16,7 +16,7 @@
  * with this program; if not, see <http://www.gnu.org/licenses/>.
  */
 
-package de.mnl.moodle.provider;
+package de.mnl.moodle.service;
 
 import java.net.URLEncoder;
 import java.nio.charset.Charset;

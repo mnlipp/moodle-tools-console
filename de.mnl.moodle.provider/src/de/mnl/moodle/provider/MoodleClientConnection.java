@@ -26,6 +26,7 @@ import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Map;
 import org.osgi.service.component.annotations.Component;
 
 /**
@@ -48,6 +49,13 @@ public class MoodleClientConnection implements MoodleClient {
         this.siteUri = siteUri;
         this.restClient = restClient;
         this.moodleUser = moodleUser;
+    }
+
+    @Override
+    public Object invoke(String wsfunction, Map<String, Object> params)
+            throws IOException {
+        return restClient.invoke(Object.class, Map.of("wsfunction", wsfunction),
+            params);
     }
 
     @Override

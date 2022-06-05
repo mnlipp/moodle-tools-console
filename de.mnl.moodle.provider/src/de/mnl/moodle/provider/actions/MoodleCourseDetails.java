@@ -18,9 +18,9 @@
 
 package de.mnl.moodle.provider.actions;
 
-import de.mnl.moodle.provider.CommaSeparatedValues;
 import de.mnl.moodle.provider.RestAction;
 import de.mnl.moodle.provider.RestClient;
+import de.mnl.moodle.service.CommaSeparatedValues;
 import de.mnl.moodle.service.model.MoodleCourse;
 import java.beans.ConstructorProperties;
 import java.io.IOException;

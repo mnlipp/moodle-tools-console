@@ -22,6 +22,7 @@ import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
+import java.util.Map;
 
 /**
  * Represents the client side of a connection to a moodle server.
@@ -30,6 +31,17 @@ public interface MoodleClient extends AutoCloseable {
 
     @Override
     void close();
+
+    /**
+     * Invoke some function. Allows the invocation of functions that
+     * haven't been typed yet.
+     *
+     * @param wsfunction the function
+     * @param params the parameters
+     * @return the result
+     */
+    Object invoke(String wsfunction, Map<String, Object> params)
+            throws IOException;
 
     /**
      * The authenticated moodle user.

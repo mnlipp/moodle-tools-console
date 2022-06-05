@@ -18,6 +18,7 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.service.QueryValueEncoder;
 import de.mnl.moodle.service.model.MoodleErrorValues;
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
