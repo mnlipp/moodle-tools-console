@@ -179,7 +179,7 @@ public class RestClient implements AutoCloseable {
      * @param keyBase the key base of `null` for the top-lebel invocation 
      * @return the query string
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings({ "unchecked", "PMD.CognitiveComplexity" })
     public static String encodeStream(Stream<Map.Entry<String, Object>> data,
             String keyBase) {
         // Iterate over all entries in stream.
@@ -209,9 +209,17 @@ public class RestClient implements AutoCloseable {
                         Integer.toString(counter.getAndIncrement()), v)),
                     key);
             }
-            return URLEncoder.encode(key, Charset.forName("utf-8")) + "="
-                + URLEncoder.encode(e.getValue().toString(),
-                    Charset.forName("utf-8"));
+            StringBuilder res = new StringBuilder()
+                .append(URLEncoder.encode(key, Charset.forName("utf-8")))
+                .append('=');
+            if (e.getValue() instanceof QueryValueEncoder) {
+                res.append(
+                    ((QueryValueEncoder) e.getValue()).asQueryValue());
+            } else {
+                res.append(URLEncoder.encode(e.getValue().toString(),
+                    Charset.forName("utf-8")));
+            }
+            return res.toString();
         }).collect(Collectors.joining("&"));
     }
 

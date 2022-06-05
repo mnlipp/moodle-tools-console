@@ -25,7 +25,6 @@ import de.mnl.moodle.service.model.MoodleAssignmentGrades;
 import de.mnl.moodle.service.model.MoodleGetAssignmentGradesResponse;
 import de.mnl.moodle.service.model.MoodleGrade;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

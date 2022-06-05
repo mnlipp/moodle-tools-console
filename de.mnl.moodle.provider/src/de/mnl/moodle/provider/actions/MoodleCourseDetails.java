@@ -18,11 +18,10 @@
 
 package de.mnl.moodle.provider.actions;
 
+import de.mnl.moodle.provider.CommaSeparatedValues;
 import de.mnl.moodle.provider.RestAction;
 import de.mnl.moodle.provider.RestClient;
 import de.mnl.moodle.service.model.MoodleCourse;
-import de.mnl.moodle.service.model.MoodleErrorValues;
-import de.mnl.moodle.service.model.MoodleUser;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
 import java.util.Map;
@@ -44,6 +43,36 @@ public class MoodleCourseDetails extends RestAction {
     }
 
     /**
+     * Must be public in order for the JSON decoder to work. For
+     * internal use only. 
+     */
+    public static class ResultWrapper {
+        private final MoodleCourse[] courses;
+
+        /**
+         * Instantiates a new result wrapper.
+         *
+         * @param courses the courses
+         */
+        @ConstructorProperties({ "courses" })
+        @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
+        public ResultWrapper(MoodleCourse[] courses) {
+            super();
+            this.courses = courses;
+        }
+
+        /**
+         * Gets the courses.
+         *
+         * @return the courses
+         */
+        @SuppressWarnings("PMD.MethodReturnsInternalArray")
+        public MoodleCourse[] getCourses() {
+            return courses;
+        }
+    }
+
+    /**
      * Invoke the action.
      *
      * @param shortName the short name
@@ -52,11 +81,12 @@ public class MoodleCourseDetails extends RestAction {
      */
     @SuppressWarnings("PMD.AvoidLiteralsInIfCondition")
     public MoodleCourse[] invoke(MoodleCourse... courses) throws IOException {
-        return client.invoke(MoodleCourse[].class, Map.of(
+        return client.invoke(ResultWrapper.class, Map.of(
             "wsfunction", "core_course_get_courses_by_field"),
             Map.of("field", "ids",
-                "value", Stream.of(courses).map(MoodleCourse::getId)
-                    .map(id -> id.toString())
-                    .collect(Collectors.joining(","))));
+                "value", new CommaSeparatedValues(Stream.of(courses)
+                    .map(MoodleCourse::getId).map(id -> id.toString())
+                    .collect(Collectors.toSet()))))
+            .getCourses();
     }
 }

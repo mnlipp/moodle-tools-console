@@ -18,17 +18,15 @@
 
 package de.mnl.moodle.provider;
 
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import org.osgi.service.component.annotations.Component;
-
 import de.mnl.moodle.provider.actions.MoodleCourseDetails;
 import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleUser;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import org.osgi.service.component.annotations.Component;
 
 /**
  * Represents an open connection to a moodle instance.
