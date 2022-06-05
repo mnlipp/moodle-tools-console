@@ -18,11 +18,13 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.service.model.MoodleErrorValues;
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PushbackReader;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URLEncoder;
@@ -32,10 +34,14 @@ import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
 import java.nio.charset.Charset;
 import java.time.Duration;
+import java.util.AbstractMap;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.jdrupes.json.JsonBeanDecoder;
 import org.jdrupes.json.JsonDecodeException;
 
@@ -118,25 +124,29 @@ public class RestClient implements AutoCloseable {
      *
      * @param <T> the generic type
      * @param resultType the result type
-     * @param params the params
+     * @param queryParams parameters to be added to the query
+     * @param data to be send in the body
      * @return the result
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    @SuppressWarnings("PMD.GuardLogStatement")
-    public <T> T invoke(Class<T> resultType, Map<String, Object> params)
-            throws IOException {
+    @SuppressWarnings({ "PMD.GuardLogStatement", "PMD.AvoidDuplicateLiterals",
+        "PMD.AvoidRethrowingException" })
+    public <T> T invoke(Class<T> resultType, Map<String, Object> queryParams,
+            Map<String, Object> data) throws IOException {
         try {
-            @SuppressWarnings("PMD.UseConcurrentHashMap")
-            Map<String, Object> allParams = new HashMap<>(defaultParams);
-            allParams.putAll(params);
-            var query = allParams.entrySet().stream()
-                .map(e -> e.getKey() + "="
+            var query = Stream.concat(defaultParams.entrySet().stream(),
+                queryParams.entrySet().stream())
+                .map(e -> URLEncoder.encode(e.getKey(),
+                    Charset.forName("utf-8")) + "="
                     + URLEncoder.encode(e.getValue().toString(),
                         Charset.forName("utf-8")))
                 .collect(Collectors.joining("&"));
+            var formData = encodeData(data);
             for (int attempt = 0; attempt < 4; attempt++) {
                 try {
-                    return doInvoke(resultType, query);
+                    return doInvoke(resultType, query, formData);
+                } catch (MoodleException e) {
+                    throw e;
                 } catch (IOException e) {
                     logger.debug("Reconnecting due to: " + e.getMessage(), e);
                 }
@@ -144,13 +154,69 @@ public class RestClient implements AutoCloseable {
                 Thread.sleep(1000);
             }
             // Final attempt
-            return doInvoke(resultType, query);
+            return doInvoke(resultType, query, formData);
         } catch (InterruptedException e) {
             throw new IOException(e);
         }
     }
 
-    private <T> T doInvoke(Class<T> resultType, String query)
+    /**
+     * Encodes the map following the non-standard conventions of
+     * PHP's `http_build_query`
+     *
+     * @param data the data
+     * @return the query string
+     * @see https://github.com/pear/PHP_Compat/blob/master/PHP/Compat/Function/http_build_query.php
+     */
+    public static String encodeData(Map<String, Object> data) {
+        return encodeStream(data.entrySet().stream(), null);
+    }
+
+    /**
+     * Used by {@link #encodeData(Map)} and recursively invoked as required.
+     *
+     * @param data a stream of entries
+     * @param keyBase the key base of `null` for the top-lebel invocation 
+     * @return the query string
+     */
+    @SuppressWarnings("unchecked")
+    public static String encodeStream(Stream<Map.Entry<String, Object>> data,
+            String keyBase) {
+        // Iterate over all entries in stream.
+        return data.map(e -> {
+            // Use entry's key as result's key or as "index" of existing key.
+            String key;
+            if (keyBase == null) {
+                key = e.getKey();
+            } else {
+                key = keyBase + '[' + e.getKey() + ']';
+            }
+            if (e.getValue() instanceof Map) {
+                return encodeStream(
+                    ((Map<String, Object>) e.getValue()).entrySet().stream(),
+                    key);
+            }
+            Stream<Object> valueStream = null;
+            if (e.getValue().getClass().isArray()) {
+                valueStream = Stream.of((Object[]) e.getValue());
+            } else if (e.getValue() instanceof Collection) {
+                valueStream = ((Collection<Object>) e.getValue()).stream();
+            }
+            if (valueStream != null) {
+                AtomicInteger counter = new AtomicInteger();
+                return encodeStream(valueStream.map(
+                    v -> new AbstractMap.SimpleEntry<>(
+                        Integer.toString(counter.getAndIncrement()), v)),
+                    key);
+            }
+            return URLEncoder.encode(key, Charset.forName("utf-8")) + "="
+                + URLEncoder.encode(e.getValue().toString(),
+                    Charset.forName("utf-8"));
+        }).collect(Collectors.joining("&"));
+    }
+
+    @SuppressWarnings("PMD.AvoidLiteralsInIfCondition")
+    private <T> T doInvoke(Class<T> resultType, String query, String formData)
             throws IOException, InterruptedException {
         URI fullUri;
         try {
@@ -160,7 +226,8 @@ public class RestClient implements AutoCloseable {
             throw new IllegalArgumentException(e);
         }
         HttpRequest request = HttpRequest.newBuilder().uri(fullUri)
-            .POST(HttpRequest.BodyPublishers.noBody()).build();
+            .header("Content-Type", "application/x-www-form-urlencoded")
+            .POST(HttpRequest.BodyPublishers.ofString(formData)).build();
 
         // Execute and get the response.
         HttpResponse<InputStream> response
@@ -169,11 +236,21 @@ public class RestClient implements AutoCloseable {
             return null;
         }
 
-        try (InputStream resultData = response.body()) {
+        try (var resultData = new PushbackReader(
+            new InputStreamReader(response.body(), "utf-8"))) {
+            if (resultType.isArray()) {
+                // Errors for requests returning an array are
+                // reported as JSON object.
+                int peek = resultData.read();
+                resultData.unread(peek);
+                if ((char) peek != '[') {
+                    throw new MoodleException(
+                        JsonBeanDecoder.create(resultData).skipUnknown()
+                            .readObject(MoodleErrorValues.class));
+                }
+            }
             return JsonBeanDecoder
-                .create(new InputStreamReader(response.body(), "utf-8"))
-                .skipUnknown()
-                .readObject(resultType);
+                .create(resultData).skipUnknown().readObject(resultType);
         } catch (JsonDecodeException e) {
             throw new IOException("Unparsable result: " + e.getMessage(), e);
         }

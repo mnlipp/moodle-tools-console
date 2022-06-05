@@ -29,6 +29,7 @@ import de.mnl.osgi.lf4osgi.LoggerFactory;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.Collections;
 import java.util.Map;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
@@ -45,6 +46,8 @@ public class MoodleServiceProvider implements MoodleService {
         = LoggerFactory.getLogger(MoodleServiceProvider.class);
 
     @Override
+    @SuppressWarnings({ "PMD.AvoidCatchingGenericException",
+        "PMD.EmptyCatchBlock" })
     public MoodleClient connect(String website, String username,
             char[] password) throws IOException, MoodleAuthFailedException {
         // Request token
@@ -64,8 +67,14 @@ public class MoodleServiceProvider implements MoodleService {
             var tokens = restClient.invoke(MoodleTokens.class,
                 Map.of("username", username,
                     "password", new String(password),
-                    "service", "moodle_mobile_app"));
+                    "service", "moodle_mobile_app"),
+                Collections.emptyMap());
             if (tokens.getErrorcode() != null) {
+                try {
+                    restClient.close();
+                } catch (Exception e) {
+                    // Was just trying to be nice
+                }
                 throw new MoodleAuthFailedException(tokens.getError());
             }
             URI serviceUri = siteUri.resolve(

@@ -24,6 +24,7 @@ import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -110,8 +111,8 @@ public class MoodleCourseAssignments extends RestAction {
     public MoodleAssignment[] invoke(MoodleCourse course)
             throws IOException {
         var result = client.invoke(ResultWrapper.class, Map.of(
-            "wsfunction", "mod_assign_get_assignments",
-            "courseids[0]", course.getId()));
+            "wsfunction", "mod_assign_get_assignments"),
+            Map.of("courseids", List.of(course.getId())));
         return result.getCourses()[0].getAssignments();
     }
 }

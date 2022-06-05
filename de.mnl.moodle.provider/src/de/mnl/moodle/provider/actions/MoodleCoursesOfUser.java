@@ -77,8 +77,8 @@ public class MoodleCoursesOfUser extends RestAction {
     @SuppressWarnings("PMD.AvoidLiteralsInIfCondition")
     public MoodleCourse[] invoke(MoodleUser user) throws IOException {
         return client.invoke(MoodleCourse[].class, Map.of(
-            "wsfunction", "core_enrol_get_users_courses",
-            "userid", user.getId(),
-            "returnusercount", 0));
+            "wsfunction", "core_enrol_get_users_courses"),
+            Map.of("userid", user.getId(),
+                "returnusercount", 0));
     }
 }

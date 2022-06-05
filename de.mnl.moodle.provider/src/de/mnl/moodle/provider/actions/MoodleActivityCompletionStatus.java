@@ -77,9 +77,8 @@ public class MoodleActivityCompletionStatus extends RestAction {
     public MoodleCompletionStatus[] invoke(MoodleCourse course, MoodleUser user)
             throws IOException {
         var result = client.invoke(ResultWrapper.class, Map.of(
-            "wsfunction", "core_completion_get_activities_completion_status",
-            "courseid", course.getId(),
-            "userid", user.getId()));
+            "wsfunction", "core_completion_get_activities_completion_status"),
+            Map.of("courseid", course.getId(), "userid", user.getId()));
         return result.getStatuses();
     }
 }

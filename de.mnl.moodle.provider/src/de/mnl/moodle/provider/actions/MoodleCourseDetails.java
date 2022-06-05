@@ -21,48 +21,26 @@ package de.mnl.moodle.provider.actions;
 import de.mnl.moodle.provider.RestAction;
 import de.mnl.moodle.provider.RestClient;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleErrorValues;
+import de.mnl.moodle.service.model.MoodleUser;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
 import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Searches course by short name.
  */
-public class MoodleCourseByShortName extends RestAction {
+public class MoodleCourseDetails extends RestAction {
 
     /**
      * Creates the action.
      *
      * @param client the client
      */
-    public MoodleCourseByShortName(RestClient client) {
+    public MoodleCourseDetails(RestClient client) {
         super(client);
-    }
-
-    /**
-     * Must be public in order for the JSON decoder to work. For
-     * internal use only. 
-     */
-    public static class ResultWrapper {
-        private final MoodleCourse[] courses;
-
-        /**
-         * Instantiates a new result wrapper.
-         *
-         * @param courses the courses
-         */
-        @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
-        @ConstructorProperties({ "courses" })
-        public ResultWrapper(MoodleCourse[] courses) {
-            super();
-            this.courses = courses;
-        }
-
-        @SuppressWarnings("PMD.MethodReturnsInternalArray")
-        public MoodleCourse[] getCourses() {
-            return courses;
-        }
-
     }
 
     /**
@@ -73,15 +51,12 @@ public class MoodleCourseByShortName extends RestAction {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @SuppressWarnings("PMD.AvoidLiteralsInIfCondition")
-    public MoodleCourse invoke(String shortName) throws IOException {
-        ResultWrapper result = client.invoke(ResultWrapper.class, Map.of(
+    public MoodleCourse[] invoke(MoodleCourse... courses) throws IOException {
+        return client.invoke(MoodleCourse[].class, Map.of(
             "wsfunction", "core_course_get_courses_by_field"),
-            Map.of("field", "shortname", "value", shortName));
-        var courses = result.getCourses();
-        if (courses.length != 1) {
-            throw new IllegalArgumentException(
-                "Course \"" + shortName + "\"not found.");
-        }
-        return courses[0];
+            Map.of("field", "ids",
+                "value", Stream.of(courses).map(MoodleCourse::getId)
+                    .map(id -> id.toString())
+                    .collect(Collectors.joining(","))));
     }
 }

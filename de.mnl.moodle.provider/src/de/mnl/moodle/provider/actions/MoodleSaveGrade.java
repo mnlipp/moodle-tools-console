@@ -54,7 +54,6 @@ public class MoodleSaveGrade extends RestAction {
             double grade, String text) throws IOException {
         @SuppressWarnings("PMD.UseConcurrentHashMap")
         Map<String, Object> params = new HashMap<>(Map.of(
-            "wsfunction", "mod_assign_save_grade",
             "assignmentid", assignment.getId(),
             "userid", user.getId(),
             "grade", grade,
@@ -62,9 +61,10 @@ public class MoodleSaveGrade extends RestAction {
             "addattempt", 0,
             "workflowstate", "graded",
             "applytoall", 0,
-            "plugindata[assignfeedbackcomments_editor][text]", text,
-            "plugindata[assignfeedbackcomments_editor][format]", 1));
+            "plugindata", Map.of("assignfeedbackcomments_editor",
+                Map.of("text", text, "format", 1))));
         params.put("plugindata[files_filemanager]", 0);
-        client.invoke(Object.class, params);
+        client.invoke(Object.class, Map.of(
+            "wsfunction", "mod_assign_save_grade"), params);
     }
 }

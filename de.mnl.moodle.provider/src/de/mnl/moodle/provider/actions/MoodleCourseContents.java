@@ -49,7 +49,7 @@ public class MoodleCourseContents extends RestAction {
     public MoodleCourseSection[] invoke(MoodleCourse course)
             throws IOException {
         return client.invoke(MoodleCourseSection[].class, Map.of(
-            "wsfunction", "core_course_get_contents",
-            "courseid", course.getId()));
+            "wsfunction", "core_course_get_contents"),
+            Map.of("courseid", course.getId()));
     }
 }

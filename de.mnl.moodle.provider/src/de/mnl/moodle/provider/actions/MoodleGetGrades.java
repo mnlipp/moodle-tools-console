@@ -26,6 +26,7 @@ import de.mnl.moodle.service.model.MoodleGetAssignmentGradesResponse;
 import de.mnl.moodle.service.model.MoodleGrade;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -53,12 +54,9 @@ public class MoodleGetGrades extends RestAction {
      */
     public MoodleAssignmentGrades invoke(MoodleAssignment assignment)
             throws IOException {
-        @SuppressWarnings("PMD.UseConcurrentHashMap")
-        Map<String, Object> params = new HashMap<>(Map.of(
-            "wsfunction", "mod_assign_get_grades",
-            "assignmentids[0]", assignment.getId()));
-        var result
-            = client.invoke(MoodleGetAssignmentGradesResponse.class, params);
+        var result = client.invoke(MoodleGetAssignmentGradesResponse.class,
+            Map.of("wsfunction", "mod_assign_get_grades"), Map.of(
+                "assignmentids", List.of(assignment.getId())));
         if (result.getAssignments().length > 0) {
             return result.getAssignments()[0];
         }

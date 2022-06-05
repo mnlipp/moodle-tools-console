@@ -51,8 +51,8 @@ public class MoodleEnrolledUsers extends RestAction {
      */
     public Set<MoodleUser> invoke(MoodleCourse course) throws IOException {
         var result = client.invoke(MoodleUser[].class,
-            Map.of("wsfunction", "core_enrol_get_enrolled_users",
-                "courseid", course.getId()));
+            Map.of("wsfunction", "core_enrol_get_enrolled_users"),
+            Map.of("courseid", course.getId()));
         return new HashSet<>(Arrays.asList(result));
     }
 }

@@ -23,6 +23,7 @@ import de.mnl.moodle.provider.RestClient;
 import de.mnl.moodle.service.model.MoodleErrorValues;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -70,9 +71,9 @@ public class MoodleUserByName extends RestAction {
     @SuppressWarnings("PMD.AvoidLiteralsInIfCondition")
     public MoodleUser invoke(String userName) throws IOException {
         var users = client.invoke(MoodleUser[].class, Map.of(
-            "wsfunction", "core_user_get_users_by_field",
-            "field", "username",
-            "values[0]", userName));
+            "wsfunction", "core_user_get_users_by_field"),
+            Map.of("field", "username",
+                "values", List.of(userName)));
         if (users.length != 1) {
             throw new IllegalArgumentException(
                 "Course \"" + userName + "\"not found.");

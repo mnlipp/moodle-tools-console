@@ -1,0 +1,65 @@
+Bundle-Name: Moodle Provider Test Bundle
+# Choose either depending on whether we build a snapshot or a release:
+Bundle-Version: 0.0.0.-${tstamp}-SNAPSHOT
+#Bundle-Version: 1.0.0.ga
+
+# Discover and run all test cases annotated with the @ExtendWith annotation
+Test-Cases: ${classes;CONCRETE;ANNOTATED;org.junit.jupiter.api.extension.ExtendWith}
+
+# Build dependencies 
+-buildpath: \
+    ${junit},\
+    ${mockito},\
+    osgi.core; version=6.0,\
+    osgi.annotation; version=6.0.1,\
+    de.mnl.moodle.provider;version=snapshot
+
+Export-Package: de.mnl.moodle.provider.test
+
+# Maintain this.
+-runrequires: \
+	bnd.identity;id='de.mnl.moodle.provider',\
+    bnd.identity; id=org.apache.felix.log; version='latest',\
+	bnd.identity;id=junit-jupiter-engine,\
+	bnd.identity;id='biz.aQute.tester.junit-platform',\
+	bnd.identity;id='org.mockito.junit-jupiter'
+
+# Let the resolver create this.
+-runbundles: \
+	org.opentest4j;version='[1.2.0,1.2.1)',\
+	org.objenesis;version='[3.2.0,3.2.1)',\
+	biz.aQute.tester.junit-platform;version='[6.3.0,6.3.1)',\
+	junit-jupiter-api;version='[5.9.0,5.9.1)',\
+	junit-jupiter-engine;version='[5.9.0,5.9.1)',\
+	junit-platform-commons;version='[1.9.0,1.9.1)',\
+	junit-platform-engine;version='[1.9.0,1.9.1)',\
+	junit-platform-launcher;version='[1.9.0,1.9.1)',\
+	net.bytebuddy.byte-buddy;version='[1.12.10,1.12.11)',\
+	net.bytebuddy.byte-buddy-agent;version='[1.12.10,1.12.11)',\
+	org.mockito.junit-jupiter;version='[4.6.1,4.6.2)',\
+	org.mockito.mockito-core;version='[4.6.1,4.6.2)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.12.2,2.12.3)',\
+	de.mnl.moodle.provider;version=snapshot,\
+	de.mnl.moodle.service;version=snapshot,\
+	de.mnl.osgi.coreutils;version='[2.1.0,2.1.1)',\
+	de.mnl.osgi.lf4osgi;version='[2.2.0,2.2.1)',\
+	org.jdrupes.json;version='[2.3.1,2.3.2)',\
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	org.osgi.util.promise;version='[1.2.0,1.2.1)',\
+	org.apache.felix.scr;version='[2.2.0,2.2.1)',\
+	org.apache.felix.log;version='[1.2.6,1.2.7)'
+
+-runvm.coverage: \
+    "-javaagent:${repo;org.jacoco:org.jacoco.agent:jar:runtime;latest}=destfile=${basedir}/generated/jacoco.exec,append=false,includes=de.mnl.osgi.*"
+
+# Use Felix by default
+-runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
+# Use Equinox by default
+#-runfw: org.eclipse.osgi;version=3.13
+
+-runvm: -ea
+
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable."
+    
+-runee: JavaSE-17

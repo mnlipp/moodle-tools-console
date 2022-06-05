@@ -52,4 +52,13 @@ public interface MoodleClient extends AutoCloseable {
      * @return the uri
      */
     URI courseUri(MoodleCourse course);
+
+    /**
+     * Retrieves new course objects with all details filled in.
+     *
+     * @param courses the courses
+     * @return the moodle course[]
+     * @throws IOException 
+     */
+    MoodleCourse[] courseDetails(MoodleCourse... courses) throws IOException;
 }
