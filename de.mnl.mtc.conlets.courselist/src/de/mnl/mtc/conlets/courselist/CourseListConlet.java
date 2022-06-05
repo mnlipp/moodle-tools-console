@@ -18,15 +18,21 @@
 
 package de.mnl.mtc.conlets.courselist;
 
+import de.mnl.moodle.service.MoodleClient;
+import de.mnl.moodle.service.model.MoodleCourse;
 import freemarker.core.ParseException;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
 import freemarker.template.TemplateNotFoundException;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
@@ -39,14 +45,17 @@ import org.jgrapes.webconsole.base.events.AddConletRequest;
 import org.jgrapes.webconsole.base.events.AddConletType;
 import org.jgrapes.webconsole.base.events.AddPageResources.ScriptResource;
 import org.jgrapes.webconsole.base.events.ConsoleReady;
+import org.jgrapes.webconsole.base.events.NotifyConletView;
 import org.jgrapes.webconsole.base.events.RenderConlet;
 import org.jgrapes.webconsole.base.events.RenderConletRequestBase;
+import org.jgrapes.webconsole.base.events.ResourceNotAvailable;
 import org.jgrapes.webconsole.base.events.SetLocale;
 import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 
 /**
  * A conlet for listing courses.
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class CourseListConlet
         extends FreeMarkerConlet<CourseListConlet.CourseListModel> {
 
@@ -99,10 +108,9 @@ public class CourseListConlet
     @Override
     protected Optional<CourseListModel> createNewState(AddConletRequest event,
             ConsoleSession session, String conletId) throws Exception {
-        if (stateFromSession(session.browserSession(), conletId).isPresent()) {
-            return Optional.empty();
-        }
-        return super.createNewState(event, session, conletId);
+        return Optional
+            .ofNullable(stateFromSession(session.browserSession(), conletId)
+                .orElse(super.createNewState(event, session, conletId).get()));
     }
 
     @Override
@@ -127,8 +135,58 @@ public class CourseListConlet
                             RenderMode.Preview.addModifiers(event.renderAs()))
                         .setSupportedModes(MODES));
             renderedAs.add(RenderMode.Preview);
+            sendCourseList(consoleSession, conletState);
         }
         return renderedAs;
+    }
+
+    private void sendCourseList(ConsoleSession channel, CourseListModel model) {
+        var bundle = resourceBundle(channel.locale());
+        channel.respond(new NotifyConletView(type(),
+            model.getConletId(), "setMessage", bundle.getString("Loading")));
+        Optional<MoodleClient> moodleClient
+            = channel.associated(MoodleClient.class);
+        if (moodleClient.isEmpty()) {
+            channel.respond(new ResourceNotAvailable(MoodleClient.class));
+            return;
+        }
+        try {
+            MoodleClient client = moodleClient.get();
+            MoodleCourse[] courses = client.enrolledIn();
+            var data
+                = Stream.of(courses).sorted(new Comparator<MoodleCourse>() {
+                    @Override
+                    public int compare(MoodleCourse crs1, MoodleCourse crs2) {
+                        if (crs1.startDate().isPresent()
+                            && crs2.startDate().isEmpty()) {
+                            return -1;
+                        }
+                        if (crs1.startDate().isEmpty()
+                            && crs2.startDate().isPresent()) {
+                            return 1;
+                        }
+                        if (crs1.startDate().isEmpty() && crs2.startDate().isEmpty()
+                            || crs1.startDate().get()
+                                .equals(crs2.startDate().get())) {
+                            return crs1.getShortName()
+                                .compareTo(crs2.getShortName());
+                        }
+                        return crs2.startDate().get()
+                            .compareTo(crs1.startDate().get());
+                    }
+                }).map(course -> {
+                    var mapped = new HashMap<String, Object>();
+                    mapped.put("shortName", course.getShortName());
+                    mapped.put("url", client.courseUri(course).toString());
+                    mapped.put("startDate", course.startDate());
+                    return mapped;
+                }).collect(Collectors.toList());
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setCourses", data));
+        } catch (IOException e) {
+            channel.respond(new ResourceNotAvailable(MoodleClient.class));
+            return;
+        }
     }
 
     @Override

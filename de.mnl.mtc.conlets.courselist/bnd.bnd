@@ -19,7 +19,8 @@ Export-Package: de.mnl.mtc.conlets.courselist
     org.freemarker.freemarker;version=latest,\
     org.jgrapes.webconsole.base;version=latest,\
     org.jgrapes.webconsole.provider.vue;version=latest,\
-    org.jgrapes.webconsole.provider.jgwcvuecomponents;version=latest
+    org.jgrapes.webconsole.provider.jgwcvuecomponents;version=latest,\
+    de.mnl.moodle.service;version=latest
 
 -includeresource: \
 	resources, "build/generated/resources"
