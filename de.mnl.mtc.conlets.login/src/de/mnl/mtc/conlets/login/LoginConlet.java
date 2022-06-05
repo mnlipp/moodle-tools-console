@@ -199,8 +199,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             return;
         } catch (IOException e) {
             channel.respond(new NotifyConletView(type(),
-                model.getConletId(), "setMessage",
-                bundle.getString("IOException")));
+                model.getConletId(), "setMessages",
+                null, bundle.getString("IOException")));
             return;
         }
         if (client == null) {
