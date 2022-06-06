@@ -24,8 +24,8 @@ import freemarker.core.ParseException;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
 import freemarker.template.TemplateNotFoundException;
-import java.beans.ConstructorProperties;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -56,8 +56,7 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
  * A conlet for listing courses.
  */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
-public class CourseListConlet
-        extends FreeMarkerConlet<CourseListConlet.CourseListModel> {
+public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
 
     private static final Set<RenderMode> MODES
         = RenderMode.asSet(RenderMode.Preview);
@@ -106,7 +105,7 @@ public class CourseListConlet
     }
 
     @Override
-    protected Optional<CourseListModel> createNewState(AddConletRequest event,
+    protected Optional<ConletBaseModel> createNewState(AddConletRequest event,
             ConsoleSession session, String conletId) throws Exception {
         return Optional
             .ofNullable(stateFromSession(session.browserSession(), conletId)
@@ -114,16 +113,16 @@ public class CourseListConlet
     }
 
     @Override
-    protected Optional<CourseListModel> createStateRepresentation(
+    protected Optional<ConletBaseModel> createStateRepresentation(
             RenderConletRequestBase<?> event,
             ConsoleSession channel, String conletId) throws IOException {
-        return Optional.of(new CourseListModel(conletId));
+        return Optional.of(new ConletBaseModel(conletId));
     }
 
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
             ConsoleSession consoleSession, String conletId,
-            CourseListModel conletState) throws Exception {
+            ConletBaseModel conletState) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
         if (event.renderAs().contains(RenderMode.Preview)) {
             Template tpl
@@ -140,7 +139,7 @@ public class CourseListConlet
         return renderedAs;
     }
 
-    private void sendCourseList(ConsoleSession channel, CourseListModel model) {
+    private void sendCourseList(ConsoleSession channel, ConletBaseModel model) {
         var bundle = resourceBundle(channel.locale());
         channel.respond(new NotifyConletView(type(),
             model.getConletId(), "setMessage", bundle.getString("Loading")));
@@ -165,9 +164,10 @@ public class CourseListConlet
                             && crs2.startDate().isPresent()) {
                             return 1;
                         }
-                        if (crs1.startDate().isEmpty() && crs2.startDate().isEmpty()
-                            || crs1.startDate().get()
-                                .equals(crs2.startDate().get())) {
+                        if (crs1.startDate().isEmpty()
+                            && crs2.startDate().isEmpty()
+                            || Duration.between(crs1.startDate().get(),
+                                crs2.startDate().get()).abs().toDays() <= 10) {
                             return crs1.getShortName()
                                 .compareTo(crs2.getShortName());
                         }
@@ -193,24 +193,6 @@ public class CourseListConlet
     protected boolean doSetLocale(SetLocale event, ConsoleSession channel,
             String conletId) throws Exception {
         return true;
-    }
-
-    /**
-     * Model with account info.
-     */
-    @SuppressWarnings({ "serial", "PMD.DataClass" })
-    public static class CourseListModel extends ConletBaseModel {
-
-        /**
-         * Creates a new model with the given type and id.
-         * 
-         * @param conletId the web console component id
-         */
-        @ConstructorProperties({ "conletId" })
-        public CourseListModel(String conletId) {
-            super(conletId);
-        }
-
     }
 
 }
