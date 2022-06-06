@@ -28,12 +28,10 @@ import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
-import org.osgi.service.component.annotations.Component;
 
 /**
  * Represents an open connection to a moodle instance.
  */
-@Component(immediate = true)
 public class MoodleClientConnection implements MoodleClient {
 
     private final URI siteUri;
