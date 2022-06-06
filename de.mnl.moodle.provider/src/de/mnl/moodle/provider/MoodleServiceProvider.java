@@ -18,10 +18,12 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.provider.actions.MoodleGetSiteInfo;
 import de.mnl.moodle.provider.actions.MoodleUserByName;
 import de.mnl.moodle.service.MoodleAuthFailedException;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.MoodleService;
+import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleTokens;
 import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
@@ -84,7 +86,10 @@ public class MoodleServiceProvider implements MoodleService {
                 "moodlewsrestformat", "json"));
             MoodleUser muser
                 = new MoodleUserByName(restClient).invoke(username);
-            return new MoodleClientConnection(siteUri, restClient, muser);
+            MoodleSiteInfo siteInfo
+                = new MoodleGetSiteInfo(restClient).invoke();
+            return new MoodleClientConnection(siteUri, restClient, muser,
+                siteInfo);
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }

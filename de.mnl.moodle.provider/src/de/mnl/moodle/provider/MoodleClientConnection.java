@@ -22,6 +22,7 @@ import de.mnl.moodle.provider.actions.MoodleCourseDetails;
 import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
@@ -38,6 +39,7 @@ public class MoodleClientConnection implements MoodleClient {
     private final URI siteUri;
     private final RestClient restClient;
     private final MoodleUser moodleUser;
+    private final MoodleSiteInfo siteInfo;
 
     /**
      * Instantiates a new moodle client connection.
@@ -45,10 +47,11 @@ public class MoodleClientConnection implements MoodleClient {
      * @param restClient the rest client
      */
     public MoodleClientConnection(URI siteUri, RestClient restClient,
-            MoodleUser moodleUser) {
+            MoodleUser moodleUser, MoodleSiteInfo siteInfo) {
         this.siteUri = siteUri;
         this.restClient = restClient;
         this.moodleUser = moodleUser;
+        this.siteInfo = siteInfo;
     }
 
     @Override
@@ -61,6 +64,11 @@ public class MoodleClientConnection implements MoodleClient {
     @Override
     public MoodleUser moodleUser() {
         return moodleUser;
+    }
+
+    @Override
+    public MoodleSiteInfo siteInfo() {
+        return siteInfo;
     }
 
     @Override

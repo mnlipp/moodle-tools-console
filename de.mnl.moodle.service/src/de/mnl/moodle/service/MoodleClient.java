@@ -19,6 +19,7 @@
 package de.mnl.moodle.service;
 
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
@@ -49,6 +50,13 @@ public interface MoodleClient extends AutoCloseable {
      * @return the moodle user
      */
     MoodleUser moodleUser();
+
+    /**
+     * The site info (includes information about the user)
+     *
+     * @return the moodle site info
+     */
+    MoodleSiteInfo siteInfo();
 
     /**
      * The courses that the user is enrolled in.
