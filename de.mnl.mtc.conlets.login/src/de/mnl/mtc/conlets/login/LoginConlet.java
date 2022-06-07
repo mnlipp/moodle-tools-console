@@ -30,6 +30,7 @@ import java.beans.ConstructorProperties;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -39,6 +40,7 @@ import org.jgrapes.core.Components;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
+import org.jgrapes.core.events.Detached;
 import org.jgrapes.io.events.Close;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
@@ -50,10 +52,12 @@ import org.jgrapes.webconsole.base.events.AddPageResources.ScriptResource;
 import org.jgrapes.webconsole.base.events.CloseModalDialog;
 import org.jgrapes.webconsole.base.events.ConsolePrepared;
 import org.jgrapes.webconsole.base.events.ConsoleReady;
+import org.jgrapes.webconsole.base.events.DisplayNotification;
 import org.jgrapes.webconsole.base.events.NotifyConletModel;
 import org.jgrapes.webconsole.base.events.NotifyConletView;
 import org.jgrapes.webconsole.base.events.OpenModalDialog;
 import org.jgrapes.webconsole.base.events.RenderConletRequestBase;
+import org.jgrapes.webconsole.base.events.ResourceNotAvailable;
 import org.jgrapes.webconsole.base.events.SetLocale;
 import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 
@@ -207,8 +211,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             return;
         }
 
-        // Associate with channel
+        // Associate with channel and track
         channel.setAssociated(MoodleClient.class, client);
+        trackConlet(channel, model.getConletId(), null);
 
         // Okay, close and resume
         channel.respond(new CloseModalDialog(type(), event.conletId()));
@@ -228,6 +233,35 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             client.close();
             channel.setAssociated(MoodleClient.class, null);
         });
+    }
+
+    /**
+     * Clean up any provided moodle clients.
+     *
+     * @param event the event
+     */
+    @Handler
+    public void onDetach(Detached event) {
+        for (ConsoleSession channel : trackedSessions()) {
+            channel.setAssociated(MoodleClient.class, null);
+        }
+    }
+
+    /**
+     * Central handling of connection lost. Display notification.
+     *
+     * @param event the event
+     * @param channel the channel
+     */
+    @Handler
+    public void onResourceNotAvailable(ResourceNotAvailable event,
+            ConsoleSession channel) {
+        if (MoodleClient.class.equals(event.itemSpecification())) {
+            var bundle = resourceBundle(channel.locale());
+            channel.respond(new DisplayNotification(
+                "<span>" + bundle.getString("connectionLost") + "</span>",
+                new HashMap<>()));
+        }
     }
 
     @Override
