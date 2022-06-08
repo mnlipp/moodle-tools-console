@@ -18,16 +18,22 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.provider.actions.MoodleCourseAssignments;
 import de.mnl.moodle.provider.actions.MoodleCourseDetails;
 import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
+import de.mnl.moodle.provider.actions.MoodleEnrolledUsers;
+import de.mnl.moodle.provider.actions.MoodleGetGroupings;
 import de.mnl.moodle.service.MoodleClient;
+import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Represents an open connection to a moodle instance.
@@ -90,6 +96,22 @@ public class MoodleClientConnection implements MoodleClient {
             // Cannot happen.
         }
         return siteUri;
+    }
+
+    @Override
+    public MoodleGrouping[] groupings(MoodleCourse course) throws IOException {
+        return new MoodleGetGroupings(restClient).invoke(course);
+    }
+
+    @Override
+    public Set<MoodleUser> enrolled(MoodleCourse course) throws IOException {
+        return new MoodleEnrolledUsers(restClient).invoke(course);
+    }
+
+    @Override
+    public MoodleAssignment[] assignments(MoodleCourse course)
+            throws IOException {
+        return new MoodleCourseAssignments(restClient).invoke(course);
     }
 
     @Override

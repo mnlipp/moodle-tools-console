@@ -19,6 +19,8 @@
 package de.mnl.moodle.service.model;
 
 import java.beans.ConstructorProperties;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -28,6 +30,7 @@ public class MoodleAssignment {
 
     private final long id;
     private final String name;
+    private final List<?> configs = new ArrayList<>();
 
     /**
      * Instantiates a new moodle assignment.
@@ -47,6 +50,13 @@ public class MoodleAssignment {
 
     public String getName() {
         return name;
+    }
+
+    /**
+     * @return the configs
+     */
+    public List<?> getConfigs() {
+        return configs;
     }
 
     @Override

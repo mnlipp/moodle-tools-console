@@ -18,12 +18,15 @@
 
 package de.mnl.moodle.service;
 
+import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Represents the client side of a connection to a moodle server.
@@ -66,6 +69,15 @@ public interface MoodleClient extends AutoCloseable {
     MoodleCourse[] enrolledIn() throws IOException;
 
     /**
+     * The users enrolled in the course.
+     *
+     * @param course the course
+     * @return the moodle user[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    Set<MoodleUser> enrolled(MoodleCourse course) throws IOException;
+
+    /**
      * Generate the URI for the given courses main page.
      *
      * @param course the course
@@ -81,4 +93,23 @@ public interface MoodleClient extends AutoCloseable {
      * @throws IOException 
      */
     MoodleCourse[] courseDetails(MoodleCourse... courses) throws IOException;
+
+    /**
+     * Retrieves a course's grouping.
+     *
+     * @param course the course
+     * @return the moodle grouping[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleGrouping[] groupings(MoodleCourse course) throws IOException;
+
+    /**
+     * Retrieves the assignments from a course.
+     *
+     * @param course the course
+     * @return the moodle assignment[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleAssignment[] assignments(MoodleCourse course) throws IOException;
+
 }
