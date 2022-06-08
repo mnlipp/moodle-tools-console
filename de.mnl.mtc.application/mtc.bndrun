@@ -26,6 +26,7 @@
 	bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
     bnd.identity;id='de.mnl.mtc.conlets.login';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.courselist';version='latest',\
+    bnd.identity;id='de.mnl.mtc.conlets.tobegraded';version='latest',\
 	bnd.identity;id='de.mnl.moodle.provider';version='latest'
 
 # - SLF4J 1.8 is still alpha and backward compatibility is unclear
@@ -124,4 +125,5 @@
 	de.mnl.moodle.service;version=snapshot,\
 	de.mnl.moodle.provider;version=snapshot,\
 	de.mnl.mtc.conlets.login;version=snapshot,\
-    de.mnl.mtc.conlets.courselist;version=snapshot
+    de.mnl.mtc.conlets.courselist;version=snapshot,\
+    de.mnl.mtc.conlets.tobegraded;version=snapshot
