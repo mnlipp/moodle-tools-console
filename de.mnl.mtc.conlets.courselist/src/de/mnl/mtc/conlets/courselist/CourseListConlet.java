@@ -20,6 +20,8 @@ package de.mnl.mtc.conlets.courselist;
 
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.osgi.lf4osgi.Logger;
+import de.mnl.osgi.lf4osgi.LoggerFactory;
 import freemarker.core.ParseException;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
@@ -57,6 +59,10 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
  */
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
+
+    @SuppressWarnings("PMD.FieldNamingConventions")
+    private static final Logger logger
+        = LoggerFactory.getLogger(CourseListConlet.class);
 
     private static final Set<RenderMode> MODES
         = RenderMode.asSet(RenderMode.Preview);
@@ -139,6 +145,8 @@ public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
         return renderedAs;
     }
 
+    @SuppressWarnings({ "PMD.CognitiveComplexity", "PMD.NcssCount",
+        "PMD.NPathComplexity", "PMD.GuardLogStatement" })
     private void sendCourseList(ConsoleSession channel, ConletBaseModel model) {
         var bundle = resourceBundle(channel.locale());
         channel.respond(new NotifyConletView(type(),
@@ -184,6 +192,7 @@ public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setCourses", data));
         } catch (IOException e) {
+            logger.debug(e.getMessage(), e);
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }

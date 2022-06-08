@@ -9,8 +9,9 @@ Export-Package: de.mnl.mtc.conlets.courselist
 -buildpath: \
 	osgi.core;version=6.0.0,\
 	osgi.annotation;version=6.0.1,\
-	osgi.cmpn;version=6.0,\
+	osgi.cmpn;version=7.0,\
     com.fasterxml.jackson.core.jackson-core;version=latest,\
+    de.mnl.osgi.lf4osgi;version=latest,\
     org.jdrupes.json;version=latest,\
     org.jgrapes.core;version=latest,\
     org.jgrapes.io;version=latest,\
