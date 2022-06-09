@@ -26,11 +26,15 @@ import java.util.Optional;
 /**
  * Models a Moodle course with the properties required in this context.
  */
+@SuppressWarnings("PMD.DataClass")
 public class MoodleCourse {
 
     private final long id;
     private final String shortName;
+    private String fullname;
+    private String displayname;
     private Long startdate;
+    private MoodleAssignment[] assignments = new MoodleAssignment[0];
 
     /**
      * Instantiates a new moodle course.
@@ -79,12 +83,63 @@ public class MoodleCourse {
     }
 
     /**
+     * @param startdate the startdate to set
+     */
+    public void setStartdate(Long startdate) {
+        this.startdate = startdate;
+    }
+
+    /**
+     * @return the fullname
+     */
+    public String getFullname() {
+        return fullname;
+    }
+
+    /**
+     * @param fullname the fullname to set
+     */
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
+    }
+
+    /**
+     * @return the displayname
+     */
+    public String getDisplayname() {
+        return displayname;
+    }
+
+    /**
+     * @param displayname the displayname to set
+     */
+    public void setDisplayname(String displayname) {
+        this.displayname = displayname;
+    }
+
+    /**
      * Start date as instant.
      *
      * @return the optional
      */
     public Optional<Instant> startDate() {
         return Optional.ofNullable(startdate).map(Instant::ofEpochSecond);
+    }
+
+    /**
+     * @return the assignments
+     */
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
+    public MoodleAssignment[] getAssignments() {
+        return assignments;
+    }
+
+    /**
+     * @param assignments the assignments to set
+     */
+    @SuppressWarnings("PMD.ArrayIsStoredDirectly")
+    public void setAssignments(MoodleAssignment... assignments) {
+        this.assignments = assignments;
     }
 
     /**

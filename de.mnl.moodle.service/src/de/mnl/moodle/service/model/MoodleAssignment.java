@@ -26,11 +26,13 @@ import java.util.Objects;
 /**
  * Models a Moodle assignment with the properties required in this context.
  */
+@SuppressWarnings("PMD.DataClass")
 public class MoodleAssignment {
 
     private final long id;
-    private final String name;
+    private String name;
     private final List<?> configs = new ArrayList<>();
+    private MoodleSubmission[] submissions;
 
     /**
      * Instantiates a new moodle assignment.
@@ -38,14 +40,25 @@ public class MoodleAssignment {
      * @param id the id
      * @param name the name
      */
-    @ConstructorProperties({ "id", "name" })
-    public MoodleAssignment(long id, String name) {
+    @ConstructorProperties({ "id" })
+    public MoodleAssignment(long id) {
         this.id = id;
-        this.name = name;
     }
 
+    /**
+     * Gets the id.
+     *
+     * @return the id
+     */
     public long getId() {
         return id;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getName() {
@@ -57,6 +70,22 @@ public class MoodleAssignment {
      */
     public List<?> getConfigs() {
         return configs;
+    }
+
+    /**
+     * @return the submissions
+     */
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
+    public MoodleSubmission[] getSubmissions() {
+        return submissions;
+    }
+
+    /**
+     * @param submissions the submissions to set
+     */
+    @SuppressWarnings("PMD.ArrayIsStoredDirectly")
+    public void setSubmissions(MoodleSubmission... submissions) {
+        this.submissions = submissions;
     }
 
     @Override

@@ -246,13 +246,14 @@ public class RestClient implements AutoCloseable {
         }
 
         try (var resultData = new PushbackReader(
-            new InputStreamReader(response.body(), "utf-8"))) {
+            new InputStreamReader(response.body(), "utf-8"), 8)) {
             if (resultType.isArray()) {
                 // Errors for requests returning an array are
                 // reported as JSON object.
-                int peek = resultData.read();
-                resultData.unread(peek);
-                if ((char) peek != '[') {
+                char[] peekData = new char[2];
+                int peeked = resultData.read(peekData, 0, peekData.length);
+                resultData.unread(peekData, 0, peeked);
+                if (peeked > 0 && peekData[0] != '[') {
                     throw new MoodleException(
                         JsonBeanDecoder.create(resultData).skipUnknown()
                             .readObject(MoodleErrorValues.class));

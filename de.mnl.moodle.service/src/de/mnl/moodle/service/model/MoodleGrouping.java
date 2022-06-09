@@ -107,6 +107,7 @@ public class MoodleGrouping {
     /**
      * @return the groups
      */
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
     public MoodleGroup[] getGroups() {
         return groups;
     }
@@ -114,6 +115,7 @@ public class MoodleGrouping {
     /**
      * @param groups the groups to set
      */
+    @SuppressWarnings({ "PMD.UseVarargs", "PMD.ArrayIsStoredDirectly" })
     public void setGroups(MoodleGroup[] groups) {
         this.groups = groups;
     }
@@ -156,7 +158,7 @@ public class MoodleGrouping {
      */
     @Override
     public String toString() {
-        return "MoodleCourse [id=" + id + ", name=" + name + "]";
+        return "MoodleGrouping [id=" + id + ", name=" + name + "]";
     }
 
 }

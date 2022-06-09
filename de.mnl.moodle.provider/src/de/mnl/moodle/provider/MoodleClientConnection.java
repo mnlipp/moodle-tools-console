@@ -23,15 +23,19 @@ import de.mnl.moodle.provider.actions.MoodleCourseDetails;
 import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
 import de.mnl.moodle.provider.actions.MoodleEnrolledUsers;
 import de.mnl.moodle.provider.actions.MoodleGetGroupings;
+import de.mnl.moodle.provider.actions.MoodleSubmissions;
+import de.mnl.moodle.provider.actions.MoodleUsersGroupsInGrouping;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleGroup;
 import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Set;
 
@@ -109,9 +113,24 @@ public class MoodleClientConnection implements MoodleClient {
     }
 
     @Override
-    public MoodleAssignment[] assignments(MoodleCourse course)
-            throws IOException {
-        return new MoodleCourseAssignments(restClient).invoke(course);
+    public MoodleCourse[] withAssignments(MoodleCourse[] courses,
+            String... capabilities) throws IOException {
+        return new MoodleCourseAssignments(restClient).invoke(courses,
+            capabilities);
+    }
+
+    @Override
+    public MoodleGroup[] usersGroupsInGrouping(MoodleCourse course,
+            MoodleUser user, MoodleGrouping grouping) throws IOException {
+        return new MoodleUsersGroupsInGrouping(restClient).invoke(course, user,
+            grouping);
+    }
+
+    @Override
+    public MoodleAssignment[] withSubmissions(MoodleAssignment[] assignments,
+            String status, Instant since, Instant before) throws IOException {
+        return new MoodleSubmissions(restClient).invoke(assignments, status,
+            since, before);
     }
 
     @Override

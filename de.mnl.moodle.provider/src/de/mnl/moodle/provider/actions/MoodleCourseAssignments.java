@@ -20,16 +20,18 @@ package de.mnl.moodle.provider.actions;
 
 import de.mnl.moodle.provider.RestAction;
 import de.mnl.moodle.provider.RestClient;
-import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
-import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * Retrieves all assignments from a course.
  */
+@SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class MoodleCourseAssignments extends RestAction {
 
     /**
@@ -46,7 +48,7 @@ public class MoodleCourseAssignments extends RestAction {
      * internal use only. 
      */
     public static class ResultWrapper {
-        private final CourseWrapper[] courses;
+        private final MoodleCourse[] courses;
 
         /**
          * Instantiates a new result wrapper.
@@ -55,7 +57,7 @@ public class MoodleCourseAssignments extends RestAction {
          */
         @ConstructorProperties({ "courses" })
         @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
-        public ResultWrapper(CourseWrapper[] courses) {
+        public ResultWrapper(MoodleCourse[] courses) {
             super();
             this.courses = courses;
         }
@@ -66,53 +68,33 @@ public class MoodleCourseAssignments extends RestAction {
          * @return the courses
          */
         @SuppressWarnings("PMD.MethodReturnsInternalArray")
-        public CourseWrapper[] getCourses() {
+        public MoodleCourse[] getCourses() {
             return courses;
-        }
-    }
-
-    /**
-     * Must be public in order for the JSON decoder to work. For
-     * internal use only. 
-     */
-    public static class CourseWrapper {
-        private final MoodleAssignment[] assignments;
-
-        /**
-         * Instantiates a new course wrapper.
-         *
-         * @param assignments the assignments
-         */
-        @ConstructorProperties({ "assignments" })
-        @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
-        public CourseWrapper(MoodleAssignment[] assignments) {
-            super();
-            this.assignments = assignments;
-        }
-
-        /**
-         * Gets the assignments.
-         *
-         * @return the assignments
-         */
-        @SuppressWarnings("PMD.MethodReturnsInternalArray")
-        public MoodleAssignment[] getAssignments() {
-            return assignments;
         }
     }
 
     /**
      * Invokes the action.
      *
-     * @param course the course
+     * @param courses the courses
+     * @param capabilities the capabilities
      * @return the moodle assignment[]
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    public MoodleAssignment[] invoke(MoodleCourse course)
+    public MoodleCourse[] invoke(MoodleCourse[] courses, String... capabilities)
             throws IOException {
-        var result = client.invoke(ResultWrapper.class, Map.of(
+        // For faster access
+        Map<MoodleCourse, MoodleCourse> asMap = Stream.of(courses).collect(
+            Collectors.toMap(Function.identity(), Function.identity()));
+        var res = client.invoke(ResultWrapper.class, Map.of(
             "wsfunction", "mod_assign_get_assignments"),
-            Map.of("courseids", List.of(course.getId())));
-        return result.getCourses()[0].getAssignments();
+            Map.of("courseids", Stream.of(courses).map(MoodleCourse::getId)
+                .collect(Collectors.toList()),
+                "capabilities", capabilities))
+            .getCourses();
+        Stream.of(res)
+            .forEach(c -> asMap.get(c).setAssignments(c.getAssignments()));
+        return courses;
     }
+
 }

@@ -20,11 +20,13 @@ package de.mnl.moodle.service;
 
 import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleGroup;
 import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleSiteInfo;
 import de.mnl.moodle.service.model.MoodleUser;
 import java.io.IOException;
 import java.net.URI;
+import java.time.Instant;
 import java.util.Map;
 import java.util.Set;
 
@@ -104,12 +106,38 @@ public interface MoodleClient extends AutoCloseable {
     MoodleGrouping[] groupings(MoodleCourse course) throws IOException;
 
     /**
-     * Retrieves the assignments from a course.
+     * Adds the assignments to the given courses.
      *
-     * @param course the course
+     * @param courses the courses
+     * @param capabilities the capabilities used for filtering
      * @return the moodle assignment[]
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    MoodleAssignment[] assignments(MoodleCourse course) throws IOException;
+    MoodleCourse[] withAssignments(MoodleCourse[] courses,
+            String... capabilities) throws IOException;
 
+    /**
+     * Get a user's groups filtered by grouping.
+     *
+     * @param course the course
+     * @param user the user
+     * @param grouping the grouping
+     * @return the moodle grouping[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleGroup[] usersGroupsInGrouping(MoodleCourse course, MoodleUser user,
+            MoodleGrouping grouping) throws IOException;
+
+    /**
+     * Retrieve the submissions matching the given criteria.
+     *
+     * @param assignments the assignments
+     * @param status the status
+     * @param since the since
+     * @param before the before
+     * @return the moodle submissions[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleAssignment[] withSubmissions(MoodleAssignment[] assignments,
+            String status, Instant since, Instant before) throws IOException;
 }

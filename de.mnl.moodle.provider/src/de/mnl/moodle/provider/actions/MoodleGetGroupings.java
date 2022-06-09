@@ -18,6 +18,7 @@
 
 package de.mnl.moodle.provider.actions;
 
+import de.mnl.moodle.provider.MoodleException;
 import de.mnl.moodle.provider.RestAction;
 import de.mnl.moodle.provider.RestClient;
 import de.mnl.moodle.service.model.MoodleCourse;
@@ -50,8 +51,16 @@ public class MoodleGetGroupings extends RestAction {
      */
     public MoodleGrouping[] invoke(MoodleCourse course)
             throws IOException {
-        return client.invoke(MoodleGrouping[].class,
-            Map.of("wsfunction", "core_group_get_course_groupings"),
-            Map.of("courseid", course.getId()));
+        try {
+            return client.invoke(MoodleGrouping[].class,
+                Map.of("wsfunction", "core_group_get_course_groupings"),
+                Map.of("courseid", course.getId()));
+        } catch (MoodleException e) {
+            if ("nopermissions".equals(e.errorCode())) {
+                // Permission may be missing in some courses
+                return new MoodleGrouping[0];
+            }
+            throw e;
+        }
     }
 }
