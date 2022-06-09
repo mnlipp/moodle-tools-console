@@ -22,6 +22,7 @@ import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleGrouping;
+import de.mnl.moodle.service.model.MoodleSubmission;
 import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
@@ -33,12 +34,13 @@ import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Event;
@@ -154,7 +156,8 @@ public class ToBeGradedConlet
 
     @SuppressWarnings({ "PMD.GuardLogStatement",
         "PMD.AvoidInstantiatingObjectsInLoops", "PMD.ExcessiveMethodLength",
-        "PMD.CognitiveComplexity", "PMD.NcssCount" })
+        "PMD.CognitiveComplexity", "PMD.NcssCount",
+        "PMD.AvoidLiteralsInIfCondition" })
     private void sendPreviewData(ConsoleSession channel,
             ConletBaseModel model) {
         var bundle = resourceBundle(channel.locale());
@@ -167,19 +170,10 @@ public class ToBeGradedConlet
             return;
         }
         try {
+            @SuppressWarnings("PMD.UseConcurrentHashMap")
+            Map<Long, Map<String, Object>> data = new HashMap<>();
             MoodleClient client = moodleClient.get();
             MoodleCourse[] courses = client.enrolledIn();
-
-//            try {
-//                var grpgs = client.invoke("mod_assign_get_assignments",
-//                    Map.of("courseids",
-//                        Stream.of(courses).map(MoodleCourse::getId)
-//                            .collect(Collectors.toList())));
-//                grpgs = null;
-//            } catch (IOException e) {
-//                System.out.println(e.getMessage());
-//            }
-
             String processingFormat = bundle.getString("ProcessingCourse");
             for (var course : client.withAssignments(courses,
                 "mod/assign:grade")) {
@@ -222,28 +216,22 @@ public class ToBeGradedConlet
                     continue;
                 }
 
-                Map<MoodleCourse,
-                        Map<MoodleAssignment,
-                                Set<MoodleUser>>> toBeGradedAssignments
-                                    = new HashMap<>();
                 for (var assignment : assignmentsToCheck) {
                     for (var submission : assignment.getSubmissions()) {
                         if (!myUsers.containsKey(submission.getUserid())) {
                             continue;
                         }
                         if (!"graded".equals(submission.getGradingstatus())) {
-                            toBeGradedAssignments
-                                .computeIfAbsent(course, c -> new HashMap<>())
-                                .computeIfAbsent(assignment,
-                                    a -> new HashSet<>())
-                                .add(myUsers.get(submission.getUserid()));
+                            addUngraded(client, data, course, assignment,
+                                submission,
+                                myUsers.get(submission.getUserid()));
                         }
                     }
                 }
-                System.out.println(toBeGradedAssignments);
             }
-//            channel.respond(new NotifyConletView(type(),
-//                model.getConletId(), "setPreviewData", data));
+            var displayData = compact(data);
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setPreviewData", displayData));
         } catch (
 
         IOException e) {
@@ -251,6 +239,43 @@ public class ToBeGradedConlet
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
+    }
+
+    @SuppressWarnings({ "unchecked", "PMD.UnusedFormalParameter" })
+    private void addUngraded(MoodleClient client,
+            Map<Long, Map<String, Object>> data, MoodleCourse course,
+            MoodleAssignment assignment, MoodleSubmission submission,
+            MoodleUser user) {
+        // Course data is collected by id
+        @SuppressWarnings({ "PMD.AvoidDuplicateLiterals",
+            "PMD.UseConcurrentHashMap" })
+        Map<String, Object> courseData = data.computeIfAbsent(
+            course.getId(), k -> new HashMap<String, Object>(
+                Map.of("url", client.courseUri(course).toString(),
+                    "shortname", course.getShortName(),
+                    "fullname", course.getFullname(),
+                    "assignments", new HashMap<Long, Object>())));
+        var assignmentData
+            = ((Map<Long, Map<String, Object>>) courseData.get("assignments"))
+                .computeIfAbsent(assignment.getId(),
+                    k -> new HashMap<>(Map.of(
+                        "name", assignment.getName(),
+                        "users", new ArrayList<Map<String, Object>>())));
+        ((List<Map<String, Object>>) assignmentData.get("users"))
+            .add(Map.of("email", user.getEmail(), "fullname",
+                user.getFullname()));
+    }
+
+    @SuppressWarnings({ "PMD.AvoidDuplicateLiterals", "unchecked" })
+    private List<Map<String, Object>>
+            compact(Map<Long, Map<String, Object>> data) {
+        List<Map<String, Object>> displayData = new ArrayList<>();
+        for (var course : data.values()) {
+            displayData.add(course);
+            course.put("assignments",
+                ((Map<String, Object>) course.get("assignments")).values());
+        }
+        return displayData;
     }
 
     @Override

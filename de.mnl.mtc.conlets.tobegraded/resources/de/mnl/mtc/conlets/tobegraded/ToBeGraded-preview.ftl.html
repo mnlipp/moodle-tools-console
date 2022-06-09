@@ -6,7 +6,16 @@
     <p v-if="message">{{ message }}</p>
     <ul>
     <template v-for="course in courses"> 
-      <li><a :href="course.url" target="_blank">{{ course.shortName }}</a></li>
+      <li>
+        <p><a :href="course.url" target="_blank">{{ course.shortname }}</a></p>
+        <p>
+          <ul>
+          <template v-for="assignment in course.assignments">
+            <li>{{ assignment.name }}</li>
+          </template>
+          </ul>
+        </p>
+      </li>
     </template>
     </ul>
   </div>

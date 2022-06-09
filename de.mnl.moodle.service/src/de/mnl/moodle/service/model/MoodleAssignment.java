@@ -19,8 +19,6 @@
 package de.mnl.moodle.service.model;
 
 import java.beans.ConstructorProperties;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -31,8 +29,8 @@ public class MoodleAssignment {
 
     private final long id;
     private String name;
-    private final List<?> configs = new ArrayList<>();
     private MoodleSubmission[] submissions;
+    private MoodleConfig[] configs;
 
     /**
      * Instantiates a new moodle assignment.
@@ -68,8 +66,17 @@ public class MoodleAssignment {
     /**
      * @return the configs
      */
-    public List<?> getConfigs() {
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
+    public MoodleConfig[] getConfigs() {
         return configs;
+    }
+
+    /**
+     * @param configs the configs to set
+     */
+    @SuppressWarnings({ "PMD.ArrayIsStoredDirectly", "PMD.UseVarargs" })
+    public void setConfigs(MoodleConfig[] configs) {
+        this.configs = configs;
     }
 
     /**
