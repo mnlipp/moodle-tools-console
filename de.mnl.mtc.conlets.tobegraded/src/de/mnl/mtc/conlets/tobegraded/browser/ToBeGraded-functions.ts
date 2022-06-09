@@ -32,5 +32,61 @@ declare global {
 window.deMnlMtcTobegraded = {}
 
 window.deMnlMtcTobegraded.initPreview = function(previewDom: HTMLElement) {
+    let app = createApp({
+        setup() {
+            const localize = (key: string) => {
+                return JGConsole.localize(
+                    l10nBundles, JGWC.lang()!, key);
+            };
+
+            const message = ref(null);
+            
+            const setMessage = (msg: string) => {
+                message.value = msg;
+            }
+
+            const courses = ref<any[]>([]);
+            
+            const setCourses = (data: any[] | null) => {
+                if (!data) {
+                    courses.value = [];
+                    return;
+                }
+                courses.value = data;
+            }
+            
+            const apiNode = ref(null);
+            
+            provideApi(apiNode, { setMessage, setCourses });
+            
+            return { apiNode, localize, message, courses };
+        }
+    });
+    app.use(JgwcPlugin);
+    app.mount(previewDom);
 }
+
+JGConsole.registerConletFunction("de.mnl.mtc.conlets.tobegraded.ToBeGradedConlet",
+    "setMessage", function(conletId, message: string) {
+    let previewDom = JGConsole.findConletPreview(conletId);
+    if (!previewDom) {
+        return;
+    }
+    let api = getApi<any>(previewDom.querySelector
+        (":scope .mtc-conlet-tobegraded-api"));
+    api.setMessage(message);
+});
+
+JGConsole.registerConletFunction("de.mnl.mtc.conlets.tobegraded.ToBeGradedConlet",
+    "setPreviewData", function(conletId, courses: [any]) {
+    let previewDom = JGConsole.findConletPreview(conletId);
+    if (!previewDom) {
+        return;
+    }
+    let api = getApi<any>(previewDom.querySelector
+        (":scope .mtc-conlet-tobegraded-api"));
+    api.setMessage(null);
+    api.setCourses(courses);
+});
+
 

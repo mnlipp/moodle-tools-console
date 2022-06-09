@@ -2,7 +2,7 @@ import typescript from 'rollup-plugin-typescript2';
 import postcss from 'rollup-plugin-postcss';
 
 let packagePath = "de/mnl/mtc/conlets/tobegraded";
-let baseName = "Conlet"
+let baseName = "ToBeGraded"
 let module = "build/generated/resources/" + packagePath 
     +  "/" + baseName + "-functions.js";
 
