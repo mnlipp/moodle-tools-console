@@ -22,6 +22,7 @@ import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleCourseSection;
+import de.mnl.moodle.service.model.MoodleGroup;
 import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleModule;
 import de.mnl.moodle.service.model.MoodleSubmission;
@@ -43,6 +44,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Event;
@@ -179,7 +181,8 @@ public class ToBeGradedConlet
         }
         var bundle = resourceBundle(channel.locale());
         try {
-            @SuppressWarnings("PMD.UseConcurrentHashMap")
+            @SuppressWarnings({ "PMD.UseConcurrentHashMap",
+                "PMD.AvoidDuplicateLiterals" })
             Map<Long, Map<String, Object>> data = new HashMap<>();
             MoodleClient client = moodleClient.get();
             MoodleCourse[] courses = client.enrolledIn();
@@ -217,12 +220,16 @@ public class ToBeGradedConlet
 
                 // Get the users in groups in my grading grouping
                 var myUsers = new HashMap<Long, MoodleUser>();
+                @SuppressWarnings("PMD.UseConcurrentHashMap")
+                Map<MoodleUser, MoodleGroup[]> groupsOfUser = new HashMap<>();
                 for (var user : client.enrolled(course)) {
                     // Handle users in my grouping
-                    if (client.usersGroupsInGrouping(course, user,
-                        myGrouping).length == 0) {
+                    var groups = client.usersGroupsInGrouping(course, user,
+                        myGrouping);
+                    if (groups.length == 0) {
                         continue;
                     }
+                    groupsOfUser.put(user, groups);
                     myUsers.put(user.getId(), user);
                 }
                 if (myUsers.isEmpty()) {
@@ -237,9 +244,10 @@ public class ToBeGradedConlet
                             if (course.getContents() == null) {
                                 client.withContents(course, true, "assign");
                             }
+                            MoodleUser user
+                                = myUsers.get(submission.getUserid());
                             addUngraded(client, data, course, assignment,
-                                submission,
-                                myUsers.get(submission.getUserid()));
+                                submission, user, groupsOfUser.get(user));
                         }
                     }
                 }
@@ -247,20 +255,19 @@ public class ToBeGradedConlet
             var displayData = compact(data);
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setPreviewData", displayData));
-        } catch (
-
-        IOException e) {
+        } catch (IOException e) {
             logger.debug(e.getMessage(), e);
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
     }
 
-    @SuppressWarnings({ "unchecked", "PMD.UnusedFormalParameter" })
+    @SuppressWarnings({ "unchecked", "PMD.UnusedFormalParameter",
+        "PMD.UseVarargs" })
     private void addUngraded(MoodleClient client,
             Map<Long, Map<String, Object>> data, MoodleCourse course,
             MoodleAssignment assignment, MoodleSubmission submission,
-            MoodleUser user) {
+            MoodleUser user, MoodleGroup[] groups) {
         // Course data is collected by id
         @SuppressWarnings({ "PMD.AvoidDuplicateLiterals",
             "PMD.UseConcurrentHashMap" })
@@ -276,6 +283,7 @@ public class ToBeGradedConlet
                     k -> {
                         @SuppressWarnings("PMD.UseConcurrentHashMap")
                         Map<String, Object> res = new HashMap<>(Map.of(
+                            "id", assignment.getId(),
                             "name", assignment.getName(),
                             "users", new ArrayList<Map<String, Object>>()));
                         Stream.of(course.getContents())
@@ -287,8 +295,11 @@ public class ToBeGradedConlet
                         return res;
                     });
         ((List<Map<String, Object>>) assignmentData.get("users"))
-            .add(Map.of("email", user.getEmail(), "fullname",
-                user.getFullname()));
+            .add(Map.of("id", user.getId(),
+                "email", user.getEmail(),
+                "fullname", user.getFullname(),
+                "groups", Stream.of(groups).map(g -> Map.of("name", g.getName(),
+                    "id", g.getId())).collect(Collectors.toList())));
     }
 
     @SuppressWarnings({ "PMD.AvoidDuplicateLiterals", "unchecked" })

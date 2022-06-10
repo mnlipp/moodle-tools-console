@@ -47,19 +47,46 @@ window.deMnlMtcTobegraded.initPreview = function(previewDom: HTMLElement) {
 
             const courses = ref<any[]>([]);
             
+            const groupsInAssignment 
+                = new Map<number,Map<number,any>>();
+                
+            const groupsByAssignment = (assignmentId: number) => {
+                let groups = [...groupsInAssignment.get(assignmentId)!.values()];
+                return groups.sort((a, b) => a.name.localeCompare(b.name));
+            }
+            
             const setCourses = (data: any[] | null) => {
                 if (!data) {
                     courses.value = [];
                     return;
                 }
+                for (let course of data) {
+                    for (let assignment of course.assignments) {
+                        for (let user of assignment.users) {
+                            for (let group of user.groups) {
+                                if (!groupsInAssignment.has(assignment.id)) {
+                                    groupsInAssignment.set(assignment.id,
+                                        new Map<number,any>());
+                                }
+                                let groups = groupsInAssignment.get(assignment.id)!;
+                                groups.set(group.id, group);
+                            }
+                        }
+                    }
+                }                
                 courses.value = data;
+            }
+            
+            const groupUrl = (assignment: any, group: any) => {
+                return assignment.url + "&group=" + group.id;
             }
             
             const apiNode = ref(null);
             
             provideApi(apiNode, { setMessage, setCourses });
             
-            return { apiNode, localize, message, courses };
+            return { apiNode, localize, message, courses, groupsByAssignment,
+                groupUrl };
         }
     });
     app.use(JgwcPlugin);

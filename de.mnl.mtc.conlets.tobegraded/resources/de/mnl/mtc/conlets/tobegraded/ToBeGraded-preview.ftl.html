@@ -10,8 +10,13 @@
         <p>
           <ul>
           <template v-for="assignment in course.assignments">
-            <li><a :href="assignment.url" 
-                  target="_blank">{{ assignment.name }}</a></li>
+            <li><p>
+              <a :href="assignment.url" target="_blank">{{ assignment.name }}</a>
+              <template v-for="group in groupsByAssignment(assignment.id)">
+                &nbsp;(<a :href="groupUrl(assignment, group)" target="_blank">
+                  {{group.name}}</a>)
+              </template>
+            </p></li>
           </template>
           </ul>
         </p>
