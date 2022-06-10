@@ -2,11 +2,10 @@
     data-portlet-title="${_("conletName")}"
     data-jgwc-on-load="deMnlMtcTobegraded.initPreview"
     data-jgwc-on-unload="JGConsole.jgwc.unmountVueApps">
-  <div ref="apiNode" class="mtc-conlet-tobegraded-api mtc-conlet-tobegraded__info">
-    <p v-if="message">{{ message }}</p>
+  <div ref="apiNode" class="mtc-conlet-tobegraded-api">
+    <p class="mtc-conlet-tobegraded__info" v-if="message">{{ message }}</p>
     <ul>
-    <template v-for="course in courses"> 
-      <li>
+      <li v-for="course in courses">
         <p><a :href="course.url" target="_blank">{{ course.shortname }}</a></p>
         <p>
           <ul>
@@ -16,7 +15,6 @@
           </ul>
         </p>
       </li>
-    </template>
     </ul>
   </div>
 </div>

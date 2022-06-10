@@ -29,6 +29,7 @@ public class MoodleAssignment {
 
     private final long id;
     private String name;
+    private long grade;
     private MoodleSubmission[] submissions;
     private MoodleConfig[] configs;
 
@@ -59,8 +60,27 @@ public class MoodleAssignment {
         this.name = name;
     }
 
+    /**
+     * Gets the name.
+     *
+     * @return the name
+     */
     public String getName() {
         return name;
+    }
+
+    /**
+     * @return the grade
+     */
+    public long getGrade() {
+        return grade;
+    }
+
+    /**
+     * @param grade the grade to set
+     */
+    public void setGrade(long grade) {
+        this.grade = grade;
     }
 
     /**

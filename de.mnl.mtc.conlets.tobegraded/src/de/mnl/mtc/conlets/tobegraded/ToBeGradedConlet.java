@@ -187,11 +187,15 @@ public class ToBeGradedConlet
                     model.getConletId(), "setMessage",
                     String.format(processingFormat, course.getShortName())));
 
-                // We have a course with assignments gradable by current user.
+                // Filter ungraded assignments
+                var assignmentsToCheck = Stream.of(course.getAssignments())
+                    .filter(a -> a.getGrade() != 0)
+                    .toArray(s -> new MoodleAssignment[s]);
+
                 // Check if the assignments have submissions within the
                 // last 2 months
-                var assignmentsToCheck = client.withSubmissions(
-                    course.getAssignments(), "submitted",
+                assignmentsToCheck = client.withSubmissions(
+                    assignmentsToCheck, "submitted",
                     Instant.now().minus(Duration.of(60, ChronoUnit.DAYS)),
                     null);
                 if (assignmentsToCheck.length == 0) {
