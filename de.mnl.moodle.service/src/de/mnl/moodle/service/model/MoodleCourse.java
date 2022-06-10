@@ -34,6 +34,7 @@ public class MoodleCourse {
     private String fullname;
     private String displayname;
     private Long startdate;
+    private MoodleCourseSection[] contents;
     private MoodleAssignment[] assignments = new MoodleAssignment[0];
 
     /**
@@ -140,6 +141,22 @@ public class MoodleCourse {
     @SuppressWarnings("PMD.ArrayIsStoredDirectly")
     public void setAssignments(MoodleAssignment... assignments) {
         this.assignments = assignments;
+    }
+
+    /**
+     * @return the contents
+     */
+    @SuppressWarnings("PMD.MethodReturnsInternalArray")
+    public MoodleCourseSection[] getContents() {
+        return contents;
+    }
+
+    /**
+     * @param contents the contents to set
+     */
+    @SuppressWarnings({ "PMD.UseVarargs", "PMD.ArrayIsStoredDirectly" })
+    public void setContents(MoodleCourseSection[] contents) {
+        this.contents = contents;
     }
 
     /**

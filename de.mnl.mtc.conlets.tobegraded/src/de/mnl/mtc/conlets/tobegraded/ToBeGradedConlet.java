@@ -21,7 +21,9 @@ package de.mnl.mtc.conlets.tobegraded;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleAssignment;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleCourseSection;
 import de.mnl.moodle.service.model.MoodleGrouping;
+import de.mnl.moodle.service.model.MoodleModule;
 import de.mnl.moodle.service.model.MoodleSubmission;
 import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
@@ -136,23 +138,27 @@ public class ToBeGradedConlet
 
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
-            ConsoleSession consoleSession, String conletId,
-            ConletBaseModel conletState) throws Exception {
+            ConsoleSession channel, String conletId,
+            ConletBaseModel model) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
         if (event.renderAs().contains(RenderMode.Preview)) {
             Template tpl
                 = freemarkerConfig().getTemplate("ToBeGraded-preview.ftl.html");
-            consoleSession.respond(new RenderConlet(type(), conletId,
+            channel.respond(new RenderConlet(type(), conletId,
                 processTemplate(event, tpl,
-                    fmModel(event, consoleSession, conletId, conletState)))
+                    fmModel(event, channel, conletId, model)))
                         .setRenderAs(
                             RenderMode.Preview.addModifiers(event.renderAs()))
                         .setSupportedModes(MODES));
             renderedAs.add(RenderMode.Preview);
+            var bundle = resourceBundle(channel.locale());
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setMessage",
+                bundle.getString("Loading")));
             activeEventPipeline().executorService().execute(new Runnable() {
                 @Override
                 public void run() {
-                    sendPreviewData(consoleSession, conletState);
+                    sendPreviewData(channel, model);
                 }
             });
         }
@@ -162,18 +168,16 @@ public class ToBeGradedConlet
     @SuppressWarnings({ "PMD.GuardLogStatement",
         "PMD.AvoidInstantiatingObjectsInLoops", "PMD.ExcessiveMethodLength",
         "PMD.CognitiveComplexity", "PMD.NcssCount",
-        "PMD.AvoidLiteralsInIfCondition" })
+        "PMD.AvoidLiteralsInIfCondition", "PMD.NPathComplexity" })
     private void sendPreviewData(ConsoleSession channel,
             ConletBaseModel model) {
-        var bundle = resourceBundle(channel.locale());
-        channel.respond(new NotifyConletView(type(),
-            model.getConletId(), "setMessage", bundle.getString("Loading")));
         Optional<MoodleClient> moodleClient
             = channel.associated(MoodleClient.class);
         if (moodleClient.isEmpty()) {
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
+        var bundle = resourceBundle(channel.locale());
         try {
             @SuppressWarnings("PMD.UseConcurrentHashMap")
             Map<Long, Map<String, Object>> data = new HashMap<>();
@@ -224,13 +228,15 @@ public class ToBeGradedConlet
                 if (myUsers.isEmpty()) {
                     continue;
                 }
-
                 for (var assignment : assignmentsToCheck) {
                     for (var submission : assignment.getSubmissions()) {
                         if (!myUsers.containsKey(submission.getUserid())) {
                             continue;
                         }
                         if (!"graded".equals(submission.getGradingstatus())) {
+                            if (course.getContents() == null) {
+                                client.withContents(course, true, "assign");
+                            }
                             addUngraded(client, data, course, assignment,
                                 submission,
                                 myUsers.get(submission.getUserid()));
@@ -267,9 +273,19 @@ public class ToBeGradedConlet
         var assignmentData
             = ((Map<Long, Map<String, Object>>) courseData.get("assignments"))
                 .computeIfAbsent(assignment.getId(),
-                    k -> new HashMap<>(Map.of(
-                        "name", assignment.getName(),
-                        "users", new ArrayList<Map<String, Object>>())));
+                    k -> {
+                        @SuppressWarnings("PMD.UseConcurrentHashMap")
+                        Map<String, Object> res = new HashMap<>(Map.of(
+                            "name", assignment.getName(),
+                            "users", new ArrayList<Map<String, Object>>()));
+                        Stream.of(course.getContents())
+                            .map(MoodleCourseSection::getModules)
+                            .flatMap(m -> Stream.of(m))
+                            .filter(m -> m.getInstance() == assignment.getId())
+                            .findFirst().map(MoodleModule::getUrl)
+                            .ifPresent(url -> res.put("url", url));
+                        return res;
+                    });
         ((List<Map<String, Object>>) assignmentData.get("users"))
             .add(Map.of("email", user.getEmail(), "fullname",
                 user.getFullname()));

@@ -30,6 +30,7 @@ public class MoodleModule {
     private final long id;
     private final String name;
     private final long instance;
+    private String url;
 
     /**
      * Instantiates a new moodle module.
@@ -70,6 +71,20 @@ public class MoodleModule {
      */
     public long getInstance() {
         return instance;
+    }
+
+    /**
+     * @return the url
+     */
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     /**

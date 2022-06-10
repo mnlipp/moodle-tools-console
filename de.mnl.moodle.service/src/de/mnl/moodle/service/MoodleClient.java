@@ -140,4 +140,16 @@ public interface MoodleClient extends AutoCloseable {
      */
     MoodleAssignment[] withSubmissions(MoodleAssignment[] assignments,
             String status, Instant since, Instant before) throws IOException;
+
+    /**
+     * Retrieve a course's contents and add it to the representation.
+     *
+     * @param course the course
+     * @param excludeContents whether to exclude the module's contents 
+     * @param modname if != null, return only modules of the given type
+     * @return the moodle course sections
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleCourse withContents(MoodleCourse course, boolean excludeContents,
+            String modname) throws IOException;
 }

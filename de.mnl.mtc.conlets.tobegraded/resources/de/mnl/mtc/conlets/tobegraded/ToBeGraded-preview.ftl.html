@@ -10,7 +10,8 @@
         <p>
           <ul>
           <template v-for="assignment in course.assignments">
-            <li>{{ assignment.name }}</li>
+            <li><a :href="assignment.url" 
+                  target="_blank">{{ assignment.name }}</a></li>
           </template>
           </ul>
         </p>

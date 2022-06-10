@@ -23,6 +23,8 @@ import de.mnl.moodle.provider.RestClient;
 import de.mnl.moodle.service.model.MoodleCourse;
 import de.mnl.moodle.service.model.MoodleCourseSection;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -46,10 +48,19 @@ public class MoodleCourseContents extends RestAction {
      * @return the moodle course section[]
      * @throws IOException Signals that an I/O exception has occurred.
      */
-    public MoodleCourseSection[] invoke(MoodleCourse course)
-            throws IOException {
+    public MoodleCourseSection[] invoke(MoodleCourse course,
+            boolean excludeContents, String modname) throws IOException {
+        @SuppressWarnings("PMD.UseConcurrentHashMap")
+        List<Map<String, Object>> options
+            = new ArrayList<>(List.of(Map.of(
+                "name", "excludecontents",
+                "value", Boolean.toString(excludeContents))));
+        if (modname != null) {
+            options.add(Map.of("name", "modname", "value", modname));
+        }
         return client.invoke(MoodleCourseSection[].class, Map.of(
             "wsfunction", "core_course_get_contents"),
-            Map.of("courseid", course.getId()));
+            Map.of("courseid", course.getId(),
+                "options", options));
     }
 }

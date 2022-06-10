@@ -19,6 +19,7 @@
 package de.mnl.moodle.provider;
 
 import de.mnl.moodle.provider.actions.MoodleCourseAssignments;
+import de.mnl.moodle.provider.actions.MoodleCourseContents;
 import de.mnl.moodle.provider.actions.MoodleCourseDetails;
 import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
 import de.mnl.moodle.provider.actions.MoodleEnrolledUsers;
@@ -131,6 +132,14 @@ public class MoodleClientConnection implements MoodleClient {
             String status, Instant since, Instant before) throws IOException {
         return new MoodleSubmissions(restClient).invoke(assignments, status,
             since, before);
+    }
+
+    @Override
+    public MoodleCourse withContents(MoodleCourse course,
+            boolean excludeContents, String modname) throws IOException {
+        course.setContents(new MoodleCourseContents(restClient).invoke(course,
+            excludeContents, modname));
+        return course;
     }
 
     @Override
