@@ -149,7 +149,12 @@ public class ToBeGradedConlet
                             RenderMode.Preview.addModifiers(event.renderAs()))
                         .setSupportedModes(MODES));
             renderedAs.add(RenderMode.Preview);
-            sendPreviewData(consoleSession, conletState);
+            activeEventPipeline().executorService().execute(new Runnable() {
+                @Override
+                public void run() {
+                    sendPreviewData(consoleSession, conletState);
+                }
+            });
         }
         return renderedAs;
     }
