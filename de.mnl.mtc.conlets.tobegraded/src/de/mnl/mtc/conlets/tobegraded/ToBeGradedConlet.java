@@ -185,7 +185,12 @@ public class ToBeGradedConlet
                 "PMD.AvoidDuplicateLiterals" })
             Map<Long, Map<String, Object>> data = new HashMap<>();
             MoodleClient client = moodleClient.get();
-            MoodleCourse[] courses = client.enrolledIn();
+            Instant limit
+                = Instant.now().minus(Duration.of(190, ChronoUnit.DAYS));
+            MoodleCourse[] courses = Stream.of(client.enrolledIn())
+                .filter(c -> c.startDate().map(sd -> !sd.isBefore(limit))
+                    .orElse(false))
+                .toArray(s -> new MoodleCourse[s]);
             String processingFormat = bundle.getString("ProcessingCourse");
             for (var course : client.withAssignments(courses,
                 "mod/assign:grade")) {
