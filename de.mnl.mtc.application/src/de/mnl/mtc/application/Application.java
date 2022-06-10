@@ -18,12 +18,27 @@
 
 package de.mnl.mtc.application;
 
+import de.mnl.osgi.lf4osgi.Logger;
+import de.mnl.osgi.lf4osgi.LoggerFactory;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.UnrecoverableKeyException;
+import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.SSLContext;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Component;
 import org.jgrapes.core.Components;
@@ -36,6 +51,7 @@ import org.jgrapes.http.events.Request;
 import org.jgrapes.io.FileStorage;
 import org.jgrapes.io.NioDispatcher;
 import org.jgrapes.io.util.PermitsPool;
+import org.jgrapes.net.SslCodec;
 import org.jgrapes.net.TcpServer;
 import org.jgrapes.osgi.core.ComponentCollector;
 import org.jgrapes.webconsole.base.BrowserLocalBackedKVStore;
@@ -53,6 +69,9 @@ import org.osgi.framework.BundleContext;
  */
 public class Application extends Component implements BundleActivator {
 
+    @SuppressWarnings("PMD.FieldNamingConventions")
+    private static final Logger logger
+        = LoggerFactory.getLogger(Application.class);
     private Application app;
 
     /*
@@ -68,14 +87,46 @@ public class Application extends Component implements BundleActivator {
         // Attach a general nio dispatcher
         app.attach(new NioDispatcher());
 
-        // Create a TCP server listening on port 5001
+        // Create a TCP server
         Channel tcpChannel = new NamedChannel("TCP");
-        app.attach(new TcpServer(tcpChannel)
-            .setServerAddress(new InetSocketAddress(
-                Optional.ofNullable(System.getenv("PORT"))
-                    .map(Integer::parseInt).orElse(5002)))
-            .setConnectionLimiter(new PermitsPool(300))
-            .setMinimalPurgeableTime(1000));
+        Optional.ofNullable(System.getenv("PORT")).map(Integer::parseInt)
+            .ifPresent(port -> {
+                app.attach(new TcpServer(tcpChannel)
+                    .setServerAddress(new InetSocketAddress(port))
+                    .setConnectionLimiter(new PermitsPool(300))
+                    .setMinimalPurgeableTime(1000));
+            });
+
+        // Create TLS server
+        Optional.ofNullable(System.getenv("TLS_PORT")).map(Integer::parseInt)
+            .ifPresent(port -> {
+                try {
+                    // Create TLS "converter"
+                    KeyStore serverStore = KeyStore.getInstance("JKS");
+                    try (InputStream keyFile
+                        = Files.newInputStream(Paths.get("localhost.jks"))) {
+                        serverStore.load(keyFile, "nopass".toCharArray());
+                    }
+                    KeyManagerFactory kmf = KeyManagerFactory.getInstance(
+                        KeyManagerFactory.getDefaultAlgorithm());
+                    kmf.init(serverStore, "nopass".toCharArray());
+                    SSLContext sslContext = SSLContext.getInstance("TLS");
+                    sslContext.init(kmf.getKeyManagers(), null,
+                        new SecureRandom());
+                    // Create a TCP server for SSL
+                    Channel securedNetwork = app.attach(
+                        new TcpServer()
+                            .setServerAddress(new InetSocketAddress(port))
+                            .setBacklog(3000)
+                            .setConnectionLimiter(new PermitsPool(50)));
+                    app.attach(
+                        new SslCodec(tcpChannel, securedNetwork, sslContext));
+                } catch (IOException | KeyStoreException
+                        | NoSuchAlgorithmException | UnrecoverableKeyException
+                        | KeyManagementException | CertificateException e) {
+                    logger.error(() -> e.getMessage(), e);
+                }
+            });
 
         // Create an HTTP server as converter between transport and application
         // layer.
