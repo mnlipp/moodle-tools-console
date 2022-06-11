@@ -89,13 +89,16 @@ public class Application extends Component implements BundleActivator {
 
         // Create a TCP server
         Channel tcpChannel = new NamedChannel("TCP");
-        Optional.ofNullable(System.getenv("PORT")).map(Integer::parseInt)
-            .ifPresent(port -> {
-                app.attach(new TcpServer(tcpChannel)
-                    .setServerAddress(new InetSocketAddress(port))
-                    .setConnectionLimiter(new PermitsPool(300))
-                    .setMinimalPurgeableTime(1000));
-            });
+        Optional.ofNullable(System.getenv("PORT")).ifPresent(port -> {
+            String[] parts = port.split(":");
+            InetSocketAddress addr = parts.length > 1
+                ? new InetSocketAddress(parts[0], Integer.parseInt(parts[1]))
+                : new InetSocketAddress(Integer.parseInt(parts[0]));
+            app.attach(new TcpServer(tcpChannel)
+                .setServerAddress(addr)
+                .setConnectionLimiter(new PermitsPool(300))
+                .setMinimalPurgeableTime(1000));
+        });
 
         // Create TLS server
         Optional.ofNullable(System.getenv("TLS_PORT")).map(Integer::parseInt)
