@@ -53,7 +53,7 @@
 	org.apache.felix.log.storeDebug=true,\
     de.mnl.osgi.osgi2jul.handlers='java.util.logging.ConsoleHandler[1]', \
     de.mnl.osgi.osgi2jul.handler.1.format='{0} [{2}/{4}]'
--runee: JavaSE-17
+-runee: JavaSE-11
 -runvm: -Xmx256m, \
     -Xbootclasspath/a:${basename;${repo;de.mnl.osgi.jul2osgi.lib;latest}}, \
     -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager
