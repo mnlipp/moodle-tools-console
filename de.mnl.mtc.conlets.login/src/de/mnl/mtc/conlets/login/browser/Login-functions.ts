@@ -66,18 +66,25 @@ window.deMnlMtcLogin.openDialog
                 warning.value = warningMsg;
             }
 
-            const formDom = ref(null);
+            const formDom = ref<HTMLElement>(null);
+            
+            const taggedInstance = computed(() => !formDom.value ? null
+                : (<HTMLElement>formDom.value.closest("*[data-tagged-instance]")!)
+                .dataset["taggedInstance"]);
 
             provideApi(formDom, { accountData, setMessages });
                         
-            return { formDom, formId, localize, accountData, info, warning };
+            return { formDom, formId, localize, accountData, info, warning,
+                taggedInstance };
         },
         template: `
           <form :id="formId" ref="formDom" onsubmit="return false;"
             class="mtc-conlet-login-form">
             <fieldset>
-              <legend>{{ localize("Login Data") }}</legend>
-              <p>
+              <legend v-if="taggedInstance">{{ localize("Login Data") }} 
+                ({{ taggedInstance }})</legend>
+              <legend v-else>{{ localize("Login Data") }}</legend>
+              <p v-if="!taggedInstance">
                 <label class="form__label--full-width">
                   <span>
                     {{ localize("Website") }}

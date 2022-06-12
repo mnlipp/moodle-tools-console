@@ -144,6 +144,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         // Create model and save in session.
         String conletId = type() + TYPE_INSTANCE_SEPARATOR + "Singleton";
         AccountModel accountModel = new AccountModel(conletId);
+        Optional.ofNullable(System.getenv("MOODLE_SERVER"))
+            .ifPresent(moodle -> accountModel.setTaggedInstance(moodle));
         accountModel.setDialogOpen(true);
         putInSession(channel.browserSession(), conletId, accountModel);
 
@@ -152,6 +154,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         final Map<String, Object> renderModel
             = fmSessionModel(channel.browserSession());
         renderModel.put("locale", channel.locale());
+        renderModel.put("taggedInstance",
+            Optional.ofNullable(accountModel.getTaggedInstance()).orElse(""));
         var bundle = resourceBundle(channel.locale());
         channel.respond(new OpenModalDialog(type(), conletId,
             processTemplate(event, tpl,
@@ -194,8 +198,12 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages",
                 bundle.getString("Connecting"), null));
+            String site = model.getTaggedInstance();
+            if (site == null) {
+                site = event.params().asString(0);
+            }
             client = moodleService
-                .connect(event.params().asString(0), event.params().asString(1),
+                .connect(site, event.params().asString(1),
                     event.params().asString(2).toCharArray());
         } catch (MoodleAuthFailedException e) {
             channel.respond(new NotifyConletView(type(),
@@ -279,6 +287,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     public static class AccountModel extends ConletBaseModel {
 
         private boolean dialogOpen;
+        private String taggedInstance;
 
         /**
          * Creates a new model with the given type and id.
@@ -306,6 +315,20 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
          */
         public void setDialogOpen(boolean dialogOpen) {
             this.dialogOpen = dialogOpen;
+        }
+
+        /**
+         * @return the taggedInstance
+         */
+        public String getTaggedInstance() {
+            return taggedInstance;
+        }
+
+        /**
+         * @param taggedInstance the taggedInstance to set
+         */
+        public void setTaggedInstance(String taggedInstance) {
+            this.taggedInstance = taggedInstance;
         }
 
     }
