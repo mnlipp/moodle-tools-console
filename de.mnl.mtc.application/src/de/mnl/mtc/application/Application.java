@@ -143,7 +143,9 @@ public class Application extends Component implements BundleActivator {
         httpServer.attach(new FileStorage(httpChannel, 65_536));
         ConsoleWeblet consoleWeblet
             = httpServer.attach(new VueJsConsoleWeblet(httpChannel,
-                Channel.SELF, new URI("/")))
+                Channel.SELF,
+                new URI(Optional.ofNullable(
+                    System.getenv("PATH_PREFIX")).orElse("") + "/")))
                 .prependClassTemplateLoader(getClass())
                 .prependResourceBundleProvider(getClass());
         WebConsole console = consoleWeblet.console();
