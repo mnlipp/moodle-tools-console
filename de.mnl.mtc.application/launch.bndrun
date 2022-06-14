@@ -93,7 +93,7 @@
 	org.jgrapes.io;version='[1.8.0,1.8.1)',\
 	org.jgrapes.util;version='[1.8.0,1.8.1)',\
 	org.jgrapes.osgi.core;version='[1.2.0,1.2.1)',\
-	org.jgrapes.webconsole.base;version='[0.38.0,0.38.1)',\
+	org.jgrapes.webconsole.base;version='[0.39.0,0.39.1)',\
 	org.jgrapes.webconsole.vuejs;version='[0.17.0,0.17.1)',\
 	org.jgrapes.webconsole.provider.chartjs;version='[0.31.1,0.31.2)',\
 	org.jgrapes.webconsole.provider.fontawesome;version='[0.28.1,0.28.2)',\
@@ -111,4 +111,4 @@
 	de.mnl.moodle.provider;version=snapshot,\
 	de.mnl.mtc.conlets.login;version=snapshot,\
 	de.mnl.mtc.conlets.courselist;version=snapshot,\
-    de.mnl.mtc.conlets.tobegraded;version=snapshot
+	de.mnl.mtc.conlets.tobegraded;version=snapshot
