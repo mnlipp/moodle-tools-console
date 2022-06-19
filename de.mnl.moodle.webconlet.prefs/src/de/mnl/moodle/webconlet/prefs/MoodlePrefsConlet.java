@@ -45,7 +45,7 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 public class MoodlePrefsConlet extends FreeMarkerConlet<Serializable> {
 
     private static final Set<RenderMode> MODES = RenderMode.asSet(
-        RenderMode.Component);
+        RenderMode.Content);
 
     /**
      * Creates a new component with its channel set to the given 
@@ -81,7 +81,7 @@ public class MoodlePrefsConlet extends FreeMarkerConlet<Serializable> {
                     .setScriptUri(event.renderSupport().conletResource(
                         type(), "MoodlePrefs-functions.js"))
                     .setScriptType("module"))
-                .addRenderMode(RenderMode.Component));
+                .addRenderMode(RenderMode.Content));
     }
 
     @Override
@@ -89,15 +89,15 @@ public class MoodlePrefsConlet extends FreeMarkerConlet<Serializable> {
             ConsoleSession channel, String conletId,
             Serializable conletState) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>();
-        if (event.renderAs().contains(RenderMode.Component)) {
+        if (event.renderAs().contains(RenderMode.Content)) {
             Template tpl
                 = freemarkerConfig().getTemplate("MoodlePrefs.ftl.html");
             channel.respond(new RenderConlet(type(), conletId,
                 processTemplate(event, tpl,
                     fmModel(event, channel, conletId, conletState)))
-                        .setRenderAs(RenderMode.Component)
+                        .setRenderAs(RenderMode.Content)
                         .setSupportedModes(MODES));
-            renderedAs.add(RenderMode.Component);
+            renderedAs.add(RenderMode.Content);
         }
         return renderedAs;
     }
