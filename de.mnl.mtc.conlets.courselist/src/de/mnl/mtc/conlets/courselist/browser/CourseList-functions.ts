@@ -68,22 +68,22 @@ window.deMnlMtcCourseList.initPreview = function(previewDom: HTMLElement) {
 
 JGConsole.registerConletFunction("de.mnl.mtc.conlets.courselist.CourseListConlet",
     "setMessage", function(conletId, message: string) {
-    let previewDom = JGConsole.findConletPreview(conletId);
-    if (!previewDom) {
+    let previewConlet = JGConsole.findConletPreview(conletId);
+    if (!previewConlet) {
         return;
     }
-    let api = getApi<any>(previewDom.querySelector
+    let api = getApi<any>(previewConlet.element().querySelector
         (":scope .mtc-conlet-courselist-api"));
     api.setMessage(message);
 });
 
 JGConsole.registerConletFunction("de.mnl.mtc.conlets.courselist.CourseListConlet",
     "setCourses", function(conletId, courses: [any]) {
-    let previewDom = JGConsole.findConletPreview(conletId);
-    if (!previewDom) {
+    let previewConlet = JGConsole.findConletPreview(conletId);
+    if (!previewConlet) {
         return;
     }
-    let api = getApi<any>(previewDom.querySelector
+    let api = getApi<any>(previewConlet.element().querySelector
         (":scope .mtc-conlet-courselist-api"));
     api.setMessage(null);
     api.setCourses(courses);
