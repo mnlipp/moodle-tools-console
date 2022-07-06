@@ -29,8 +29,8 @@ import freemarker.template.TemplateNotFoundException;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
 import java.io.StringWriter;
-import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
@@ -56,9 +56,11 @@ import org.jgrapes.webconsole.base.events.DisplayNotification;
 import org.jgrapes.webconsole.base.events.NotifyConletModel;
 import org.jgrapes.webconsole.base.events.NotifyConletView;
 import org.jgrapes.webconsole.base.events.OpenModalDialog;
+import org.jgrapes.webconsole.base.events.RenderConlet;
 import org.jgrapes.webconsole.base.events.RenderConletRequestBase;
 import org.jgrapes.webconsole.base.events.ResourceNotAvailable;
 import org.jgrapes.webconsole.base.events.SetLocale;
+import org.jgrapes.webconsole.base.events.SimpleConsoleCommand;
 import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 
 /**
@@ -82,6 +84,34 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         this.moodleService = moodleService;
     }
 
+    @Override
+    protected String generateInstanceId(AddConletRequest event,
+            ConsoleSession session) {
+        return "Singleton";
+    }
+
+    @Override
+    protected Optional<AccountModel> createStateRepresentation(
+            RenderConletRequestBase<?> event,
+            ConsoleSession channel, String conletId) throws IOException {
+        return Optional.of(new AccountModel(conletId));
+    }
+
+    /**
+     * As a model has already been created in {@link #doUpdateConletState},
+     * the "new" model may already exist in the session.
+     */
+    @Override
+    protected Optional<AccountModel> createNewState(AddConletRequest event,
+            ConsoleSession session, String conletId) throws Exception {
+        Optional<AccountModel> model
+            = stateFromSession(session.browserSession(), conletId);
+        if (model.isPresent()) {
+            return model;
+        }
+        return super.createNewState(event, session, conletId);
+    }
+
     /**
      * Register conlet.
      *
@@ -103,22 +133,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
                     type(), "Login-functions.js"))
                 .setScriptType("module"))
             .addCss(event.renderSupport(), WebConsoleUtils.uriFromPath(
-                "Login-style.css")));
-    }
-
-    @Override
-    protected Optional<AccountModel> createNewState(AddConletRequest event,
-            ConsoleSession session, String conletId) throws Exception {
-        return Optional
-            .ofNullable(stateFromSession(session.browserSession(), conletId)
-                .orElse(super.createNewState(event, session, conletId).get()));
-    }
-
-    @Override
-    protected Optional<AccountModel> createStateRepresentation(
-            RenderConletRequestBase<?> event,
-            ConsoleSession channel, String conletId) throws IOException {
-        return Optional.of(new AccountModel(conletId));
+                "Login-style.css"))
+            .addPageContent("headerIcons", Map.of("priority", "1000"))
+            .addRenderMode(RenderMode.Content));
     }
 
     /**
@@ -135,6 +152,12 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     public void onConsolePrepared(ConsolePrepared event, ConsoleSession channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
             ParseException, IOException {
+        // Check if login connection to moodle service exists
+        if (channel.associated(MoodleClient.class).isPresent()) {
+            return;
+        }
+
+        // Force login
         event.suspendHandling();
         channel.setAssociated(this, event);
 
@@ -184,15 +207,50 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
             ConsoleSession channel, String conletId,
-            AccountModel conletState) throws Exception {
-        return Collections.emptySet();
+            AccountModel model) throws Exception {
+        Set<RenderMode> renderedAs = new HashSet<>();
+        if (event.renderAs().contains(RenderMode.Content)) {
+            Template tpl
+                = freemarkerConfig().getTemplate("Login-status.ftl.html");
+            channel.respond(new RenderConlet(type(), conletId,
+                processTemplate(event, tpl,
+                    fmModel(event, channel, conletId, model)))
+                        .setRenderAs(RenderMode.Content));
+            channel.respond(new NotifyConletView(type(), conletId,
+                "updateUser", model.getFullName()));
+            renderedAs.add(RenderMode.Content);
+        }
+        return renderedAs;
     }
 
     @Override
     protected void doUpdateConletState(NotifyConletModel event,
             ConsoleSession channel, AccountModel model) {
         // Let's give it a try
-        MoodleClient client;
+        if ("loginData".equals(event.method())) {
+            MoodleClient client = attemptLogin(event, channel, model);
+
+            // Update mode, associate with channel and track
+            model.setFullName(client.siteInfo().getFullname());
+            channel.setAssociated(MoodleClient.class, client);
+            trackConlet(channel, model.getConletId(), null);
+
+            // Close dialog and resume console initialization
+            channel.respond(new CloseModalDialog(type(), event.conletId()));
+            channel.associated(this, ConsolePrepared.class)
+                .ifPresent(Event::resumeHandling);
+            return;
+        }
+        if ("logout".equals(event.method())) {
+            model.setUserName(null);
+            model.setFullName(null);
+            channel.setAssociated(MoodleClient.class, null);
+            channel.respond(new SimpleConsoleCommand("reload"));
+        }
+    }
+
+    private MoodleClient attemptLogin(NotifyConletModel event,
+            ConsoleSession channel, AccountModel model) {
         var bundle = resourceBundle(channel.locale());
         try {
             channel.respond(new NotifyConletView(type(),
@@ -202,31 +260,20 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             if (site == null) {
                 site = event.params().asString(0);
             }
-            client = moodleService
-                .connect(site, event.params().asString(1),
+            model.setUserName(event.params().asString(1));
+            return moodleService
+                .connect(site, model.getUserName(),
                     event.params().asString(2).toCharArray());
         } catch (MoodleAuthFailedException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages", null, e.getMessage()));
-            return;
+            return null;
         } catch (IOException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages",
                 null, bundle.getString("IOException")));
-            return;
+            return null;
         }
-        if (client == null) {
-            return;
-        }
-
-        // Associate with channel and track
-        channel.setAssociated(MoodleClient.class, client);
-        trackConlet(channel, model.getConletId(), null);
-
-        // Okay, close and resume
-        channel.respond(new CloseModalDialog(type(), event.conletId()));
-        channel.associated(this, ConsolePrepared.class)
-            .ifPresent(Event::resumeHandling);
     }
 
     /**
@@ -264,12 +311,17 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     @Handler
     public void onResourceNotAvailable(ResourceNotAvailable event,
             ConsoleSession channel) {
-        if (MoodleClient.class.equals(event.itemSpecification())) {
+        if (!MoodleClient.class.equals(event.itemSpecification())) {
+            return;
+        }
+        channel.associated(MoodleClient.class).ifPresent(client -> {
+            client.close();
+            channel.setAssociated(MoodleClient.class, null);
             var bundle = resourceBundle(channel.locale());
             channel.respond(new DisplayNotification(
                 "<span>" + bundle.getString("connectionLost") + "</span>",
                 new HashMap<>()));
-        }
+        });
     }
 
     @Override
@@ -287,6 +339,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     public static class AccountModel extends ConletBaseModel {
 
         private boolean dialogOpen;
+        private String userName;
+        private String fullName;
         private String taggedInstance;
 
         /**
@@ -315,6 +369,34 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
          */
         public void setDialogOpen(boolean dialogOpen) {
             this.dialogOpen = dialogOpen;
+        }
+
+        /**
+         * @return the userName
+         */
+        public String getUserName() {
+            return userName;
+        }
+
+        /**
+         * @param userName the userName to set
+         */
+        public void setUserName(String userName) {
+            this.userName = userName;
+        }
+
+        /**
+         * @return the fullName
+         */
+        public String getFullName() {
+            return fullName;
+        }
+
+        /**
+         * @param fullName the fullName to set
+         */
+        public void setFullName(String fullName) {
+            this.fullName = fullName;
         }
 
         /**

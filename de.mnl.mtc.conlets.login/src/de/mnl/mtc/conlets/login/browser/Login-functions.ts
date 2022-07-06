@@ -19,7 +19,7 @@
 import { reactive, ref, createApp, computed, onMounted } from "vue";
 import JGConsole from "jgconsole"
 import JgwcPlugin, { JGWC } from "jgwc";
-import { provideApi, getApi } from "aash-plugin";
+import { provideApi, getApi, AashDropdownMenu } from "aash-plugin";
 import l10nBundles from "l10nBundles";
 
 // For global access
@@ -135,6 +135,9 @@ window.deMnlMtcLogin.openDialog
 
 window.deMnlMtcLogin.apply = function(dialogDom: HTMLElement,
     apply: boolean, close: boolean) {
+    if (!apply) {
+        return;
+    }
     const conletId = (<HTMLElement>dialogDom.closest("[data-conlet-id]")!)
         .dataset["conletId"]!;
     const accountData = getApi<any>
@@ -150,3 +153,34 @@ JGConsole.registerConletFunction("de.mnl.mtc.conlets.login.LoginConlet",
         (".conlet-modal-dialog[data-conlet-id=\"" + conletId + "\"] form"));
     api.setMessages(info, warning);
 });
+
+window.deMnlMtcLogin.initStatus 
+    = function(container: HTMLElement, isUpdate: boolean) {
+    if (isUpdate) {
+        return;
+    }
+    const conletId = (<HTMLElement>container.closest("*[data-conlet-id]")!)
+        .dataset["conletId"]!;
+    let app = createApp({
+        setup() {
+            const name = ref<string | null>(null);
+            
+            JGConsole.registerConletFunction(
+                "de.mnl.mtc.conlets.login.LoginConlet",
+                "updateUser", function(conletId: string, newName: string) {
+                    name.value = newName;
+                });
+            
+            const localize = (key: string) =>
+                JGConsole.localize(l10nBundles, JGWC.lang()!, key)
+
+            const action = (arg: AashDropdownMenu.MenuItem) => {
+                JGConsole.notifyConletModel(conletId, "logout");
+            }
+            
+            return { localize, name, action };
+        }
+    });
+    app.use(JgwcPlugin);
+    app.mount(container);
+}
