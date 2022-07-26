@@ -9,7 +9,7 @@
     \
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
     bnd.identity; id=org.apache.felix.metatype; version='latest',\
-	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.9.0.ga))',\
+	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.10.0.ga))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
 	osgi.identity;filter:='(osgi.identity=de.mnl.mtc.application)',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(version>=0.41.0.ga))',\
@@ -89,20 +89,20 @@
 	de.mnl.osgi.osgi2jul;version='[1.2.0,1.2.1)',\
 	de.mnl.osgi.slf4j2osgi;version='[2.2.0,2.2.1)',\
 	org.jdrupes.httpcodec;version='[2.4.0,2.4.1)',\
-	org.jgrapes.core;version='[1.9.0,1.9.1)',\
-	org.jgrapes.http;version='[1.9.0,1.9.1)',\
-	org.jgrapes.io;version='[1.9.0,1.9.1)',\
-	org.jgrapes.util;version='[1.9.0,1.9.1)',\
+	org.jgrapes.core;version='[1.10.0,1.10.1)',\
+	org.jgrapes.http;version='[1.10.0,1.10.1)',\
+	org.jgrapes.io;version='[1.10.0,1.10.1)',\
+	org.jgrapes.util;version='[1.10.0,1.10.1)',\
 	org.jgrapes.osgi.core;version='[1.2.0,1.2.1)',\
-	org.jgrapes.webconsole.base;version='[0.43.0,0.43.1)',\
+	org.jgrapes.webconsole.base;version='[0.44.0,0.44.1)',\
 	org.jgrapes.webconsole.vuejs;version='[0.22.0,0.22.1)',\
 	org.jgrapes.webconsole.provider.chartjs;version='[0.31.2,0.31.3)',\
 	org.jgrapes.webconsole.provider.forkawesome;version='[0.1.0,0.1.1)',\
 	org.jgrapes.webconsole.provider.gridstack;version='[0.9.2,0.9.3)',\
 	org.jgrapes.webconsole.provider.jgwcvuecomponents;version='[0.14.0,0.14.1)',\
 	org.jgrapes.webconsole.provider.jquery;version='[0.2.2,0.2.3)',\
-	org.jgrapes.webconsole.provider.jqueryui;version='[0.2.2,0.2.3)',\
-	org.jgrapes.webconsole.provider.jquitouchpunch;version='[0.2.2,0.2.3)',\
+	org.jgrapes.webconsole.provider.jqueryui;version='[0.2.3,0.2.4)',\
+	org.jgrapes.webconsole.provider.jquitouchpunch;version='[0.2.3,0.2.4)',\
 	org.jgrapes.webconsole.provider.markdownit;version='[0.27.2,0.27.3)',\
 	org.jgrapes.webconsole.provider.vue;version='[0.6.2,0.6.3)',\
 	org.jgrapes.webconlet.markdowndisplay;version='[0.36.0,0.36.1)',\
