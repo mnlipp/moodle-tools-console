@@ -151,14 +151,13 @@ public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
         var bundle = resourceBundle(channel.locale());
         channel.respond(new NotifyConletView(type(),
             model.getConletId(), "setMessage", bundle.getString("Loading")));
-        Optional<MoodleClient> moodleClient
-            = channel.associated(MoodleClient.class);
-        if (moodleClient.isEmpty()) {
+        MoodleClient client = (MoodleClient) channel.browserSession()
+            .transientData().get(MoodleClient.class);
+        if (client == null) {
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
         try {
-            MoodleClient client = moodleClient.get();
             MoodleCourse[] courses = client.enrolledIn();
             var data
                 = Stream.of(courses).sorted(new Comparator<MoodleCourse>() {

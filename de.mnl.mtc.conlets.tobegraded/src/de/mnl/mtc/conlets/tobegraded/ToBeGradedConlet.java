@@ -173,9 +173,9 @@ public class ToBeGradedConlet
         "PMD.AvoidLiteralsInIfCondition", "PMD.NPathComplexity" })
     private void sendPreviewData(ConsoleSession channel,
             ConletBaseModel model) {
-        Optional<MoodleClient> moodleClient
-            = channel.associated(MoodleClient.class);
-        if (moodleClient.isEmpty()) {
+        MoodleClient client = (MoodleClient) channel.browserSession()
+            .transientData().get(MoodleClient.class);
+        if (client == null) {
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
@@ -184,7 +184,6 @@ public class ToBeGradedConlet
             @SuppressWarnings({ "PMD.UseConcurrentHashMap",
                 "PMD.AvoidDuplicateLiterals" })
             Map<Long, Map<String, Object>> data = new HashMap<>();
-            MoodleClient client = moodleClient.get();
             Instant limit
                 = Instant.now().minus(Duration.of(190, ChronoUnit.DAYS));
             MoodleCourse[] courses = Stream.of(client.enrolledIn())

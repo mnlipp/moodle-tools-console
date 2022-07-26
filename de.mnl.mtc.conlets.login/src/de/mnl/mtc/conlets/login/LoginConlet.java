@@ -40,8 +40,7 @@ import org.jgrapes.core.Components;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
-import org.jgrapes.core.events.Detached;
-import org.jgrapes.io.events.Close;
+import org.jgrapes.http.events.DiscardSession;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
 import org.jgrapes.webconsole.base.ConsoleSession;
@@ -152,17 +151,15 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     public void onConsolePrepared(ConsolePrepared event, ConsoleSession channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
             ParseException, IOException {
-        // Check if login connection to moodle service exists
-        if (channel.associated(MoodleClient.class).isPresent()) {
+        // Check if client connection to moodle service exists
+        if (channel.browserSession().transientData()
+            .get(MoodleClient.class) != null) {
             return;
         }
 
         // Force login
         event.suspendHandling();
         channel.setAssociated(this, event);
-
-        // Clear left over client
-        onClose(null, channel);
 
         // Create model and save in session.
         String conletId = type() + TYPE_INSTANCE_SEPARATOR + "Singleton";
@@ -229,10 +226,14 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         // Let's give it a try
         if ("loginData".equals(event.method())) {
             MoodleClient client = attemptLogin(event, channel, model);
+            if (client == null) {
+                return;
+            }
 
-            // Update mode, associate with channel and track
+            // Update model, put client in session and track
             model.setFullName(client.siteInfo().getFullname());
-            channel.setAssociated(MoodleClient.class, client);
+            channel.browserSession().transientData().put(MoodleClient.class,
+                client);
             trackConlet(channel, model.getConletId(), null);
 
             // Close dialog and resume console initialization
@@ -242,9 +243,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             return;
         }
         if ("logout".equals(event.method())) {
-            model.setUserName(null);
-            model.setFullName(null);
-            channel.setAssociated(MoodleClient.class, null);
+            // Creates a new session which cleans up everything
+            channel.respond(new DiscardSession(channel.browserSession(),
+                channel.webletChannel()));
             channel.respond(new SimpleConsoleCommand("reload"));
         }
     }
@@ -277,32 +278,6 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     }
 
     /**
-     * On close, close moodle client.
-     *
-     * @param event the event
-     * @param channel the channel
-     */
-    @Handler
-    public void onClose(Close event, ConsoleSession channel) {
-        channel.associated(MoodleClient.class).ifPresent(client -> {
-            client.close();
-            channel.setAssociated(MoodleClient.class, null);
-        });
-    }
-
-    /**
-     * Clean up any provided moodle clients.
-     *
-     * @param event the event
-     */
-    @Handler
-    public void onDetach(Detached event) {
-        for (ConsoleSession channel : trackedSessions()) {
-            channel.setAssociated(MoodleClient.class, null);
-        }
-    }
-
-    /**
      * Central handling of connection lost. Display notification.
      *
      * @param event the event
@@ -314,14 +289,15 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         if (!MoodleClient.class.equals(event.itemSpecification())) {
             return;
         }
-        channel.associated(MoodleClient.class).ifPresent(client -> {
-            client.close();
-            channel.setAssociated(MoodleClient.class, null);
-            var bundle = resourceBundle(channel.locale());
-            channel.respond(new DisplayNotification(
-                "<span>" + bundle.getString("connectionLost") + "</span>",
-                new HashMap<>()));
-        });
+        channel.browserSession().transientData()
+            .computeIfPresent(MoodleClient.class, (key, value) -> {
+                ((MoodleClient) value).close();
+                var bundle = resourceBundle(channel.locale());
+                channel.respond(new DisplayNotification(
+                    "<span>" + bundle.getString("connectionLost") + "</span>",
+                    new HashMap<>()));
+                return null;
+            });
     }
 
     @Override
