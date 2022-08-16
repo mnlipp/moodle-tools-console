@@ -240,6 +240,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
             // Close dialog and resume console initialization
             channel.respond(new CloseModalDialog(type(), event.conletId()));
+            model.setDialogOpen(false);
             channel.associated(this, ConsolePrepared.class)
                 .ifPresentOrElse(ConsolePrepared::resumeHandling,
                     () -> channel.respond(new SimpleConsoleCommand("reload")));
