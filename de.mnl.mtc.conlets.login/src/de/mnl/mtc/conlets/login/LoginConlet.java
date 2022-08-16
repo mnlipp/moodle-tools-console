@@ -272,7 +272,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             return moodleService
                 .connect(site, model.getUserName(),
                     event.params().asString(2).toCharArray());
-        } catch (MoodleAuthFailedException e) {
+        } catch (MoodleAuthFailedException | IllegalArgumentException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages", null, e.getMessage()));
             return null;
