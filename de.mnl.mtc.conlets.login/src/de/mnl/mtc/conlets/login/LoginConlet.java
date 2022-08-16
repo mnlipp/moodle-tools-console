@@ -18,7 +18,6 @@
 
 package de.mnl.mtc.conlets.login;
 
-import de.mnl.moodle.service.MoodleAuthFailedException;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.MoodleService;
 import freemarker.core.ParseException;
@@ -257,6 +256,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         }
     }
 
+    @SuppressWarnings({ "PMD.AvoidDuplicateLiterals",
+        "PMD.AvoidCatchingGenericException" })
     private MoodleClient attemptLogin(NotifyConletModel event,
             ConsoleConnection channel, AccountModel model) {
         var bundle = resourceBundle(channel.locale());
@@ -272,16 +273,15 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             return moodleService
                 .connect(site, model.getUserName(),
                     event.params().asString(2).toCharArray());
-        } catch (MoodleAuthFailedException | IllegalArgumentException e) {
-            channel.respond(new NotifyConletView(type(),
-                model.getConletId(), "setMessages", null, e.getMessage()));
-            return null;
         } catch (IOException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages",
                 null, bundle.getString("IOException")));
-            return null;
+        } catch (Exception e) {
+            channel.respond(new NotifyConletView(type(),
+                model.getConletId(), "setMessages", null, e.getMessage()));
         }
+        return null;
     }
 
     /**
