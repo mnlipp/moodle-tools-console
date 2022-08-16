@@ -27,7 +27,7 @@ import org.jgrapes.core.Component;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.webconsole.base.Conlet;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
-import org.jgrapes.webconsole.base.ConsoleSession;
+import org.jgrapes.webconsole.base.ConsoleConnection;
 import org.jgrapes.webconsole.base.events.AddConletRequest;
 import org.jgrapes.webconsole.base.events.ConsoleConfigured;
 import org.jgrapes.webconsole.base.events.ConsolePrepared;
@@ -74,12 +74,12 @@ public class NewConsoleSessionPolicy extends Component {
      * On portal prepared.
      *
      * @param event the event
-     * @param portalSession the portal session
+     * @param channel the portal channel
      */
     @Handler
     public void onPortalPrepared(ConsolePrepared event,
-            ConsoleSession portalSession) {
-        portalSession.setAssociated(NewConsoleSessionPolicy.class,
+            ConsoleConnection channel) {
+        channel.setAssociated(NewConsoleSessionPolicy.class,
             new HashMap<String, String>());
     }
 
@@ -87,20 +87,20 @@ public class NewConsoleSessionPolicy extends Component {
      * On render conlet.
      *
      * @param event the event
-     * @param portalSession the portal session
+     * @param channel the portal session
      */
     @Handler
     public void onRenderConlet(RenderConlet event,
-            ConsoleSession portalSession) {
+            ConsoleConnection channel) {
         if ("de.mnl.ahp.conlets.management.AdminConlet"
             .equals(event.conletType())) {
             if (event.renderAs().contains(RenderMode.Preview)) {
-                portalSession.associated(NewConsoleSessionPolicy.class,
+                channel.associated(NewConsoleSessionPolicy.class,
                     () -> new HashMap<String, String>())
                     .put("AdminPreview", event.conletId());
             }
             if (event.renderAs().contains(RenderMode.View)) {
-                portalSession.associated(NewConsoleSessionPolicy.class,
+                channel.associated(NewConsoleSessionPolicy.class,
                     () -> new HashMap<String, String>())
                     .put("AdminView", event.conletId());
             }
@@ -111,19 +111,19 @@ public class NewConsoleSessionPolicy extends Component {
      * On console configured.
      *
      * @param event the event
-     * @param portalSession the portal session
+     * @param channel the portal session
      * @throws InterruptedException the interrupted exception
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @Handler
     public void onConsoleConfigured(ConsoleConfigured event,
-            ConsoleSession portalSession)
+            ConsoleConnection channel)
             throws InterruptedException, IOException {
         @SuppressWarnings("PMD.UseConcurrentHashMap")
         final Map<String, String> found
-            = portalSession.associated(NewConsoleSessionPolicy.class,
+            = channel.associated(NewConsoleSessionPolicy.class,
                 () -> new HashMap<String, String>());
-        portalSession.setAssociated(NewConsoleSessionPolicy.class, null);
+        channel.setAssociated(NewConsoleSessionPolicy.class, null);
         String previewId = found.get("AdminPreview");
         String viewId = found.get("AdminView");
         if (previewId != null && viewId != null) {
@@ -132,7 +132,7 @@ public class NewConsoleSessionPolicy extends Component {
         if (previewId != null && viewId == null) {
             fire(new RenderConletRequest(event.event().event().renderSupport(),
                 previewId, RenderMode.asSet(Conlet.RenderMode.View)),
-                portalSession);
+                channel);
             return;
         }
         AddConletRequest addReq = new AddConletRequest(
@@ -140,18 +140,18 @@ public class NewConsoleSessionPolicy extends Component {
             "de.mnl.ahp.conlets.management.AdminConlet",
             RenderMode.asSet(RenderMode.Preview, RenderMode.StickyPreview));
         addReq.addCompletionEvent(new AddedPreview(addReq));
-        fire(addReq, portalSession);
+        fire(addReq, channel);
     }
 
     /**
      * On added preview.
      *
      * @param event the event
-     * @param portalSession the portal session
+     * @param channel the portal session
      * @throws InterruptedException the interrupted exception
      */
     @Handler
-    public void onAddedPreview(AddedPreview event, ConsoleSession portalSession)
+    public void onAddedPreview(AddedPreview event, ConsoleConnection channel)
             throws InterruptedException {
         AddConletRequest completed = event.event();
         if (completed.get() == null) {
@@ -159,6 +159,6 @@ public class NewConsoleSessionPolicy extends Component {
         }
         fire(new RenderConletRequest(completed.renderSupport(),
             completed.get(), RenderMode.asSet(Conlet.RenderMode.View)),
-            portalSession);
+            channel);
     }
 }

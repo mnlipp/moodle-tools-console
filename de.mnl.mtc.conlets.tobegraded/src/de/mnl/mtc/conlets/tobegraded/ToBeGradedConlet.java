@@ -52,7 +52,7 @@ import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
-import org.jgrapes.webconsole.base.ConsoleSession;
+import org.jgrapes.webconsole.base.ConsoleConnection;
 import org.jgrapes.webconsole.base.WebConsoleUtils;
 import org.jgrapes.webconsole.base.events.AddConletRequest;
 import org.jgrapes.webconsole.base.events.AddConletType;
@@ -102,7 +102,7 @@ public class ToBeGradedConlet
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @Handler
-    public void onConsoleReady(ConsoleReady event, ConsoleSession channel)
+    public void onConsoleReady(ConsoleReady event, ConsoleConnection channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
             ParseException, IOException {
         // Add conlet resources to page
@@ -119,28 +119,28 @@ public class ToBeGradedConlet
 
     @Override
     protected String generateInstanceId(AddConletRequest event,
-            ConsoleSession session) {
+            ConsoleConnection channel) {
         return "Singleton";
     }
 
     @Override
     protected Optional<ConletBaseModel> createNewState(AddConletRequest event,
-            ConsoleSession session, String conletId) throws Exception {
+            ConsoleConnection channel, String conletId) throws Exception {
         return Optional
-            .ofNullable(stateFromSession(session.browserSession(), conletId)
-                .orElse(super.createNewState(event, session, conletId).get()));
+            .ofNullable(stateFromSession(channel.session(), conletId)
+                .orElse(super.createNewState(event, channel, conletId).get()));
     }
 
     @Override
     protected Optional<ConletBaseModel> createStateRepresentation(
             RenderConletRequestBase<?> event,
-            ConsoleSession channel, String conletId) throws IOException {
+            ConsoleConnection channel, String conletId) throws IOException {
         return Optional.of(new ConletBaseModel(conletId));
     }
 
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
-            ConsoleSession channel, String conletId,
+            ConsoleConnection channel, String conletId,
             ConletBaseModel model) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
         if (event.renderAs().contains(RenderMode.Preview)) {
@@ -171,9 +171,9 @@ public class ToBeGradedConlet
         "PMD.AvoidInstantiatingObjectsInLoops", "PMD.ExcessiveMethodLength",
         "PMD.CognitiveComplexity", "PMD.NcssCount",
         "PMD.AvoidLiteralsInIfCondition", "PMD.NPathComplexity" })
-    private void sendPreviewData(ConsoleSession channel,
+    private void sendPreviewData(ConsoleConnection channel,
             ConletBaseModel model) {
-        MoodleClient client = (MoodleClient) channel.browserSession()
+        MoodleClient client = (MoodleClient) channel.session()
             .transientData().get(MoodleClient.class);
         if (client == null) {
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
@@ -319,7 +319,7 @@ public class ToBeGradedConlet
     }
 
     @Override
-    protected boolean doSetLocale(SetLocale event, ConsoleSession channel,
+    protected boolean doSetLocale(SetLocale event, ConsoleConnection channel,
             String conletId) throws Exception {
         return true;
     }

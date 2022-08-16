@@ -42,8 +42,8 @@ import org.jgrapes.util.events.KeyValueStoreQuery;
 import org.jgrapes.util.events.KeyValueStoreUpdate;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
-import org.jgrapes.webconsole.base.ConsoleSession;
-import org.jgrapes.webconsole.base.UserPrincipal;
+import org.jgrapes.webconsole.base.ConsoleConnection;
+import org.jgrapes.webconsole.base.ConsoleUser;
 import org.jgrapes.webconsole.base.WebConsoleUtils;
 import org.jgrapes.webconsole.base.events.AddConletRequest;
 import org.jgrapes.webconsole.base.events.AddConletType;
@@ -67,7 +67,7 @@ public class AccountConlet
 
     private String storagePath(Session session) {
         return "/" + WebConsoleUtils.userFromSession(session)
-            .map(UserPrincipal::toString).orElse("")
+            .map(ConsoleUser::toString).orElse("")
             + "/conlets/" + AccountConlet.class.getName() + "/";
     }
 
@@ -93,7 +93,7 @@ public class AccountConlet
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @Handler
-    public void onConsoleReady(ConsoleReady event, ConsoleSession channel)
+    public void onConsoleReady(ConsoleReady event, ConsoleConnection channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
             ParseException, IOException {
         // Add conlet resources to page
@@ -110,43 +110,43 @@ public class AccountConlet
 
     @Override
     protected String generateInstanceId(AddConletRequest event,
-            ConsoleSession session) {
+            ConsoleConnection channel) {
         return "Singleton";
     }
 
     @Override
     protected Optional<AccountModel> createNewState(AddConletRequest event,
-            ConsoleSession session, String conletId) throws Exception {
+            ConsoleConnection channel, String conletId) throws Exception {
         return Optional
-            .ofNullable(stateFromSession(session.browserSession(), conletId)
-                .orElse(super.createNewState(event, session, conletId).get()));
+            .ofNullable(stateFromSession(channel.session(), conletId)
+                .orElse(super.createNewState(event, channel, conletId).get()));
     }
 
     @Override
     protected Optional<AccountModel> createStateRepresentation(
             RenderConletRequestBase<?> event,
-            ConsoleSession channel, String conletId) throws IOException {
+            ConsoleConnection channel, String conletId) throws IOException {
         return Optional.of(new AccountModel(conletId));
     }
 
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
-            ConsoleSession consoleSession, String conletId,
+            ConsoleConnection channel, String conletId,
             AccountModel conletState) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
         if (event.renderAs().contains(RenderMode.Preview)) {
             Template tpl
                 = freemarkerConfig().getTemplate("Account-preview.ftl.html");
-            consoleSession.respond(new RenderConlet(type(), conletId,
+            channel.respond(new RenderConlet(type(), conletId,
                 processTemplate(event, tpl,
-                    fmModel(event, consoleSession, conletId, conletState)))
+                    fmModel(event, channel, conletId, conletState)))
                         .setRenderAs(
                             RenderMode.Preview.addModifiers(event.renderAs()))
                         .setSupportedModes(MODES));
             renderedAs.add(RenderMode.Preview);
             KeyValueStoreQuery query = new KeyValueStoreQuery(
-                storagePath(consoleSession.browserSession()), consoleSession);
-            fire(query, consoleSession);
+                storagePath(channel.session()), channel);
+            fire(query, channel);
         }
         return renderedAs;
     }
@@ -158,7 +158,7 @@ public class AccountConlet
      */
     @Override
     protected void doUpdateConletState(NotifyConletModel event,
-            ConsoleSession channel, AccountModel conletModel)
+            ConsoleConnection channel, AccountModel conletModel)
             throws Exception {
         event.stop();
 
@@ -172,7 +172,7 @@ public class AccountConlet
             String jsonState = JsonBeanEncoder.create()
                 .writeObject(conletModel).toJson();
             channel.respond(new KeyValueStoreUpdate().update(
-                storagePath(channel.browserSession())
+                storagePath(channel.session())
                     + conletModel.getConletId(),
                 jsonState));
             return;
@@ -189,8 +189,8 @@ public class AccountConlet
     @Handler
     @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
     public void onKeyValueStoreData(KeyValueStoreData event,
-            ConsoleSession channel) throws JsonDecodeException {
-        Session session = channel.browserSession();
+            ConsoleConnection channel) throws JsonDecodeException {
+        Session session = channel.session();
         if (!event.event().query()
             .equals(storagePath(session))) {
             return;
@@ -199,7 +199,7 @@ public class AccountConlet
         for (String json : event.data().values()) {
             AccountModel model = JsonBeanDecoder.create(json)
                 .readObject(AccountModel.class);
-            putInSession(channel.browserSession(), model.getConletId(), model);
+            putInSession(channel.session(), model.getConletId(), model);
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "accountData",
                 model.getResource(), model.getUsername()));
@@ -207,7 +207,7 @@ public class AccountConlet
     }
 
     @Override
-    protected boolean doSetLocale(SetLocale event, ConsoleSession channel,
+    protected boolean doSetLocale(SetLocale event, ConsoleConnection channel,
             String conletId) throws Exception {
         return true;
     }
@@ -215,7 +215,7 @@ public class AccountConlet
     /**
      * Model with account info.
      */
-    @SuppressWarnings({ "serial", "PMD.DataClass" })
+    @SuppressWarnings("PMD.DataClass")
     public static class AccountModel extends ConletBaseModel {
 
         private String resource;

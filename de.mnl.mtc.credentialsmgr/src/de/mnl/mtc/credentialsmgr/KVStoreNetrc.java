@@ -33,8 +33,8 @@ import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.http.Session;
 import org.jgrapes.util.events.KeyValueStoreData;
 import org.jgrapes.util.events.KeyValueStoreUpdate;
-import org.jgrapes.webconsole.base.ConsoleSession;
-import org.jgrapes.webconsole.base.UserPrincipal;
+import org.jgrapes.webconsole.base.ConsoleConnection;
+import org.jgrapes.webconsole.base.ConsoleUser;
 import org.jgrapes.webconsole.base.WebConsoleUtils;
 
 /**
@@ -59,7 +59,7 @@ public class KVStoreNetrc extends Component {
 
     private String storagePath(Session session) {
         return "/" + WebConsoleUtils.userFromSession(session)
-            .map(UserPrincipal::toString).orElse("") + "/credentials/";
+            .map(ConsoleUser::toString).orElse("") + "/credentials/";
     }
 
     /**
@@ -71,12 +71,12 @@ public class KVStoreNetrc extends Component {
      */
     @Handler
     public void onUpdateCredentials(UpdateCredentials event,
-            ConsoleSession channel) throws IOException {
+            ConsoleConnection channel) throws IOException {
         Credentials credentials = event.credentials();
         String jsonState = JsonBeanEncoder.create()
             .writeObject(credentials).toJson();
         channel.respond(new KeyValueStoreUpdate().update(
-            storagePath(channel.browserSession())
+            storagePath(channel.session())
                 + URLEncoder.encode(credentials.getResource(),
                     Charset.forName("utf-8")),
             jsonState));
@@ -91,8 +91,8 @@ public class KVStoreNetrc extends Component {
      */
     @Handler
     public void onKeyValueStoreData(KeyValueStoreData event,
-            ConsoleSession channel) throws JsonDecodeException {
-        Session session = channel.browserSession();
+            ConsoleConnection channel) throws JsonDecodeException {
+        Session session = channel.session();
         if (!event.event().query().equals(storagePath(session))) {
             return;
         }

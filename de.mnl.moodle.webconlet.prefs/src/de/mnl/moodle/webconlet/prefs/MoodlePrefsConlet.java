@@ -31,7 +31,7 @@ import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
-import org.jgrapes.webconsole.base.ConsoleSession;
+import org.jgrapes.webconsole.base.ConsoleConnection;
 import org.jgrapes.webconsole.base.events.AddConletType;
 import org.jgrapes.webconsole.base.events.AddPageResources.ScriptResource;
 import org.jgrapes.webconsole.base.events.ConsoleReady;
@@ -63,19 +63,18 @@ public class MoodlePrefsConlet extends FreeMarkerConlet<Serializable> {
      * Trigger loading of resources when the console is ready.
      *
      * @param event the event
-     * @param consoleSession the console session
+     * @param channel the console session
      * @throws TemplateNotFoundException the template not found exception
      * @throws MalformedTemplateNameException the malformed template name exception
      * @throws ParseException the parse exception
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @Handler
-    public void onConsoleReady(ConsoleReady event,
-            ConsoleSession consoleSession)
+    public void onConsoleReady(ConsoleReady event, ConsoleConnection channel)
             throws TemplateNotFoundException, MalformedTemplateNameException,
             ParseException, IOException {
         // Add resources to page
-        consoleSession.respond(
+        channel.respond(
             new AddConletType(type())
                 .addScript(new ScriptResource()
                     .setScriptUri(event.renderSupport().conletResource(
@@ -86,7 +85,7 @@ public class MoodlePrefsConlet extends FreeMarkerConlet<Serializable> {
 
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
-            ConsoleSession channel, String conletId,
+            ConsoleConnection channel, String conletId,
             Serializable conletState) throws Exception {
         Set<RenderMode> renderedAs = new HashSet<>();
         if (event.renderAs().contains(RenderMode.Content)) {
