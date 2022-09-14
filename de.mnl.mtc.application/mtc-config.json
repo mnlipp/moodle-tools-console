@@ -1,0 +1,26 @@
+{
+    "/Mtc": {
+        "/TcpServer": {
+            "port": 5007
+        },
+        "/VueJsConsoleWeblet": {
+            "/WebConsole": {
+                "/RoleConfigurator": {
+                    "rolesByUser": {
+                        "*": [
+                            "user"
+                        ]
+                    },
+                    "replace": false
+                },
+                "/RoleConletFilter": {
+                    "conletTypesByRole": {
+                        "user": [
+                            "!org.jgrapes.webconlet.sysinfo.SysInfoConlet", "*"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}

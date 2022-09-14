@@ -34,6 +34,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.Future;
+import javax.security.auth.Subject;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Components;
 import org.jgrapes.core.Event;
@@ -44,6 +45,7 @@ import org.jgrapes.io.events.Close;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
 import org.jgrapes.webconsole.base.ConsoleConnection;
+import org.jgrapes.webconsole.base.ConsoleUser;
 import org.jgrapes.webconsole.base.WebConsoleUtils;
 import org.jgrapes.webconsole.base.events.AddConletRequest;
 import org.jgrapes.webconsole.base.events.AddConletType;
@@ -215,7 +217,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
                     fmModel(event, channel, conletId, model)))
                         .setRenderAs(RenderMode.Content));
             channel.respond(new NotifyConletView(type(), conletId,
-                "updateUser", model.getFullName()));
+                "updateUser",
+                WebConsoleUtils.userFromSession(channel.session())
+                    .map(ConsoleUser::getDisplayName).orElse(null)));
             renderedAs.add(RenderMode.Content);
         }
         return renderedAs;
@@ -236,6 +240,12 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             model.setFullName(client.siteInfo().getFullname());
             channel.session().transientData().put(MoodleClient.class, client);
             trackConlet(channel, model.getConletId(), null);
+
+            // Save login data for use by framework
+            Subject user = new Subject();
+            user.getPrincipals()
+                .add(new ConsoleUser(model.userName, model.fullName));
+            channel.session().put(Subject.class, user);
 
             // Close dialog and resume console initialization
             channel.respond(new CloseModalDialog(type(), event.conletId()));
