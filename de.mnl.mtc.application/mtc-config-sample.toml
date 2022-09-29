@@ -1,0 +1,22 @@
+[_Mtc._TcpServer]
+
+port = 5007
+
+[_Mtc._VueJsConsoleWeblet._WebConsole]
+
+_RoleConfigurator.rolesByUser."*" = ["user"]
+
+_RoleConletFilter.conletTypesByRole.user = [
+    "!org.jgrapes.webconlet.sysinfo.SysInfoConlet", 
+    "!org.jgrapes.webconlet.markdowndisplay.MarkdownDisplayConlet",
+    "!org.jgrapes.osgi.webconlet.logviewer.LogViewerConlet",
+    "!org.jgrapes.osgi.webconlet.bundles.BundleListConlet",
+    "!org.jgrapes.osgi.webconlet.services.ServiceListConlet",
+    "*"
+]
+
+_RoleConletFilter.conletTypesByRole.admin = [ "*" ]
+
+[_Mtc._VueJsConsoleWeblet._WebConsole._ComponentCollector._LoginConlet]
+
+moodleServer = "lernen.h-da.de"

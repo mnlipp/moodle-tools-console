@@ -13,12 +13,16 @@
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
     bnd.identity; id=org.apache.felix.metatype; version='latest',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.10.0.ga))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(version>=1.18.0))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
 	osgi.identity;filter:='(osgi.identity=de.mnl.mtc.application)',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(version>=0.46.0.ga))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.vuejs)(version>=0.13.0.ga))',\
 	osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.sysinfo)',\
 	osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.markdowndisplay)',\
+	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.bundles)',\
+	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.services)',\
+	bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
     bnd.identity;id='de.mnl.mtc.conlets.login';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.courselist';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.tobegraded';version='latest',\
@@ -59,7 +63,8 @@
 -runee: JavaSE-11
 -runvm: -Xmx256m, \
     -Xbootclasspath/a:${basename;${repo;de.mnl.osgi.jul2osgi.lib;latest}}, \
-    -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager
+    -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager, \
+    -Dmtc.config.file=/etc/mtc-config.toml
 -runsystempackages: \
     de.mnl.osgi.jul2osgi.lib; version=1.6.0
 -includeresource: \
@@ -90,18 +95,18 @@
 	de.mnl.osgi.jul2osgi;version='[1.6.0,1.6.1)',\
 	slf4j.api;version='[1.7.36,1.7.37)',\
 	de.mnl.osgi.lf4osgi;version='[2.2.0,2.2.1)',\
-	org.apache.logging.log4j.api;version='[2.18.0,2.18.1)',\
+	org.apache.logging.log4j.api;version='[2.19.0,2.19.1)',\
 	de.mnl.osgi.log4j2osgi;version='[1.2.0,1.2.1)',\
 	de.mnl.osgi.osgi2jul;version='[1.2.0,1.2.1)',\
 	de.mnl.osgi.slf4j2osgi;version='[2.2.0,2.2.1)',\
 	org.jdrupes.httpcodec;version='[3.0.0,3.0.1)',\
-	org.jgrapes.core;version='[1.14.1,1.14.2)',\
+	org.jgrapes.core;version='[1.15.0,1.15.1)',\
 	org.jgrapes.http;version='[1.15.0,1.15.1)',\
 	org.jgrapes.io;version='[1.14.0,1.14.1)',\
-	org.jgrapes.util;version='[1.17.0,1.17.1)',\
+	org.jgrapes.util;version='[1.18.0,1.18.1)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
 	org.jgrapes.webconsole.base;version='[0.47.0,0.47.1)',\
-    org.jgrapes.webconsole.rbac;version='[0.1.0,0.1.1)',\
+	org.jgrapes.webconsole.rbac;version='[0.2.0,0.2.1)',\
 	org.jgrapes.webconsole.vuejs;version='[0.24.0,0.24.1)',\
 	org.jgrapes.webconsole.provider.chartjs;version='[0.32.0,0.32.1)',\
 	org.jgrapes.webconsole.provider.forkawesome;version='[0.2.0,0.2.1)',\
@@ -114,9 +119,12 @@
 	org.jgrapes.webconsole.provider.vue;version='[0.7.1,0.7.2)',\
 	org.jgrapes.webconlet.markdowndisplay;version='[0.37.0,0.37.1)',\
 	org.jgrapes.webconlet.sysinfo;version='[0.40.0,0.40.1)',\
-	de.mnl.mtc.application;version=snapshot,\
+	org.jgrapes.osgi.webconlet.bundles;version='[0.21.0,0.21.1)',\
+	org.jgrapes.osgi.webconlet.logviewer;version='[0.19.0,0.19.1)',\
+	org.jgrapes.osgi.webconlet.services;version='[0.19.0,0.19.1)',\
 	de.mnl.moodle.service;version=snapshot,\
 	de.mnl.moodle.provider;version=snapshot,\
 	de.mnl.mtc.conlets.login;version=snapshot,\
 	de.mnl.mtc.conlets.courselist;version=snapshot,\
-	de.mnl.mtc.conlets.tobegraded;version=snapshot
+	de.mnl.mtc.conlets.tobegraded;version=snapshot,\
+	de.mnl.mtc.application;version=snapshot

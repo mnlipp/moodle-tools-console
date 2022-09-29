@@ -42,6 +42,7 @@ import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.http.events.DiscardSession;
 import org.jgrapes.io.events.Close;
+import org.jgrapes.util.events.ConfigurationUpdate;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
 import org.jgrapes.webconsole.base.ConsoleConnection;
@@ -70,6 +71,7 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
+    private String moodleServer;
     private final MoodleService moodleService;
 
     /**
@@ -83,6 +85,44 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     public LoginConlet(Channel componentChannel, MoodleService moodleService) {
         super(componentChannel);
         this.moodleService = moodleService;
+    }
+
+    /**
+     * Returns the preconfigured moodle server.
+     *
+     * @return the moodleServer
+     */
+    public String moodleServer() {
+        return moodleServer;
+    }
+
+    /**
+     * Preconfigures a moodle server. The respective input field
+     * is omitted from the login dialog and the preconfigured
+     * value is used.
+     *
+     * @param moodleServer the moodle server to configure
+     */
+    public void setMoodleServer(String moodleServer) {
+        this.moodleServer = moodleServer;
+    }
+
+    /**
+     * The component can be configured with events that include a path 
+     * (see @link {@link ConfigurationUpdate#paths()}) that matches 
+     * this components path (see {@link Manager#componentPath()}).
+     * 
+     * The following properties are recognized:
+     * 
+     * `moodleServer`
+     * : Invokes {@link #setMoodleServer(String)} with the given values.
+     * 
+     * @param event the event
+     */
+    @Handler
+    public void onConfigUpdate(ConfigurationUpdate event) {
+        event.value(componentPath(), "moodleServer")
+            .ifPresent(this::setMoodleServer);
     }
 
     @Override
@@ -167,8 +207,9 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         // Create model and save in session.
         String conletId = type() + TYPE_INSTANCE_SEPARATOR + "Singleton";
         AccountModel accountModel = new AccountModel(conletId);
-        Optional.ofNullable(System.getenv("MOODLE_SERVER"))
-            .ifPresent(moodle -> accountModel.setTaggedInstance(moodle));
+        if (moodleServer != null) {
+            accountModel.setTaggedInstance(moodleServer);
+        }
         accountModel.setDialogOpen(true);
         putInSession(channel.session(), conletId, accountModel);
 

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1613941433958">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1664385094563">
   <resource>
     <capability namespace="bnd.info">
       <attribute name="name" value="org.sonatype.sisu:sisu-guice:pom:2.1.7"/>

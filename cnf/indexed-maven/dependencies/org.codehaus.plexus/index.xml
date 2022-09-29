@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1654425978545">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1664385094655">
   <resource>
     <capability namespace="bnd.info">
       <attribute name="name" value="org.codehaus.plexus:plexus-utils:3.0.17"/>
@@ -398,19 +398,6 @@
   </resource>
   <resource>
     <capability namespace="bnd.info">
-      <attribute name="name" value="org.codehaus.plexus:plexus-utils:1.4"/>
-      <attribute name="from" value="org.codehaus.plexus:plexus-utils:1.4"/>
-      <attribute name="version" value="0.0.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="182167" type="Long"/>
-      <attribute name="url" value="https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.jar"/>
-      <attribute name="mime" value="application/java-archive"/>
-      <attribute name="osgi.content" value="B607FF463BEA2D5EA235BC1BA736A40CE9BB71E2FCCE5A10E54B98400BAD50FB"/>
-    </capability>
-  </resource>
-  <resource>
-    <capability namespace="bnd.info">
       <attribute name="name" value="org.codehaus.plexus:plexus-utils"/>
       <attribute name="from" value="org.codehaus.plexus:plexus-utils:3.2.1"/>
       <attribute name="version" value="3.2.1" type="Version"/>
@@ -743,6 +730,19 @@
   </resource>
   <resource>
     <capability namespace="bnd.info">
+      <attribute name="name" value="org.codehaus.plexus:plexus-utils:1.4"/>
+      <attribute name="from" value="org.codehaus.plexus:plexus-utils:1.4"/>
+      <attribute name="version" value="0.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="182167" type="Long"/>
+      <attribute name="url" value="https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-utils/1.4/plexus-utils-1.4.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="B607FF463BEA2D5EA235BC1BA736A40CE9BB71E2FCCE5A10E54B98400BAD50FB"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="bnd.info">
       <attribute name="name" value="org.codehaus.plexus:plexus-classworlds:1.2-alpha-7"/>
       <attribute name="from" value="org.codehaus.plexus:plexus-classworlds:1.2-alpha-7"/>
       <attribute name="version" value="0.0.0" type="Version"/>
@@ -791,6 +791,19 @@
   </resource>
   <resource>
     <capability namespace="bnd.info">
+      <attribute name="name" value="org.codehaus.plexus:plexus-component-annotations"/>
+      <attribute name="from" value="org.codehaus.plexus:plexus-component-annotations:2.1.0"/>
+      <attribute name="version" value="2.1.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="4225" type="Long"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="osgi.content" value="BDE3617CE9B5BCF9584126046080043AF6A4B3BAEA40A3B153F02E7BBC32ACAC"/>
+    </capability>
+  </resource>
+  <resource>
+    <capability namespace="bnd.info">
       <attribute name="name" value="org.codehaus.plexus:plexus-io:3.0.0"/>
       <attribute name="from" value="org.codehaus.plexus:plexus-io:3.0.0"/>
       <attribute name="version" value="0.0.0" type="Version"/>
@@ -803,19 +816,6 @@
       <attribute name="url" value="https://repo.maven.apache.org/maven2/org/codehaus/plexus/plexus-io/3.0.0/plexus-io-3.0.0.jar"/>
       <attribute name="mime" value="application/java-archive"/>
       <attribute name="osgi.content" value="5A49332CEB3A74E1551F792F56E375C9D3B10FE0B9B5B23D286D05BBBD44B44C"/>
-    </capability>
-  </resource>
-  <resource>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.codehaus.plexus:plexus-component-annotations"/>
-      <attribute name="from" value="org.codehaus.plexus:plexus-component-annotations:2.1.0"/>
-      <attribute name="version" value="2.1.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="4225" type="Long"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/codehaus/plexus/plexus-component-annotations/2.1.0/plexus-component-annotations-2.1.0.jar"/>
-      <attribute name="mime" value="application/java-archive"/>
-      <attribute name="osgi.content" value="BDE3617CE9B5BCF9584126046080043AF6A4B3BAEA40A3B153F02E7BBC32ACAC"/>
     </capability>
   </resource>
   <resource>

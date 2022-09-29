@@ -20,27 +20,12 @@ package de.mnl.mtc.application;
 
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
-
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.InetSocketAddress;
 import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
-import java.security.UnrecoverableKeyException;
-import java.security.cert.CertificateException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Optional;
-import javax.net.ssl.KeyManagerFactory;
-import javax.net.ssl.SSLContext;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Component;
 import org.jgrapes.core.Components;
@@ -53,10 +38,10 @@ import org.jgrapes.http.events.Request;
 import org.jgrapes.io.FileStorage;
 import org.jgrapes.io.NioDispatcher;
 import org.jgrapes.io.util.PermitsPool;
-import org.jgrapes.net.SslCodec;
 import org.jgrapes.net.TcpServer;
 import org.jgrapes.osgi.core.ComponentCollector;
 import org.jgrapes.util.JsonConfigurationStore;
+import org.jgrapes.util.TomlConfigurationStore;
 import org.jgrapes.webconsole.base.BrowserLocalBackedKVStore;
 import org.jgrapes.webconsole.base.ConletComponentFactory;
 import org.jgrapes.webconsole.base.ConsoleWeblet;
@@ -72,6 +57,7 @@ import org.osgi.framework.BundleContext;
 /**
  *
  */
+@SuppressWarnings("PMD.ShortClassName")
 public class Mtc extends Component implements BundleActivator {
 
     @SuppressWarnings("PMD.FieldNamingConventions")
@@ -89,8 +75,10 @@ public class Mtc extends Component implements BundleActivator {
     @SuppressWarnings("PMD.TooFewBranchesForASwitchStatement")
     public void start(BundleContext context) throws Exception {
         app = new Mtc();
-        var config
-            = new JsonConfigurationStore(app, new File("mtc-config.json"));
+        String configFile
+            = Optional.ofNullable(System.getProperty("mtc.config.file"))
+                .orElse("mtc-config.json");
+        var config = new TomlConfigurationStore(app, new File(configFile));
         app.attach(config);
         // Attach a general nio dispatcher
         app.attach(new NioDispatcher());
