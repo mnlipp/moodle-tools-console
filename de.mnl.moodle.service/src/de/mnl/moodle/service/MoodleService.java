@@ -19,6 +19,7 @@
 package de.mnl.moodle.service;
 
 import java.io.IOException;
+import org.jgrapes.util.Password;
 
 /**
  * Represents the client side of a connection to a moodle server.
@@ -35,6 +36,6 @@ public interface MoodleService {
      * @throws IOException Signals that an I/O exception has occurred.
      */
     @SuppressWarnings("PMD.UseVarargs")
-    MoodleClient connect(String website, String username, char[] password)
+    MoodleClient connect(String website, String username, Password password)
             throws IOException, MoodleAuthFailedException;
 }

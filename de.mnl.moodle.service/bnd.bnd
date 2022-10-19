@@ -12,7 +12,8 @@ Export-Package: \
 
 -buildpath: \
     osgi.core;version=6.0.0, \
-    osgi.cmpn;version='7.0'    
+    osgi.cmpn;version='7.0', \
+    org.jgrapes.util;version=latest  
 
 -fixupmessages: \
     "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \

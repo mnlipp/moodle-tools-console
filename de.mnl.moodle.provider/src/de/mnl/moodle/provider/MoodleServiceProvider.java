@@ -33,6 +33,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Collections;
 import java.util.Map;
+import org.jgrapes.util.Password;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.ServiceScope;
 
@@ -51,7 +52,7 @@ public class MoodleServiceProvider implements MoodleService {
     @SuppressWarnings({ "PMD.AvoidCatchingGenericException",
         "PMD.EmptyCatchBlock" })
     public MoodleClient connect(String website, String username,
-            char[] password) throws IOException, MoodleAuthFailedException {
+            Password password) throws IOException, MoodleAuthFailedException {
         // Request token
         try {
             String site = website;
@@ -68,7 +69,7 @@ public class MoodleServiceProvider implements MoodleService {
             var restClient = new RestClient(tokenUri);
             var tokens = restClient.invoke(MoodleTokens.class,
                 Map.of("username", username,
-                    "password", new String(password),
+                    "password", new String(password.password()),
                     "service", "moodle_mobile_app"),
                 Collections.emptyMap());
             if (tokens.getErrorcode() != null) {

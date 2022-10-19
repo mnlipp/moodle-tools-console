@@ -42,6 +42,7 @@ import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.http.events.DiscardSession;
 import org.jgrapes.io.events.Close;
+import org.jgrapes.util.Password;
 import org.jgrapes.util.events.ConfigurationUpdate;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
@@ -323,7 +324,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             model.setUserName(event.params().asString(1));
             return moodleService
                 .connect(site, model.getUserName(),
-                    event.params().asString(2).toCharArray());
+                    new Password(event.params().asString(2).toCharArray()));
         } catch (IOException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages",

@@ -17,6 +17,7 @@ Export-Package: de.mnl.moodle.provider;version='${api_version}'
 	osgi.cmpn;version='7.0',\
 	de.mnl.osgi.lf4osgi;version=latest,\
 	org.jdrupes.json;version=latest,\
+	org.jgrapes.util;version=latest,\
     com.fasterxml.jackson.core.jackson-core,\
 	de.mnl.moodle.service;version=latest
 

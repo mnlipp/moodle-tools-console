@@ -18,7 +18,7 @@
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
     bnd.identity; id=org.apache.felix.metatype; version='latest',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.10.0.ga))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(version>=1.18.0))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(version>=1.19.0))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
 	osgi.identity;filter:='(osgi.identity=de.mnl.mtc.application)',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(version>=0.46.0.ga))',\
@@ -111,7 +111,7 @@
 	org.jgrapes.core;version='[1.15.0,1.15.1)',\
 	org.jgrapes.http;version='[1.15.0,1.15.1)',\
 	org.jgrapes.io;version='[1.14.0,1.14.1)',\
-	org.jgrapes.util;version='[1.18.0,1.18.1)',\
+	org.jgrapes.util;version='[1.19.0,1.19.1)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
 	org.jgrapes.webconsole.base;version='[0.47.0,0.47.1)',\
 	org.jgrapes.webconsole.rbac;version='[0.2.0,0.2.1)',\
