@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1664385094522">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1666211762186">
   <resource>
     <capability namespace="bnd.info">
       <attribute name="name" value="org.iq80.snappy:snappy:0.4"/>
