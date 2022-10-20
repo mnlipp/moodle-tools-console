@@ -28,12 +28,12 @@ Export-Package: de.mnl.moodle.provider.test
 -runbundles: \
 	org.opentest4j;version='[1.2.0,1.2.1)',\
 	org.objenesis;version='[3.2.0,3.2.1)',\
-	biz.aQute.tester.junit-platform;version='[6.3.0,6.3.1)',\
-	junit-jupiter-api;version='[5.9.0,5.9.1)',\
-	junit-jupiter-engine;version='[5.9.0,5.9.1)',\
-	junit-platform-commons;version='[1.9.0,1.9.1)',\
-	junit-platform-engine;version='[1.9.0,1.9.1)',\
-	junit-platform-launcher;version='[1.9.0,1.9.1)',\
+	biz.aQute.tester.junit-platform;version='[6.3.1,6.3.2)',\
+	junit-jupiter-api;version='[5.9.1,5.9.2)',\
+	junit-jupiter-engine;version='[5.9.1,5.9.2)',\
+	junit-platform-commons;version='[1.9.1,1.9.2)',\
+	junit-platform-engine;version='[1.9.1,1.9.2)',\
+	junit-platform-launcher;version='[1.9.1,1.9.2)',\
 	net.bytebuddy.byte-buddy;version='[1.12.10,1.12.11)',\
 	net.bytebuddy.byte-buddy-agent;version='[1.12.10,1.12.11)',\
 	org.mockito.junit-jupiter;version='[4.6.1,4.6.2)',\
@@ -46,8 +46,11 @@ Export-Package: de.mnl.moodle.provider.test
 	org.jdrupes.json;version='[2.3.1,2.3.2)',\
 	org.osgi.util.function;version='[1.2.0,1.2.1)',\
 	org.osgi.util.promise;version='[1.2.0,1.2.1)',\
-	org.apache.felix.scr;version='[2.2.0,2.2.1)',\
-	org.apache.felix.log;version='[1.2.6,1.2.7)'
+	org.apache.felix.scr;version='[2.2.4,2.2.5)',\
+	org.apache.felix.log;version='[1.2.6,1.2.7)',\
+	org.jgrapes.core;version='[1.15.0,1.15.1)',\
+	org.jgrapes.util;version='[1.19.0,1.19.1)',\
+	org.osgi.service.component;version='[1.5.0,1.5.1)'
 
 -runvm.coverage: \
     "-javaagent:${repo;org.jacoco:org.jacoco.agent:jar:runtime;latest}=destfile=${basedir}/generated/jacoco.exec,append=false,includes=de.mnl.osgi.*"
