@@ -1,8 +1,6 @@
 -runfw: org.apache.felix.framework;version='[7.0.3,7.0.3]'
 
 -runrequires: \
-    bnd.identity; id=org.glassfish.hk2.osgi-resource-locator; version='latest',\
-    bnd.identity; id=angus-activation; version='latest',\
     bnd.identity; id=org.apache.felix.log; version='latest',\
     \
     bnd.identity; id=de.mnl.osgi.jul2osgi; version='latest',\
@@ -17,6 +15,11 @@
     \
     bnd.identity; id=org.apache.felix.configadmin; version='latest',\
     bnd.identity; id=org.apache.felix.metatype; version='latest',\
+    \
+    bnd.identity; id=org.glassfish.hk2.osgi-resource-locator; version='latest',\
+    bnd.identity; id=angus-activation; version='latest',\
+    bnd.identity; id=com.sun.mail.jakarta.mail; version='latest',\
+    \
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(version>=1.10.0.ga))',\
     osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(version>=1.19.0))',\
 	osgi.identity;filter:='(&(osgi.identity=org.jgrapes.osgi.core)(version>=1.0.0.ga))',\
@@ -31,6 +34,7 @@
     bnd.identity;id='de.mnl.mtc.conlets.login';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.courselist';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.tobegraded';version='latest',\
+    bnd.identity;id='de.mnl.mtc.conlets.senderinfo';version='latest',\
 	bnd.identity;id='de.mnl.moodle.provider';version='latest'
 
 # - SLF4J 1.8 is still alpha and backward compatibility is unclear
@@ -71,7 +75,8 @@
     -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager, \
     -Dmtc.config.file=mtc-config.toml
 -runsystempackages: \
-    de.mnl.osgi.jul2osgi.lib; version=1.6.0
+    de.mnl.osgi.jul2osgi.lib;version=1.6.0, \
+    sun.security.util
 
 -runbundles: \
 	org.apache.aries.spifly.dynamic.bundle;version='[1.3.5,1.3.6)',\
@@ -80,15 +85,16 @@
 	org.objectweb.asm.tree;version='[9.3.0,9.3.1)',\
 	org.objectweb.asm.tree.analysis;version='[9.3.0,9.3.1)',\
 	org.objectweb.asm.util;version='[9.3.0,9.3.1)',\
+	com.sun.activation.javax.activation;version='[1.2.0,1.2.1)',\
+	org.glassfish.hk2.osgi-resource-locator;version='[1.0.3,1.0.4)',\
 	jakarta.activation-api;version='[2.1.0,2.1.1)',\
-	org.glassfish.hk2.osgi-resource-locator;version='[2.5.0,2.5.1)',\
 	angus-activation;version='[1.0.0,1.0.1)',\
+	com.sun.mail.jakarta.mail;version='[2.0.1,2.0.2)',\
 	com.fasterxml.jackson.core.jackson-core;version='[2.12.2,2.12.3)',\
 	org.freemarker.freemarker;version='[2.3.31,2.3.32)',\
 	org.jdrupes.json;version='[2.3.1,2.3.2)',\
-	com.sun.activation.javax.activation;version='[1.2.0,1.2.1)',\
 	org.apache.felix.log;version='[1.2.6,1.2.7)',\
-	org.apache.felix.scr;version='[2.2.2,2.2.3)',\
+	org.apache.felix.scr;version='[2.2.4,2.2.5)',\
 	org.apache.felix.configadmin;version='[1.9.24,1.9.25)',\
 	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
 	org.apache.felix.gogo.command;version='[1.1.2,1.1.3)',\
@@ -108,10 +114,11 @@
 	de.mnl.osgi.osgi2jul;version='[1.2.0,1.2.1)',\
 	de.mnl.osgi.slf4j2osgi;version='[2.2.0,2.2.1)',\
 	org.jdrupes.httpcodec;version='[3.0.0,3.0.1)',\
-	org.jgrapes.core;version='[1.15.0,1.15.1)',\
+	org.jgrapes.core;version='[1.16.0,1.16.1)',\
 	org.jgrapes.http;version='[1.15.0,1.15.1)',\
 	org.jgrapes.io;version='[1.14.0,1.14.1)',\
 	org.jgrapes.util;version='[1.19.0,1.19.1)',\
+	org.jgrapes.mail;version='[0.1.1,0.1.2)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
 	org.jgrapes.webconsole.base;version='[0.47.0,0.47.1)',\
 	org.jgrapes.webconsole.rbac;version='[0.2.0,0.2.1)',\
@@ -135,5 +142,6 @@
 	de.mnl.mtc.conlets.login;version=snapshot,\
 	de.mnl.mtc.conlets.courselist;version=snapshot,\
 	de.mnl.mtc.conlets.tobegraded;version=snapshot,\
+	de.mnl.mtc.conlets.senderinfo;version=snapshot,\
 	de.mnl.mtc.application;version=snapshot
 	
