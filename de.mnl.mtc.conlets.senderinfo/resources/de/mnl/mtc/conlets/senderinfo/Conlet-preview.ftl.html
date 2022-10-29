@@ -1,0 +1,14 @@
+<div class="mtc-conlet-senderinfo mtc-conlet-senderinfo__preview"
+    data-portlet-title="${_("conletName")}"
+    data-jgwc-on-load="deMnlMtcSenderInfo.initPreview"
+    data-jgwc-on-unload="JGConsole.jgwc.unmountVueApps">
+  <div ref="apiNode" class="mtc-conlet-senderinfo-api mtc-conlet-senderinfo__info">
+    <p v-if="message">{{ message }}</p>
+    <ul>
+    <template v-for="item in items"> 
+      <li><button type="button" @click="showDetails(item.address)">{{ item.from }}
+        <span class="fa fa-arrow-circle-o-right"></span></button></li>
+    </template>
+    </ul>
+  </div>
+</div>

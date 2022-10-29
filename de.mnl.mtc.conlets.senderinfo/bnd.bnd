@@ -1,0 +1,34 @@
+Bundle-Name: Moodle Sender Info Conlet
+Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
+#Bundle-Version: 1.0.0.ga
+Bundle-Copyright: Michael N. Lipp (c) 2022
+Bundle-License: http://www.gnu.org/licenses/agpl-3.0.txt
+Bundle-Category: conlet
+Export-Package: de.mnl.mtc.conlets.senderinfo
+
+-buildpath: \
+	osgi.core;version=6.0.0,\
+	osgi.annotation;version=6.0.1,\
+	osgi.cmpn;version=7.0,\
+    com.fasterxml.jackson.core.jackson-core;version=latest,\
+    de.mnl.osgi.lf4osgi;version=latest,\
+    org.jdrupes.json;version=latest,\
+    org.jgrapes.core;version=latest,\
+    org.jgrapes.io;version=latest,\
+    org.jgrapes.util;version=latest,\
+    org.jgrapes.http;version=latest,\
+    org.jgrapes.mail;version=latest,\
+    com.sun.mail.jakarta.mail;version=latest,\
+    org.freemarker.freemarker;version=latest,\
+    org.jgrapes.webconsole.base;version=latest,\
+    org.jgrapes.webconsole.provider.vue;version=latest,\
+    org.jgrapes.webconsole.provider.jgwcvuecomponents;version=latest,\
+    de.mnl.moodle.service;version=latest
+
+-includeresource: \
+	resources, "build/generated/resources"
+
+-fixupmessages: \
+    "The .classpath contains an unknown container: GROOVY_DSL_SUPPORT. This could make your build less portable.", \
+    "The .classpath contains an unknown container: org.eclipse.buildship.core.gradleclasspathcontainer. This could make your build less portable.", \
+    "The .classpath contains a library that will not be available during continuous integration:"
