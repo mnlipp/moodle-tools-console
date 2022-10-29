@@ -15,6 +15,8 @@ Export-Package: de.mnl.mtc.conlets.login
 	org.jgrapes.io;version=latest,\
     org.jgrapes.util;version=latest,\
 	org.jgrapes.http;version=latest,\
+    jakarta.mail-api;version=latest,\
+    org.jgrapes.mail;version=latest,\
     org.freemarker.freemarker;version=latest,\
 	org.jgrapes.webconsole.base;version=latest,\
     org.jgrapes.webconsole.provider.vue;version=latest,\

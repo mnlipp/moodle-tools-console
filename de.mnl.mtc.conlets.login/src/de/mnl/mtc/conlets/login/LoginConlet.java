@@ -28,6 +28,7 @@ import freemarker.template.TemplateNotFoundException;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
 import java.io.StringWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -42,6 +43,7 @@ import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.http.events.DiscardSession;
 import org.jgrapes.io.events.Close;
+import org.jgrapes.mail.InternetAddressPrincipal;
 import org.jgrapes.util.Password;
 import org.jgrapes.util.events.ConfigurationUpdate;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
@@ -258,8 +260,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
                 processTemplate(event, tpl,
                     fmModel(event, channel, conletId, model)))
                         .setRenderAs(RenderMode.Content));
-            channel.respond(new NotifyConletView(type(), conletId,
-                "updateUser",
+            channel.respond(new NotifyConletView(type(), conletId, "updateUser",
                 WebConsoleUtils.userFromSession(channel.session())
                     .map(ConsoleUser::getDisplayName).orElse(null)));
             renderedAs.add(RenderMode.Content);
@@ -270,7 +271,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     @Override
     protected void doUpdateConletState(NotifyConletModel event,
             ConsoleConnection channel, AccountModel model)
-            throws InterruptedException {
+            throws InterruptedException, UnsupportedEncodingException {
         // Let's give it a try
         if ("loginData".equals(event.method())) {
             MoodleClient client = attemptLogin(event, channel, model);
@@ -287,6 +288,13 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             Subject user = new Subject();
             user.getPrincipals()
                 .add(new ConsoleUser(model.userName, model.fullName));
+            
+            // Get and save internet address principal for general use 
+            var moodleUser = client.moodleUser();
+            user.getPrincipals().add(new InternetAddressPrincipal(
+                moodleUser.getEmail(), model.fullName));
+            user.getPrivateCredentials().add(
+                new Password(event.params().asString(2).toCharArray()));
             channel.session().put(Subject.class, user);
 
             // Close dialog and resume console initialization
