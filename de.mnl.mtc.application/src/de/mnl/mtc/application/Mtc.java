@@ -38,9 +38,9 @@ import org.jgrapes.http.events.Request;
 import org.jgrapes.io.FileStorage;
 import org.jgrapes.io.NioDispatcher;
 import org.jgrapes.io.util.PermitsPool;
+import org.jgrapes.mail.MailStoreMonitor;
 import org.jgrapes.net.TcpServer;
 import org.jgrapes.osgi.core.ComponentCollector;
-import org.jgrapes.util.JsonConfigurationStore;
 import org.jgrapes.util.TomlConfigurationStore;
 import org.jgrapes.webconsole.base.BrowserLocalBackedKVStore;
 import org.jgrapes.webconsole.base.ConletComponentFactory;
@@ -107,6 +107,7 @@ public class Mtc extends Component implements BundleActivator {
                 .prependClassTemplateLoader(getClass())
                 .prependResourceBundleProvider(getClass());
         WebConsole console = consoleWeblet.console();
+        console.attach(new MailStoreMonitor(console.channel()));
         console.attach(new BrowserLocalBackedKVStore(
             console.channel(), consoleWeblet.prefix().getPath()));
         console.attach(new KVStoreBasedConsolePolicy(console.channel()));

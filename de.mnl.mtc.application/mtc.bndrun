@@ -47,6 +47,7 @@
     osgi.identity;filter:='(osgi.identity=slf4j.log4j12)',\
     osgi.identity;filter:='(osgi.identity=slf4j.osgi)',\
     osgi.identity;filter:='(osgi.identity=ch.qos.logback.core)',\
+    osgi.identity;filter:='(&(osgi.identity=jakarta.mail-api)(version>=2.1))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.coreutils)(!(version>=2.1.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.osgi2jul)(!(version>=1.2.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.log4j2osgi)(!(version>=1.2.0.ga)))',\
@@ -116,11 +117,11 @@
 	org.jdrupes.httpcodec;version='[3.0.0,3.0.1)',\
 	org.jgrapes.core;version='[1.16.0,1.16.1)',\
 	org.jgrapes.http;version='[1.15.0,1.15.1)',\
-	org.jgrapes.io;version='[1.14.0,1.14.1)',\
+	org.jgrapes.io;version='[1.15.0,1.15.1)',\
 	org.jgrapes.util;version='[1.19.0,1.19.1)',\
-	org.jgrapes.mail;version='[0.1.1,0.1.2)',\
+	org.jgrapes.mail;version='[0.2.0,0.2.1)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
-	org.jgrapes.webconsole.base;version='[0.47.0,0.47.1)',\
+	org.jgrapes.webconsole.base;version='[0.49.0,0.49.1)',\
 	org.jgrapes.webconsole.rbac;version='[0.2.0,0.2.1)',\
 	org.jgrapes.webconsole.vuejs;version='[0.24.0,0.24.1)',\
 	org.jgrapes.webconsole.provider.chartjs;version='[0.32.0,0.32.1)',\
