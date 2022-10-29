@@ -20,6 +20,12 @@
 #        index=${.}/snapshots.mvn; \
 #        name="PublishedSnapshots"
 
+#-plugin.3.Local: \
+#    aQute.bnd.deployer.repository.LocalIndexedRepo; \
+#        name=Local; \
+#        local=${workspace}/cnf/localrepo; \
+#        pretty=true
+        
 #-plugin.8.LocalMaven: \
 #    aQute.bnd.repository.maven.provider.MavenBndRepository; \
 #        index=${.}/snapshots.mvn; \
