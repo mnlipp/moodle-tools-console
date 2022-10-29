@@ -25,6 +25,7 @@ import de.mnl.moodle.provider.actions.MoodleCoursesOfUser;
 import de.mnl.moodle.provider.actions.MoodleEnrolledUsers;
 import de.mnl.moodle.provider.actions.MoodleGetGroupings;
 import de.mnl.moodle.provider.actions.MoodleSubmissions;
+import de.mnl.moodle.provider.actions.MoodleUserByEmail;
 import de.mnl.moodle.provider.actions.MoodleUsersGroupsInGrouping;
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleAssignment;
@@ -38,6 +39,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.time.Instant;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -140,6 +142,16 @@ public class MoodleClientConnection implements MoodleClient {
         course.setContents(new MoodleCourseContents(restClient).invoke(course,
             excludeContents, modname));
         return course;
+    }
+
+    @Override
+    public Optional<MoodleUser> userByEmail(String email) throws IOException {
+        return new MoodleUserByEmail(restClient).invoke(email);
+    }
+
+    @Override
+    public MoodleCourse[] courses(MoodleUser moodleUser) throws IOException {
+        return new MoodleCoursesOfUser(restClient).invoke(moodleUser);
     }
 
     @Override

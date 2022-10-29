@@ -28,6 +28,7 @@ import java.io.IOException;
 import java.net.URI;
 import java.time.Instant;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 /**
@@ -152,4 +153,22 @@ public interface MoodleClient extends AutoCloseable {
      */
     MoodleCourse withContents(MoodleCourse course, boolean excludeContents,
             String modname) throws IOException;
+
+    /**
+     * Find a user given his email address.
+     *
+     * @param email the email
+     * @return the moodle user
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    Optional<MoodleUser> userByEmail(String email) throws IOException;
+
+    /**
+     * Returns the courses that the user is enrolled in.
+     *
+     * @param user the user
+     * @return the moodle course[]
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleCourse[] courses(MoodleUser user) throws IOException;
 }
