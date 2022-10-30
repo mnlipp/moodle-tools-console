@@ -10,7 +10,12 @@
     <p>{{ localize("First name") }}: {{ userInfo.firstName }}</p>
     <ul>
     <li v-for="course in userInfo.courses">
-      <a :href="course.url" target="_blank">{{ course.name }}</a></li>
+      <a :href="course.url" target="_blank">{{ course.name }}</a>
+      <ul>
+        <li><a :href="course.gradesUrl" target="_blank">{{ 
+            localize("Grades for course") }}</a></li>
+      </ul>
+      </li>
     </ul>
   </div>
 </div>

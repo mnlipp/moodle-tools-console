@@ -20,6 +20,7 @@ package de.mnl.mtc.conlets.senderinfo;
 
 import de.mnl.moodle.service.MoodleClient;
 import de.mnl.moodle.service.model.MoodleCourse;
+import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
 import de.mnl.osgi.lf4osgi.LoggerFactory;
 import freemarker.core.ParseException;
@@ -306,7 +307,7 @@ public class SenderInfoConlet
             userInfo.put("lastName", user.get().getLastname());
             userInfo.put("firstName", user.get().getFirstname());
             var courses = client.courses(user.get());
-            var courseInfos = courseInfos(client, courses);
+            var courseInfos = courseInfos(client, user.get(), courses);
             userInfo.put("courses", courseInfos);
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setUserInfo", userInfo));
@@ -319,7 +320,7 @@ public class SenderInfoConlet
 
     @SuppressWarnings("PMD.UseVarargs")
     private List<Map<String, String>> courseInfos(MoodleClient client,
-            MoodleCourse[] courses) {
+            MoodleUser user, MoodleCourse[] courses) {
         return Stream.of(courses).sorted(new Comparator<MoodleCourse>() {
             @Override
             public int compare(MoodleCourse crs1, MoodleCourse crs2) {
@@ -343,7 +344,9 @@ public class SenderInfoConlet
             }
         }).map(course -> {
             return Map.of("name", course.getDisplayname(),
-                "url", client.courseUri(course).toString());
+                "url", client.courseUri(course).toString(),
+                "gradesUrl",
+                client.userCourseGradesUri(user, course).toString());
         }).collect(Collectors.toList());
     }
 
