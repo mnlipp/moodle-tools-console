@@ -89,6 +89,15 @@ public interface MoodleClient extends AutoCloseable {
     URI courseUri(MoodleCourse course);
 
     /**
+     * User course grades uri.
+     *
+     * @param user the user
+     * @param course the course
+     * @return the uri
+     */
+    URI userCourseGradesUri(MoodleUser user, MoodleCourse course);
+
+    /**
      * Retrieves new course objects with all details filled in.
      *
      * @param courses the courses

@@ -106,6 +106,20 @@ public class MoodleClientConnection implements MoodleClient {
     }
 
     @Override
+    @SuppressWarnings("PMD.EmptyCatchBlock")
+    public URI userCourseGradesUri(MoodleUser user, MoodleCourse course) {
+        // grade/report/user/index.php?id=18465&userid=65252
+        try {
+            return siteUri.resolve(new URI(null, null,
+                "grade/report/user/index.php",
+                "id=" + course.getId() + "&userid=" + user.getId(), null));
+        } catch (URISyntaxException e) {
+            // Cannot happen.
+        }
+        return siteUri;
+    }
+
+    @Override
     public MoodleGrouping[] groupings(MoodleCourse course) throws IOException {
         return new MoodleGetGroupings(restClient).invoke(course);
     }
