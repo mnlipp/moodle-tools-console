@@ -21,6 +21,7 @@ Bundle-Activator: de.mnl.mtc.application.Mtc
     org.jgrapes.webconsole.base;version=latest,\
     org.jgrapes.webconsole.rbac;version=latest,\
 	org.jgrapes.webconsole.vuejs;version=latest,\
+    org.jgrapes.webconlet.markdowndisplay;version='latest',\
 	org.jgrapes.osgi.core;version=latest,\
 	org.jdrupes.httpcodec
 

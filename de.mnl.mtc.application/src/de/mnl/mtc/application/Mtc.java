@@ -111,10 +111,9 @@ public class Mtc extends Component implements BundleActivator {
         console.attach(new BrowserLocalBackedKVStore(
             console.channel(), consoleWeblet.prefix().getPath()));
         console.attach(new KVStoreBasedConsolePolicy(console.channel()));
-        console.attach(new NewConsoleSessionPolicy(console.channel()));
+        console.attach(new AvoidEmptyPolicy(console.channel()));
         console.attach(new RoleConfigurator(console.channel()));
         console.attach(new RoleConletFilter(console.channel()));
-        console.attach(new ActionFilter(console.channel()));
         console.attach(new ComponentCollector<>(
             console.channel(), context, PageResourceProviderFactory.class,
             type -> {
