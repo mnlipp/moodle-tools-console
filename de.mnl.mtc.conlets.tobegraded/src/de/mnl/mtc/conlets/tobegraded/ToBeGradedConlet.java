@@ -257,6 +257,12 @@ public class ToBeGradedConlet
                 }
             }
             var displayData = compact(data);
+            if (displayData.isEmpty()) {
+                channel.respond(new NotifyConletView(type(),
+                    model.getConletId(), "setMessage",
+                    bundle.getString("NothingToBeGraded")));
+                return;
+            }
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setPreviewData", displayData));
         } catch (IOException e) {
