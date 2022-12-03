@@ -152,6 +152,17 @@ public interface MoodleClient extends AutoCloseable {
             String status, Instant since, Instant before) throws IOException;
 
     /**
+     * With participant info.
+     *
+     * @param user the user
+     * @param assignment the assignment
+     * @return the moodle user
+     * @throws IOException Signals that an I/O exception has occurred.
+     */
+    MoodleUser withParticipantInfo(MoodleUser user, MoodleAssignment assignment)
+            throws IOException;
+
+    /**
      * Retrieve a course's contents and add it to the representation.
      *
      * @param course the course

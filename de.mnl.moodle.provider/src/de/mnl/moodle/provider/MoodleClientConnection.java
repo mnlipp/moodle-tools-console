@@ -18,6 +18,7 @@
 
 package de.mnl.moodle.provider;
 
+import de.mnl.moodle.provider.actions.MoodleAssignmentGetParticipant;
 import de.mnl.moodle.provider.actions.MoodleCourseAssignments;
 import de.mnl.moodle.provider.actions.MoodleCourseContents;
 import de.mnl.moodle.provider.actions.MoodleCourseDetails;
@@ -148,6 +149,16 @@ public class MoodleClientConnection implements MoodleClient {
             String status, Instant since, Instant before) throws IOException {
         return new MoodleSubmissions(restClient).invoke(assignments, status,
             since, before);
+    }
+
+    @Override
+    public MoodleUser withParticipantInfo(MoodleUser user,
+            MoodleAssignment assignment) throws IOException {
+        var info = new MoodleAssignmentGetParticipant(restClient)
+            .invoke(assignment, user);
+        info.setAssignmentId(assignment.getId());
+        user.setParticipantInfo(assignment, info);
+        return user;
     }
 
     @Override

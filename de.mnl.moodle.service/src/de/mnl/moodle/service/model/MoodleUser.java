@@ -18,7 +18,10 @@
 
 package de.mnl.moodle.service.model;
 
+import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Models a Moodle user with the properties required in this context.
@@ -31,6 +34,8 @@ public class MoodleUser extends MoodleErrorValues {
     private String firstname;
     private String fullname;
     private String email;
+    private final Map<Long, MoodleParticipantInfo> participantInfo
+        = new ConcurrentHashMap<>();
 
     /**
      * @return the id
@@ -100,6 +105,31 @@ public class MoodleUser extends MoodleErrorValues {
      */
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    /**
+     * Sets the participant info for an assignment.
+     *
+     * @param assignment the assignment
+     * @param info the info
+     * @return the moodle user
+     */
+    @SuppressWarnings("PMD.LinguisticNaming")
+    public MoodleUser setParticipantInfo(MoodleAssignment assignment,
+            MoodleParticipantInfo info) {
+        participantInfo.put(assignment.getId(), info);
+        return this;
+    }
+
+    /**
+     * Return the participant info for the given assignment.
+     *
+     * @param assignment the assignment
+     * @return the optional
+     */
+    public Optional<MoodleParticipantInfo>
+            participantInfo(MoodleAssignment assignment) {
+        return Optional.ofNullable(participantInfo.get(assignment.getId()));
     }
 
     @Override
