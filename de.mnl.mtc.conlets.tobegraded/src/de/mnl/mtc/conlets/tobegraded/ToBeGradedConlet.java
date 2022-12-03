@@ -25,6 +25,7 @@ import de.mnl.moodle.service.model.MoodleCourseSection;
 import de.mnl.moodle.service.model.MoodleGroup;
 import de.mnl.moodle.service.model.MoodleGrouping;
 import de.mnl.moodle.service.model.MoodleModule;
+import de.mnl.moodle.service.model.MoodleParticipantInfo;
 import de.mnl.moodle.service.model.MoodleSubmission;
 import de.mnl.moodle.service.model.MoodleUser;
 import de.mnl.osgi.lf4osgi.Logger;
@@ -170,7 +171,8 @@ public class ToBeGradedConlet
     @SuppressWarnings({ "PMD.GuardLogStatement",
         "PMD.AvoidInstantiatingObjectsInLoops", "PMD.ExcessiveMethodLength",
         "PMD.CognitiveComplexity", "PMD.NcssCount",
-        "PMD.AvoidLiteralsInIfCondition", "PMD.NPathComplexity" })
+        "PMD.AvoidLiteralsInIfCondition", "PMD.NPathComplexity",
+        "PMD.CyclomaticComplexity" })
     private void sendPreviewData(ConsoleConnection channel,
             ConletBaseModel model) {
         MoodleClient client = (MoodleClient) channel.session()
@@ -223,36 +225,25 @@ public class ToBeGradedConlet
                 }
 
                 // Get the users in groups in my grading grouping
-                var myUsers = new HashMap<Long, MoodleUser>();
-                @SuppressWarnings("PMD.UseConcurrentHashMap")
-                Map<MoodleUser, MoodleGroup[]> groupsOfUser = new HashMap<>();
-                for (var user : client.enrolled(course)) {
-                    // Handle users in my grouping
-                    var groups = client.usersGroupsInGrouping(course, user,
-                        myGrouping);
-                    if (groups.length == 0) {
-                        continue;
-                    }
-                    groupsOfUser.put(user, groups);
-                    myUsers.put(user.getId(), user);
-                }
+                var myUsers = gradingCandidates(client, course, myGrouping);
                 if (myUsers.isEmpty()) {
                     continue;
                 }
                 for (var assignment : assignmentsToCheck) {
                     for (var submission : assignment.getSubmissions()) {
-                        if (!myUsers.containsKey(submission.getUserid())) {
+                        Optional<MoodleUser> user = myUsers.keySet().stream()
+                            .filter(u -> u.getId() == submission.getUserid())
+                            .findFirst();
+                        if (user.isEmpty()
+                            || "graded".equals(submission.getGradingstatus())) {
                             continue;
                         }
-                        if (!"graded".equals(submission.getGradingstatus())) {
-                            if (course.getContents() == null) {
-                                client.withContents(course, true, "assign");
-                            }
-                            MoodleUser user
-                                = myUsers.get(submission.getUserid());
-                            addUngraded(client, data, course, assignment,
-                                submission, user, groupsOfUser.get(user));
+                        if (course.getContents() == null) {
+                            client.withContents(course, true, "assign");
                         }
+                        client.withParticipantInfo(user.get(), assignment);
+                        addUngraded(client, data, course, assignment,
+                            submission, user.get(), myUsers.get(user.get()));
                     }
                 }
             }
@@ -270,6 +261,24 @@ public class ToBeGradedConlet
             channel.respond(new ResourceNotAvailable(MoodleClient.class));
             return;
         }
+    }
+
+    private Map<MoodleUser, MoodleGroup[]> gradingCandidates(
+            MoodleClient client, MoodleCourse course, MoodleGrouping myGrouping)
+            throws IOException {
+        // Get the users in groups in my grading grouping
+        @SuppressWarnings("PMD.UseConcurrentHashMap")
+        Map<MoodleUser, MoodleGroup[]> usersWithGroups = new HashMap<>();
+        for (var user : client.enrolled(course)) {
+            // Handle users in my grouping
+            var groups = client.usersGroupsInGrouping(course, user,
+                myGrouping);
+            if (groups.length == 0) {
+                continue;
+            }
+            usersWithGroups.put(user, groups);
+        }
+        return usersWithGroups;
     }
 
     @SuppressWarnings({ "unchecked", "PMD.UnusedFormalParameter",
@@ -309,7 +318,9 @@ public class ToBeGradedConlet
                 "email", user.getEmail(),
                 "fullname", user.getFullname(),
                 "groups", Stream.of(groups).map(g -> Map.of("name", g.getName(),
-                    "id", g.getId())).collect(Collectors.toList())));
+                    "id", g.getId())).collect(Collectors.toList()),
+                "duedate", user.participantInfo(assignment)
+                    .map(MoodleParticipantInfo::getDuedate).orElse(0L)));
     }
 
     @SuppressWarnings({ "PMD.AvoidDuplicateLiterals", "unchecked" })

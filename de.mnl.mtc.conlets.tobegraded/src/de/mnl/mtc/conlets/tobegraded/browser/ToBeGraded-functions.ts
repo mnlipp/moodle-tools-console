@@ -60,6 +60,7 @@ window.deMnlMtcTobegraded.initPreview = function(previewDom: HTMLElement) {
                     courses.value = [];
                     return;
                 }
+                let now = Date.now() / 1000;
                 for (let course of data) {
                     for (let assignment of course.assignments) {
                         for (let user of assignment.users) {
@@ -69,7 +70,14 @@ window.deMnlMtcTobegraded.initPreview = function(previewDom: HTMLElement) {
                                         new Map<number,any>());
                                 }
                                 let groups = groupsInAssignment.get(assignment.id)!;
-                                groups.set(group.id, group);
+                                if (!groups.has(group.id)) {
+                                    groups.set(group.id, group);
+                                    group.dueCount = 0;
+                                }
+                                let g = groups.get(group.id);
+                                if (user.duedate <= now) {
+                                    g.dueCount = g.dueCount + 1;
+                                }
                             }
                         }
                     }
