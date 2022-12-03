@@ -19,3 +19,7 @@
  .mtc-conlet-tobegraded__info {
     color: var(--info);
 }
+
+.mtc-conlet-tobegraded ul {
+    padding-left: 2em;
+}

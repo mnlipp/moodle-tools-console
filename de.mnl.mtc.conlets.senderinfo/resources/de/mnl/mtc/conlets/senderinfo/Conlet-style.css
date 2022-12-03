@@ -30,3 +30,8 @@
   vertical-align: top;
   cursor: zoom-in;
 }
+
+.mtc-conlet-senderinfo ul {
+    padding-left: 2em;
+}
+

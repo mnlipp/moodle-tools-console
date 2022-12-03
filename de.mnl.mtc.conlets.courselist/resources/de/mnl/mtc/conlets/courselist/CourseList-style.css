@@ -19,3 +19,7 @@
  .mtc-conlet-courselist__info {
     color: var(--info);
 }
+
+.mtc-conlet-courselist ul {
+    padding-left: 2em;
+}
