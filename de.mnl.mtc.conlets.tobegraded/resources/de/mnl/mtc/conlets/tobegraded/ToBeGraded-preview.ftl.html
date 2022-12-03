@@ -14,7 +14,7 @@
             <template v-for="group in groupsByAssignment(assignment.id)">
               &nbsp;(<a :href="groupUrl(assignment, group)" target="_blank">
                 {{group.name}}</a><span v-if="group.dueCount > 0">
-                , {{ group.dueCount }} {{ localize("whereGradingIsDue") }}</span>)
+                , {{ group.dueCount }}&nbsp;{{ localize("whereGradingIsDue") }}</span>)
             </template>
           </p></li>
         </template>
