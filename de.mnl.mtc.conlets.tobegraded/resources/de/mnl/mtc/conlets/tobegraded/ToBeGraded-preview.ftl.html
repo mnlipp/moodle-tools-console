@@ -1,4 +1,4 @@
-<div 
+<div class="mtc-conlet-tobegraded"
     data-portlet-title="${_("conletName")}"
     data-jgwc-on-load="deMnlMtcTobegraded.initPreview"
     data-jgwc-on-unload="JGConsole.jgwc.unmountVueApps">
@@ -7,20 +7,18 @@
     <ul>
       <li v-for="course in courses">
         <p><a :href="course.url" target="_blank">{{ course.shortname }}</a></p>
-        <p>
-          <ul>
-          <template v-for="assignment in course.assignments">
-            <li><p>
-              <a :href="assignment.url" target="_blank">{{ assignment.name }}</a>
-              <template v-for="group in groupsByAssignment(assignment.id)">
-                &nbsp;(<a :href="groupUrl(assignment, group)" target="_blank">
-                  {{group.name}}</a><span v-if="group.dueCount > 0">
-                  , {{ group.dueCount }} {{ localize("whereGradingIsDue") }}</span>)
-              </template>
-            </p></li>
-          </template>
-          </ul>
-        </p>
+        <ul>
+        <template v-for="assignment in course.assignments">
+          <li><p>
+            <a :href="assignment.url" target="_blank">{{ assignment.name }}</a>
+            <template v-for="group in groupsByAssignment(assignment.id)">
+              &nbsp;(<a :href="groupUrl(assignment, group)" target="_blank">
+                {{group.name}}</a><span v-if="group.dueCount > 0">
+                , {{ group.dueCount }} {{ localize("whereGradingIsDue") }}</span>)
+            </template>
+          </p></li>
+        </template>
+        </ul>
       </li>
     </ul>
   </div>
