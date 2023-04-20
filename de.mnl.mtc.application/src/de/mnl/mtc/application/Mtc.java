@@ -39,7 +39,7 @@ import org.jgrapes.io.FileStorage;
 import org.jgrapes.io.NioDispatcher;
 import org.jgrapes.io.util.PermitsPool;
 import org.jgrapes.mail.MailStoreMonitor;
-import org.jgrapes.net.TcpServer;
+import org.jgrapes.net.SocketServer;
 import org.jgrapes.osgi.core.ComponentCollector;
 import org.jgrapes.util.TomlConfigurationStore;
 import org.jgrapes.webconsole.base.BrowserLocalBackedKVStore;
@@ -85,7 +85,7 @@ public class Mtc extends Component implements BundleActivator {
 
         // Create a TCP server
         Channel tcpChannel = new NamedChannel("TCP");
-        app.attach(new TcpServer(tcpChannel)
+        app.attach(new SocketServer(tcpChannel)
             .setConnectionLimiter(new PermitsPool(300))
             .setMinimalPurgeableTime(1000));
 

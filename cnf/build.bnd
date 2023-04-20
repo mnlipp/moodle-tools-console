@@ -31,9 +31,9 @@
 #        index=${.}/snapshots.mvn; \
 #        name="LocalMaven"
 
-javac.source: 11
-javac.target: 11
--runee: JavaSE-11
+javac.source: 17
+javac.target: 17
+-runee: JavaSE-17
 
 -outputmask: ${@bsn}-${versionmask;===S;${@version}}.jar
 
