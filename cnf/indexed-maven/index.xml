@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<repository increment="1682002391456" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1682283944421" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
     <referral url="org.jgrapes/index.xml"/>
     <referral url="dependencies/org.assertj/index.xml"/>
     <referral url="dependencies/org.ops4j.base/index.xml"/>
-    <referral url="dependencies/jakarta.mail/index.xml"/>
+    <referral url="jakarta.mail/index.xml"/>
     <referral url="dependencies/jakarta.activation/index.xml"/>
     <referral url="dependencies/ch.qos.logback/index.xml"/>
     <referral url="dependencies/xml-apis/index.xml"/>
@@ -19,7 +19,6 @@
     <referral url="dependencies/com.google.code.findbugs/index.xml"/>
     <referral url="dependencies/aopalliance/index.xml"/>
     <referral url="org.mockito/index.xml"/>
-    <referral url="dependencies/com.sun.activation/index.xml"/>
     <referral url="dependencies/com.google.errorprone/index.xml"/>
     <referral url="dependencies/org.sonatype.plexus/index.xml"/>
     <referral url="dependencies/org.apache.tomcat/index.xml"/>
@@ -39,21 +38,20 @@
     <referral url="dependencies/com.google.j2objc/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.http2/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.alpn/index.xml"/>
-    <referral url="dependencies/stax/index.xml"/>
     <referral url="dependencies/javax.servlet/index.xml"/>
     <referral url="dependencies/org.eclipse.platform/index.xml"/>
     <referral url="dependencies/jakarta.servlet/index.xml"/>
     <referral url="dependencies/asm/index.xml"/>
     <referral url="dependencies/org.hamcrest/index.xml"/>
-    <referral url="dependencies/org.apache.commons/index.xml"/>
     <referral url="dependencies/org.junit.vintage/index.xml"/>
+    <referral url="dependencies/org.apache.commons/index.xml"/>
     <referral url="org.slf4j/index.xml"/>
     <referral url="dependencies/org.opentest4j/index.xml"/>
     <referral url="dependencies/xerces/index.xml"/>
     <referral url="dependencies/org.jdrupes.httpcodec/index.xml"/>
     <referral url="dependencies/com.fasterxml.jackson.core/index.xml"/>
     <referral url="dependencies/commons-io/index.xml"/>
-    <referral url="dependencies/org.apache.aries/index.xml"/>
+    <referral url="dependencies/org.apache.johnzon/index.xml"/>
     <referral url="org.junit.platform/index.xml"/>
     <referral url="dependencies/org.apiguardian/index.xml"/>
     <referral url="dependencies/org.jdrupes.json/index.xml"/>
@@ -72,22 +70,19 @@
     <referral url="dependencies/org.apache.ant/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty/index.xml"/>
     <referral url="de.mnl.osgi/index.xml"/>
-    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/com.google.guava/index.xml"/>
+    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/org.jline/index.xml"/>
     <referral url="dependencies/org.apache.maven.shared/index.xml"/>
     <referral url="dependencies/org.apache.maven/index.xml"/>
     <referral url="dependencies/org.codehaus.mojo/index.xml"/>
-    <referral url="com.sun.mail/index.xml"/>
     <referral url="dependencies/net.sf.kxml/index.xml"/>
     <referral url="dependencies/org.jetbrains/index.xml"/>
-    <referral url="dependencies/org.codehaus.woodstox/index.xml"/>
-    <referral url="dependencies/de.twentyeleven.skysail/index.xml"/>
     <referral url="dependencies/junit/index.xml"/>
+    <referral url="dependencies/de.twentyeleven.skysail/index.xml"/>
     <referral url="dependencies/org.mongodb/index.xml"/>
     <referral url="org.junit.jupiter/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.websocket/index.xml"/>
-    <referral url="dependencies/it.cnr.isti.domoware.cyberdomo/index.xml"/>
     <referral url="dependencies/org.freemarker/index.xml"/>
     <referral url="dependencies/org.apache.maven.wagon/index.xml"/>
     <referral url="dependencies/jmock/index.xml"/>

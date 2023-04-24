@@ -1,220 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1681974943013">
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.util"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: Utilities"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.log,org.eclipse.jetty.util.resource,org.eclipse.jetty.util.thread"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-593212548,1958135503,-1695285860,579053043,579084763,298500332,985040776,29603135,-1034806157,-1895856777,-649224091,41803917,73863,-487502739,-395201406,156250859,279828960,2070178790,1452261334,-1965077225,-107576219,1587623670,1203945159,-354341429,80204913,-1596216757,1372300957,-747524644,-587981320,2606525,1728678996,-1867268300,-1762961381,1026742184,67875034,2104126169,-1898550456,743473592,-1531638156,-236039575,67081517,190385941,1157473206,74653,-1950517813,-1255203208,2342,112522936,1789136609,2145418575,1331028018,-1792766410,1517690576,435125205,836712508,1234220832,-125521065,-551231138,738400162,2088795709,1955883606,-981660676,-2123299629,-973445066,71464638,-1189985710,1631285969,-776250263,-2013651917,1903863714,-1550426519,-1217526768,1804946017,-1442072778,718439811,-284735749,796887212,1391921832,-1447769763,-964556115,-917051329,-628217970,1484290473,2024042338,10727683,-438088948,1216206062,1410803924,-726747147,1573669168,-1622395766,538816951,-2002788446,67115090,529486639,-1076069671,-1806825107,2493500,322874207,514145071,1355436283,-1528077474,-250712348,1126453952,-629145925,-1791797249,-195491902,-1744462706,1677696006,683604717,759553291,28399645,-1403226511,2023948962,2131414094,-719352354,1324359848,1643215322,-1704403112,1645734376,1129782847,63574620,2592443,-388416505,-462825443,420425683,466903926,1748796160,979545901,1450819832,2615354,-611636612,546056046,1230588897,2283072,-1754494968,-112916289,1241909227,-1406859803,441962404,-1182419486,2002649657" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="227746269,193289118,1877363880,2420395" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="874442236,1427336488,1589922231,6568334,1410803924,1593011297,2066384,-1795053697,-1314650135,-314159052,2051870387,-2057234066,1591882412,-879096552,1115343082,-104699274,153253605,1672091434,-1544609464" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.component"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.compression"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-925107582,-1292423549,360296999" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="921533554,-1440059584,-372519952,762991812,76580,-2013470288,219982708,-1338049599,-794456034,1247891330" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.component,org.eclipse.jetty.util.log"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.preventers"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-1890339292,1940210496,482412180,941455968,-1495436771,1222486012,-1009794898,-433786885,262244661,-1815390607" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-854886637,1764245595,-1444792886,1857107781,-1880154327,-1362760845,-276420562,1839096291,1276367212,-1453936388,-1555254659" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.resource"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="777357690,77395867,1803088381,65391950,76158,1310049399,-2099263608,1281629883,1620297894" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.util,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.resource,org.eclipse.jetty.util.security"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-970865604,-449308228,1487302477,1141746043,1346836020,-691764897,2021122027,572770538,-1821959325,1794620710,-107984609,-952769177,1938820899,922313492,2674086" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.statistic"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-1261665580,138284252,608630832,-813131098" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-939117646,-430523765,-356978506,-1423840615,771915786,258922559,2373963,-1757528188,-2013585608,-787651438,-2017824147,-1835938992,-244565191,17781618,80204913,908467813,853069397,-594341861,2599333,1843257499,399763986,2368538,-154940777,1815098400,-312308186,-143341447,840941491,-752406007,808378726,73293370,-2022872726,-1161996213,561876599,737411862,933923597,901241742" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.thread"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread.strategy"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="2403779,80204913,-59127199,-162225163,-2015892047,-556640484,1349132199" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.version"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.util"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.util"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.util"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-util:9.4.50.v20221201"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="javax.servlet:javax.servlet-api:3.1.0"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="583157" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.50.v20221201/jetty-util-9.4.50.v20221201.jar"/>
-      <attribute name="osgi.content" value="38891B3480B582D1F2646CF94F33E1675BDC7C814657E1742424C98193C9117B"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.imageio)"/>
-      <attribute name="osgi.wiring.package" value="javax.imageio"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.naming.ldap)"/>
-      <attribute name="osgi.wiring.package" value="javax.naming.ldap"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.x500)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.x500"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="javax.servlet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
-      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.statistic)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.statistic"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="org.slf4j"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.util.security.CredentialProvider)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-    </requirement>
-  </resource>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1682257808611">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
@@ -847,310 +632,6 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.webapp"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: Webapp Application Support"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.servlet,org.eclipse.jetty.security,org.eclipse.jetty.server,org.eclipse.jetty.server.handler,org.eclipse.jetty.server.session,org.eclipse.jetty.servlet,org.eclipse.jetty.util,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.resource,org.eclipse.jetty.xml"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.webapp"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.webapp"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="1453618315,1938082772,-1253391009,1975018305,-2072926900,-905877605,1385178563,-2043633713,1952548797,1678996986,67115090,-1021824611,448871750,-1736838164,1793104723,-1548623175,1994027542,-1034806157,-1117925013,-1563253546,-1321962626,2031886209,1245097871,-1307193917,971108279,-1969269658,58104394,-1604146689,1743876374,-493991037,1339786741,108945684,-386313361,969017800,40797914,1298958836,-1924752570,1273641083,1376992480,-2010047546,-1678783089,150175518,171154082,1633718723,-75215839,-969723723,-477277719,208707955" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.webapp"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.webapp"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.webapp"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-webapp:9.4.50.v20221201"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-xml:9.4.50.v20221201;org.eclipse.jetty:jetty-servlet:9.4.50.v20221201"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="140316" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.50.v20221201/jetty-webapp-9.4.50.v20221201.jar"/>
-      <attribute name="osgi.content" value="7FC633C92DD462BF9B3E4ACE572634F7D9A271BFEDF0D1311424F9DFC5974E07"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="javax.servlet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.descriptor)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="javax.servlet.descriptor"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.http)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.http"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.http.pathmap)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.http.pathmap"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.security"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server.handler)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server.handler"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server.session)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server.session"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.servlet)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.servlet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.xml)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
-      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.50.v20221201"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.50.v20221201"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="42357" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.50.v20221201/jetty-jmx-9.4.50.v20221201.jar"/>
-      <attribute name="osgi.content" value="927078DE7184613E45522BCE42951A6EF9DBFC7F5E020928775F672431D2E8C6"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
-      <attribute name="osgi.wiring.package" value="javax.management"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <directive name="singleton" value="true"/>
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="version" value="9.4.50" type="Version"/>
-      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.50.v20221201"/>
-      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.50.v20221201"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="17660" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.50.v20221201/jetty-alpn-server-9.4.50.v20221201.jar"/>
-      <attribute name="osgi.content" value="AC090B6472CDDC67161EF12F384DC7ED29100372614EE3A672A5594AA3CA3036"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.http"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Http Utility"/>
@@ -1494,6 +975,525 @@
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Utilities"/>
       <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.log,org.eclipse.jetty.util.resource,org.eclipse.jetty.util.thread"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-593212548,1958135503,-1695285860,579053043,579084763,298500332,985040776,29603135,-1034806157,-1895856777,-649224091,41803917,73863,-487502739,-395201406,156250859,279828960,2070178790,1452261334,-1965077225,-107576219,1587623670,1203945159,-354341429,80204913,-1596216757,1372300957,-747524644,-587981320,2606525,1728678996,-1867268300,-1762961381,1026742184,67875034,2104126169,-1898550456,743473592,-1531638156,-236039575,67081517,190385941,1157473206,74653,-1950517813,-1255203208,2342,112522936,1789136609,2145418575,1331028018,-1792766410,1517690576,435125205,836712508,1234220832,-125521065,-551231138,738400162,2088795709,1955883606,-981660676,-2123299629,-973445066,71464638,-1189985710,1631285969,-776250263,-2013651917,1903863714,-1550426519,-1217526768,1804946017,-1442072778,718439811,-284735749,796887212,1391921832,-1447769763,-964556115,-917051329,-628217970,1484290473,2024042338,10727683,-438088948,1216206062,1410803924,-726747147,1573669168,-1622395766,538816951,-2002788446,67115090,529486639,-1076069671,-1806825107,2493500,322874207,514145071,1355436283,-1528077474,-250712348,1126453952,-629145925,-1791797249,-195491902,-1744462706,1677696006,683604717,759553291,28399645,-1403226511,2023948962,2131414094,-719352354,1324359848,1643215322,-1704403112,1645734376,1129782847,63574620,2592443,-388416505,-462825443,420425683,466903926,1748796160,979545901,1450819832,2615354,-611636612,546056046,1230588897,2283072,-1754494968,-112916289,1241909227,-1406859803,441962404,-1182419486,2002649657" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="227746269,193289118,1877363880,2420395" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="874442236,1427336488,1589922231,6568334,1410803924,1593011297,2066384,-1795053697,-1314650135,-314159052,2051870387,-2057234066,1591882412,-879096552,1115343082,-104699274,153253605,1672091434,-1544609464" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.component"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.compression"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-925107582,-1292423549,360296999" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="921533554,-1440059584,-372519952,762991812,76580,-2013470288,219982708,-1338049599,-794456034,1247891330" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.component,org.eclipse.jetty.util.log"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.preventers"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-1890339292,1940210496,482412180,941455968,-1495436771,1222486012,-1009794898,-433786885,262244661,-1815390607" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-854886637,1764245595,-1444792886,1857107781,-1880154327,-1362760845,-276420562,1839096291,1276367212,-1453936388,-1555254659" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.resource"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="777357690,77395867,1803088381,65391950,76158,1310049399,-2099263608,1281629883,1620297894" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.util,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.resource,org.eclipse.jetty.util.security"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-970865604,-449308228,1487302477,1141746043,1346836020,-691764897,2021122027,572770538,-1821959325,1794620710,-107984609,-952769177,1938820899,922313492,2674086" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.statistic"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-1261665580,138284252,608630832,-813131098" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-939117646,-430523765,-356978506,-1423840615,771915786,258922559,2373963,-1757528188,-2013585608,-787651438,-2017824147,-1835938992,-244565191,17781618,80204913,908467813,853069397,-594341861,2599333,1843257499,399763986,2368538,-154940777,1815098400,-312308186,-143341447,840941491,-752406007,808378726,73293370,-2022872726,-1161996213,561876599,737411862,933923597,901241742" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.thread"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread.strategy"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="2403779,80204913,-59127199,-162225163,-2015892047,-556640484,1349132199" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.util"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.version"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.util"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.util"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.util"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-util:9.4.50.v20221201"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="provided" value="javax.servlet:javax.servlet-api:3.1.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="583157" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-util/9.4.50.v20221201/jetty-util-9.4.50.v20221201.jar"/>
+      <attribute name="osgi.content" value="38891B3480B582D1F2646CF94F33E1675BDC7C814657E1742424C98193C9117B"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.imageio)"/>
+      <attribute name="osgi.wiring.package" value="javax.imageio"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.naming.ldap)"/>
+      <attribute name="osgi.wiring.package" value="javax.naming.ldap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.x500)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.x500"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.statistic)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.statistic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.helpers)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.slf4j.spi)(version&gt;=1.7.36)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.slf4j.spi"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.util.security.CredentialProvider)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.webapp"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: Webapp Application Support"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.servlet,org.eclipse.jetty.security,org.eclipse.jetty.server,org.eclipse.jetty.server.handler,org.eclipse.jetty.server.session,org.eclipse.jetty.servlet,org.eclipse.jetty.util,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.resource,org.eclipse.jetty.xml"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.webapp"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.webapp"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="1453618315,1938082772,-1253391009,1975018305,-2072926900,-905877605,1385178563,-2043633713,1952548797,1678996986,67115090,-1021824611,448871750,-1736838164,1793104723,-1548623175,1994027542,-1034806157,-1117925013,-1563253546,-1321962626,2031886209,1245097871,-1307193917,971108279,-1969269658,58104394,-1604146689,1743876374,-493991037,1339786741,108945684,-386313361,969017800,40797914,1298958836,-1924752570,1273641083,1376992480,-2010047546,-1678783089,150175518,171154082,1633718723,-75215839,-969723723,-477277719,208707955" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.webapp"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.webapp"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.webapp"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-webapp:9.4.50.v20221201"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-xml:9.4.50.v20221201;org.eclipse.jetty:jetty-servlet:9.4.50.v20221201"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="140316" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-webapp/9.4.50.v20221201/jetty-webapp-9.4.50.v20221201.jar"/>
+      <attribute name="osgi.content" value="7FC633C92DD462BF9B3E4ACE572634F7D9A271BFEDF0D1311424F9DFC5974E07"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.descriptor)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet.descriptor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=javax.servlet.http)(version&gt;=3.1.0)(!(version&gt;=4.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="javax.servlet.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.http)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.http"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.http.pathmap)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.http.pathmap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server.handler)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server.handler"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server.session)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server.session"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.servlet)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.servlet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.security)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.xml)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.50.v20221201"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.50.v20221201"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="42357" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.50.v20221201/jetty-jmx-9.4.50.v20221201.jar"/>
+      <attribute name="osgi.content" value="927078DE7184613E45522BCE42951A6EF9DBFC7F5E020928775F672431D2E8C6"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <directive name="singleton" value="true"/>
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="version" value="9.4.50" type="Version"/>
+      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.50.v20221201" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.50.v20221201"/>
+      <attribute name="version" value="9.4.50.v20221201" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.50.v20221201"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="17660" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.50.v20221201/jetty-alpn-server-9.4.50.v20221201.jar"/>
+      <attribute name="osgi.content" value="AC090B6472CDDC67161EF12F384DC7ED29100372614EE3A672A5594AA3CA3036"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.50)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.util"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: Utilities"/>
+      <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="9.4.49.v20220914" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
@@ -1705,6 +1705,91 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.xml"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: XML utilities"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.49.v20220914" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.resource,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.xml"/>
+      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
+      <attribute name="version" value="9.4.49" type="Version"/>
+      <attribute name="bnd.hashes" value="-511977380,51450126,192688843,30233749,2049277,-1870231894,597520637,-1191954881,2017053308,-1937510614,2433570,-1841679000,295135990" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.xml"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.xml"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.xml"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-xml:9.4.49.v20220914"/>
+      <attribute name="version" value="9.4.49.v20220914" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.49.v20220914"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="68298" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/9.4.49.v20220914/jetty-xml-9.4.49.v20220914.jar"/>
+      <attribute name="osgi.content" value="0047F7B8569BFF65523C3023D1AC2E483FACCB003DCF9E307763BC2D21AEF85B"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax.helpers)"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.xml.ConfigurationProcessorFactory)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.servlet"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Servlet Handling"/>
@@ -1840,91 +1925,6 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.xml"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: XML utilities"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.49.v20220914" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.resource,org.xml.sax"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.xml"/>
-      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
-      <attribute name="version" value="9.4.49" type="Version"/>
-      <attribute name="bnd.hashes" value="-511977380,51450126,192688843,30233749,2049277,-1870231894,597520637,-1191954881,2017053308,-1937510614,2433570,-1841679000,295135990" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.xml"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.49.v20220914" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.xml"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.xml"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-xml:9.4.49.v20220914"/>
-      <attribute name="version" value="9.4.49.v20220914" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.49.v20220914"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="68298" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/9.4.49.v20220914/jetty-xml-9.4.49.v20220914.jar"/>
-      <attribute name="osgi.content" value="0047F7B8569BFF65523C3023D1AC2E483FACCB003DCF9E307763BC2D21AEF85B"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
-      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.49)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
-      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.xml.sax.helpers)"/>
-      <attribute name="osgi.wiring.package" value="org.xml.sax.helpers"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.xml.ConfigurationProcessorFactory)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
     </requirement>
   </resource>
   <resource>
@@ -3424,6 +3424,106 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.45.v20220203" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+      <attribute name="version" value="9.4.45" type="Version"/>
+      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
+      <attribute name="version" value="9.4.45" type="Version"/>
+      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.45.v20220203"/>
+      <attribute name="version" value="9.4.45.v20220203" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.45.v20220203"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="42356" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.45.v20220203/jetty-jmx-9.4.45.v20220203.jar"/>
+      <attribute name="osgi.content" value="6E8B02DE4AC4AFA95301A4C32E8D977FEE8D30E6C7EA1DEA648B775347A6FD64"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.http"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Http Utility"/>
@@ -3519,106 +3619,6 @@
       <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.http.HttpFieldPreEncoder)"/>
       <directive name="resolution" value="optional"/>
       <directive name="cardinality" value="multiple"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2022 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.45.v20220203" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-      <attribute name="version" value="9.4.45" type="Version"/>
-      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
-      <attribute name="version" value="9.4.45" type="Version"/>
-      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.45.v20220203" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.45.v20220203"/>
-      <attribute name="version" value="9.4.45.v20220203" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.45.v20220203"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="42356" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.45.v20220203/jetty-jmx-9.4.45.v20220203.jar"/>
-      <attribute name="osgi.content" value="6E8B02DE4AC4AFA95301A4C32E8D977FEE8D30E6C7EA1DEA648B775347A6FD64"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
-      <attribute name="osgi.wiring.package" value="javax.management"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.45)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
@@ -5199,91 +5199,6 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.xml"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: XML utilities"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.44.v20210927" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.util.resource,org.xml.sax"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.xml"/>
-      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
-      <attribute name="version" value="9.4.44" type="Version"/>
-      <attribute name="bnd.hashes" value="-511977380,51450126,192688843,30233749,2049277,-1870231894,597520637,-1191954881,2017053308,-1937510614,2433570,-1841679000,295135990" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.xml"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.xml"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.xml"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-xml:9.4.44.v20210927"/>
-      <attribute name="version" value="9.4.44.v20210927" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.44.v20210927"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="68300" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/9.4.44.v20210927/jetty-xml-9.4.44.v20210927.jar"/>
-      <attribute name="osgi.content" value="5D8A77311C87015006547D23BD06E36B02212C48CA26C2B0B30B8D2CA3C6E6C3"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
-      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
-      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=org.xml.sax.helpers)"/>
-      <attribute name="osgi.wiring.package" value="org.xml.sax.helpers"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.xml.ConfigurationProcessorFactory)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.servlet"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Servlet Handling"/>
@@ -5419,6 +5334,91 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.xml"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: XML utilities"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.44.v20210927" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.util.resource,org.xml.sax"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.xml"/>
+      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.xml"/>
+      <attribute name="version" value="9.4.44" type="Version"/>
+      <attribute name="bnd.hashes" value="-511977380,51450126,192688843,30233749,2049277,-1870231894,597520637,-1191954881,2017053308,-1937510614,2433570,-1841679000,295135990" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.xml"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.44.v20210927" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.xml"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.xml"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-xml:9.4.44.v20210927"/>
+      <attribute name="version" value="9.4.44.v20210927" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.44.v20210927"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="68300" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-xml/9.4.44.v20210927/jetty-xml-9.4.44.v20210927.jar"/>
+      <attribute name="osgi.content" value="5D8A77311C87015006547D23BD06E36B02212C48CA26C2B0B30B8D2CA3C6E6C3"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.xml.parsers)"/>
+      <attribute name="osgi.wiring.package" value="javax.xml.parsers"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.resource)(version&gt;=9.4.44)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.resource"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax)"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=org.xml.sax.helpers)"/>
+      <attribute name="osgi.wiring.package" value="org.xml.sax.helpers"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.xml.ConfigurationProcessorFactory)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
     </requirement>
   </resource>
   <resource>
@@ -6464,106 +6464,6 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
-      <attribute name="version" value="9.4.43" type="Version"/>
-      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-      <attribute name="version" value="9.4.43" type="Version"/>
-      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.43.v20210629"/>
-      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.43.v20210629"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="42355" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.43.v20210629/jetty-jmx-9.4.43.v20210629.jar"/>
-      <attribute name="osgi.content" value="959811A21492952582F20093E352CAB4D767594B17616D0B18E2AD4F5962BFAB"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
-      <attribute name="osgi.wiring.package" value="javax.management"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.http"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Http Utility"/>
@@ -6785,6 +6685,190 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
+      <attribute name="version" value="9.4.43" type="Version"/>
+      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+      <attribute name="version" value="9.4.43" type="Version"/>
+      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.43.v20210629"/>
+      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.43.v20210629"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="42355" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.43.v20210629/jetty-jmx-9.4.43.v20210629.jar"/>
+      <attribute name="osgi.content" value="959811A21492952582F20093E352CAB4D767594B17616D0B18E2AD4F5962BFAB"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <directive name="singleton" value="true"/>
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="version" value="9.4.43" type="Version"/>
+      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.43.v20210629"/>
+      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.43.v20210629"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="17661" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.43.v20210629/jetty-alpn-server-9.4.43.v20210629.jar"/>
+      <attribute name="osgi.content" value="90AEAD45C45B8D826E89DADD4D6E5C97FD941E6BE9136913DC007CC651494FB3"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.client"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Asynchronous HTTP Client"/>
@@ -6928,90 +7012,6 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <directive name="singleton" value="true"/>
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="version" value="9.4.43" type="Version"/>
-      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.43.v20210629" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.43.v20210629"/>
-      <attribute name="version" value="9.4.43.v20210629" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.43.v20210629"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="17661" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.43.v20210629/jetty-alpn-server-9.4.43.v20210629.jar"/>
-      <attribute name="osgi.content" value="90AEAD45C45B8D826E89DADD4D6E5C97FD941E6BE9136913DC007CC651494FB3"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.43)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
     </requirement>
   </resource>
   <resource>
@@ -9348,6 +9348,90 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <directive name="singleton" value="true"/>
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.40.v20210413" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="version" value="9.4.40" type="Version"/>
+      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <directive name="singleton" value="true"/>
+      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.40.v20210413"/>
+      <attribute name="version" value="9.4.40.v20210413" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.40.v20210413"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="17660" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.40.v20210413/jetty-alpn-server-9.4.40.v20210413.jar"/>
+      <attribute name="osgi.content" value="8AFFF9F3B5E4333452F7B4B185BF3D1FF3F1C4A2E52A9CF2534A893B1AA989A9"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+    <requirement namespace="osgi.serviceloader">
+      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
+      <directive name="resolution" value="optional"/>
+      <directive name="cardinality" value="multiple"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.client"/>
@@ -9493,90 +9577,6 @@
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <directive name="singleton" value="true"/>
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: ALPN :: Server"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.40.v20210413" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.net.ssl,org.eclipse.jetty.io,org.eclipse.jetty.server,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="version" value="9.4.40" type="Version"/>
-      <attribute name="bnd.hashes" value="-1701996534,-1066995296" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <directive name="singleton" value="true"/>
-      <attribute name="bundle-version" value="9.4.40.v20210413" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.alpn.server"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.alpn.server"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-alpn-server:9.4.40.v20210413"/>
-      <attribute name="version" value="9.4.40.v20210413" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-server:9.4.40.v20210413"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="17660" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-alpn-server/9.4.40.v20210413/jetty-alpn-server-9.4.40.v20210413.jar"/>
-      <attribute name="osgi.content" value="8AFFF9F3B5E4333452F7B4B185BF3D1FF3F1C4A2E52A9CF2534A893B1AA989A9"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.io.ssl)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.io.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.server)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.server"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.40)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.alpn)(version&gt;=1.1.3))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.alpn"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(osgi.extender=osgi.serviceloader.processor)"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-    <requirement namespace="osgi.serviceloader">
-      <directive name="filter" value="(osgi.serviceloader=org.eclipse.jetty.io.ssl.ALPNProcessor$Server)"/>
-      <directive name="resolution" value="optional"/>
-      <directive name="cardinality" value="multiple"/>
     </requirement>
   </resource>
   <resource>
@@ -10482,6 +10482,106 @@
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
       <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
+      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
+      <attribute name="documentation" value="https://eclipse.org/jetty"/>
+      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="9.4.38.v20210224" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
+      <attribute name="version" value="9.4.38" type="Version"/>
+      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+      <attribute name="version" value="9.4.38" type="Version"/>
+      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.jetty.jmx"/>
+      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.38.v20210224"/>
+      <attribute name="version" value="9.4.38.v20210224" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.38.v20210224"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="42354" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.38.v20210224/jetty-jmx-9.4.38.v20210224.jar"/>
+      <attribute name="osgi.content" value="40B0AF67714F1E1767DFF7877902FF30D806D937F4876CA5F374E9C3080EA9A0"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
+      <attribute name="osgi.wiring.package" value="javax.management"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
+      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
+      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
       <attribute name="osgi.identity" value="org.eclipse.jetty.http"/>
       <attribute name="documentation" value="https://eclipse.org/jetty"/>
       <attribute name="description" value="Jetty module for Jetty :: Http Utility"/>
@@ -10626,106 +10726,6 @@
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
       <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0, https://www.eclipse.org/org/documents/epl-v10.php"/>
-      <attribute name="copyright" value="Copyright (c) 2008-2021 Mort Bay Consulting Pty Ltd and others."/>
-      <attribute name="osgi.identity" value="org.eclipse.jetty.jmx"/>
-      <attribute name="documentation" value="https://eclipse.org/jetty"/>
-      <attribute name="description" value="Jetty module for Jetty :: JMX Management"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="9.4.38.v20210224" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="org.eclipse.jetty.jmx,org.eclipse.jetty.util.annotation"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log.jmx"/>
-      <attribute name="version" value="9.4.38" type="Version"/>
-      <attribute name="bnd.hashes" value="2060240121" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="javax.management,javax.management.remote,org.eclipse.jetty.util.annotation,org.eclipse.jetty.util.component,org.eclipse.jetty.util.ssl"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-      <attribute name="version" value="9.4.38" type="Version"/>
-      <attribute name="bnd.hashes" value="-1488221957,-798189104,935154532,-650443446,890622613,-386313361,372559262" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="9.4.38.v20210224" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.jetty.jmx"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.jetty.jmx"/>
-      <attribute name="from" value="org.eclipse.jetty:jetty-jmx:9.4.38.v20210224"/>
-      <attribute name="version" value="9.4.38.v20210224" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.jetty:jetty-util:9.4.38.v20210224"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="42354" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/jetty/jetty-jmx/9.4.38.v20210224/jetty-jmx-9.4.38.v20210224.jar"/>
-      <attribute name="osgi.content" value="40B0AF67714F1E1767DFF7877902FF30D806D937F4876CA5F374E9C3080EA9A0"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management)"/>
-      <attribute name="osgi.wiring.package" value="javax.management"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.modelmbean)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.modelmbean"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.management.remote)"/>
-      <attribute name="osgi.wiring.package" value="javax.management.remote"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.rmi.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.rmi.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.jmx)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.jmx"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.annotation)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.annotation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.component)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.component"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.log)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.log"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.ssl)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.jetty.util.thread)(version&gt;=9.4.38)(!(version&gt;=10.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.jetty.util.thread"/>
     </requirement>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
