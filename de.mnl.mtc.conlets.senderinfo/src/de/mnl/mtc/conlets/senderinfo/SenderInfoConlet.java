@@ -51,10 +51,10 @@ import org.jgrapes.core.annotation.Handler;
 import org.jgrapes.io.events.Close;
 import org.jgrapes.mail.InternetAddressPrincipal;
 import org.jgrapes.mail.MailChannel;
-import org.jgrapes.mail.events.FoldersUpdated;
+import org.jgrapes.mail.events.MailFoldersUpdated;
 import org.jgrapes.mail.events.MailMonitorOpened;
 import org.jgrapes.mail.events.OpenMailMonitor;
-import org.jgrapes.mail.events.UpdateFolders;
+import org.jgrapes.mail.events.UpdateMailFolders;
 import org.jgrapes.util.Password;
 import org.jgrapes.webconsole.base.Conlet.RenderMode;
 import org.jgrapes.webconsole.base.ConletBaseModel;
@@ -207,8 +207,8 @@ public class SenderInfoConlet
         var data = channel.session().transientData();
         if ((boolean) data.getOrDefault(MAIL_CON_REQUESTED, false)) {
             // Get fresh data if connection to mail monitor exists
-            Optional.of(data.get(MailChannel.class))
-                .ifPresent(c -> fire(new UpdateFolders("INBOX"),
+            Optional.ofNullable(data.get(MailChannel.class))
+                .ifPresent(c -> fire(new UpdateMailFolders("INBOX"),
                     ((CloseableWrapper<MailChannel>) c).get()));
         } else {
             // Open connection to mail monitor
@@ -261,13 +261,13 @@ public class SenderInfoConlet
      */
     @Handler
     @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
-    public void onFoldersUpdated(FoldersUpdated event, MailChannel channel)
+    public void onFoldersUpdated(MailFoldersUpdated event, MailChannel channel)
             throws MessagingException {
         var data = new LinkedList<Map<String, Object>>();
         Optional<Folder> inbox = event.folders().stream()
             .filter(f -> "INBOX".equals(f.getFullName())).findFirst();
         if (inbox.isPresent()) {
-            var msgs = FoldersUpdated.messages(inbox.get(), 10);
+            var msgs = MailFoldersUpdated.messages(inbox.get(), 10);
             for (var msg : msgs) {
                 if (!(msg.getFrom()[0] instanceof InternetAddress)) {
                     continue;

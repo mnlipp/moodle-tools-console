@@ -113,10 +113,10 @@
 	de.mnl.osgi.slf4j2osgi;version='[2.2.0,2.2.1)',\
 	org.jdrupes.httpcodec;version='[3.0.0,3.0.1)',\
 	org.jgrapes.core;version='[1.17.1,1.17.2)',\
-	org.jgrapes.http;version='[3.0.1,3.0.2)',\
-	org.jgrapes.io;version='[2.0.1,2.0.2)',\
-	org.jgrapes.util;version='[1.21.1,1.21.2)',\
-	org.jgrapes.mail;version='[1.1.0,1.1.1)',\
+	org.jgrapes.http;version='[3.0.2,3.0.3)',\
+	org.jgrapes.io;version='[2.0.2,2.0.3)',\
+	org.jgrapes.util;version='[1.21.2,1.21.3)',\
+	org.jgrapes.mail;version='[1.1.1,1.1.2)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
 	org.jgrapes.webconsole.base;version='[0.50.0,0.50.1)',\
 	org.jgrapes.webconsole.rbac;version='[0.3.0,0.3.1)',\
