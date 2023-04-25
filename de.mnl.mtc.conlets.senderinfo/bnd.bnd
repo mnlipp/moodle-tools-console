@@ -11,6 +11,7 @@ Export-Package: de.mnl.mtc.conlets.senderinfo
 	osgi.annotation;version=6.0.1,\
 	osgi.cmpn;version=7.0,\
     com.fasterxml.jackson.core.jackson-core;version=latest,\
+    jakarta.mail-api;version=latest,\
     de.mnl.osgi.lf4osgi;version=latest,\
     org.jdrupes.json;version=latest,\
     org.jgrapes.core;version=latest,\
@@ -18,7 +19,6 @@ Export-Package: de.mnl.mtc.conlets.senderinfo
     org.jgrapes.util;version=latest,\
     org.jgrapes.http;version=latest,\
     org.jgrapes.mail;version=latest,\
-    com.sun.mail.jakarta.mail;version=latest,\
     org.freemarker.freemarker;version=latest,\
     org.jgrapes.webconsole.base;version=latest,\
     org.jgrapes.webconsole.provider.vue;version=latest,\
