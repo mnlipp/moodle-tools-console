@@ -18,8 +18,6 @@
 
 package de.mnl.mtc.application;
 
-import de.mnl.osgi.lf4osgi.Logger;
-import de.mnl.osgi.lf4osgi.LoggerFactory;
 import java.io.File;
 import java.net.URI;
 import java.util.Arrays;
@@ -38,8 +36,7 @@ import org.jgrapes.http.events.Request;
 import org.jgrapes.io.FileStorage;
 import org.jgrapes.io.NioDispatcher;
 import org.jgrapes.io.util.PermitsPool;
-import org.jgrapes.mail.MailStoreMonitor;
-//import org.jgrapes.mail.MailStoreMonitor;
+import org.jgrapes.mail.MailMonitor;
 import org.jgrapes.net.SocketServer;
 import org.jgrapes.osgi.core.ComponentCollector;
 import org.jgrapes.util.TomlConfigurationStore;
@@ -61,9 +58,6 @@ import org.osgi.framework.BundleContext;
 @SuppressWarnings("PMD.ShortClassName")
 public class Mtc extends Component implements BundleActivator {
 
-    @SuppressWarnings("PMD.FieldNamingConventions")
-    private static final Logger logger
-        = LoggerFactory.getLogger(Mtc.class);
     private Mtc app;
 
     /*
@@ -108,7 +102,7 @@ public class Mtc extends Component implements BundleActivator {
                 .prependClassTemplateLoader(getClass())
                 .prependResourceBundleProvider(getClass());
         WebConsole console = consoleWeblet.console();
-        console.attach(new MailStoreMonitor(console.channel()));
+        console.attach(new MailMonitor(console.channel()));
         console.attach(new BrowserLocalBackedKVStore(
             console.channel(), consoleWeblet.prefix().getPath()));
         console.attach(new KVStoreBasedConsolePolicy(console.channel()));
