@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<repository increment="1683299384575" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
+<repository increment="1684144712479" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
     <referral url="org.jgrapes/index.xml"/>
     <referral url="dependencies/org.assertj/index.xml"/>
     <referral url="dependencies/org.ops4j.base/index.xml"/>
@@ -16,8 +16,8 @@
     <referral url="org.glassfish.hk2/index.xml"/>
     <referral url="dependencies/org.apache.maven.resolver/index.xml"/>
     <referral url="biz.aQute.bnd/index.xml"/>
-    <referral url="dependencies/com.google.code.findbugs/index.xml"/>
     <referral url="dependencies/aopalliance/index.xml"/>
+    <referral url="dependencies/com.google.code.findbugs/index.xml"/>
     <referral url="org.mockito/index.xml"/>
     <referral url="dependencies/com.google.errorprone/index.xml"/>
     <referral url="dependencies/org.sonatype.plexus/index.xml"/>
@@ -78,8 +78,8 @@
     <referral url="dependencies/org.codehaus.mojo/index.xml"/>
     <referral url="dependencies/net.sf.kxml/index.xml"/>
     <referral url="dependencies/org.jetbrains/index.xml"/>
-    <referral url="dependencies/junit/index.xml"/>
     <referral url="dependencies/de.twentyeleven.skysail/index.xml"/>
+    <referral url="dependencies/junit/index.xml"/>
     <referral url="dependencies/org.mongodb/index.xml"/>
     <referral url="org.junit.jupiter/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.websocket/index.xml"/>
