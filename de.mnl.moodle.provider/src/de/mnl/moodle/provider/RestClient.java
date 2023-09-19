@@ -143,10 +143,15 @@ public class RestClient implements AutoCloseable {
                         Charset.forName("utf-8")))
                 .collect(Collectors.joining("&"));
             var formData = encodeData(data);
-            for (int attempt = 0; attempt < 4; attempt++) {
+            for (int attempt = 0; attempt < 10; attempt++) {
                 try {
                     return doInvoke(resultType, query, formData);
                 } catch (MoodleException e) {
+                    if ("ex_unabletolock".equals(e.getMessage())) {
+                        logger.debug("Retrying due to: " + e.getMessage()
+                            + " with query params " + queryParams, e);
+                        continue;
+                    }
                     throw e;
                 } catch (IOException e) {
                     logger.debug("Reconnecting due to: " + e.getMessage(), e);

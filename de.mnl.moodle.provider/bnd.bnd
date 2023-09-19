@@ -1,6 +1,6 @@
 Bundle-Name: Moodle Service as OSGi Component
-Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
-#Bundle-Version: 1.0.0.ga
+#Bundle-Version: 1.0.0.-${tstamp}-SNAPSHOT
+Bundle-Version: 1.1.0.ga
 Bundle-Copyright: Michael N. Lipp (c) 2018, 2022
 Bundle-License: http://www.gnu.org/licenses/agpl-3.0.txt
 
