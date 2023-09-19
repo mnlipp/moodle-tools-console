@@ -77,6 +77,7 @@
     java.util.logging.config.file=jul-debug.properties,\
 	org.apache.felix.log=10000,\
 	org.apache.felix.log.storeDebug=true,\
+	org.osgi.service.log.admin.loglevel=DEBUG,\
     de.mnl.osgi.osgi2jul.handlers='java.util.logging.ConsoleHandler[1]', \
     de.mnl.osgi.osgi2jul.handler.1.format='{0} [{2}/{4}]'
 -runee: JavaSE-17
