@@ -48,109 +48,108 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
  * A conlet for listing courses.
  */
 public class TemplateConlet
-        extends FreeMarkerConlet<TemplateConlet.CourseListModel> {
+    extends FreeMarkerConlet<TemplateConlet.CourseListModel> {
 
-    private static final Set<RenderMode> MODES
-        = RenderMode.asSet(RenderMode.Preview);
+  private static final Set<RenderMode> MODES
+    = RenderMode.asSet(RenderMode.Preview);
+
+  /**
+   * Creates a new component with its channel set to the given channel.
+   * 
+   * @param componentChannel the channel that the component's handlers listen
+   *            on by default and that {@link Manager#fire(Event, Channel...)}
+   *            sends the event to
+   */
+  public TemplateConlet(Channel componentChannel) {
+    super(componentChannel);
+  }
+
+  /**
+   * Register conlet.
+   *
+   * @param event the event
+   * @param channel the channel
+   * @throws TemplateNotFoundException the template not found exception
+   * @throws MalformedTemplateNameException the malformed template name exception
+   * @throws ParseException the parse exception
+   * @throws IOException Signals that an I/O exception has occurred.
+   */
+  @Handler
+  public void onConsoleReady(ConsoleReady event, ConsoleConnection channel)
+      throws TemplateNotFoundException, MalformedTemplateNameException,
+      ParseException, IOException {
+    // Add conlet resources to page
+    channel.respond(new AddConletType(type())
+      .addRenderMode(RenderMode.Preview).setDisplayNames(
+        localizations(channel.supportedLocales(), "conletName"))
+      .addScript(new ScriptResource()
+        .setScriptUri(event.renderSupport().conletResource(
+          type(), "Conlet-functions.js"))
+        .setScriptType("module"))
+      .addCss(event.renderSupport(),
+        WebConsoleUtils.uriFromPath("Conlet-style.css")));
+  }
+
+  @Override
+  protected String generateInstanceId(AddConletRequest event,
+      ConsoleConnection channel) {
+    return "Singleton";
+  }
+
+  @Override
+  protected Optional<CourseListModel> createNewState(AddConletRequest event,
+      ConsoleConnection channel, String conletId) throws Exception {
+    return Optional
+      .ofNullable(stateFromSession(channel.session(), conletId)
+        .orElse(super.createNewState(event, channel, conletId).get()));
+  }
+
+  @Override
+  protected Optional<CourseListModel> createStateRepresentation(Event<?> event,
+      ConsoleConnection channel, String conletId) throws IOException {
+    return Optional.of(new CourseListModel(conletId));
+  }
+
+  @Override
+  protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
+      ConsoleConnection channel, String conletId,
+      CourseListModel conletState) throws Exception {
+    Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
+    if (event.renderAs().contains(RenderMode.Preview)) {
+      Template tpl
+        = freemarkerConfig().getTemplate("Conlet-preview.ftl.html");
+      channel.respond(new RenderConlet(type(), conletId,
+        processTemplate(event, tpl,
+          fmModel(event, channel, conletId, conletState)))
+            .setRenderAs(
+              RenderMode.Preview.addModifiers(event.renderAs()))
+            .setSupportedModes(MODES));
+      renderedAs.add(RenderMode.Preview);
+    }
+    return renderedAs;
+  }
+
+  @Override
+  protected boolean doSetLocale(SetLocale event, ConsoleConnection channel,
+      String conletId) throws Exception {
+    return true;
+  }
+
+  /**
+   * Model with no additional info.
+   */
+  public static class CourseListModel extends ConletBaseModel {
 
     /**
-     * Creates a new component with its channel set to the given channel.
+     * Creates a new model with the given type and id.
      * 
-     * @param componentChannel the channel that the component's handlers listen
-     *            on by default and that {@link Manager#fire(Event, Channel...)}
-     *            sends the event to
+     * @param conletId the web console component id
      */
-    public TemplateConlet(Channel componentChannel) {
-        super(componentChannel);
+    @ConstructorProperties({ "conletId" })
+    public CourseListModel(String conletId) {
+      super(conletId);
     }
 
-    /**
-     * Register conlet.
-     *
-     * @param event the event
-     * @param channel the channel
-     * @throws TemplateNotFoundException the template not found exception
-     * @throws MalformedTemplateNameException the malformed template name exception
-     * @throws ParseException the parse exception
-     * @throws IOException Signals that an I/O exception has occurred.
-     */
-    @Handler
-    public void onConsoleReady(ConsoleReady event, ConsoleConnection channel)
-            throws TemplateNotFoundException, MalformedTemplateNameException,
-            ParseException, IOException {
-        // Add conlet resources to page
-        channel.respond(new AddConletType(type())
-            .addRenderMode(RenderMode.Preview).setDisplayNames(
-                localizations(channel.supportedLocales(), "conletName"))
-            .addScript(new ScriptResource()
-                .setScriptUri(event.renderSupport().conletResource(
-                    type(), "Conlet-functions.js"))
-                .setScriptType("module"))
-            .addCss(event.renderSupport(),
-                WebConsoleUtils.uriFromPath("Conlet-style.css")));
-    }
-
-    @Override
-    protected String generateInstanceId(AddConletRequest event,
-            ConsoleConnection channel) {
-        return "Singleton";
-    }
-
-    @Override
-    protected Optional<CourseListModel> createNewState(AddConletRequest event,
-            ConsoleConnection channel, String conletId) throws Exception {
-        return Optional
-            .ofNullable(stateFromSession(channel.session(), conletId)
-                .orElse(super.createNewState(event, channel, conletId).get()));
-    }
-
-    @Override
-    protected Optional<CourseListModel> createStateRepresentation(
-            RenderConletRequestBase<?> event,
-            ConsoleConnection channel, String conletId) throws IOException {
-        return Optional.of(new CourseListModel(conletId));
-    }
-
-    @Override
-    protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
-            ConsoleConnection channel, String conletId,
-            CourseListModel conletState) throws Exception {
-        Set<RenderMode> renderedAs = new HashSet<>(event.renderAs());
-        if (event.renderAs().contains(RenderMode.Preview)) {
-            Template tpl
-                = freemarkerConfig().getTemplate("Conlet-preview.ftl.html");
-            channel.respond(new RenderConlet(type(), conletId,
-                processTemplate(event, tpl,
-                    fmModel(event, channel, conletId, conletState)))
-                        .setRenderAs(
-                            RenderMode.Preview.addModifiers(event.renderAs()))
-                        .setSupportedModes(MODES));
-            renderedAs.add(RenderMode.Preview);
-        }
-        return renderedAs;
-    }
-
-    @Override
-    protected boolean doSetLocale(SetLocale event, ConsoleConnection channel,
-            String conletId) throws Exception {
-        return true;
-    }
-
-    /**
-     * Model with no additional info.
-     */
-    public static class CourseListModel extends ConletBaseModel {
-
-        /**
-         * Creates a new model with the given type and id.
-         * 
-         * @param conletId the web console component id
-         */
-        @ConstructorProperties({ "conletId" })
-        public CourseListModel(String conletId) {
-            super(conletId);
-        }
-
-    }
+  }
 
 }

@@ -154,8 +154,8 @@ public class SenderInfoConlet
 
     @Override
     protected Optional<SenderInfoModel> createStateRepresentation(
-            RenderConletRequestBase<?> event,
-            ConsoleConnection channel, String conletId) throws IOException {
+            Event<?> event, ConsoleConnection channel, String conletId)
+            throws IOException {
         return Optional.of(new SenderInfoModel(conletId));
     }
 

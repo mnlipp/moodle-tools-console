@@ -120,8 +120,8 @@ public class CourseListConlet extends FreeMarkerConlet<ConletBaseModel> {
 
     @Override
     protected Optional<ConletBaseModel> createStateRepresentation(
-            RenderConletRequestBase<?> event,
-            ConsoleConnection channel, String conletId) throws IOException {
+            Event<?> event, ConsoleConnection channel, String conletId)
+            throws IOException {
         return Optional.of(new ConletBaseModel(conletId));
     }
 

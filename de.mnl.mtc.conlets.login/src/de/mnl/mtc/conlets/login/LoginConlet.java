@@ -135,8 +135,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
     }
 
     @Override
-    protected Optional<AccountModel> createStateRepresentation(
-            RenderConletRequestBase<?> event,
+    protected Optional<AccountModel> createStateRepresentation(Event<?> event,
             ConsoleConnection channel, String conletId) throws IOException {
         return Optional.of(new AccountModel(conletId));
     }
@@ -288,8 +287,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             Subject user = new Subject();
             user.getPrincipals()
                 .add(new ConsoleUser(model.userName, model.fullName));
-            
-            // Get and save internet address principal for general use 
+
+            // Get and save internet address principal for general use
             var moodleUser = client.moodleUser();
             user.getPrincipals().add(new InternetAddressPrincipal(
                 moodleUser.getEmail(), model.fullName));
