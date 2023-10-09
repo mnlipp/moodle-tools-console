@@ -80,7 +80,8 @@
     -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager, \
     -Dmtc.config.file=/etc/mtc-config.toml
 -runsystempackages: \
-    de.mnl.osgi.jul2osgi.lib; version=1.6.0
+    de.mnl.osgi.jul2osgi.lib;version=1.6.0,\
+    sun.security.util
 -includeresource: \
     ${repo;de.mnl.osgi.jul2osgi.lib;latest}
     
