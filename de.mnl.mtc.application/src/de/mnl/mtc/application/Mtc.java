@@ -100,7 +100,8 @@ public class Mtc extends Component implements BundleActivator {
             = app.attach(new VueJsConsoleWeblet(httpChannel,
                 Channel.SELF, new URI(prefix + "/")))
                 .prependClassTemplateLoader(getClass())
-                .prependResourceBundleProvider(getClass());
+                .prependResourceBundleProvider(getClass())
+                .prependConsoleResourceProvider(getClass());
         WebConsole console = consoleWeblet.console();
         console.attach(new MailMonitor(console.channel()));
         console.attach(new BrowserLocalBackedKVStore(
