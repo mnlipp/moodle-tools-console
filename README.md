@@ -5,7 +5,7 @@ This application uses the
 as a basis and adds components to provide a few useful functions 
 to Moodle that I found lacking as a teacher.
 
-![Screenshot](mtc-screenshot.jpg)
+![Screenshot](mtc-screenshot.png)
 
 The application provides three conlets (display elements).
 
