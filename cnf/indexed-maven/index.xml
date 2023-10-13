@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<repository increment="1695051041267" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
-    <referral url="org.jgrapes/index.xml"/>
+<repository increment="1697197391166" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
     <referral url="dependencies/org.assertj/index.xml"/>
+    <referral url="org.jgrapes/index.xml"/>
     <referral url="dependencies/org.ops4j.base/index.xml"/>
     <referral url="jakarta.mail/index.xml"/>
     <referral url="dependencies/jakarta.activation/index.xml"/>
@@ -44,8 +44,8 @@
     <referral url="dependencies/org.eclipse.jetty.http2/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.alpn/index.xml"/>
     <referral url="dependencies/javax.servlet/index.xml"/>
-    <referral url="dependencies/org.eclipse.platform/index.xml"/>
     <referral url="dependencies/jakarta.servlet/index.xml"/>
+    <referral url="dependencies/org.eclipse.platform/index.xml"/>
     <referral url="dependencies/asm/index.xml"/>
     <referral url="dependencies/org.hamcrest/index.xml"/>
     <referral url="dependencies/org.junit.vintage/index.xml"/>
@@ -65,8 +65,8 @@
     <referral url="dependencies/org.apache.geronimo.specs/index.xml"/>
     <referral url="org.apache.aries.spifly/index.xml"/>
     <referral url="dependencies/org.apache.xbean/index.xml"/>
-    <referral url="dependencies/net.java.dev.jna/index.xml"/>
     <referral url="dependencies/net.bytebuddy/index.xml"/>
+    <referral url="dependencies/net.java.dev.jna/index.xml"/>
     <referral url="org.eclipse.angus/index.xml"/>
     <referral url="dependencies/org.easymock/index.xml"/>
     <referral url="dependencies/biz.aQute/index.xml"/>
@@ -75,8 +75,8 @@
     <referral url="dependencies/org.apache.ant/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty/index.xml"/>
     <referral url="de.mnl.osgi/index.xml"/>
-    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/com.google.guava/index.xml"/>
+    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/org.jline/index.xml"/>
     <referral url="dependencies/org.apache.maven.shared/index.xml"/>
     <referral url="dependencies/org.apache.maven/index.xml"/>
