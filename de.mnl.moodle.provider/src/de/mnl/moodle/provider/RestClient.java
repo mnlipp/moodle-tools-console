@@ -235,7 +235,11 @@ public class RestClient implements AutoCloseable {
         URI fullUri;
         try {
             fullUri = new URI(uri.getScheme(), uri.getAuthority(),
-                uri.getPath(), query, uri.getFragment());
+                uri.getPath(), null, null);
+            fullUri = new URI(fullUri.toString()
+                + (query == null ? "" : "?" + query)
+                + (uri.getRawFragment() == null ? ""
+                    : "#" + uri.getRawFragment()));
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
