@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1698587183721">
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="net.sourceforge.cobertura:cobertura"/>
+      <attribute name="from" value="net.sourceforge.cobertura:cobertura:1.9"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="oro:oro:2.0.8;log4j:log4j:1.2.9;org.apache.ant:ant:1.7.0;asm:asm:2.2.1;asm:asm-tree:2.2.1"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="193907" type="Long"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/net/sourceforge/cobertura/cobertura/1.9/cobertura-1.9.jar"/>
+      <attribute name="osgi.content" value="613B979271AD46E1B1190A3530DA4B17B9B7B73D137C55BD49D5EBE82C7C4136"/>
+    </capability>
+  </resource>
+</repository>

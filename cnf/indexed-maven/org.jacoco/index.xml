@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1682428878043">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1697561117804">
+  <resource>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.jacoco:org.jacoco.agent:jar:runtime"/>
+      <attribute name="from" value="org.jacoco:org.jacoco.agent:jar:runtime:0.8.11"/>
+      <attribute name="version" value="0.8.11" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="300661" type="Long"/>
+      <attribute name="mime" value="application/java-archive"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar"/>
+      <attribute name="osgi.content" value="47257AE9F22B93817EEA11BC1B1FD31FC8E23049AD5DD483BFDE603EAA624D0B"/>
+    </capability>
+  </resource>
   <resource>
     <capability namespace="bnd.info">
       <attribute name="name" value="org.jacoco:org.jacoco.agent:jar:runtime"/>

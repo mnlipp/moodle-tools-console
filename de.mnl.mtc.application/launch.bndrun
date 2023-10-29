@@ -1,4 +1,4 @@
--runfw: org.apache.felix.framework;version='[7.0.3,7.0.3]'
+-runfw: org.apache.felix.framework;version='[7.0.5,7.0.5]'
 
 # Use org.eclipse.angus.mail instead of org.eclipse.angus.jakarta.mail
 # once it has been fixed (2.0.2+)
@@ -123,11 +123,11 @@
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
 	org.jgrapes.webconsole.base;version='[1.2.0,1.2.1)',\
 	org.jgrapes.webconsole.rbac;version='[1.0.0,1.0.1)',\
-	org.jgrapes.webconsole.vuejs;version='[1.4.0,1.4.1)',\
-	org.jgrapes.webconsole.provider.chartjs;version='[1.1.0,1.1.1)',\
+	org.jgrapes.webconsole.vuejs;version='[1.5.0,1.5.1)',\
+	org.jgrapes.webconsole.provider.chartjs;version='[1.2.0,1.2.1)',\
 	org.jgrapes.webconsole.provider.forkawesome;version='[1.1.0,1.1.1)',\
 	org.jgrapes.webconsole.provider.gridstack;version='[1.1.0,1.1.1)',\
-	org.jgrapes.webconsole.provider.jgwcvuecomponents;version='[1.1.0,1.1.1)',\
+	org.jgrapes.webconsole.provider.jgwcvuecomponents;version='[1.2.0,1.2.1)',\
 	org.jgrapes.webconsole.provider.jquery;version='[1.1.0,1.1.1)',\
 	org.jgrapes.webconsole.provider.markdownit;version='[1.1.0,1.1.1)',\
 	org.jgrapes.webconsole.provider.vue;version='[1.2.0,1.2.1)',\
