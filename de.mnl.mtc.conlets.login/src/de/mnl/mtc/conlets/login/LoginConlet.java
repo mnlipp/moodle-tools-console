@@ -71,6 +71,8 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
+    private static final String PENDING_CONSOLE_PREPARED
+        = "pendingConsolePrepared";
     private String moodleServer;
     private final MoodleService moodleService;
 
@@ -201,7 +203,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
 
         // Force login
         event.suspendHandling();
-        channel.setAssociated(this, event);
+        channel.setAssociated(PENDING_CONSOLE_PREPARED, event);
 
         // Create model and save in session.
         String conletId = type() + TYPE_INSTANCE_SEPARATOR + "Singleton";
@@ -276,14 +278,8 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             user.getPrivateCredentials().add(
                 new Password(event.params().asString(2).toCharArray()));
             channel.session().put(Subject.class, user);
-            fire(new UserAuthenticated(event, user).by("Moodle Login"));
-
-            // Close dialog and resume console initialization
-            channel.respond(new CloseModalDialog(type(), event.conletId()));
-            model.setDialogOpen(false);
-            channel.associated(this, ConsolePrepared.class)
-                .ifPresentOrElse(ConsolePrepared::resumeHandling,
-                    () -> channel.respond(new SimpleConsoleCommand("reload")));
+            fire(new UserAuthenticated(event.setAssociated(this,
+                new LoginContext(channel, model)), user).by("Moodle Login"));
             return;
         }
         if ("logout".equals(event.method())) {
@@ -295,6 +291,30 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             // Alternative to sending Close (see above):
             // channel.respond(new SimpleConsoleCommand("reload"));
         }
+    }
+
+    /**
+     * Invoked when a user has been authenticated.
+     *
+     * @param event the event
+     * @param channel the channel
+     */
+    @Handler
+    public void onUserAuthenticated(UserAuthenticated event, Channel channel) {
+        var ctx = event.forLogin().associated(this, LoginContext.class)
+            .filter(c -> c.conlet() == this).orElse(null);
+        if (ctx == null) {
+            return;
+        }
+        var model = ctx.model;
+        model.setDialogOpen(false);
+        var connection = ctx.connection;
+        connection.session().put(Subject.class, event.subject());
+        connection.respond(new CloseModalDialog(type(), model.getConletId()));
+        connection.associated(PENDING_CONSOLE_PREPARED, ConsolePrepared.class)
+            .ifPresentOrElse(ConsolePrepared::resumeHandling,
+                () -> connection
+                    .respond(new SimpleConsoleCommand("reload")));
     }
 
     @SuppressWarnings({ "PMD.AvoidDuplicateLiterals",
@@ -354,6 +374,34 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
         return stateFromSession(channel.session(),
             type() + TYPE_INSTANCE_SEPARATOR + "Singleton")
                 .map(model -> !model.isDialogOpen()).orElse(true);
+    }
+
+    /**
+     * The context to preserve during the authentication process.
+     */
+    private class LoginContext {
+        public final ConsoleConnection connection;
+        public final AccountModel model;
+
+        /**
+         * Instantiates a new oidc context.
+         *
+         * @param connection the connection
+         * @param model the model
+         */
+        public LoginContext(ConsoleConnection connection, AccountModel model) {
+            this.connection = connection;
+            this.model = model;
+        }
+
+        /**
+         * Returns the conlet (the outer class).
+         *
+         * @return the login conlet
+         */
+        public LoginConlet conlet() {
+            return LoginConlet.this;
+        }
     }
 
     /**
