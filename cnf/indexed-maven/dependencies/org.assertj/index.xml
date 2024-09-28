@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1696792998535">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148445">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="&quot;Apache License, Version 2.0&quot;;link=&quot;https://www.apache.org/licenses/LICENSE-2.0.txt&quot;"/>
@@ -227,7 +227,7 @@
     <capability namespace="osgi.content">
       <attribute name="size" value="1340629" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="file:/home/mnl/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar"/>
       <attribute name="osgi.content" value="DF3D0B348F1FE806BDDDCB10FA4AE63C6679E9888D4BC7055F09848517976AA3"/>
     </capability>
     <requirement namespace="osgi.wiring.package">
@@ -349,8 +349,64 @@
       <directive name="resolution" value="optional"/>
       <attribute name="osgi.wiring.package" value="org.xml.sax"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=assertj-core)(&amp;(version&gt;=3.24.2)(version&lt;=3.24.2)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.24.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -686,8 +742,64 @@
       <directive name="resolution" value="optional"/>
       <attribute name="osgi.wiring.package" value="org.xml.sax"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=assertj-core)(&amp;(version&gt;=3.23.1)(version&lt;=3.23.1)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.23.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -991,8 +1103,64 @@
       <directive name="resolution" value="optional"/>
       <attribute name="osgi.wiring.package" value="org.xml.sax"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=assertj-core)(&amp;(version&gt;=3.22.0)(version&lt;=3.22.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="assertj-core__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="assertj-core"/>
+      <attribute name="version" value="3.22.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
 </repository>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1698587183721">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148750">
   <resource>
     <capability namespace="bnd.info">
       <attribute name="name" value="net.sourceforge.cobertura:cobertura"/>
@@ -7,7 +7,7 @@
       <attribute name="version" value="1.9.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="oro:oro:2.0.8;log4j:log4j:1.2.9;org.apache.ant:ant:1.7.0;asm:asm:2.2.1;asm:asm-tree:2.2.1"/>
+      <attribute name="compile" value="asm:asm-tree:2.2.1;asm:asm:2.2.1;org.apache.ant:ant:1.7.0;log4j:log4j:1.2.9;oro:oro:2.0.8"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="193907" type="Long"/>

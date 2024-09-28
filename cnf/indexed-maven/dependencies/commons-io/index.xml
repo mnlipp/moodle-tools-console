@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1698587183725">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148815">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
@@ -553,6 +553,7 @@
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
       <attribute name="osgi.identity" value="org.apache.commons.io"/>
       <attribute name="documentation" value="http://commons.apache.org/io/"/>
+      <attribute name="description" value="The Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more."/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="2.2.0" type="Version"/>
     </capability>
@@ -589,14 +590,14 @@
       <attribute name="bundle-version" value="2.2.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io.input"/>
       <attribute name="version" value="2.2.0" type="Version"/>
-      <attribute name="bnd.hashes" value="985598657,2000188970,35341613,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,1165,-1314869293,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,1611884026,1583915893" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="985598657,2000188970,35341613,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,-671018065,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,1611884026,1583915893" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="bundle-symbolic-name" value="org.apache.commons.io"/>
       <attribute name="bundle-version" value="2.2.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io"/>
       <attribute name="version" value="2.2.0" type="Version"/>
-      <attribute name="bnd.hashes" value="1500594931,-794562020,-453945807,774556899,1797207478,128433018,34260755,-1086079372,-2053101885,-1999463327,656598778,1202226711,-441444218,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="1500594931,-794562020,745415381,774556899,1797207478,128433018,-1851100689,597258008,-2053101885,412779781,656598778,1202226711,-441444218,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.bundle">
       <attribute name="bundle-version" value="2.2.0" type="Version"/>
@@ -607,14 +608,14 @@
       <attribute name="osgi.wiring.host" value="org.apache.commons.io"/>
     </capability>
     <capability namespace="bnd.info">
-      <attribute name="name" value="commons-io:commons-io:2.2"/>
+      <attribute name="name" value="org.apache.commons.io"/>
       <attribute name="from" value="commons-io:commons-io:2.2"/>
-      <attribute name="version" value="0.0.0" type="Version"/>
+      <attribute name="version" value="2.2.0" type="Version"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="173587" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo.maven.apache.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/commons-io/commons-io/2.2/commons-io-2.2.jar"/>
       <attribute name="osgi.content" value="675F60BD11A82D481736591FE4054C66471FA5463D45616652FD71585792BA87"/>
     </capability>
   </resource>
@@ -623,6 +624,7 @@
       <attribute name="license" value="http://www.apache.org/licenses/LICENSE-2.0.txt"/>
       <attribute name="osgi.identity" value="org.apache.commons.io"/>
       <attribute name="documentation" value="http://commons.apache.org/proper/commons-io/"/>
+      <attribute name="description" value="The Apache Commons IO library contains utility classes, stream implementations, file filters, file comparators, endian transformation classes, and much more."/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="2.5.0" type="Version"/>
     </capability>
@@ -631,7 +633,7 @@
       <attribute name="bundle-version" value="2.5.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io"/>
       <attribute name="version" value="1.4.9999" type="Version"/>
-      <attribute name="bnd.hashes" value="1500594931,1501113543,-794562020,-453945807,774556899,1797207478,128433018,34260755,-1086079372,-2053101885,-1999463327,656598778,1202226711,-441444218,1165,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,-1311410214,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="1500594931,1501113543,-794562020,745415381,774556899,1797207478,128433018,-1851100689,597258008,-2053101885,412779781,656598778,1202226711,-441444218,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,-1311410214,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="bundle-symbolic-name" value="org.apache.commons.io"/>
@@ -652,7 +654,7 @@
       <attribute name="bundle-version" value="2.5.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io.input"/>
       <attribute name="version" value="1.4.9999" type="Version"/>
-      <attribute name="bnd.hashes" value="985598657,1165,2000188970,35341613,-99735136,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,-1314869293,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,-1553939993,-251942900,1611884026,1583915893" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="985598657,2000188970,35341613,-99735136,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,-671018065,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,-1553939993,-251942900,1611884026,1583915893" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="bundle-symbolic-name" value="org.apache.commons.io"/>
@@ -680,7 +682,7 @@
       <attribute name="bundle-version" value="2.5.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io"/>
       <attribute name="version" value="2.5.0" type="Version"/>
-      <attribute name="bnd.hashes" value="1500594931,1501113543,-794562020,-453945807,774556899,1797207478,128433018,34260755,-1086079372,-2053101885,-1999463327,656598778,1202226711,-441444218,1165,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,-1311410214,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="1500594931,1501113543,-794562020,745415381,774556899,1797207478,128433018,-1851100689,597258008,-2053101885,412779781,656598778,1202226711,-441444218,678451317,-635163958,-1814703217,-2129988234,1038622586,-1587945685,-1311410214,460274850,-1170291523,-2134411312" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="bundle-symbolic-name" value="org.apache.commons.io"/>
@@ -694,7 +696,7 @@
       <attribute name="bundle-version" value="2.5.0" type="Version"/>
       <attribute name="osgi.wiring.package" value="org.apache.commons.io.input"/>
       <attribute name="version" value="2.5.0" type="Version"/>
-      <attribute name="bnd.hashes" value="985598657,1165,2000188970,35341613,-99735136,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,-1314869293,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,-1553939993,-251942900,1611884026,1583915893" type="List&lt;Long&gt;"/>
+      <attribute name="bnd.hashes" value="985598657,2000188970,35341613,-99735136,1439284405,59949587,749319418,1638653664,-1720201783,520502974,444552535,2014506203,-895695933,-411998902,839124156,-572412751,-206202105,-671018065,1950838652,-380517436,1674096318,-1797301987,810423537,-49027810,-1866812586,-1553939993,-251942900,1611884026,1583915893" type="List&lt;Long&gt;"/>
     </capability>
     <capability namespace="osgi.wiring.package">
       <attribute name="bundle-symbolic-name" value="org.apache.commons.io"/>
@@ -719,14 +721,14 @@
       <attribute name="osgi.wiring.host" value="org.apache.commons.io"/>
     </capability>
     <capability namespace="bnd.info">
-      <attribute name="name" value="commons-io:commons-io:2.5"/>
+      <attribute name="name" value="org.apache.commons.io"/>
       <attribute name="from" value="commons-io:commons-io:2.5"/>
-      <attribute name="version" value="0.0.0" type="Version"/>
+      <attribute name="version" value="2.5.0" type="Version"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="208700" type="Long"/>
       <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo.maven.apache.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/commons-io/commons-io/2.5/commons-io-2.5.jar"/>
       <attribute name="osgi.content" value="A10418348D234968600CCB1D988EFCBBD08716E1D96936CCC1880E7D22513474"/>
     </capability>
     <requirement namespace="osgi.ee">

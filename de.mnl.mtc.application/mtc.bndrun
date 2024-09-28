@@ -23,11 +23,11 @@
     bnd.identity; id=org.eclipse.angus.jakarta.mail; version='latest',\
     \
     osgi.identity;filter:='(osgi.identity=de.mnl.mtc.application)',\
-	osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.sysinfo)',\
-	osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.markdowndisplay)',\
-	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.bundles)',\
-	osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.services)',\
-	bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.sysinfo)',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.webconlet.markdowndisplay)',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.bundles)',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.webconlet.services)',\
+    bnd.identity;id='org.jgrapes.osgi.webconlet.logviewer',\
     bnd.identity;id='de.mnl.mtc.conlets.login';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.courselist';version='latest',\
     bnd.identity;id='de.mnl.mtc.conlets.tobegraded';version='latest',\
@@ -54,9 +54,6 @@
     osgi.identity;filter:='(osgi.identity=org.apache.logging.log4j.core)',\
     osgi.identity;filter:='(osgi.identity=org.apache.logging.log4j.plugins)',\
     osgi.identity;filter:='(osgi.identity=ch.qos.logback.core)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.portal.*)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.portal)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.portal.*)',\
     osgi.identity;filter:='(osgi.identity=org.jgrapes.webconsole.provider.fontawesome)',\
     \
     osgi.identity;filter:='(osgi.identity=jakarta.mail-api)',\
@@ -67,11 +64,13 @@
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.log4j2osgi)(!(version>=1.2.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.lf4osgi)(!(version>=2.2.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.jul2osgi)(!(version>=1.6.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jdrupes.httpcodec)(!(version>=3.0.0)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(!(version>=1.17.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.io)(!(version>=2.0.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.http)(!(version>=3.0.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(!(version>=1.2.0.ga)))'
+    osgi.identity;filter:='(&(osgi.identity=org.jdrupes.httpcodec)(!(version>=3.1.0)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(!(version>=1.21.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(!(version>=1.37.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.io)(!(version>=2.11.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.http)(!(version>=3.5.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(!(version>=1.8.0.ga)))',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.webconsole.provider.fontawesome)'
 
 -runprogramargs: -console
 -runproperties: \

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1696792999265">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148992">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="https://www.apache.org/licenses/LICENSE-2.0.txt"/>
@@ -285,7 +285,7 @@
       <attribute name="version" value="1.12.21" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="com.google.code.findbugs:jsr305:3.0.2;net.java.dev.jna:jna-platform:5.12.1;net.java.dev.jna:jna:5.12.1;com.google.code.findbugs:findbugs-annotations:3.0.1"/>
+      <attribute name="provided" value="com.google.code.findbugs:findbugs-annotations:3.0.1;net.java.dev.jna:jna-platform:5.12.1;com.google.code.findbugs:jsr305:3.0.2;net.java.dev.jna:jna:5.12.1"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="3910158" type="Long"/>
@@ -293,6 +293,65 @@
       <attribute name="url" value="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.12.21/byte-buddy-1.12.21.jar"/>
       <attribute name="osgi.content" value="F6F45C2237A7F132C16745AD2A52C4CDDE58028B11EE80B09F0D422F4930D685"/>
     </capability>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=net.bytebuddy.byte-buddy)(&amp;(version&gt;=1.12.21)(version&lt;=1.12.21)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.21" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
@@ -579,7 +638,7 @@
       <attribute name="version" value="1.12.10" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="net.java.dev.jna:jna-platform:5.8.0;com.google.code.findbugs:jsr305:3.0.2;com.google.code.findbugs:findbugs-annotations:3.0.1;net.java.dev.jna:jna:5.8.0"/>
+      <attribute name="provided" value="com.google.code.findbugs:jsr305:3.0.2;net.java.dev.jna:jna-platform:5.8.0;net.java.dev.jna:jna:5.8.0;com.google.code.findbugs:findbugs-annotations:3.0.1"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="3836661" type="Long"/>
@@ -587,6 +646,65 @@
       <attribute name="url" value="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.12.10/byte-buddy-1.12.10.jar"/>
       <attribute name="osgi.content" value="1A1AC9CE65EDDCEA54EAD958387BB0B3863D02A2FFE856AB6A57AC79737C19CF"/>
     </capability>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=net.bytebuddy.byte-buddy)(&amp;(version&gt;=1.12.10)(version&lt;=1.12.10)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
@@ -873,7 +991,7 @@
       <attribute name="version" value="1.12.13" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="net.java.dev.jna:jna-platform:5.12.1;com.google.code.findbugs:jsr305:3.0.2;net.java.dev.jna:jna:5.12.1;com.google.code.findbugs:findbugs-annotations:3.0.1"/>
+      <attribute name="provided" value="com.google.code.findbugs:findbugs-annotations:3.0.1;net.java.dev.jna:jna:5.12.1;net.java.dev.jna:jna-platform:5.12.1;com.google.code.findbugs:jsr305:3.0.2"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="3886571" type="Long"/>
@@ -881,6 +999,65 @@
       <attribute name="url" value="https://repo1.maven.org/maven2/net/bytebuddy/byte-buddy/1.12.13/byte-buddy-1.12.13.jar"/>
       <attribute name="osgi.content" value="6A688BFF5B0DA4F4F26A672BE6623EFEF94837F1DD49EF2D1F5F6FE07C06699C"/>
     </capability>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=net.bytebuddy.byte-buddy)(&amp;(version&gt;=1.12.13)(version&lt;=1.12.13)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__0"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=0.0.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy"/>
+      <attribute name="version" value="1.12.13" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
   </resource>
   <resource>
     <capability namespace="osgi.identity">
@@ -917,7 +1094,7 @@
       <attribute name="version" value="1.12.10" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="net.java.dev.jna:jna-platform:5.8.0;com.google.code.findbugs:findbugs-annotations:3.0.1;com.google.code.findbugs:jsr305:3.0.2;net.java.dev.jna:jna:5.8.0"/>
+      <attribute name="provided" value="net.java.dev.jna:jna:5.8.0;com.google.code.findbugs:jsr305:3.0.2;com.google.code.findbugs:findbugs-annotations:3.0.1;net.java.dev.jna:jna-platform:5.8.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="257411" type="Long"/>
@@ -935,8 +1112,64 @@
       <directive name="resolution" value="optional"/>
       <attribute name="osgi.wiring.package" value="com.ibm.tools.attach"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=net.bytebuddy.byte-buddy-agent)(&amp;(version&gt;=1.12.10)(version&lt;=1.12.10)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy-agent__5"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy-agent"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.5))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.5.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy-agent__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy-agent"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy-agent__5"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy-agent"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.5.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="net.bytebuddy.byte-buddy-agent__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="net.bytebuddy.byte-buddy-agent"/>
+      <attribute name="version" value="1.12.10" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
 </repository>

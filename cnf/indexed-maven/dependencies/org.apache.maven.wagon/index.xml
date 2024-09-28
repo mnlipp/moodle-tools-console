@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1682257808734">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555149192">
   <resource>
     <capability namespace="bnd.info">
-      <attribute name="name" value="org.apache.maven.wagon:wagon-provider-api:1.0-beta-2"/>
+      <attribute name="name" value="org.apache.maven.wagon:wagon-provider-api"/>
       <attribute name="from" value="org.apache.maven.wagon:wagon-provider-api:1.0-beta-2"/>
-      <attribute name="version" value="0.0.0" type="Version"/>
+      <attribute name="version" value="1.0.0.beta-2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="org.codehaus.plexus:plexus-utils:1.0.4"/>
@@ -12,7 +12,7 @@
     <capability namespace="osgi.content">
       <attribute name="size" value="46326" type="Long"/>
       <attribute name="mime" value="application/java-archive"/>
-      <attribute name="url" value="https://repo.maven.apache.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/apache/maven/wagon/wagon-provider-api/1.0-beta-2/wagon-provider-api-1.0-beta-2.jar"/>
       <attribute name="osgi.content" value="0BA6040074D1E193580BAE9314392940F5ECD81E3B6D3B3381050360DCE033AD"/>
     </capability>
   </resource>

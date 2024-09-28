@@ -46,10 +46,9 @@
     osgi.identity;filter:='(osgi.identity=slf4j.simple)',\
     osgi.identity;filter:='(osgi.identity=slf4j.log4j12)',\
     osgi.identity;filter:='(osgi.identity=slf4j.osgi)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.logging.log4j.core)',\
+    osgi.identity;filter:='(osgi.identity=org.apache.logging.log4j.plugins)',\
     osgi.identity;filter:='(osgi.identity=ch.qos.logback.core)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.portal.*)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.portal)',\
-    osgi.identity;filter:='(osgi.identity=org.jgrapes.osgi.portal.*)',\
     osgi.identity;filter:='(osgi.identity=org.jgrapes.webconsole.provider.fontawesome)',\
     \
     osgi.identity;filter:='(osgi.identity=jakarta.mail-api)',\
@@ -60,11 +59,13 @@
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.log4j2osgi)(!(version>=1.2.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.lf4osgi)(!(version>=2.2.0.ga)))',\
     osgi.identity;filter:='(&(osgi.identity=de.mnl.osgi.jul2osgi)(!(version>=1.6.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jdrupes.httpcodec)(!(version>=3.0.0)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(!(version>=1.17.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.io)(!(version>=2.0.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.http)(!(version>=3.0.0.ga)))',\
-    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(!(version>=1.2.0.ga)))'
+    osgi.identity;filter:='(&(osgi.identity=org.jdrupes.httpcodec)(!(version>=3.1.0)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.core)(!(version>=1.21.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.util)(!(version>=1.37.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.io)(!(version>=2.11.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.http)(!(version>=3.5.0.ga)))',\
+    osgi.identity;filter:='(&(osgi.identity=org.jgrapes.webconsole.base)(!(version>=1.8.0.ga)))',\
+    osgi.identity;filter:='(osgi.identity=org.jgrapes.webconsole.provider.fontawesome)'
 
 -runprogramargs: -console
 -runproperties: \
@@ -74,7 +75,7 @@
 	org.osgi.service.log.admin.loglevel=DEBUG,\
     de.mnl.osgi.osgi2jul.handlers='java.util.logging.ConsoleHandler[1]', \
     de.mnl.osgi.osgi2jul.handler.1.format='{0} [{2}/{4}]'
--runee: JavaSE-17
+-runee: JavaSE-21
 -runvm: -Xmx256m, \
     -Xbootclasspath/a:${basename;${repo;de.mnl.osgi.jul2osgi.lib;latest}}, \
     -Djava.util.logging.manager=de.mnl.osgi.jul2osgi.lib.LogManager, \
@@ -86,16 +87,18 @@
     ${repo;de.mnl.osgi.jul2osgi.lib;latest}
     
 -runbundles: \
-	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.6,1.3.7)',\
+	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.7,1.3.8)',\
 	org.glassfish.hk2.osgi-resource-locator;version='[1.0.3,1.0.4)',\
-	jakarta.activation-api;version='[2.1.2,2.1.3)',\
-	angus-activation;version='[2.0.1,2.0.2)',\
-	org.eclipse.angus.jakarta.mail;version='[2.0.2,2.0.3)',\
-	com.fasterxml.jackson.core.jackson-core;version='[2.12.2,2.12.3)',\
-	org.freemarker.freemarker;version='[2.3.32,2.3.33)',\
+	jakarta.activation-api;version='[2.1.3,2.1.4)',\
+	angus-activation;version='[2.0.2,2.0.3)',\
+	org.eclipse.angus.jakarta.mail;version='[2.0.3,2.0.4)',\
+	com.fasterxml.jackson.core.jackson-core;version='[2.18.0,2.18.1)',\
+	com.fasterxml.jackson.core.jackson-annotations;version='[2.18.0,2.18.1)',\
+	com.fasterxml.jackson.core.jackson-databind;version='[2.18.0,2.18.1)',\
+	org.freemarker.freemarker;version='[2.3.33,2.3.34)',\
 	org.jdrupes.json;version='[2.3.1,2.3.2)',\
 	org.apache.felix.log;version='[1.3.0,1.3.1)',\
-	org.apache.felix.scr;version='[2.2.6,2.2.7)',\
+	org.apache.felix.scr;version='[2.2.12,2.2.13)',\
 	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
 	org.apache.felix.metatype;version='[1.2.4,1.2.5)',\
 	org.osgi.util.function;version='[1.2.0,1.2.1)',\
@@ -105,34 +108,34 @@
 	de.mnl.osgi.jul2osgi;version='[1.6.0,1.6.1)',\
 	slf4j.api;version='[1.7.36,1.7.37)',\
 	de.mnl.osgi.lf4osgi;version='[2.3.0,2.3.1)',\
-	org.apache.logging.log4j.api;version='[2.20.0,2.20.1)',\
+	org.apache.logging.log4j.api;version='[2.24.0,2.24.1)',\
 	de.mnl.osgi.log4j2osgi;version='[1.2.1,1.2.2)',\
 	de.mnl.osgi.osgi2jul;version='[1.2.0,1.2.1)',\
 	de.mnl.osgi.slf4j2osgi;version='[2.2.1,2.2.2)',\
-	org.jdrupes.httpcodec;version='[3.0.0,3.0.1)',\
-	org.jgrapes.core;version='[1.19.0,1.19.1)',\
-	org.jgrapes.io;version='[2.7.0,2.7.1)',\
-	org.jgrapes.http;version='[3.1.0,3.1.1)',\
-	org.jgrapes.util;version='[1.32.0,1.32.1)',\
+	org.jdrupes.httpcodec;version='[3.1.0,3.1.1)',\
+	org.jgrapes.core;version='[1.21.0,1.21.1)',\
+	org.jgrapes.io;version='[2.11.0,2.11.1)',\
+	org.jgrapes.http;version='[3.5.0,3.5.1)',\
+	org.jgrapes.util;version='[1.37.0,1.37.1)',\
 	com.electronwill.nightconfig.core;version='[3.6.7,3.6.8)',\
 	com.electronwill.nightconfig.json;version='[3.6.7,3.6.8)',\
 	com.electronwill.nightconfig.toml;version='[3.6.7,3.6.8)',\
 	com.electronwill.nightconfig.yaml;version='[3.6.7,3.6.8)',\
 	org.yaml.snakeyaml;version='[1.33.0,1.33.1)',\
-	org.jgrapes.mail;version='[2.0.0,2.0.1)',\
+	org.jgrapes.mail;version='[2.1.0,2.1.1)',\
 	org.jgrapes.osgi.core;version='[1.2.1,1.2.2)',\
-	org.jgrapes.webconsole.base;version='[1.2.0,1.2.1)',\
-	org.jgrapes.webconsole.rbac;version='[1.0.0,1.0.1)',\
-	org.jgrapes.webconsole.vuejs;version='[1.5.0,1.5.1)',\
+	org.jgrapes.webconsole.base;version='[1.8.0,1.8.1)',\
+	org.jgrapes.webconsole.rbac;version='[1.4.0,1.4.1)',\
+	org.jgrapes.webconsole.vuejs;version='[1.6.0,1.6.1)',\
 	org.jgrapes.webconsole.provider.chartjs;version='[1.2.0,1.2.1)',\
 	org.jgrapes.webconsole.provider.forkawesome;version='[1.1.0,1.1.1)',\
 	org.jgrapes.webconsole.provider.gridstack;version='[1.1.0,1.1.1)',\
-	org.jgrapes.webconsole.provider.jgwcvuecomponents;version='[1.2.0,1.2.1)',\
+	org.jgrapes.webconsole.provider.jgwcvuecomponents;version='[1.3.2,1.3.3)',\
 	org.jgrapes.webconsole.provider.jquery;version='[1.1.0,1.1.1)',\
 	org.jgrapes.webconsole.provider.markdownit;version='[1.1.0,1.1.1)',\
-	org.jgrapes.webconsole.provider.vue;version='[1.2.0,1.2.1)',\
+	org.jgrapes.webconsole.provider.vue;version='[1.3.0,1.3.1)',\
 	org.jgrapes.webconlet.markdowndisplay;version='[1.2.0,1.2.1)',\
-	org.jgrapes.webconlet.sysinfo;version='[1.3.0,1.3.1)',\
+	org.jgrapes.webconlet.sysinfo;version='[1.4.0,1.4.1)',\
 	org.jgrapes.osgi.webconlet.bundles;version='[1.0.0,1.0.1)',\
 	org.jgrapes.osgi.webconlet.logviewer;version='[1.0.0,1.0.1)',\
 	org.jgrapes.osgi.webconlet.services;version='[1.0.0,1.0.1)',\

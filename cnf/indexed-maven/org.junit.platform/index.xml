@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727549457240">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148865">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
@@ -400,6 +400,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-engine"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.11.1" type="Version"/>
@@ -499,7 +555,7 @@
       <attribute name="version" value="1.11.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.11.1;org.opentest4j:opentest4j:1.3.0"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.11.1;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="246638" type="Long"/>
@@ -922,7 +978,7 @@
       <attribute name="version" value="1.11.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.11.0;org.opentest4j:opentest4j:1.3.0"/>
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0;org.junit.platform:junit-platform-commons:1.11.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="238143" type="Long"/>
@@ -1250,6 +1306,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.10.4" type="Version"/>
@@ -1491,6 +1603,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.4" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-engine"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.10.4" type="Version"/>
@@ -1590,7 +1758,7 @@
       <attribute name="version" value="1.10.4" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.10.4;org.opentest4j:opentest4j:1.3.0"/>
+      <attribute name="compile" value="org.opentest4j:opentest4j:1.3.0;org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.10.4"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="213221" type="Long"/>
@@ -1723,7 +1891,7 @@
       <attribute name="version" value="1.10.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-engine:1.10.3"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-engine:1.10.3;org.apiguardian:apiguardian-api:1.1.2"/>
     </capability>
     <capability namespace="org.junit.platform.launcher">
       <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
@@ -1890,6 +2058,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-engine"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.10.3" type="Version"/>
@@ -1989,7 +2213,7 @@
       <attribute name="version" value="1.10.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.10.3;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0"/>
+      <attribute name="compile" value="org.opentest4j:opentest4j:1.3.0;org.junit.platform:junit-platform-commons:1.10.3;org.apiguardian:apiguardian-api:1.1.2"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="204825" type="Long"/>
@@ -2280,7 +2504,7 @@
       <attribute name="version" value="1.10.2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.10.2;org.opentest4j:opentest4j:1.3.0"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.10.2;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="204821" type="Long"/>
@@ -2447,6 +2671,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.10.1" type="Version"/>
@@ -2521,7 +2801,7 @@
       <attribute name="version" value="1.10.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-engine:1.10.1"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-engine:1.10.1;org.apiguardian:apiguardian-api:1.1.2"/>
     </capability>
     <capability namespace="org.junit.platform.launcher">
       <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
@@ -2679,7 +2959,7 @@
       <attribute name="version" value="1.10.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0;org.junit.platform:junit-platform-commons:1.10.1"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.10.1;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="204822" type="Long"/>
@@ -2842,6 +3122,62 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.10.1)(version&lt;=1.10.1)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -3245,6 +3581,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.10.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.9.3" type="Version"/>
@@ -3486,6 +3878,62 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-engine"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.9.3" type="Version"/>
@@ -3576,7 +4024,7 @@
       <attribute name="version" value="1.9.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.2.0;org.junit.platform:junit-platform-commons:1.9.3"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.9.3;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.2.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="189226" type="Long"/>
@@ -3705,7 +4153,7 @@
       <attribute name="version" value="1.9.2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.junit.platform:junit-platform-engine:1.9.2;org.apiguardian:apiguardian-api:1.1.2"/>
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-engine:1.9.2"/>
     </capability>
     <capability namespace="org.junit.platform.launcher">
       <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
@@ -3866,8 +4314,64 @@
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.9.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
       <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.9.2)(version&lt;=1.9.2)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -3962,7 +4466,7 @@
       <attribute name="version" value="1.9.2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.opentest4j:opentest4j:1.2.0;org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.9.2"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.9.2;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.2.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="189223" type="Long"/>
@@ -4240,7 +4744,7 @@
       <attribute name="version" value="1.9.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.opentest4j:opentest4j:1.2.0;org.junit.platform:junit-platform-commons:1.9.1;org.apiguardian:apiguardian-api:1.1.2"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.9.1;org.opentest4j:opentest4j:1.2.0;org.apiguardian:apiguardian-api:1.1.2"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="188204" type="Long"/>
@@ -4397,8 +4901,64 @@
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.9.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
       <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.9.1)(version&lt;=1.9.1)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.1" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -4626,7 +5186,7 @@
       <attribute name="version" value="1.9.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.opentest4j:opentest4j:1.2.0;org.junit.platform:junit-platform-commons:1.9.0;org.apiguardian:apiguardian-api:1.1.2"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.9.0;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.2.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="188203" type="Long"/>
@@ -4785,6 +5345,62 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.9.0)(version&lt;=1.9.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.9.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -5020,8 +5636,64 @@
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.8.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
       <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.8.2)(version&lt;=1.8.2)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.8.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -5116,7 +5788,7 @@
       <attribute name="version" value="1.8.2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.opentest4j:opentest4j:1.2.0;org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.8.2"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.8.2;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.2.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="185762" type="Long"/>
@@ -5176,7 +5848,7 @@
       <attribute name="version" value="1.3.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.0.0;org.junit.platform:junit-platform-engine:1.3.1"/>
+      <attribute name="compile" value="org.junit.platform:junit-platform-engine:1.3.1;org.apiguardian:apiguardian-api:1.0.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="94645" type="Long"/>
@@ -5313,8 +5985,64 @@
       <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.6.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
       <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
     </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.6.0)(version&lt;=1.6.0)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
     <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.6.0" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
 </repository>

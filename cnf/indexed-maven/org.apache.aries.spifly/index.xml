@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1702927542392">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148915">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="&quot;Apache-2.0&quot;;link=&quot;https://www.apache.org/licenses/LICENSE-2.0.txt&quot;"/>
@@ -23,7 +23,7 @@
       <attribute name="version" value="1.3.7" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="org.ow2.asm:asm:9.6;biz.aQute.bnd:biz.aQute.bndlib:6.4.0;biz.aQute.bnd:aQute.libg:6.4.0;org.ow2.asm:asm-commons:9.6;org.ow2.asm:asm-util:9.6;org.osgi:osgi.core:5.0.0;org.apache.aries.spifly:org.apache.aries.spifly.dynamic.bundle:1.3.7"/>
+      <attribute name="provided" value="org.ow2.asm:asm-commons:9.6;biz.aQute.bnd:aQute.libg:6.4.0;org.osgi:osgi.core:5.0.0;org.ow2.asm:asm-util:9.6;org.ow2.asm:asm:9.6;biz.aQute.bnd:biz.aQute.bndlib:6.4.0;org.apache.aries.spifly:org.apache.aries.spifly.dynamic.bundle:1.3.7"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="521192" type="Long"/>
@@ -72,7 +72,7 @@
       <attribute name="version" value="1.3.7" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.7;org.ow2.asm:asm-util:9.6;org.ow2.asm:asm-commons:9.6;org.ow2.asm:asm:9.6"/>
+      <attribute name="compile" value="org.ow2.asm:asm-commons:9.6;org.ow2.asm:asm-util:9.6;org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.7;org.ow2.asm:asm:9.6"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="13930" type="Long"/>
@@ -128,8 +128,8 @@
       <attribute name="version" value="1.3.7" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.ow2.asm:asm-commons:9.6;org.ow2.asm:asm:9.6;org.ow2.asm:asm-util:9.6"/>
-      <attribute name="provided" value="org.apache.aries.spifly:org.apache.aries.spifly.weaver-internal:1.3.7;biz.aQute.bnd:aQute.libg:6.4.0;biz.aQute.bnd:biz.aQute.bndlib:6.4.0;org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.7;org.osgi:osgi.core:5.0.0"/>
+      <attribute name="compile" value="org.ow2.asm:asm-util:9.6;org.ow2.asm:asm:9.6;org.ow2.asm:asm-commons:9.6"/>
+      <attribute name="provided" value="org.apache.aries.spifly:org.apache.aries.spifly.weaver-internal:1.3.7;biz.aQute.bnd:aQute.libg:6.4.0;org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.7;org.osgi:osgi.core:5.0.0;biz.aQute.bnd:biz.aQute.bndlib:6.4.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="153960" type="Long"/>
@@ -190,7 +190,7 @@
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="biz.aQute.bnd:biz.aQute.bndlib:6.4.0"/>
-      <attribute name="provided" value="biz.aQute.bnd:aQute.libg:6.4.0;org.osgi:osgi.core:5.0.0"/>
+      <attribute name="provided" value="org.osgi:osgi.core:5.0.0;biz.aQute.bnd:aQute.libg:6.4.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="61019" type="Long"/>
@@ -222,7 +222,7 @@
       <attribute name="version" value="1.3.6" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="biz.aQute.bnd:aQute.libg:6.4.0;biz.aQute.bnd:biz.aQute.bndlib:6.4.0;org.ow2.asm:asm-util:9.4;org.apache.aries.spifly:org.apache.aries.spifly.dynamic.bundle:1.3.6;org.osgi:osgi.core:5.0.0;org.ow2.asm:asm-commons:9.4;org.ow2.asm:asm:9.4"/>
+      <attribute name="provided" value="org.ow2.asm:asm-commons:9.4;org.ow2.asm:asm-util:9.4;biz.aQute.bnd:biz.aQute.bndlib:6.4.0;org.ow2.asm:asm:9.4;org.osgi:osgi.core:5.0.0;biz.aQute.bnd:aQute.libg:6.4.0;org.apache.aries.spifly:org.apache.aries.spifly.dynamic.bundle:1.3.6"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="519073" type="Long"/>
@@ -288,7 +288,7 @@
       <attribute name="version" value="1.3.6" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.6;org.ow2.asm:asm:9.4;org.ow2.asm:asm-commons:9.4;org.ow2.asm:asm-util:9.4"/>
+      <attribute name="compile" value="org.ow2.asm:asm:9.4;org.ow2.asm:asm-util:9.4;org.ow2.asm:asm-commons:9.4;org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.6"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="13868" type="Long"/>
@@ -344,8 +344,8 @@
       <attribute name="version" value="1.3.6" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.ow2.asm:asm-commons:9.4;org.ow2.asm:asm-util:9.4;org.ow2.asm:asm:9.4"/>
-      <attribute name="provided" value="biz.aQute.bnd:aQute.libg:6.4.0;org.apache.aries.spifly:org.apache.aries.spifly.weaver-internal:1.3.6;org.osgi:osgi.core:5.0.0;org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.6;biz.aQute.bnd:biz.aQute.bndlib:6.4.0"/>
+      <attribute name="compile" value="org.ow2.asm:asm-util:9.4;org.ow2.asm:asm-commons:9.4;org.ow2.asm:asm:9.4"/>
+      <attribute name="provided" value="org.apache.aries.spifly:org.apache.aries.spifly.core-internal:1.3.6;org.apache.aries.spifly:org.apache.aries.spifly.weaver-internal:1.3.6;biz.aQute.bnd:aQute.libg:6.4.0;org.osgi:osgi.core:5.0.0;biz.aQute.bnd:biz.aQute.bndlib:6.4.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="153856" type="Long"/>

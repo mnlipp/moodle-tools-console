@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<repository increment="1708526213542" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
-    <referral url="dependencies/org.assertj/index.xml"/>
+<repository increment="1727555149194" name="IndexedMaven" xmlns="http://www.osgi.org/xmlns/repository/v1.0.0">
     <referral url="org.jgrapes/index.xml"/>
+    <referral url="dependencies/org.assertj/index.xml"/>
     <referral url="dependencies/org.ops4j.base/index.xml"/>
     <referral url="jakarta.mail/index.xml"/>
     <referral url="dependencies/jakarta.activation/index.xml"/>
@@ -19,13 +19,14 @@
     <referral url="dependencies/com.fasterxml.woodstox/index.xml"/>
     <referral url="org.mockito/index.xml"/>
     <referral url="dependencies/at.favre.lib/index.xml"/>
+    <referral url="dependencies/com.sun.activation/index.xml"/>
     <referral url="dependencies/com.google.errorprone/index.xml"/>
     <referral url="dependencies/org.sonatype.plexus/index.xml"/>
     <referral url="dependencies/org.apache.tomcat/index.xml"/>
     <referral url="org.osgi/index.xml"/>
     <referral url="dependencies/org.awaitility/index.xml"/>
-    <referral url="dependencies/org.sonatype.sisu.inject/index.xml"/>
     <referral url="dependencies/org.objenesis/index.xml"/>
+    <referral url="dependencies/org.sonatype.sisu.inject/index.xml"/>
     <referral url="dependencies/concurrent/index.xml"/>
     <referral url="dependencies/jakarta.json/index.xml"/>
     <referral url="org.apache.logging.log4j/index.xml"/>
@@ -44,8 +45,8 @@
     <referral url="dependencies/asm/index.xml"/>
     <referral url="dependencies/org.hamcrest/index.xml"/>
     <referral url="dependencies/net.sourceforge.cobertura/index.xml"/>
-    <referral url="dependencies/org.junit.vintage/index.xml"/>
     <referral url="dependencies/org.apache.commons/index.xml"/>
+    <referral url="dependencies/org.junit.vintage/index.xml"/>
     <referral url="org.slf4j/index.xml"/>
     <referral url="dependencies/org.opentest4j/index.xml"/>
     <referral url="dependencies/xerces/index.xml"/>
@@ -60,8 +61,9 @@
     <referral url="dependencies/portlet-api/index.xml"/>
     <referral url="dependencies/org.apache.geronimo.specs/index.xml"/>
     <referral url="org.apache.aries.spifly/index.xml"/>
-    <referral url="dependencies/net.bytebuddy/index.xml"/>
+    <referral url="dependencies/org.fusesource.jansi/index.xml"/>
     <referral url="dependencies/net.java.dev.jna/index.xml"/>
+    <referral url="dependencies/net.bytebuddy/index.xml"/>
     <referral url="org.eclipse.angus/index.xml"/>
     <referral url="dependencies/org.easymock/index.xml"/>
     <referral url="dependencies/biz.aQute/index.xml"/>
@@ -71,25 +73,26 @@
     <referral url="dependencies/org.apache.ant/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty/index.xml"/>
     <referral url="de.mnl.osgi/index.xml"/>
-    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/com.google.guava/index.xml"/>
+    <referral url="dependencies/classworlds/index.xml"/>
     <referral url="dependencies/org.jline/index.xml"/>
     <referral url="dependencies/org.apache.maven/index.xml"/>
     <referral url="dependencies/org.codehaus.mojo/index.xml"/>
+    <referral url="dependencies/com.sun.mail/index.xml"/>
     <referral url="dependencies/net.sf.kxml/index.xml"/>
     <referral url="dependencies/org.jetbrains/index.xml"/>
     <referral url="dependencies/org.yaml/index.xml"/>
     <referral url="dependencies/log4j/index.xml"/>
-    <referral url="dependencies/org.codehaus.woodstox/index.xml"/>
     <referral url="dependencies/com.electronwill.night-config/index.xml"/>
-    <referral url="dependencies/junit/index.xml"/>
+    <referral url="dependencies/org.codehaus.woodstox/index.xml"/>
     <referral url="dependencies/de.twentyeleven.skysail/index.xml"/>
+    <referral url="dependencies/junit/index.xml"/>
     <referral url="dependencies/org.mongodb/index.xml"/>
     <referral url="dependencies/oro/index.xml"/>
     <referral url="org.junit.jupiter/index.xml"/>
     <referral url="dependencies/org.eclipse.jetty.websocket/index.xml"/>
     <referral url="dependencies/org.freemarker/index.xml"/>
-    <referral url="dependencies/jmock/index.xml"/>
     <referral url="dependencies/org.apache.maven.wagon/index.xml"/>
+    <referral url="dependencies/jmock/index.xml"/>
     <referral url="dependencies/com.github.spotbugs/index.xml"/>
 </repository>
