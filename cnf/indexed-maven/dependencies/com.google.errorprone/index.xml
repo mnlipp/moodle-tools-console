@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727535655720">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727549457205">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="&quot;Apache 2.0&quot;;link=&quot;http://www.apache.org/licenses/LICENSE-2.0.txt&quot;"/>
@@ -151,62 +151,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=com.google.errorprone.annotations)(&amp;(version&gt;=2.30.0)(version&lt;=2.30.0)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="com.google.errorprone.annotations__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="com.google.errorprone.annotations"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="com.google.errorprone.annotations__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="com.google.errorprone.annotations"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="com.google.errorprone.annotations__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="com.google.errorprone.annotations"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="com.google.errorprone.annotations__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="com.google.errorprone.annotations"/>
-      <attribute name="version" value="2.30.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
 </repository>
