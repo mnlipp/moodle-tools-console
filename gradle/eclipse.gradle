@@ -70,3 +70,11 @@ eclipse {
 }
 
 tasks.eclipse.dependsOn(cleanEclipse)
+
+if (!project.name.equals("cnf")) {
+    jar {
+        dependsOn(eclipseProject)
+        dependsOn(eclipseClasspath)
+        dependsOn(eclipseJdt)
+    }
+}
