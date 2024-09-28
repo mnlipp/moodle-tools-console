@@ -12,4 +12,4 @@ You can use the icon on the top right corner of the console
 to add more conlets to the overview tab.
 
 Technical details about the console can be found on the project's
-[home page](https://mnlipp.github.io/jgrapes/WebConsole.html).
+[home page](https://jgrapes.org/WebConsole.html).
