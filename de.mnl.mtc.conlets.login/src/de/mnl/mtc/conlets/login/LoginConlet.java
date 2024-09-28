@@ -23,21 +23,17 @@ import de.mnl.moodle.service.MoodleService;
 import freemarker.core.ParseException;
 import freemarker.template.MalformedTemplateNameException;
 import freemarker.template.Template;
-import freemarker.template.TemplateException;
 import freemarker.template.TemplateNotFoundException;
 import java.beans.ConstructorProperties;
 import java.io.IOException;
-import java.io.StringWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
-import java.util.concurrent.Future;
 import javax.security.auth.Subject;
 import org.jgrapes.core.Channel;
-import org.jgrapes.core.Components;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
 import org.jgrapes.core.annotation.Handler;
@@ -66,6 +62,7 @@ import org.jgrapes.webconsole.base.events.RenderConletRequestBase;
 import org.jgrapes.webconsole.base.events.ResourceNotAvailable;
 import org.jgrapes.webconsole.base.events.SetLocale;
 import org.jgrapes.webconsole.base.events.SimpleConsoleCommand;
+import org.jgrapes.webconsole.base.events.UserAuthenticated;
 import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 
 /**
@@ -231,22 +228,6 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
                     .addOption("useSubmit", true));
     }
 
-    private Future<String> processTemplate(
-            Event<?> request, Template template,
-            Object dataModel) {
-        return request.processedBy().map(procBy -> procBy.executorService())
-            .orElse(Components.defaultExecutorService()).submit(() -> {
-                StringWriter out = new StringWriter();
-                try {
-                    template.process(dataModel, out);
-                } catch (TemplateException | IOException e) {
-                    throw new IllegalArgumentException(e);
-                }
-                return out.toString();
-
-            });
-    }
-
     @Override
     protected Set<RenderMode> doRenderConlet(RenderConletRequestBase<?> event,
             ConsoleConnection channel, String conletId,
@@ -295,6 +276,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             user.getPrivateCredentials().add(
                 new Password(event.params().asString(2).toCharArray()));
             channel.session().put(Subject.class, user);
+            fire(new UserAuthenticated(event, user).by("Moodle Login"));
 
             // Close dialog and resume console initialization
             channel.respond(new CloseModalDialog(type(), event.conletId()));
