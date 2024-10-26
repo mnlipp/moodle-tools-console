@@ -18,6 +18,8 @@
 
 package de.mnl.moodle.provider;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.mnl.moodle.service.QueryValueEncoder;
 import de.mnl.moodle.service.model.MoodleErrorValues;
 import de.mnl.osgi.lf4osgi.Logger;
@@ -43,8 +45,6 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import org.jdrupes.json.JsonBeanDecoder;
-import org.jdrupes.json.JsonDecodeException;
 
 /**
  * A class for invoking REST services.
@@ -52,6 +52,8 @@ import org.jdrupes.json.JsonDecodeException;
 @SuppressWarnings("PMD.DataflowAnomalyAnalysis")
 public class RestClient implements AutoCloseable {
 
+    protected static ObjectMapper mapper = new ObjectMapper()
+        .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     @SuppressWarnings("PMD.FieldNamingConventions")
     private static final Logger logger
         = LoggerFactory.getLogger(RestClient.class);
@@ -264,13 +266,11 @@ public class RestClient implements AutoCloseable {
                 resultData.unread(peekData, 0, peeked);
                 if (peeked > 0 && peekData[0] != '[') {
                     throw new MoodleException(
-                        JsonBeanDecoder.create(resultData).skipUnknown()
-                            .readObject(MoodleErrorValues.class));
+                        mapper.readValue(resultData, MoodleErrorValues.class));
                 }
             }
-            return JsonBeanDecoder
-                .create(resultData).skipUnknown().readObject(resultType);
-        } catch (JsonDecodeException e) {
+            return mapper.readValue(resultData, resultType);
+        } catch (IOException e) {
             throw new IOException("Unparsable result: " + e.getMessage(), e);
         }
     }

@@ -18,6 +18,7 @@
 
 package de.mnl.mtc.conlets.account;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.mnl.mtc.credentialsmgr.Credentials;
 import de.mnl.mtc.credentialsmgr.events.UpdateCredentials;
 import freemarker.core.ParseException;
@@ -29,9 +30,6 @@ import java.io.IOException;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
-import org.jdrupes.json.JsonBeanDecoder;
-import org.jdrupes.json.JsonBeanEncoder;
-import org.jdrupes.json.JsonDecodeException;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Event;
 import org.jgrapes.core.Manager;
@@ -62,6 +60,7 @@ import org.jgrapes.webconsole.base.freemarker.FreeMarkerConlet;
 public class AccountConlet
         extends FreeMarkerConlet<AccountConlet.AccountModel> {
 
+    protected static ObjectMapper mapper = new ObjectMapper();
     private static final Set<RenderMode> MODES
         = RenderMode.asSet(RenderMode.Preview);
 
@@ -163,13 +162,12 @@ public class AccountConlet
 
         if ("accountData".equals(event.method())) {
             Credentials credentials
-                = new Credentials(event.params().asString(0),
-                    event.params().asString(1), event.params().asString(2));
+                = new Credentials(event.param(0), event.param(1),
+                    event.param(2));
             channel.respond(new UpdateCredentials(credentials));
             conletModel.setResource(credentials.getResource());
             conletModel.setUsername(credentials.getUsername());
-            String jsonState = JsonBeanEncoder.create()
-                .writeObject(conletModel).toJson();
+            String jsonState = mapper.writeValueAsString(conletModel);
             channel.respond(new KeyValueStoreUpdate().update(
                 storagePath(channel.session())
                     + conletModel.getConletId(),
@@ -188,7 +186,7 @@ public class AccountConlet
     @Handler
     @SuppressWarnings("PMD.AvoidInstantiatingObjectsInLoops")
     public void onKeyValueStoreData(KeyValueStoreData event,
-            ConsoleConnection channel) throws JsonDecodeException {
+            ConsoleConnection channel) throws IOException {
         Session session = channel.session();
         if (!event.event().query()
             .equals(storagePath(session))) {
@@ -196,8 +194,7 @@ public class AccountConlet
         }
 
         for (String json : event.data().values()) {
-            AccountModel model = JsonBeanDecoder.create(json)
-                .readObject(AccountModel.class);
+            AccountModel model = mapper.readValue(json, AccountModel.class);
             putInSession(channel.session(), model.getConletId(), model);
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "accountData",

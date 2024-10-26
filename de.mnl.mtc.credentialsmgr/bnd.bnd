@@ -13,7 +13,7 @@ Export-Package: \
 -buildpath: \
     osgi.annotation;version=6.0.1,\
     com.fasterxml.jackson.core.jackson-core;version=latest,\
-    org.jdrupes.json;version=latest,\
+    com.fasterxml.jackson.core.jackson-databind;version=latest,\
     org.jgrapes.core;version=latest,\
     org.jgrapes.util;version=latest,\
     org.jgrapes.io;version=latest,\

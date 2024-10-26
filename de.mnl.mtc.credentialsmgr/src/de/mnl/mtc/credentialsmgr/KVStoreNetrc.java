@@ -18,13 +18,12 @@
 
 package de.mnl.mtc.credentialsmgr;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import de.mnl.mtc.credentialsmgr.events.UpdateCredentials;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.Map;
-import org.jdrupes.json.JsonBeanEncoder;
-import org.jdrupes.json.JsonDecodeException;
 import org.jgrapes.core.Channel;
 import org.jgrapes.core.Component;
 import org.jgrapes.core.Event;
@@ -44,6 +43,8 @@ import org.jgrapes.webconsole.base.WebConsoleUtils;
  * generalized to "resource".
  */
 public class KVStoreNetrc extends Component {
+
+    protected static ObjectMapper mapper = new ObjectMapper();
 
     /**
      * Creates a new component with its channel set to the given channel.
@@ -73,8 +74,7 @@ public class KVStoreNetrc extends Component {
     public void onUpdateCredentials(UpdateCredentials event,
             ConsoleConnection channel) throws IOException {
         Credentials credentials = event.credentials();
-        String jsonState = JsonBeanEncoder.create()
-            .writeObject(credentials).toJson();
+        String jsonState = mapper.writeValueAsString(credentials);
         channel.respond(new KeyValueStoreUpdate().update(
             storagePath(channel.session())
                 + URLEncoder.encode(credentials.getResource(),
@@ -91,7 +91,7 @@ public class KVStoreNetrc extends Component {
      */
     @Handler
     public void onKeyValueStoreData(KeyValueStoreData event,
-            ConsoleConnection channel) throws JsonDecodeException {
+            ConsoleConnection channel) {
         Session session = channel.session();
         if (!event.event().query().equals(storagePath(session))) {
             return;
