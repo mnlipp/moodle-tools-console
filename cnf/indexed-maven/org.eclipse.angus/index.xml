@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555149097">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1729940152959">
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/org/documents/edl-v10.php"/>
@@ -135,7 +135,7 @@
       <attribute name="version" value="2.0.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.1;jakarta.mail:jakarta.mail-api:2.1.1"/>
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-core:2.0.1"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="239571" type="Long"/>
@@ -591,7 +591,7 @@
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.1;jakarta.mail:jakarta.mail-api:2.1.1"/>
-      <attribute name="provided" value="org.eclipse.angus:imap:2.0.1;org.eclipse.angus:smtp:2.0.1;org.eclipse.angus:angus-core:2.0.1;org.eclipse.angus:pop3:2.0.1;org.eclipse.angus:logging-mailhandler:2.0.1"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.1;org.eclipse.angus:imap:2.0.1;org.eclipse.angus:logging-mailhandler:2.0.1;org.eclipse.angus:pop3:2.0.1;org.eclipse.angus:smtp:2.0.1"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:2.0.0"/>
     </capability>
     <capability namespace="osgi.content">
@@ -924,94 +924,6 @@
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail smtp provider"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="2.0.3" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
-      <attribute name="bundle-version" value="2.0.3" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
-      <attribute name="version" value="2.0.3" type="Version"/>
-      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="2.0.3" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="2.0.3" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.smtp"/>
-      <attribute name="from" value="org.eclipse.angus:smtp:2.0.3"/>
-      <attribute name="version" value="2.0.3" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.3;org.eclipse.angus:angus-core:2.0.3"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="65239" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.3/smtp-2.0.3.jar"/>
-      <attribute name="osgi.content" value="421BFD7A2783D8C6435410D341FE51B8502C1FE6A8862DB8D93E62B77278022E"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <attribute name="osgi.serviceloader" value="jakarta.mail.Provider"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
       <attribute name="osgi.identity" value="org.eclipse.angus.imap"/>
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail imap provider"/>
@@ -1056,7 +968,7 @@
       <attribute name="version" value="2.0.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.3;jakarta.mail:jakarta.mail-api:2.1.3"/>
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.3;org.eclipse.angus:angus-core:2.0.3"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="236581" type="Long"/>
@@ -1700,195 +1612,6 @@
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail smtp provider"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="2.0.2" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
-      <attribute name="bundle-version" value="2.0.2" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
-      <attribute name="version" value="2.0.2" type="Version"/>
-      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="2.0.2" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="2.0.2" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.smtp"/>
-      <attribute name="from" value="org.eclipse.angus:smtp:2.0.2"/>
-      <attribute name="version" value="2.0.2" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.2;jakarta.mail:jakarta.mail-api:2.1.2"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="65733" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.2/smtp-2.0.2.jar"/>
-      <attribute name="osgi.content" value="25BEEAF80F5D81466283884964546F9AA47754ECC8CD322F1D2E79DEAC45E459"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <attribute name="osgi.serviceloader" value="jakarta.mail.Provider"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail smtp provider"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444,-1923478059" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.smtp"/>
-      <attribute name="from" value="org.eclipse.angus:smtp:2.0.0"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.0;jakarta.mail:jakarta.mail-api:2.1.1"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="67439" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.0/smtp-2.0.0.jar"/>
-      <attribute name="osgi.content" value="5A7D4BD5CD30169A7E86C9A88161E604CA90F15D18CDD203403CD563899FD920"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="effective" value="active"/>
-      <attribute name="objectClass" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="effective" value="active"/>
-      <attribute name="objectClass" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <directive name="register" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
-      <attribute name="osgi.serviceloader" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <directive name="register" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
-      <attribute name="osgi.serviceloader" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
       <attribute name="osgi.identity" value="org.eclipse.angus.imap"/>
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail imap provider"/>
@@ -1933,7 +1656,7 @@
       <attribute name="version" value="2.0.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.0;jakarta.mail:jakarta.mail-api:2.1.1"/>
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-core:2.0.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="243070" type="Long"/>
@@ -2180,6 +1903,283 @@
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail smtp provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="2.0.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
+      <attribute name="bundle-version" value="2.0.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
+      <attribute name="version" value="2.0.3" type="Version"/>
+      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="2.0.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="2.0.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.smtp"/>
+      <attribute name="from" value="org.eclipse.angus:smtp:2.0.3"/>
+      <attribute name="version" value="2.0.3" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.3;org.eclipse.angus:angus-core:2.0.3"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="65239" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.3/smtp-2.0.3.jar"/>
+      <attribute name="osgi.content" value="421BFD7A2783D8C6435410D341FE51B8502C1FE6A8862DB8D93E62B77278022E"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <attribute name="osgi.serviceloader" value="jakarta.mail.Provider"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail smtp provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="2.0.2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
+      <attribute name="bundle-version" value="2.0.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
+      <attribute name="version" value="2.0.2" type="Version"/>
+      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="2.0.2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="2.0.2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.smtp"/>
+      <attribute name="from" value="org.eclipse.angus:smtp:2.0.2"/>
+      <attribute name="version" value="2.0.2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.2;org.eclipse.angus:angus-core:2.0.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="65733" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.2/smtp-2.0.2.jar"/>
+      <attribute name="osgi.content" value="25BEEAF80F5D81466283884964546F9AA47754ECC8CD322F1D2E79DEAC45E459"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <attribute name="osgi.serviceloader" value="jakarta.mail.Provider"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail smtp provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail,jakarta.mail.internet,org.eclipse.angus.mail.util"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.smtp"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.smtp"/>
+      <attribute name="from" value="org.eclipse.angus:smtp:2.0.0"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-core:2.0.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="67439" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/2.0.0/smtp-2.0.0.jar"/>
+      <attribute name="osgi.content" value="5A7D4BD5CD30169A7E86C9A88161E604CA90F15D18CDD203403CD563899FD920"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="effective" value="active"/>
+      <attribute name="objectClass" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="effective" value="active"/>
+      <attribute name="objectClass" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <directive name="register" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
+      <attribute name="osgi.serviceloader" value="org.eclipse.angus.mail.smtp.SMTPProvider"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <directive name="register" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
+      <attribute name="osgi.serviceloader" value="org.eclipse.angus.mail.smtp.SMTPSSLProvider"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.auth)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.auth"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.eclipse.angus.mail.util)(version&gt;=2.0.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
       <attribute name="osgi.identity" value="org.eclipse.angus.imap"/>
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail imap provider"/>
@@ -2224,7 +2224,7 @@
       <attribute name="version" value="1.1.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:1.1.0;jakarta.mail:jakarta.mail-api:2.1.1"/>
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-core:1.1.0"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="235948" type="Long"/>
@@ -2287,6 +2287,107 @@
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.search)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
       <attribute name="osgi.wiring.package" value="jakarta.mail.search"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+    <requirement namespace="osgi.extender">
+      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail smtp provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="com.sun.mail.util,jakarta.mail,jakarta.mail.internet"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.smtp"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.smtp"/>
+      <attribute name="from" value="org.eclipse.angus:smtp:1.1.0"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-core:1.1.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="65325" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/1.1.0/smtp-1.1.0.jar"/>
+      <attribute name="osgi.content" value="85FADBD448570BEE56BEA83208D558A55D3605F76DC8973BA11101258BD25516"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="effective" value="active"/>
+      <attribute name="objectClass" value="com.sun.mail.smtp.SMTPProvider"/>
+    </capability>
+    <capability namespace="osgi.service">
+      <directive name="effective" value="active"/>
+      <attribute name="objectClass" value="com.sun.mail.smtp.SMTPSSLProvider"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <directive name="register" value="com.sun.mail.smtp.SMTPProvider"/>
+      <attribute name="osgi.serviceloader" value="com.sun.mail.smtp.SMTPProvider"/>
+    </capability>
+    <capability namespace="osgi.serviceloader">
+      <directive name="register" value="com.sun.mail.smtp.SMTPSSLProvider"/>
+      <attribute name="osgi.serviceloader" value="com.sun.mail.smtp.SMTPSSLProvider"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.auth)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.auth"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.util)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
@@ -2563,224 +2664,6 @@
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail smtp provider"/>
       <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="com.sun.mail.util,jakarta.mail,jakarta.mail.internet"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.smtp"/>
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.smtp"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-116480742,-1282173964,1243690060,2033386705,-787990185,-1914922393,60811239,-809282573,-1928623146,1060756916,624097511,-1681005229,-1539840906,1368777133,754571897,-1698708310,2041036492,-1365506888,1906212841,-1927483021,-498615444,-1923478059" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.smtp"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.smtp"/>
-      <attribute name="from" value="org.eclipse.angus:smtp:1.1.0"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:1.1.0;jakarta.mail:jakarta.mail-api:2.1.1"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="65325" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/smtp/1.1.0/smtp-1.1.0.jar"/>
-      <attribute name="osgi.content" value="85FADBD448570BEE56BEA83208D558A55D3605F76DC8973BA11101258BD25516"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="effective" value="active"/>
-      <attribute name="objectClass" value="com.sun.mail.smtp.SMTPProvider"/>
-    </capability>
-    <capability namespace="osgi.service">
-      <directive name="effective" value="active"/>
-      <attribute name="objectClass" value="com.sun.mail.smtp.SMTPSSLProvider"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <directive name="register" value="com.sun.mail.smtp.SMTPProvider"/>
-      <attribute name="osgi.serviceloader" value="com.sun.mail.smtp.SMTPProvider"/>
-    </capability>
-    <capability namespace="osgi.serviceloader">
-      <directive name="register" value="com.sun.mail.smtp.SMTPSSLProvider"/>
-      <attribute name="osgi.serviceloader" value="com.sun.mail.smtp.SMTPSSLProvider"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.auth)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.auth"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.util)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-    <requirement namespace="osgi.extender">
-      <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <directive name="resolution" value="optional"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.imap"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail imap provider"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="com.sun.mail.util"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.iap"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="45045682,-1525038371,2051441,-585239735,-74930671,1382643175,42930929,1847113871,-83990400,-1302308353,2127061919,-924519752,-921269129,-275679135,288192425,-590353207" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="com.sun.mail.iap,com.sun.mail.imap.protocol,com.sun.mail.util,jakarta.activation,jakarta.mail,jakarta.mail.event,jakarta.mail.internet,jakarta.mail.search"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.imap"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="64618,-281802058,-1676803973,1395759599,-1076942296,1153812834,1354597747,-1486383455,-683933289,-446384084,-1490039756,-678938914,930331005,528007012,-850115126,-1315344472,268089402,-2113999794,-6399719,446297110,-1148190757,37535432,-1472700999,1092611549,-254542976,-1413712622,717733944,78959100,-1847235081,1726485322,1142656251,1549674828,281785009" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="com.sun.mail.iap,com.sun.mail.imap,com.sun.mail.util,jakarta.mail,jakarta.mail.internet,jakarta.mail.search"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.imap.protocol"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-996559841,148606199,2044322,110543345,-1266155568,66975335,766257357,1548768507,2331,702310433,526338059,-1797165793,1175178676,-882068615,-2057177109,2289459,1409969804,-2015456739,-487582,302731003,-1038781125,-2137443688,-457500493,-457045750,-498615444,-1790974551,-1808614382,84016,-1791963630" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.imap"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.imap"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.imap"/>
-      <attribute name="from" value="org.eclipse.angus:imap:1.0.0"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:1.0.0;jakarta.mail:jakarta.mail-api:2.1.0"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="234515" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/imap/1.0.0/imap-1.0.0.jar"/>
-      <attribute name="osgi.content" value="D24305495993428AA100EED24E0040B7C38718BF5E87173922B3C30446038C78"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.auth)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.auth"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.iap)"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.iap"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.imap)"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.imap"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.imap.protocol)"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.imap.protocol"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.util)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.event)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.event"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.search)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.search"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
-      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
-      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.smtp"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail smtp provider"/>
-      <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.0.0" type="Version"/>
     </capability>
     <capability namespace="osgi.wiring.package">
@@ -2832,6 +2715,123 @@
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
       <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
+      <attribute name="osgi.wiring.package" value="javax.net.ssl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.auth.callback)"/>
+      <attribute name="osgi.wiring.package" value="javax.security.auth.callback"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.imap"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail imap provider"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="com.sun.mail.util"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.iap"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="45045682,-1525038371,2051441,-585239735,-74930671,1382643175,42930929,1847113871,-83990400,-1302308353,2127061919,-924519752,-921269129,-275679135,288192425,-590353207" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="com.sun.mail.iap,com.sun.mail.imap.protocol,com.sun.mail.util,jakarta.activation,jakarta.mail,jakarta.mail.event,jakarta.mail.internet,jakarta.mail.search"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.imap"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="64618,-281802058,-1676803973,1395759599,-1076942296,1153812834,1354597747,-1486383455,-683933289,-446384084,-1490039756,-678938914,930331005,528007012,-850115126,-1315344472,268089402,-2113999794,-6399719,446297110,-1148190757,37535432,-1472700999,1092611549,-254542976,-1413712622,717733944,78959100,-1847235081,1726485322,1142656251,1549674828,281785009" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="com.sun.mail.iap,com.sun.mail.imap,com.sun.mail.util,jakarta.mail,jakarta.mail.internet,jakarta.mail.search"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.imap"/>
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.imap.protocol"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-996559841,148606199,2044322,110543345,-1266155568,66975335,766257357,1548768507,2331,702310433,526338059,-1797165793,1175178676,-882068615,-2057177109,2289459,1409969804,-2015456739,-487582,302731003,-1038781125,-2137443688,-457500493,-457045750,-498615444,-1790974551,-1808614382,84016,-1791963630" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.imap"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.imap"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.imap"/>
+      <attribute name="from" value="org.eclipse.angus:imap:1.0.0"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.0;org.eclipse.angus:angus-core:1.0.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="234515" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/imap/1.0.0/imap-1.0.0.jar"/>
+      <attribute name="osgi.content" value="D24305495993428AA100EED24E0040B7C38718BF5E87173922B3C30446038C78"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.auth)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.auth"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.iap)"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.iap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.imap)"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.imap"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=com.sun.mail.imap.protocol)"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.imap.protocol"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=com.sun.mail.util)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.event)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.event"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.search)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.search"/>
     </requirement>
     <requirement namespace="osgi.wiring.package">
       <directive name="filter" value="(osgi.wiring.package=javax.net.ssl)"/>
@@ -3405,8 +3405,8 @@
       <attribute name="version" value="2.0.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.3;jakarta.activation:jakarta.activation-api:2.1.3"/>
-      <attribute name="provided" value="org.eclipse.angus:logging-mailhandler:2.0.3;org.eclipse.angus:angus-core:2.0.3;org.eclipse.angus:pop3:2.0.3;org.eclipse.angus:imap:2.0.3;org.eclipse.angus:smtp:2.0.3"/>
+      <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.3;jakarta.mail:jakarta.mail-api:2.1.3"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.3;org.eclipse.angus:imap:2.0.3;org.eclipse.angus:logging-mailhandler:2.0.3;org.eclipse.angus:pop3:2.0.3;org.eclipse.angus:smtp:2.0.3"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:2.0.2"/>
     </capability>
     <capability namespace="osgi.content">
@@ -4050,7 +4050,7 @@
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.2;jakarta.mail:jakarta.mail-api:2.1.2"/>
-      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.2;org.eclipse.angus:smtp:2.0.2;org.eclipse.angus:logging-mailhandler:2.0.2;org.eclipse.angus:pop3:2.0.2;org.eclipse.angus:imap:2.0.2"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.2;org.eclipse.angus:imap:2.0.2;org.eclipse.angus:logging-mailhandler:2.0.2;org.eclipse.angus:pop3:2.0.2;org.eclipse.angus:smtp:2.0.2"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:2.0.1"/>
     </capability>
     <capability namespace="osgi.content">
@@ -4468,7 +4468,7 @@
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.1"/>
-      <attribute name="provided" value="org.eclipse.angus:angus-mail:2.0.1;jakarta.mail:jakarta.mail-api:2.1.1"/>
+      <attribute name="provided" value="jakarta.mail:jakarta.mail-api:2.1.1;org.eclipse.angus:angus-mail:2.0.1"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:2.0.0"/>
     </capability>
     <capability namespace="osgi.content">
@@ -4646,75 +4646,6 @@
       <directive name="resolution" value="optional"/>
       <directive name="cardinality" value="multiple"/>
       <attribute name="osgi.serviceloader" value="jakarta.mail.util.StreamProvider"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail logging handler"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util.logging"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301,-1923478059" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="2.0.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:2.0.0"/>
-      <attribute name="version" value="2.0.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.0"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="78789" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/2.0.0/logging-mailhandler-2.0.0.jar"/>
-      <attribute name="osgi.content" value="B0B2AEADB3FBF08C06441477096B8E8BB81B9A1140B8CB38A39419386DA234DF"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
@@ -5051,6 +4982,75 @@
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail logging handler"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.eclipse.angus.mail.util.logging"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="2.0.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:2.0.0"/>
+      <attribute name="version" value="2.0.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.angus:angus-core:2.0.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="78789" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/2.0.0/logging-mailhandler-2.0.0.jar"/>
+      <attribute name="osgi.content" value="B0B2AEADB3FBF08C06441477096B8E8BB81B9A1140B8CB38A39419386DA234DF"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
       <attribute name="osgi.identity" value="org.eclipse.angus.mail"/>
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail Provider"/>
@@ -5158,8 +5158,8 @@
       <attribute name="version" value="2.0.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.1;jakarta.activation:jakarta.activation-api:2.1.1"/>
-      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.0;org.eclipse.angus:pop3:2.0.0;org.eclipse.angus:logging-mailhandler:2.0.0;org.eclipse.angus:smtp:2.0.0;org.eclipse.angus:imap:2.0.0"/>
+      <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.1;jakarta.mail:jakarta.mail-api:2.1.1"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:2.0.0;org.eclipse.angus:imap:2.0.0;org.eclipse.angus:logging-mailhandler:2.0.0;org.eclipse.angus:pop3:2.0.0;org.eclipse.angus:smtp:2.0.0"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:2.0.0"/>
     </capability>
     <capability namespace="osgi.content">
@@ -5418,134 +5418,6 @@
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
       <directive name="resolution" value="optional"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail logging handler"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.util.logging"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301,-1923478059" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.1.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:1.1.0"/>
-      <attribute name="version" value="1.1.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:1.1.0"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="77700" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/1.1.0/logging-mailhandler-1.1.0.jar"/>
-      <attribute name="osgi.content" value="9F62A5463B8688686D5A9692481570F9C25DD48C4222E42086D0538DA64AFB99"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
-      <directive name="resolution" value="optional"/>
-      <attribute name="osgi.wiring.package" value="sun.security.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
-      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="documentation" value="https://www.eclipse.org"/>
-      <attribute name="description" value="Angus Mail logging handler"/>
-      <attribute name="type" value="osgi.bundle"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-    </capability>
-    <capability namespace="osgi.wiring.package">
-      <directive name="uses" value="jakarta.mail"/>
-      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.package" value="com.sun.mail.util.logging"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301" type="List&lt;Long&gt;"/>
-    </capability>
-    <capability namespace="osgi.wiring.bundle">
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="osgi.wiring.host">
-      <attribute name="bundle-version" value="1.0.0" type="Version"/>
-      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
-    </capability>
-    <capability namespace="bnd.info">
-      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
-      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:1.0.0"/>
-      <attribute name="version" value="1.0.0" type="Version"/>
-    </capability>
-    <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.eclipse.angus:angus-core:1.0.0"/>
-    </capability>
-    <capability namespace="osgi.content">
-      <attribute name="size" value="75916" type="Long"/>
-      <attribute name="mime" value="application/vnd.osgi.bundle"/>
-      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/1.0.0/logging-mailhandler-1.0.0.jar"/>
-      <attribute name="osgi.content" value="6A8823F2086DE9439F639C6547F56ADB6E2AEBF5B39F45B4A001F8DD5161655B"/>
-    </capability>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
-    </requirement>
-    <requirement namespace="osgi.wiring.package">
-      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
-      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
-    </requirement>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
@@ -5882,6 +5754,75 @@
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail logging handler"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.util.logging"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301,-1923478059" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.1.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:1.1.0"/>
+      <attribute name="version" value="1.1.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.angus:angus-core:1.1.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="77700" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/1.1.0/logging-mailhandler-1.1.0.jar"/>
+      <attribute name="osgi.content" value="9F62A5463B8688686D5A9692481570F9C25DD48C4222E42086D0538DA64AFB99"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=javax.security.sasl)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="javax.security.sasl"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=sun.security.util)"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="sun.security.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
       <attribute name="osgi.identity" value="org.eclipse.angus.mail"/>
       <attribute name="documentation" value="https://www.eclipse.org"/>
       <attribute name="description" value="Angus Mail Provider"/>
@@ -5990,7 +5931,7 @@
     </capability>
     <capability namespace="maven.dependencies.info">
       <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.1;jakarta.mail:jakarta.mail-api:2.1.1"/>
-      <attribute name="provided" value="org.eclipse.angus:pop3:1.1.0;org.eclipse.angus:logging-mailhandler:1.1.0;org.eclipse.angus:imap:1.1.0;org.eclipse.angus:smtp:1.1.0;org.eclipse.angus:angus-core:1.1.0"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:1.1.0;org.eclipse.angus:imap:1.1.0;org.eclipse.angus:logging-mailhandler:1.1.0;org.eclipse.angus:pop3:1.1.0;org.eclipse.angus:smtp:1.1.0"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:1.1.0"/>
     </capability>
     <capability namespace="osgi.content">
@@ -6249,6 +6190,65 @@
     <requirement namespace="osgi.extender">
       <directive name="filter" value="(&amp;(osgi.extender=osgi.serviceloader.registrar)(version&gt;=1.0.0)(!(version&gt;=2.0.0)))"/>
       <directive name="resolution" value="optional"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="license" value="http://www.eclipse.org/legal/epl-2.0, https://www.gnu.org/software/classpath/license.html, http://www.eclipse.org/org/documents/edl-v10.php"/>
+      <attribute name="osgi.identity" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="documentation" value="https://www.eclipse.org"/>
+      <attribute name="description" value="Angus Mail logging handler"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="jakarta.mail"/>
+      <attribute name="bundle-symbolic-name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.package" value="com.sun.mail.util.logging"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+      <attribute name="bnd.hashes" value="-1897558307,595943514,-1752780537,-1662692788,-2121218564,-2110049070,-1019480946,1418969071,-2009987725,-2068832301" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.0.0" type="Version"/>
+      <attribute name="osgi.wiring.host" value="org.eclipse.angus.logging-mailhandler"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="org.eclipse.angus.logging-mailhandler"/>
+      <attribute name="from" value="org.eclipse.angus:logging-mailhandler:1.0.0"/>
+      <attribute name="version" value="1.0.0" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.eclipse.angus:angus-core:1.0.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="75916" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/eclipse/angus/logging-mailhandler/1.0.0/logging-mailhandler-1.0.0.jar"/>
+      <attribute name="osgi.content" value="6A8823F2086DE9439F639C6547F56ADB6E2AEBF5B39F45B4A001F8DD5161655B"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.activation)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.activation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.internet)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.internet"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=jakarta.mail.util)(version&gt;=2.1.0)(!(version&gt;=3.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="jakarta.mail.util"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
     </requirement>
   </resource>
   <resource>
@@ -6583,8 +6583,8 @@
       <attribute name="version" value="1.0.0" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="jakarta.mail:jakarta.mail-api:2.1.0;jakarta.activation:jakarta.activation-api:2.1.0"/>
-      <attribute name="provided" value="org.eclipse.angus:pop3:1.0.0;org.eclipse.angus:angus-core:1.0.0;org.eclipse.angus:imap:1.0.0;org.eclipse.angus:logging-mailhandler:1.0.0;org.eclipse.angus:smtp:1.0.0"/>
+      <attribute name="compile" value="jakarta.activation:jakarta.activation-api:2.1.0;jakarta.mail:jakarta.mail-api:2.1.0"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-core:1.0.0;org.eclipse.angus:imap:1.0.0;org.eclipse.angus:logging-mailhandler:1.0.0;org.eclipse.angus:pop3:1.0.0;org.eclipse.angus:smtp:1.0.0"/>
       <attribute name="runtime" value="org.eclipse.angus:angus-activation:1.0.0"/>
     </capability>
     <capability namespace="osgi.content">
@@ -7421,7 +7421,7 @@
       <attribute name="version" value="2.0.3" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="org.eclipse.angus:jakarta.mail:2.0.3;org.eclipse.angus:angus-mail:2.0.3"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-mail:2.0.3;org.eclipse.angus:jakarta.mail:2.0.3"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="30863" type="Long"/>
@@ -7567,7 +7567,7 @@
       <attribute name="version" value="2.0.1" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="provided" value="org.eclipse.angus:jakarta.mail:2.0.1;org.eclipse.angus:angus-mail:2.0.1"/>
+      <attribute name="provided" value="org.eclipse.angus:angus-mail:2.0.1;org.eclipse.angus:jakarta.mail:2.0.1"/>
     </capability>
     <capability namespace="osgi.content">
       <attribute name="size" value="31416" type="Long"/>

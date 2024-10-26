@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148461">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1729940150631">
   <resource>
     <capability namespace="osgi.identity">
       <directive name="singleton" value="true"/>
@@ -371,7 +371,7 @@
       <attribute name="version" value="0.3.2" type="Version"/>
     </capability>
     <capability namespace="maven.dependencies.info">
-      <attribute name="compile" value="org.codehaus.plexus:plexus-component-annotations:1.5.5;javax.enterprise:cdi-api:1.0;org.eclipse.sisu:org.eclipse.sisu.inject:0.3.2;org.codehaus.plexus:plexus-classworlds:2.5.2;org.codehaus.plexus:plexus-utils:3.0.17"/>
+      <attribute name="compile" value="javax.enterprise:cdi-api:1.0;org.codehaus.plexus:plexus-classworlds:2.5.2;org.codehaus.plexus:plexus-component-annotations:1.5.5;org.codehaus.plexus:plexus-utils:3.0.17;org.eclipse.sisu:org.eclipse.sisu.inject:0.3.2"/>
       <attribute name="provided" value="com.google.inject:guice:3.0"/>
     </capability>
     <capability namespace="osgi.content">
