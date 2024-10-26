@@ -43,7 +43,6 @@ Export-Package: de.mnl.moodle.provider.test
 	de.mnl.moodle.service;version=snapshot,\
 	de.mnl.osgi.coreutils;version='[2.1.0,2.1.1)',\
 	de.mnl.osgi.lf4osgi;version='[2.3.0,2.3.1)',\
-	org.jdrupes.json;version='[2.3.1,2.3.2)',\
 	org.osgi.util.function;version='[1.2.0,1.2.1)',\
 	org.osgi.util.promise;version='[1.2.0,1.2.1)',\
 	org.apache.felix.scr;version='[2.2.12,2.2.13)',\

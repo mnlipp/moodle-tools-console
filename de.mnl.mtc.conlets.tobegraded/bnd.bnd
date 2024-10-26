@@ -12,7 +12,6 @@ Export-Package: de.mnl.mtc.conlets.tobegraded
 	osgi.cmpn;version=7.0,\
     com.fasterxml.jackson.core.jackson-core;version=latest,\
     de.mnl.osgi.lf4osgi;version=latest,\
-    org.jdrupes.json;version=latest,\
     org.jgrapes.core;version=latest,\
     org.jgrapes.io;version=latest,\
     org.jgrapes.util;version=latest,\

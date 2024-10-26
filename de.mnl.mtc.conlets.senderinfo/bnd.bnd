@@ -13,7 +13,6 @@ Export-Package: de.mnl.mtc.conlets.senderinfo
     com.fasterxml.jackson.core.jackson-core;version=latest,\
     jakarta.mail-api;version=latest,\
     de.mnl.osgi.lf4osgi;version=latest,\
-    org.jdrupes.json;version=latest,\
     org.jgrapes.core;version=latest,\
     org.jgrapes.io;version=latest,\
     org.jgrapes.util;version=latest,\

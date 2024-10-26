@@ -27,7 +27,6 @@ Provide-Capability: osgi.serviceloader; \
     org.jgrapes.webconsole.provider.vue;version=latest,\
     org.jgrapes.webconsole.provider.jgwcvuecomponents;version=latest,\
     org.jgrapes.webconsole.provider.chartjs;version=latest,\
-    org.jdrupes.json;version=latest,\
     org.freemarker.freemarker;version='[2.3.27,2.4)'
 
 -fixupmessages.local: \
