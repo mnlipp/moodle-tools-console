@@ -276,7 +276,7 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
             user.getPrincipals().add(new InternetAddressPrincipal(
                 moodleUser.getEmail(), model.fullName));
             user.getPrivateCredentials().add(
-                new Password(event.params().asString(2).toCharArray()));
+                new Password(((String) event.param(2)).toCharArray()));
             channel.session().put(Subject.class, user);
             fire(new UserAuthenticated(event.setAssociated(this,
                 new LoginContext(channel, model)), user).by("Moodle Login"));
@@ -328,12 +328,12 @@ public class LoginConlet extends FreeMarkerConlet<LoginConlet.AccountModel> {
                 bundle.getString("Connecting"), null));
             String site = model.getTaggedInstance();
             if (site == null) {
-                site = event.params().asString(0);
+                site = event.param(0);
             }
-            model.setUserName(event.params().asString(1));
+            model.setUserName(event.param(1));
             return moodleService
                 .connect(site, model.getUserName(),
-                    new Password(event.params().asString(2).toCharArray()));
+                    new Password(((String) event.param(2)).toCharArray()));
         } catch (IOException e) {
             channel.respond(new NotifyConletView(type(),
                 model.getConletId(), "setMessages",
