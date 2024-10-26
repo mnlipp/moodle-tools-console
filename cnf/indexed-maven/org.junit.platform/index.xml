@@ -1,5 +1,1365 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1727555148865">
+<repository xmlns="http://www.osgi.org/xmlns/repository/v1.0.0" name="IndexedMaven" increment="1729937821324">
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-launcher"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1808614382,290338603,2622298,633916538,-1342606400,-883722897,-1518484828,33453727,-562801488,835019333,-8786250,-764804726,-62993304,-925500526,-961389222,1933926536,960531195,2131414094,-1082257669" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.core"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-381620381,-296616126,-1228136109,-1602580736,-406179615,-1973111933,-255593140,-3057035,-1580427704,-1004684574,936589385,77076827,621042968,-1956522905,668075648,-691559769,306969781,-1038827037,-679841856,-1532883752,-590072175,1895597947,-1557654750,-2062834534,1819083680,617099260,278233613,1209310506,233544945,-1580095183,558145330,1770974649,1017873253,-495888647,-1034758776,-868488448,46045626,-145284355,-125637019,512591254" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1514789012,-1334125293,-84450263,-352865722,-115349588,899229164,578079082,1393058368,-254225001" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-229949047,-1431117283,1442567166,171610703,777991237" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.session"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="589474627,2060857385" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.tagexpression"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="457245672,-1683613062,-1802140134,-435909436,-628290513,947152016,-703058461,989097061,-1911543745,-595935978,80204392,555689394,46502145,80988633,2145540671,2146092791" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-launcher"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-launcher:1.11.3"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.junit.platform:junit-platform-engine:1.11.3;org.apiguardian:apiguardian-api:1.1.2"/>
+    </capability>
+    <capability namespace="org.junit.platform.launcher">
+      <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="189006" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-launcher/1.11.3/junit-platform-launcher-1.11.3.jar"/>
+      <attribute name="osgi.content" value="B4727459201B0011BEB0742BD807421A1FC8426B116193031ED87825BC2D4F04"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file.attribute)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file.attribute"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.security)"/>
+      <attribute name="osgi.wiring.package" value="java.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.descriptor)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher.listeners.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-engine"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-375545665,1345105760,156758312,-2061341297,-1529311336,1524475970,408708417,-1735899734,54302839,2104342424,-2039588395,-1808614382,1481947656,2622298,2131414094,1830597057,-980430444,-1937943997,-578273427,242186632,-656591085,-229816084,1195035651" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="627246297,-1197562533,-785828280,-1199556265,-496727638,-517043970,-2106984116,-1678783089,884254167,509450219,1642075516,522929348,-1855470495,162563119,-355923227,87844251,763697107,331793185,1481555852,418339260,608338944,1095474827,278079904,-829580073,1051922089,-1684365787,-1904478997,1402313035" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1397132158" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.config"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1567018351" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1297126781,911059859,1805644966,1874935060,-2052497530,673244360,1935180657,-355923227,-504358697,-861381914,1145343100,-1900614687,1769334051,-1016956793" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.engine.discovery"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.discovery"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="224562478,1953654862,1969675469,1895597947,1126043982,1836888271,-1861634969,-1678783089,2622298,74115493,393434316,1279658277" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.filter"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="1634304673" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.opentest4j"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="443561517,2042249266,1714566694,-198264903,2099035641,1973766542,342927532,1995577635,-1017414711,-34079472,808259189,226134856,1377533090,1605592223,2106058237,1214898638,-1082148521,2023061767,1985180642,2091713860,1720818875,-562801488,2117212828,2433570,-626023478,1742371203,584000685,-1837524615,-1399436810,-1623179978,-1834417233,-505512838,1399924761,-1143441467,-1165694376,-220292487,-2042494761,-1002899986,-1388104269,-1762238358,-162179059,572770538,383956813" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.store"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="EXPERIMENTAL"/>
+      <attribute name="bnd.hashes" value="1309906478,-72669576,-1957530,578079082,1128031971,297988974,-181393585,1131909568" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-engine"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-engine:1.11.3"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-commons:1.11.3;org.opentest4j:opentest4j:1.3.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="246799" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-engine/1.11.3/junit-platform-engine-1.11.3.jar"/>
+      <attribute name="osgi.content" value="0043F72F611664735DA8DC9A308BF12ECD2236B05339351C4741EDB4D8FAB0DA"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.ref)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.ref"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.reflect)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.reflect"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.math)"/>
+      <attribute name="osgi.wiring.package" value="java.math"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.locks)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.locks"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.support)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.hierarchical)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.opentest4j)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.opentest4j"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1556677377,725552322" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.annotation"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1081760500" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="MAINTAINED"/>
+      <attribute name="bnd.hashes" value="578079082,-202516509,-331680519,84379" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="-350987159,-2013470288,963414354,971415866" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="2076723584,-1654805673,-1018638484,-2073805608,-1976535804,-276420562,166482013" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support.conversion"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="EXPERIMENTAL"/>
+      <attribute name="bnd.hashes" value="1553583033,536366521,-2130908294,-1812099743,402796467,-1611193084,507849763,1637588148,1677429728,545475187,-207137499,1620750379,22379765" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function,org.junit.platform.commons.support"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="848663202,-1977623168,533073648,-1470944282,-1468284980,1693941305,2018707861,1729647550,-1835397973,200189377,-1593150980,-129124438,-791099785,54238355,-1056180798,-1451588711,820278579,463816069,-2030099616,-1721893845,725552322,2093771131,-1018638484,-581251290,2090716121,343309145,34423320,1860656148,148294400,-1374184593,1819427913" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.3" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-commons"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-commons:1.11.3"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="142008" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.11.3/junit-platform-commons-1.11.3.jar"/>
+      <attribute name="osgi.content" value="BE262964B0B6B48DE977C61D4F931DF8CF61E80E750CC3F3A0A39CDD21C1008C"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.annotation)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.reflect)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.reflect"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.math)"/>
+      <attribute name="osgi.wiring.package" value="java.math"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file.attribute)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file.attribute"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.security)"/>
+      <attribute name="osgi.wiring.package" value="java.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.jar)"/>
+      <attribute name="osgi.wiring.package" value="java.util.jar"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.support)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.11.3)(version&lt;=1.11.3)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.3" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-launcher"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1808614382,290338603,2622298,633916538,-1342606400,-883722897,-1518484828,33453727,-562801488,835019333,-8786250,-764804726,-62993304,-925500526,-961389222,1933926536,960531195,2131414094,-1082257669" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.core"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-381620381,-296616126,-1228136109,-1602580736,-406179615,-1973111933,-255593140,-3057035,-1580427704,-1004684574,936589385,77076827,621042968,-1956522905,668075648,-691559769,306969781,-1038827037,-679841856,-1532883752,-590072175,1895597947,-1557654750,-2062834534,1819083680,617099260,278233613,1209310506,233544945,-1580095183,558145330,1770974649,1017873253,-495888647,-1034758776,-868488448,46045626,-145284355,-125637019,512591254" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1514789012,-1334125293,-84450263,-352865722,-115349588,899229164,578079082,1393058368,-254225001" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-229949047,-1431117283,1442567166,171610703,777991237" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.session"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="589474627,2060857385" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.tagexpression"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="457245672,-1683613062,-1802140134,-435909436,-628290513,947152016,-703058461,989097061,-1911543745,-595935978,80204392,555689394,46502145,80988633,2145540671,2146092791" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-launcher"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-launcher:1.11.2"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-engine:1.11.2"/>
+    </capability>
+    <capability namespace="org.junit.platform.launcher">
+      <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="189002" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-launcher/1.11.2/junit-platform-launcher-1.11.2.jar"/>
+      <attribute name="osgi.content" value="FD933E1E2029BB6C749DD94F63830C0973C30B89ED71CFD5E7F4684368D2E629"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file.attribute)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file.attribute"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.security)"/>
+      <attribute name="osgi.wiring.package" value="java.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.descriptor)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher.listeners.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-engine"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-375545665,1345105760,156758312,-2061341297,-1529311336,1524475970,408708417,-1735899734,54302839,2104342424,-2039588395,-1808614382,1481947656,2622298,2131414094,1830597057,-980430444,-1937943997,-578273427,242186632,-656591085,-229816084,1195035651" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="627246297,-1197562533,-785828280,-1199556265,-496727638,-517043970,-2106984116,-1678783089,884254167,509450219,1642075516,522929348,-1855470495,162563119,-355923227,87844251,763697107,331793185,1481555852,418339260,608338944,1095474827,278079904,-829580073,1051922089,-1684365787,-1904478997,1402313035" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1397132158" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.config"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1567018351" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1297126781,911059859,1805644966,1874935060,-2052497530,673244360,1935180657,-355923227,-504358697,-861381914,1145343100,-1900614687,1769334051,-1016956793" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.engine.discovery"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.discovery"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="224562478,1953654862,1969675469,1895597947,1126043982,1836888271,-1861634969,-1678783089,2622298,74115493,393434316,1279658277" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.filter"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="1634304673" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.opentest4j"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="443561517,2042249266,1714566694,-198264903,2099035641,1973766542,342927532,1995577635,-1017414711,-34079472,808259189,226134856,1377533090,1605592223,2106058237,1214898638,-1082148521,2023061767,1985180642,2091713860,1720818875,-562801488,2117212828,2433570,-626023478,1742371203,584000685,-1837524615,-1399436810,-1623179978,-1834417233,-505512838,1399924761,-1143441467,-1165694376,-220292487,-2042494761,-1002899986,-1388104269,-1762238358,-162179059,572770538,383956813" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.store"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="EXPERIMENTAL"/>
+      <attribute name="bnd.hashes" value="1309906478,-72669576,-1957530,578079082,1128031971,297988974,-181393585,1131909568" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-engine"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-engine:1.11.2"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.opentest4j:opentest4j:1.3.0;org.junit.platform:junit-platform-commons:1.11.2;org.apiguardian:apiguardian-api:1.1.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="246794" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-engine/1.11.2/junit-platform-engine-1.11.2.jar"/>
+      <attribute name="osgi.content" value="4E625500397631304726DA32F7AE599CE3BFC71D4EA11947DE69DBBDF0FC4409"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.ref)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.ref"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.reflect)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.reflect"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.math)"/>
+      <attribute name="osgi.wiring.package" value="java.math"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.locks)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.locks"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.support)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.hierarchical)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.opentest4j)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.opentest4j"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1556677377,725552322" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.annotation"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1081760500" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="MAINTAINED"/>
+      <attribute name="bnd.hashes" value="578079082,-202516509,-331680519,84379" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="-350987159,-2013470288,963414354,971415866" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="2076723584,-1654805673,-1018638484,-2073805608,-1976535804,-276420562,166482013" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support.conversion"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="EXPERIMENTAL"/>
+      <attribute name="bnd.hashes" value="1553583033,536366521,-2130908294,-1812099743,402796467,-1611193084,507849763,1637588148,1677429728,545475187,-207137499,1620750379,22379765" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function,org.junit.platform.commons.support"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="848663202,-1977623168,533073648,-1470944282,-1468284980,1693941305,2018707861,1729647550,-1835397973,200189377,-1593150980,-129124438,-791099785,54238355,-1056180798,-1451588711,820278579,463816069,-1721893845,725552322,2093771131,-1018638484,-581251290,2090716121,343309145,34423320,1860656148,148294400,-1374184593,1819427913" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.11.2" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-commons"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-commons:1.11.2"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="140617" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.11.2/junit-platform-commons-1.11.2.jar"/>
+      <attribute name="osgi.content" value="03CE3C6054C011A26953A065DA6A48489D1FBC1995E4CA3C6D700293E71B5800"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.io)"/>
+      <attribute name="osgi.wiring.package" value="java.io"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang)"/>
+      <attribute name="osgi.wiring.package" value="java.lang"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.annotation)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.annotation"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.invoke)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.invoke"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.lang.reflect)"/>
+      <attribute name="osgi.wiring.package" value="java.lang.reflect"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.math)"/>
+      <attribute name="osgi.wiring.package" value="java.math"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.net)"/>
+      <attribute name="osgi.wiring.package" value="java.net"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.charset)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.charset"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.nio.file.attribute)"/>
+      <attribute name="osgi.wiring.package" value="java.nio.file.attribute"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.security)"/>
+      <attribute name="osgi.wiring.package" value="java.security"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.time)"/>
+      <attribute name="osgi.wiring.package" value="java.time"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util)"/>
+      <attribute name="osgi.wiring.package" value="java.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.concurrent.atomic)"/>
+      <attribute name="osgi.wiring.package" value="java.util.concurrent.atomic"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.function)"/>
+      <attribute name="osgi.wiring.package" value="java.util.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.jar)"/>
+      <attribute name="osgi.wiring.package" value="java.util.jar"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.logging)"/>
+      <attribute name="osgi.wiring.package" value="java.util.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.regex)"/>
+      <attribute name="osgi.wiring.package" value="java.util.regex"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(osgi.wiring.package=java.util.stream)"/>
+      <attribute name="osgi.wiring.package" value="java.util.stream"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.support)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.11.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.11.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.11.2)(version&lt;=1.11.2)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
+      <attribute name="type" value="bnd.synthetic"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <capability namespace="bnd.multirelease">
+      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
+      <attribute name="version" value="1.11.2" type="Version"/>
+    </capability>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
+    </requirement>
+  </resource>
   <resource>
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
@@ -396,62 +1756,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.11.1)(version&lt;=1.11.1)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -1306,13 +2610,412 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-launcher"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1808614382,290338603,2622298,633916538,-1342606400,-883722897,-1518484828,33453727,-562801488,835019333,-8786250,-764804726,-62993304,-925500526,-961389222,1933926536,960531195,2131414094,-1082257669" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.core"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-381620381,-296616126,-1228136109,-1602580736,-406179615,-1973111933,-255593140,-3057035,-1580427704,-1004684574,936589385,77076827,621042968,-1956522905,668075648,-691559769,306969781,-1038827037,-679841856,-1532883752,-590072175,1895597947,-1557654750,-2062834534,1819083680,617099260,278233613,1209310506,233544945,-1580095183,558145330,1770974649,1017873253,-495888647,-1034758776,-868488448,46045626,-145284355,-125637019,512591254" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="MAINTAINED"/>
+      <attribute name="bnd.hashes" value="-1514789012,-1334125293,-84450263,-352865722,-115349588,899229164,578079082,1393058368,-254225001" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-229949047,-1431117283,1442567166,171610703,777991237" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.launcher"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.session"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="589474627,2060857385" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-launcher"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.tagexpression"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="457245672,-1683613062,-1802140134,-435909436,-628290513,947152016,-703058461,989097061,-1911543745,-595935978,80204392,555689394,46502145,80988633,2145540671,2146092791" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-launcher"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-launcher"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-launcher:1.10.5"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2;org.junit.platform:junit-platform-engine:1.10.5"/>
+    </capability>
+    <capability namespace="org.junit.platform.launcher">
+      <attribute name="org.junit.platform.launcher" value="junit-platform-launcher"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="184199" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-launcher/1.10.5/junit-platform-launcher-1.10.5.jar"/>
+      <attribute name="osgi.content" value="B90521D0414948797E15B62043045FFD52D79137BD565D632075BA5FD0FF3466"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.10.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.descriptor)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.launcher.listeners.discovery)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.launcher.listeners.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-engine"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine.reporting"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-375545665,1345105760,156758312,-2061341297,1524475970,408708417,-1735899734,54302839,2104342424,-2039588395,-1808614382,1481947656,2622298,2131414094,1830597057,-980430444,-1937943997,-578273427,242186632,-656591085,-229816084,1195035651" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="627246297,-1197562533,-1199556265,-496727638,-517043970,-2106984116,522929348,-1855470495,162563119,-355923227,87844251,763697107,331793185,418339260,608338944,1095474827,278079904,-829580073,1051922089,-1684365787,-1904478997,1402313035" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1397132158" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.config"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1567018351" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.descriptor"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1297126781,911059859,1805644966,1874935060,-2052497530,673244360,1935180657,-355923227,-504358697,-861381914,1145343100,-1900614687,1769334051,-1016956793" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.junit.platform.engine.discovery"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.discovery"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="224562478,1953654862,1969675469,1895597947,1126043982,1836888271,-1861634969,-1678783089,2622298,74115493,393434316,1279658277" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util,org.junit.platform.engine"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.filter"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="1634304673" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.engine,org.opentest4j"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="443561517,2042249266,1714566694,-198264903,2099035641,1973766542,342927532,1995577635,-1017414711,-34079472,808259189,226134856,1377533090,1605592223,2106058237,1214898638,-1082148521,2023061767,1985180642,2091713860,1720818875,-562801488,2117212828,2433570,-626023478,1742371203,584000685,-1837524615,-1399436810,-1623179978,-1834417233,-505512838,1399924761,-1143441467,-1165694376,-220292487,-2042494761,-1002899986,-1388104269,-1762238358,-162179059,572770538,383956813" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-engine"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.store"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="EXPERIMENTAL"/>
+      <attribute name="bnd.hashes" value="1309906478,-72669576,-1957530,578079082,1128031971,297988974,-181393585,1131909568" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-engine"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-engine"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-engine:1.10.5"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.junit.platform:junit-platform-commons:1.10.5;org.apiguardian:apiguardian-api:1.1.2;org.opentest4j:opentest4j:1.3.0"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="213373" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar"/>
+      <attribute name="osgi.content" value="BFD71F57DFFEFEE94E3F0CFD553BE5E5DD7B8F9F273ABA2515075E28B8C8E76A"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.10.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.support)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.discovery)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.discovery"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.reporting)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.reporting"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.engine.support.hierarchical)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.engine.support.hierarchical"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.opentest4j)(version&gt;=1.3.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.opentest4j"/>
+    </requirement>
+    <requirement namespace="osgi.ee">
+      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version=1.8))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
+      <attribute name="osgi.identity" value="junit-platform-commons"/>
+      <attribute name="type" value="osgi.bundle"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons.util"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="1556677377,725552322" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.annotation"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="-1081760500" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="MAINTAINED"/>
+      <attribute name="bnd.hashes" value="578079082,-202516509,-331680519,84379" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api"/>
+      <directive name="mandatory" value="status"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="INTERNAL"/>
+      <attribute name="bnd.hashes" value="-350987159,-2013470288,963414354,971415866" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.support"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="STABLE"/>
+      <attribute name="bnd.hashes" value="2076723584,-1654805673,-1018638484,-2073805608,-1976535804,166482013" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.package">
+      <directive name="uses" value="org.apiguardian.api,org.junit.platform.commons,org.junit.platform.commons.function"/>
+      <attribute name="bundle-symbolic-name" value="junit-platform-commons"/>
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+      <attribute name="status" value="DEPRECATED"/>
+      <attribute name="bnd.hashes" value="848663202,-1977623168,282663642,533073648,-1470944282,-1468284980,1693941305,200189377,-129124438,-791099785,54238355,-1056180798,-1451588711,820278579,463816069,-1721893845,725552322,2093771131,-1018638484,-581251290,2090716121,148294400,-1374184593,1819427913" type="List&lt;Long&gt;"/>
+    </capability>
+    <capability namespace="osgi.wiring.bundle">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.bundle" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="osgi.wiring.host">
+      <attribute name="bundle-version" value="1.10.5" type="Version"/>
+      <attribute name="osgi.wiring.host" value="junit-platform-commons"/>
+    </capability>
+    <capability namespace="bnd.info">
+      <attribute name="name" value="junit-platform-commons"/>
+      <attribute name="from" value="org.junit.platform:junit-platform-commons:1.10.5"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
+    </capability>
+    <capability namespace="maven.dependencies.info">
+      <attribute name="compile" value="org.apiguardian:apiguardian-api:1.1.2"/>
+    </capability>
+    <capability namespace="osgi.content">
+      <attribute name="size" value="106238" type="Long"/>
+      <attribute name="mime" value="application/vnd.osgi.bundle"/>
+      <attribute name="url" value="https://repo1.maven.org/maven2/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar"/>
+      <attribute name="osgi.content" value="ABDAEAAF4CEBD121AB9A7498ED7861693D2BB0AC5976B26C0060A308922EF49D"/>
+    </capability>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.apiguardian.api)(version&gt;=1.1.0)(!(version&gt;=2.0.0)))"/>
+      <directive name="resolution" value="optional"/>
+      <attribute name="osgi.wiring.package" value="org.apiguardian.api"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.function)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.function"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.util)(version&gt;=1.10.0)(!(version&gt;=2.0.0)))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.util"/>
+    </requirement>
+    <requirement namespace="osgi.wiring.package">
+      <directive name="filter" value="(&amp;(osgi.wiring.package=org.junit.platform.commons.logging)(version&gt;=1.10.0)(!(version&gt;=2.0.0))(status=INTERNAL))"/>
+      <attribute name="osgi.wiring.package" value="org.junit.platform.commons.logging"/>
+    </requirement>
+    <requirement namespace="bnd.multirelease">
+      <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.10.5)(version&lt;=1.10.5)))"/>
+    </requirement>
+  </resource>
+  <resource>
+    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-commons__8"/>
       <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <capability namespace="bnd.multirelease">
       <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
@@ -1322,11 +3025,11 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-commons__9"/>
       <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <capability namespace="bnd.multirelease">
       <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
@@ -1336,11 +3039,11 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-commons__8"/>
       <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <capability namespace="bnd.multirelease">
       <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
@@ -1350,11 +3053,11 @@
     <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-commons__9"/>
       <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <capability namespace="bnd.multirelease">
       <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.11.0" type="Version"/>
+      <attribute name="version" value="1.10.5" type="Version"/>
     </capability>
     <requirement namespace="osgi.ee">
       <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
@@ -1599,62 +3302,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.10.4)(version&lt;=1.10.4)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.4" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -2054,62 +3701,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.10.3)(version&lt;=1.10.3)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -2671,62 +4262,6 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.10.1" type="Version"/>
@@ -3122,62 +4657,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.10.1)(version&lt;=1.10.1)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -3581,62 +5060,6 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.10.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.9.3" type="Version"/>
@@ -3874,62 +5297,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.9.3)(version&lt;=1.9.3)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.3" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -4316,62 +5683,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.9.2)(version&lt;=1.9.2)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -4907,62 +6218,6 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.1" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.9.0" type="Version"/>
@@ -5349,62 +6604,6 @@
   </resource>
   <resource>
     <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.9.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
       <attribute name="osgi.identity" value="junit-platform-launcher"/>
       <attribute name="type" value="osgi.bundle"/>
       <attribute name="version" value="1.8.2" type="Version"/>
@@ -5638,62 +6837,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.8.2)(version&lt;=1.8.2)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.8.2" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
   <resource>
@@ -5987,62 +7130,6 @@
     </requirement>
     <requirement namespace="bnd.multirelease">
       <directive name="filter" value="(&amp;(bnd.multirelease=junit-platform-commons)(&amp;(version&gt;=1.6.0)(version&lt;=1.6.0)))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__8"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(&amp;(version&gt;=1.8.0)(!(version&gt;=9.0.0))))"/>
-    </requirement>
-  </resource>
-  <resource>
-    <capability namespace="osgi.identity">
-      <attribute name="osgi.identity" value="junit-platform-commons__9"/>
-      <attribute name="type" value="bnd.synthetic"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <capability namespace="bnd.multirelease">
-      <attribute name="bnd.multirelease" value="junit-platform-commons"/>
-      <attribute name="version" value="1.6.0" type="Version"/>
-    </capability>
-    <requirement namespace="osgi.ee">
-      <directive name="filter" value="(&amp;(osgi.ee=JavaSE)(version&gt;=9.0.0))"/>
     </requirement>
   </resource>
 </repository>
